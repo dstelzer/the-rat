@@ -1,0 +1,30 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Protagonists
+
+(animate *(protagonist $))
+
+#rat
+(protagonist *)
+(letter for *) R
+%% neuter
+
+#spider
+(protagonist *)
+(male *)
+(letter for *) S
+
+#jackdaw
+(protagonist *)
+(female *)
+(letter for *) J
+
+#chameleon
+(protagonist *)
+(female *)
+(letter for *) C
+
+#butler
+(protagonist *) (current act 4)
+(animate *)
+(male *)
+(letter for *) B

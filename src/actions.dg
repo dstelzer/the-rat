@@ -1,0 +1,678 @@
+%% The whole "actions" section of stdlib.dg was excised and moved to actions_base.dg
+%% Then the parts that are wanted for this game were moved over here
+%% This means:
+%% - TELL (Fox)
+%% - WAIT (Fox)
+%% - Commands (Fox)
+
+%% - GO (Rat, Chameleon)
+%% - SABOTAGE (Rat)
+
+%% - PROCEED (Jackdaw)
+%% - SCORE (Jackdaw)
+
+%% - LOOK (Spider)
+%% - EXAMINE (Spider)
+%% - HACK (Spider)
+
+%% - MINGLE (Chameleon)
+%% - DISENGAGE (Chameleon)
+
+%% - TAKE (Butler)
+%% - DROP (Butler)
+%% - ATTEND TO (Butler)
+
+%% We also preserve two pieces of special syntax in stdlib.dg
+%% Bare directions for GO; and ACTOR, ACTION for TELL ACTOR TO ACTION
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Commands
+
+(interface (command $<Action))
+
+@(understand command $Action)
+	(understand $Action)
+	(command $Action)
+
+(describe action (command $Action))
+	issue the (exhaust) { *($Word is one of $Action) $Word } command
+
+%% QUIT
+
+(command [quit])
+(understand [quit/q] as [quit])
+(prevent [quit])
+	~(interpreter supports quit)
+	(div @meta) { In this interpreter, close the window to quit the game. }
+(perform [quit])
+	(div @meta) { Really quit? \(y (no space) / (no space) n\) }
+	(if) (yesno) (then)
+		(div @meta) (display quit message)
+		(quit)
+	(endif)
+	(stop)
+
+(display quit message)
+	Thanks for playing!
+
+%% RESTART
+
+(understand command [restart])
+(perform [restart])
+	(div @meta) {
+		Restart the game from the beginning? \(
+		(if) (library links enabled) (then) (link) y (else) y (endif)
+		(no space) / (no space)
+		(if) (library links enabled) (then) (link) n (else) n (endif)
+		\)
+	}
+	(if) (yesno) (then)
+		(restart)
+		(div @meta) { Failed to restart. }
+	(endif)
+	(stop)
+
+%% SAVE
+
+(understand command [save])
+(perform [save])
+	(if) (save $ComingBack) (then)
+		(if) ($ComingBack = 1) (then)
+			(roman)
+			(div @meta) { Game state restored successfully. }
+			(div @roomheader) (location headline)
+		(else)
+			(div @meta) { Game state saved successfully. }
+		(endif)
+	(else)
+		(div @meta) { Failed to save the game state. }
+	(endif)
+	(stop)
+
+%% RESTORE
+
+(understand command [restore])
+(perform [restore])
+	(restore)
+	(div @meta) { Failed to restore the game state. }
+	(stop)
+
+%% UNDO
+
+(command [undo])
+(perform [undo])
+	(if) ~(interpreter supports undo) (then)
+		(div @meta) { This interpreter doesn't support undo. }
+	(elseif) (undo) (then)
+		(div @meta) { Failed to undo last turn. }
+	(else)
+		(div @meta) { There are no more turns to undo! }
+	(endif)
+	(stop)
+
+(narrate undoing $Words)
+	(div @meta) { Undoing the last turn \( (print words $Words) \). }
+	(line)
+	(location headline)
+
+%% TRANSCRIPT
+
+(command [transcript on])
+(understand [transcript/script on] as [transcript on])
+(understand [transcript/script] as [transcript on])
+
+(perform [transcript on])
+	(div @meta) {
+		(if) (transcript on) (then)
+			Transcript enabled.
+		(elseif) (transcript active) (then)
+			%% Do nothing, transcripting is already active
+		(else)
+			Failed to enable transcript.
+			(stop)
+		(endif)
+	}
+
+(command [transcript off])
+(understand [transcript/script off] as [transcript off])
+
+(perform [transcript off])
+	(transcript off)
+	(div @meta) { Transcript disabled. }
+
+%% SCORE
+
+%% Disabled, see below
+
+%% NOTIFY
+
+%% Disabled, see below
+
+%% VERBOSE / BRIEF / SUPERBRIEF / SUPERVERBOSE
+
+(global variable (verbosity level $))
+%% 0 = superbrief (never show room details)
+%% 1 = brief (show room details only when unvisited)
+%% 2 = verbose (show room details except when moving long distances)
+%% 3 = superverbose (always show room details)
+
+%% If the author doesn't specify, we start with "verbose"
+(startup)
+	~(verbosity level $)
+	(now) (verbosity level 2)
+
+(understand command [superbrief])
+(perform [superbrief])
+	(now) (verbosity level 0)
+	(div @meta) { (story title or default) is now in SUPERBRIEF mode. Location details will never be shown while moving, even on a first visit. }
+
+(understand command [brief])
+(perform [brief])
+	(now) (verbosity level 1)
+	(div @meta) { (story title or default) is now in BRIEF mode. Location details will not be shown when moving to a previously-visited area. }
+
+(understand command [verbose])
+(perform [verbose])
+	(now) (verbosity level 2)
+	(div @meta) { (story title or default) is now in VERBOSE mode. Location details will not be shown when travelling long distances, but will be shown after normal movement. }
+
+(understand command [superverbose])
+(perform [superverbose])
+	(now) (verbosity level 3)
+	(div @meta) { (story title or default) is now in SUPERVERBOSE mode. Location details will always be shown when moving. }
+
+%% VERSION
+
+(understand command [version])
+(understand [banner] as [version])
+(perform [version])
+	(banner)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Fox
+
+%% TELL <obj> TO | <action>
+
+(understand [tell/ask | $Words] as [tell $Actor to | $Action])
+	*(split $Words by [, to] into $Left and $Right)
+	*(understand $Left as single object $Actor preferably animate)
+	(current actor $OldActor)
+	(now) (current actor $Actor)
+	(rewrite $Right into $Simplified)
+	(collect $A)
+		*(understand $Simplified as $A)
+	(into $List)
+	(now) (current actor $OldActor)
+	*($Action is one of $List)
+
+(understand [ask | $Words] as [tell $Actor to give $Obj to $Player])
+	*(split $Words by [for] into $Left and $Right)
+	*(understand $Left as single object $Actor preferably animate)
+	*(understand $Right as object $Obj preferably child of $Actor)
+	(current player $Player)
+
+%% The rule for "name comma action" is further down in the file.
+
+(unlikely [tell $Addressee to | $])
+	~(animate $Addressee)
+
+(describe action [tell $Actor to give $Obj to (current player $)])
+	ask (the full $Actor) for (the full $Obj)
+
+(describe action [tell $Actor to tell (current player $) about $Topic])
+	ask (the full $Actor) about (describe topic $Topic)
+
+(describe action [tell $Actor to | $Action])
+	tell (the full $Actor) to (describe action $Action)
+
+(unlikely [tell $Obj to | $])
+	~(animate $Obj)
+
+(action [tell $NPC to | $] requires $NPC to be present) (just)
+~(action [tell $ to | $] requires $ to be touched)
+
+(instead of [tell $NPC to greet])
+	(try [greet $NPC])
+
+(instead of [tell $NPC to tell (current player $) about $Topic])
+	(try [ask $NPC about $Topic])
+
+(perform [tell $Actor to | $])
+	(if) (animate $Actor) (then)
+		(The $Actor) refuse(s $Actor).
+	(else)
+		(The $Actor) (doesn't $Actor) take orders.
+	(endif)
+
+%% WAIT
+
+(grammar [wait/z] for [wait])
+
+(perform [wait])
+	A moment slips away.
+
+(action [wait] is valid for *(protagonist $)) %% All characters can do it
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Rat
+
+%% GO TO <room>
+
+%% It is only possible to go to visited rooms and non-hidden objects in this
+%% way.
+
+(understand [go to | $Words] as [go to $Room])
+	*(understand $Words as room name $Room)
+
+(understand [go/approach | $Words] as [go to $Room])
+	*(understand $Words as room name $Room)
+
+(understand $Words as room name $Room)
+	(filter $Words into $Filtered)
+	(nonempty $Filtered)
+	(determine object $Room)
+		*(room $Room)
+		($Room is visited)
+	(from words)
+		*(dict $Room)
+	(matching all of $Filtered)
+
+(unlikely [go to $]) %% Prefer default actions on objects to default actions on rooms, if both are enabled
+	(default actions enabled)
+	(default actions apply to rooms)
+(very unlikely [go to $Room]) %% Don't call it very unlikely just because it involves a room
+	(just) (current room $Room) %% But going to the current room should still be very unlikely
+
+%% Rooms generally aren't present
+~(action [go to $] requires $ to be present)
+
+%% Utility like (last $) that also returns the everything-but-last of the list
+%% In other words, it's the opposite of ($List = [$Head | $Rest])
+(interface (split last element from $<List into $>Rest and $>Last))
+(split last element from [$Last] into [] and $Last)
+(split last element from [$Head | $OldRest] into [$Head | $NewRest] and $Last)
+	(split last element from $OldRest into $NewRest and $Last)
+
+(perform [go to $Room])
+	(current room $Here)
+	(if) ($Here = $Room) (then)
+		You are already in (the $Room).
+		(tick) (stop)
+	(elseif)
+		(shortest path from $Here to $Room is $FullPath)
+		(split last element from $FullPath into $Path and $Final)
+	(then)
+		(exhaust) {
+			*($Dir is one of $Path)
+			(now) (moving long distances) %% Switch to a more minimal reporting style
+			(try [go $Dir])
+			(tick)
+			(par)
+		}
+		(now) (last step of movement) %% And switch back for the last step
+		(try [go $Final])
+	(else)
+		You don't know how to get to (the $Room) from here.
+		(tick) (stop)
+	(endif)
+
+%% Navigation by direction:
+
+%% What the player types is eventually translated into one of:
+
+%% [leave $Room $Dir]
+%% [leave $Room $Dir by $Vehicle]
+%% [leave $Room $Dir with $Obj]
+
+%% These are generally the ones to override/extend.
+
+%% The default rules for the aforementioned actions invoke '(prevent entering
+%% $Room)' and '(narrate entering $Room)'. These predicates can of course also
+%% be overridden. Thus, entering a room is not an action of its own, but is
+%% an inherent part of leaving a room.
+
+%% GO <direction>
+
+%% The rule for just typing a list of directions (without a verb) is further
+%% down in the file.
+
+(grammar [go/walk/crawl/leave/get/climb [direction]] for [go $])
+(grammar [go/walk/crawl [to further] [direction]] for [go $])
+(grammar [go/walk/crawl] for [go #out])
+(grammar [enter] for [go #in])
+
+(understand [climb] as [go $Dir])
+	(current room $Room)
+	*($Dir is one of [#up #down])
+	(from $Room go $Dir to $)
+
+(unlikely-complex [go $DirList] 0)
+	(just)
+	(if) (direction $DirList) (then)
+		($Dir = $DirList)
+	(else)
+		%% Only consider the first direction in the list.
+		([+ $Dir | $] = $DirList)
+	(endif)
+	(unlikely [go $Dir])
+
+(unlikely [go $Dir])
+	(current room $Room)
+	~{
+		(from $Room go $Dir to $Target)
+		{ (room $Target) (or) (door $Target) (or) (direction $Target) }
+	}
+
+(before [go $])
+	(recursively leave non-vehicles)
+
+(before [go $Dir])
+	(current room $Room)
+	(from $Room go $Dir to $Target)
+	(door $Target)
+	($Target is closed)
+	(first try [open $Target])
+
+(prevent [go $])
+	(current player $Actor)
+	($Actor is $Rel $Obj)
+	~(room $Obj)
+	~(vehicle $Obj)
+	(when $Actor is $Rel $Obj)
+
+(perform [go $Dir])
+	(current player $Actor)
+	(current room $Room)
+	(if) ($Actor has parent $Room) (then)
+		(try [leave $Room $Dir])
+	(else)
+		($Actor has parent $Vehicle)
+		(try [leave $Room $Dir by $Vehicle])
+	(endif)
+
+(action [go | $] is valid for #rat/#chameleon)
+
+%% SABOTAGE <obj>
+
+(grammar [sabotage/break/wreck [single]] for [sabotage $])
+
+(prevent [sabotage ~(sabotage target $Obj)])
+	TODO there is no way to sabotage (the $Obj).
+
+(perform [sabotage $Obj])
+	TODO sabotaged!
+	(now) ($Obj is broken)
+
+(action [sabotage $] is valid for #rat)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Jackdaw
+
+(grammar [proceed] for itself)
+
+(perform [proceed])
+	TODO Proceed!
+
+(action [proceed] is valid for #jackdaw)
+
+(grammar [score] for itself)
+
+(perform [score])
+	TODO Score!
+
+(action [score] is valid for #jackdaw)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Spider
+
+%% LOOK
+
+(grammar [look/l] for [look])
+(grammar [look/l around] for [look])
+(grammar [where am i] for [look])
+
+(describe action [look])
+	look around
+
+%% We want to reset (moving long distances) just before the final [look]
+(before [look])
+	(last step of movement)
+	(now) ~(moving long distances)
+	(now) ~(last step of movement)
+
+%% And (looking after moving) just after
+(on every tick)
+	(now) ~(looking after moving)
+
+(perform [look])
+	(current player $Player)
+	($Player is $Rel $Loc)
+	{ (verbosity level $Verbosity) (or) ($Verbosity = 2) } %% Just in case
+	(div @roomheader) (location headline)
+	(if)
+		(looking after moving)
+		{
+			($Verbosity = 0) (or) %% Verbosity 0: when moving at all
+			(current room $Room) ($Room is visited) ($Verbosity < 2) (or) %% Verbosity 1: when visited
+			(moving long distances) ($Verbosity < 3) %% Verbosity 2: when moving long distances
+		}
+	(then)
+		%% No room description, keep it brief
+		(par)
+	(elseif) (player can see) (then)
+		(current scope ceiling $Ceil)
+		(look $Ceil)
+		(make appearances $Rel $Loc)
+		(par)
+	(else)
+		(narrate darkness)
+	(endif)
+
+(action [look] is valid for #rat/#chameleon/#spider)
+
+%% EXAMINE <obj>
+
+(grammar [examine/x/watch/describe/check/look/l [object]] for [examine $])
+(grammar [look/l at [object]] for [examine $])
+
+(understand [who am i] as [examine $Player])
+	(current player $Player)
+
+~(action [examine $] requires $ to be touched)
+
+(instead of [examine (room $Obj)])
+	(current room $Here)
+	~($Here = $Obj)
+	(if)
+		(from $Here go $Dir to $Obj)
+	(then)
+		(try [look $Dir])
+	(elseif)
+		(from $Here through $Door to $Obj)
+		~($Door blocks light)
+		(from $Here go $Dir to $Door)
+	(then)
+		(try [look $Dir])
+	(else)
+		You can't get a good view of (the $Obj) from here.
+	(endif)
+
+(perform [examine $Obj])
+	(current player $Player)
+	($Player is nested #in $Obj)
+	(look $Obj)
+
+(perform [examine $Obj])
+	(descr $Obj)
+	(if) (supporter $Obj) (then)
+		(if) (fungibility enabled) (then)
+			(collect $Child)
+				*($Child is #on $Obj)
+			(into $OnList)
+			(fungibility-enabled appearance $OnList #on $Obj)
+		(else)
+			(exhaust) {
+				*($Child is #on $Obj)
+				(par)
+				(appearance $Child #on $Obj)
+				(notice $Child)
+			}
+		(endif)
+	(endif)
+	(if) (container $Obj) ~{ (opaque $Obj) ($Obj is closed) } (then)
+		(if) (fungibility enabled) (then)
+			(collect $Child)
+				*($Child is #in $Obj)
+			(into $InList)
+			(fungibility-enabled appearance $InList #in $Obj)
+		(else)
+			(exhaust) {
+				*($Child is #in $Obj)
+				(par)
+				(appearance $Child #in $Obj)
+				(notice $Child)
+			}
+		(endif)
+	(endif)
+	(par)
+
+(action [examine $] is valid for #rat/#chameleon/#spider)
+
+%% HACK <obj>
+
+(grammar [hack [single]] for [hack $])
+
+(prevent [hack ~(hack target $Obj)])
+	TODO not a target.
+
+%% No default PERFORM rule
+
+(action [hack $] is valid for #spider)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Chameleon
+
+%% MINGLE
+
+(grammar [mingle/socialize] for [mingle])
+
+(prevent [mingle])
+	(people are following)
+	TODO people are already following!
+
+(prevent [mingle])
+	TODO people not around!
+
+(perform [mingle])
+	TODO it works!
+	(now) (people are following)
+
+@(people are not following) ~(people are following)
+
+(action [mingle] is valid for #chameleon)
+
+%% DISENGAGE
+
+(grammar [disengage/separate] for [disengage])
+
+(prevent [disengage])
+	(people are not following)
+	TODO people are already not following!
+
+(perform [disengage])
+	TODO it works!
+	(now) (people are not following)
+
+(action [disengage] is valid for #chameleon)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Butler
+
+%% TAKE <obj>
+
+(grammar [take/grab/snatch/steal/acquire/hold/gather/get/pick [takable]] for [take $])
+(grammar [pick up [takable]] for [take $])
+
+(unlikely [take ~(item $)])
+
+(unlikely [take $Obj])
+	($Obj has relation $Rel)
+	($Rel is one of [#partof #heldby #wornby])
+
+(before [take (item $Obj)])
+	(current player $Player)
+	($Player has ancestor $Obj)
+	(first try [leave $Obj])
+
+(prevent [take $Obj])
+	(when $Obj is already held)
+	(or) (when $Obj is already worn)
+	(or) (when $Obj is fine where it is)
+	(or) (when $Obj is part of something)
+	(or) (when $Obj is held by someone)
+	(or) (when $Obj is worn by someone)
+	(or) (when $Obj can't be taken)
+
+(narrate taking $Obj)
+	(current player $Actor)
+	You take (the $Obj)
+	(if) ($Obj is $Rel $Parent) ~($Actor has ancestor $Parent) (then)
+		(reverse-name $Rel) (the $Parent)
+	(endif)
+	.
+
+(perform [take $Obj])
+	(narrate taking $Obj)
+	(current player $Actor)
+	(now) ($Obj is #heldby $Actor)
+	(now) ($Obj is handled)
+
+(action [take $] is valid for #butler)
+
+%% DROP <obj>
+
+(grammar [put/lay/drop [held]] for [drop $])
+(grammar [put/lay/drop/set down [held]] for [drop $])
+(grammar [put/lay/drop/set [held] down] for [drop $])
+(grammar [let go of [held]] for [drop $])
+
+(unlikely [drop $Obj])
+	(current player $Actor)
+	~($Obj has ancestor $Actor)
+
+(before [drop $Obj])
+	(current player $Actor)
+	($Obj has ancestor $Actor)
+	~($Obj has relation #partof)
+	(ensure $Obj is held)
+
+(prevent [drop $Obj])
+	(when $Obj is part of something)
+	(or) (when $Obj isn't directly held)
+
+(narrate dropping $Obj)
+	(current player $Actor)
+	($Actor is $Rel $Loc)
+	(The $Obj) fall(s $Obj)
+	(if) ($Rel = #on) (then)
+		onto (the $Loc).
+	(else)
+		to the ground.
+	(endif)
+
+(perform [drop $Obj])
+	(narrate dropping $Obj)
+	(current player $Actor)
+	($Actor is $Rel $Loc)
+	(now) ($Obj is $Rel $Loc)
+	(now) ($Obj is handled)
+
+(action [drop $] is valid for #butler)
+
+%% ATTEND TO <obj>
+
+(grammar [attend to [single]] for [attend to $])
+
+(perform [attend to $Obj])
+	TODO!
+	(now) ~($Obj is broken)

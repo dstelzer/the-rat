@@ -1,0 +1,239 @@
+%% The butler's AI - your main opponent for the purposes of the game!
+
+%% This is how it generally works:
+%% Every turn, he builds a list of all the things that need his attention
+%% If that list is empty, he goes back to his default behavior for that section
+%% Otherwise, he calculates which thing on the list will be fastest to deal with
+%% Then he takes one step toward that goal
+%% The current goal is stored in (current goal $), and whenever the state of that variable changes, it's reported
+
+(global variable (current goal $))
+(update current goal to $New)
+	(current goal $New)
+	%% It's already set, no need to change it
+(update current goal to []) %% Something went wrong!
+	ERROR: Tried to set the butler's current goal to \[\]!
+(update current goal to $New)
+	(now) (current goal $New)
+	The butler's goal changes to (the $New)!
+(unset current goal)
+	~(current goal $)
+(unset current goal)
+	(now) ~(current goal $)
+	The butler returns to his default task.
+
+%% How long will it take to deal with something?
+%% If it requires a tool he is not carrying, it's the sum of:
+%%   - The distance from his location to the tool
+%%   - One turn to grab the tool
+%%   - The distance from the tool's location to the problem
+%%   - One turn to fix the problem
+%% Otherwise, it's the sum of:
+%%   - The distance from his location to the problem
+%%   - One turn to fix the problem
+
+(search for new goals)
+	(collect $Target)
+		*($Target is sabotaged)
+	(into $Targets)
+	(if) (empty $Targets) (then)
+		(unset current goal)
+	(elseif) ($Targets = [$Single]) (then) %% No need for comparisons in this case
+		(update current goal to $Single)
+	(else)
+		(fastest solution from $Targets is $Fastest)
+		(update current goal to $Fastest)
+	(endif)
+
+%% Convenience predicate
+(fastest solution from $List is $Fastest)
+	(fastest from $List into $Fastest where current best [] is 10000)
+
+(fastest from [] into $Best where current best $Best is $)
+(fastest from [$X|$Tail] into $Best where current best $Y is $YValue)
+	(calculate solution difficulty for $X into $XValue)
+	(if) ($XValue < $YValue) (then)
+		(fastest from $Tail into $Best where current best $X is $XValue)
+	(else)
+		(fastest from $Tail into $Best where current best $Y is $YValue)
+	(endif)
+
+%% How is this distance calculated?
+%% First, the straightforward equal-weight distance is calculated, avoiding any rooms that have guests in them
+%% If this succeeds, set (avoiding occupied rooms) and use that distance
+%% Otherwise, the equal-weight distance is calculated, *without* avoiding occupied rooms
+%% Then unset (avoiding occupied rooms) and use that distance
+%% Whenever the state of (avoiding occupied rooms) changes, it's reported (see the next section for this part)
+
+(avoiding occupied rooms)
+(tentatively avoiding occupied rooms)
+
+(calculate solution difficulty for $Goal into $Difficulty)
+	($Goal requires tool $Tool)
+	~($Tool is #heldby #butler)
+	
+	(#butler is in room $Start)
+	($Tool is in room $Mid)
+	($Goal is in room $End)
+	
+	(at most once) {
+		(now) (tentatively avoiding occupied rooms)
+		(distance from $Start to $Mid is $DistA)
+		(distance from $Mid to $End is $DistB)
+		($Penalty = 0)
+	(or)
+		(now) ~(tentatively avoiding occupied rooms)
+		(distance from $Start to $Mid is $DistA)
+		(distance from $Mid to $End is $DistB)
+		($Penalty = 5) %% Penalize needing to go through occupied rooms
+	(or)
+		ERROR: Could not find a path from (the $Start) to (the $Mid) to (the $End) while planning goals!
+		(fail)
+	}
+	
+	(if) ($ is #heldby #butler) (then) %% Have to drop something too
+		($Drop = 1)
+	(else)
+		($Drop = 0)
+	(endif)
+	
+	($DistA plus $DistB into $Tmp1)
+	($Tmp1 plus 2 into $Tmp2) %% One for taking, one for fixing
+	($Tmp2 plus $Drop into $Tmp3)
+	($Tmp3 plus $Penalty into $Difficulty)
+
+(calculate solution difficulty for $Goal into $Difficulty)
+	~($Goal requires tool $)
+	
+	(#butler is in room $Start)
+	($Goal is in room $End)
+	
+	(at most once) {
+		(now) (tentatively avoiding occupied rooms)
+		(distance from $Start to $End is $Distance)
+		($Penalty = 0)
+	(or)
+		(now) ~(tentatively avoiding occupied rooms)
+		(distance from $Start to $End is $Distance)
+		($Penalty = 5) %% Penalize needing to go through occupied rooms
+	(or)
+		ERROR: Could not find a path from (the $Start) to (the $End) while planning goals!
+		(fail)
+	}
+	
+	($Distance plus 1 into $Tmp) %% 1 turn to fix
+	($Tmp plus $Penalty into $Difficulty)
+
+(distance from $Start to $Start is 0) %% Optimize the easy case
+(distance from $Start to $End is $Distance)
+	(shortest path from $Start to $End is $Path)
+	(length of $Path into $Distance)
+
+%% The stdlib.dg pathfinder has been changed to use (viable $) instead of ($ is visited) as its criterion for what rooms are accessible
+%% So we have to define that predicate here
+
+~(viable room $Room)
+	~(in bounds for this act $Room)
+(viable room $) %% All in-bounds rooms are viable when we're not worried about going past people
+	~(tentatively avoiding occupied rooms)
+(viable room $Room) %% Otherwise, avoid the party guests, including Chameleon
+	~(#crowd is in room $Room)
+	~(#chameleon is in room $Room)
+
+%% Now, once we have a goal, how do we approach it?
+%% Pretty much the same way we calculated the distances up above!
+%% We also record the path we're currently using for the user interface
+
+(global variable (butler's current path $))
+
+(take one step toward the current goal)
+	(current goal $Goal)
+	(#butler is in room $Start)
+	
+	(if) ($Goal is in room $Start) (then)
+		The butler fixes (the $Goal).
+		(now) ~($Goal is sabotaged)
+	(elseif) ($Goal requires tool $Tool) ($Tool is in room $Start) (then)
+		(if) ($Other is #heldby #butler) (then)
+			The butler drops (the $Other).
+			(now) ($Other is #in $Start)
+		(else)
+			The butler picks up (the $Tool).
+			(now) ($Tool is #heldby #butler)
+		(endif)
+	(else)
+		(if) ($Goal requires tool $Tool) (then)
+			($Tool is in room $GoalRoom)
+			($Goal is in room $SecondGoalRoom)
+			($Target = $Tool)
+		(else)
+			($Goal is in room $GoalRoom)
+			($SecondGoalRoom = [])
+			($Target = $Goal)
+		(endif)
+		
+		(at most once) {
+			(now) (tentatively avoiding occupied rooms)
+			(shortest path from $Start to $GoalRoom is $Path)
+			($Path = [$Next | $])
+		(or)
+			(now) ~(tentatively avoiding occupied rooms)
+			(shortest path from $Start to $GoalRoom is $Path)
+			($Path = [$Next | $])
+			
+		(or)
+			ERROR: Could not find a path from (the $Start) to (the $GoalRoom) when carrying out the plan!
+			(fail)
+		}
+		
+		%% We also want to store the "second path" in 
+		
+		(if)
+			(tentatively avoiding occupied rooms)
+			~(avoiding occupied rooms)
+		(then) %% Not avoiding before, but avoiding now
+			The butler moves from (the $Start) to (the $Next), no longer needing to keep up appearances for the guests.
+			(now) (avoiding occupied rooms)
+		(elseif)
+			~(tentatively avoiding occupied rooms)
+			(avoiding occupied rooms)
+		(then) %% Avoiding before, not avoiding now
+			The butler eyes the possible routes to (the $Target), but doesn't see one that will entirely avoid the guests. So with a redoubled air of professionalism he moves from (the $Start) to (the $Next).
+			(now) ~(avoiding occupied rooms)
+		(else)
+			The butler moves from (the $Start) to (the $Next).
+		(endif)
+		
+		(move #butler to $Next)
+		
+		%% We also need to mark out the path, including the second step if necessary
+		(if) (object $SecondGoalRoom) (then)
+			(at most once) {
+				(now) (tentatively avoiding occupied rooms)
+				(shortest path from $GoalRoom to $SecondGoalRoom is $Path2)
+			(or)
+				(now) ~(tentatively avoiding occupied rooms)
+				(shortest path from $GoalRoom to $SecondGoalRoom is $Path2)
+				
+			(or)
+				ERROR: Could not find a path from (the $GoalRoom) to (the $SecondGoalRoom) when plotting the second half for the UI!
+				(fail)
+			}
+			(append $Path $Path2 $TotalPath)
+			(now) (butler's current path $TotalPath)
+		(else)
+			(now) (butler's current path $Path)
+		(endif)
+	(endif)
+
+(interface (move $<X to $<Y))
+(move $X to $Y) %% TODO - this will eventually need to be changed for Rat's hiding behavior
+	(now) ($X is #in $Y)
+
+%% And finally we put it all together!
+%% We use (exhaust) here to free heap memory afterward because this uses a *lot*
+%% The relevant calculations all get stored in long-term memory anyway
+
+(late on every tick)
+	(exhaust) (search for new goals)
+	(exhaust) (take one step toward the current goal)

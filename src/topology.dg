@@ -1,0 +1,102 @@
+%% X---D---D---X
+%%     |   |
+%% T---O---O---S
+%% |   |   |   |
+%% T---O---O---S
+%%     |
+%%     O---O---O
+
+(global variable (current act 0)) %% 0 (prologue), 1, 2, 3, 4 (epilogue)
+(in bounds for this act $Room)
+	(current act $Act)
+	($Room is available in act $Act)
+
+#gild1
+(room *)
+(from * go #south to #grangild)
+(from * go #east to #gild2)
+(* is available in act 1/2/3/4)
+
+#gild2
+(room *)
+(from * go #south to #glasgild)
+(from * go #west to #gild1)
+(* is available in act 1/2/3/4)
+
+#gran1
+(room *)
+(from * go #east to #grangild)
+(from * go #south to #gran2)
+(* is available in act 2/3/4)
+
+#gran2
+(room *)
+(from * go #east to #dine1)
+(from * go #north to #gran1)
+(* is available in act 2/3/4)
+
+#glas1
+(room *)
+(from * go #west to #glasgild)
+(from * go #south to #glas2)
+(* is available in act 2/3/4)
+
+#glas2
+(room *)
+(from * go #west to #dine2)
+(from * go #north to #glas1)
+(* is available in act 2/3/4)
+
+#grangild
+(room *)
+(from * go #west to #gran1)
+(from * go #north to #gild1)
+(from * go #east to #glasgild)
+(from * go #south to #dine1)
+(* is available in act 1/2/3/4)
+
+#glasgild
+(room *)
+(from * go #east to #glas1)
+(from * go #north to #gild2)
+(from * go #west to #grangild)
+(from * go #south to #dine2)
+(* is available in act 1/2/3/4)
+
+#dine1
+(room *)
+(from * go #west to #gran2)
+(from * go #north to #grangild)
+(from * go #east to #dine2)
+%% No connection south
+(* is available in act 0/1/3/4)
+
+#dine2
+(room *)
+(from * go #east to #glas2)
+(from * go #north to #glasgild)
+(from * go #west to #dine1)
+(* is available in act 1/3/4)
+
+#garden1
+(room *)
+(from * go #north to #dine1)
+(from * go #east to #garden2)
+(origin *) %% Might as well set our coordinate system's origin here
+(* is available in act 0)
+
+#garden2
+(room *)
+(from * go #west to #garden1)
+(from * go #east to #garden3)
+(* is available in act 0)
+
+#garden3
+(room *)
+(from * go #west to #garden2)
+(* is available in act 0)
+
+#fountain
+(name *) water feature
+(* is #in #garden3)
+(sabotage target *)

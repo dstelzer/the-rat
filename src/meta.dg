@@ -1,0 +1,20 @@
+(story title) The Rat
+(story author) Daniel M. Stelzer
+(story blurb) TODO
+(story noun) An authorized sequel
+(story release 0)
+(story ifid) BEDBABA9-471A-468F-8402-FF1CF892D07B
+
+%% We also shove a bunch of random interfaces here to silence compiler warnings about unused library predicates
+(interface (seat $))
+(interface (edible $))
+(interface (potable $))
+(interface (pushable $))
+(interface (sharp $))
+(interface (consultable $))
+(interface (it $< doesn't))
+(interface (when $< is out of sight))
+(interface (when $< won't accept $<))
+(interface (when $< is already $< $<))
+(interface (when $< is closed))
+(interface (when $< blocks passage))

@@ -1,0 +1,20 @@
+{:name	"The Rat"
+	:target [:zblorb :aastory]
+	:build
+	{:zblorb
+		{:options	["--cover"     "cover.png"
+					 "--cover-alt" "Dgt"]}}
+	:sources
+	{:main	["src/meta.dg"
+			 "src/world.dg"
+			 "src/topology.dg"
+			 "src/ai.dg"
+			 "src/input.dg"
+			 "src/actions.dg"
+			 "lib/automap.dg"
+			 "lib/draclib.dg"]
+	:test    ["test" "lib/dialog/test"]
+	:debug   ["lib/dialog/debug" "platform/debug.dg"]
+	:library ["lib/dialog"]
+	}
+}

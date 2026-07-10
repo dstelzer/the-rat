@@ -1,0 +1,2535 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Standard actions
+
+%% Note: this does NOT include:
+%% - Bare direction words
+%% - ACTOR, WORDS
+%% Fortunately, we want both of those to work like default
+
+%% LOOK <dir>
+
+(grammar [examine/x/look/l [direction]] for [look $])
+
+(unlikely [look $])
+
+(prevent [look $])
+	~(player can see)
+	You can't see in the darkness.
+
+(perform [look $Dir])
+	(if)
+		(current scope ceiling $Room)
+		(room $Room)
+		(from $Room go $Dir to $Target)
+	(then)
+		(if) (direction $Target) (then)
+			(try [look $Target])
+		(elseif) (door $Target) ~($Target blocks light) (then)
+			(from $Room through $Target to $OtherRoom)
+			(if) ($OtherRoom is visited) (then)
+				Through (the $Target) you see (a $OtherRoom).
+				(notice $OtherRoom)
+			(else)
+				You can't quite make out what's on the other
+				side of (the $Target).
+				(notice $Target)
+			(endif)
+		(elseif) (room $Target) ($Target is unvisited) (then)
+			You can't get a good view of what's in that direction.
+		(else)
+			(Name $Dir) from here (is $Target) (a $Target).
+			(notice $Target)
+		(endif)
+	(else)
+		(narrate failing to look $Dir)
+	(endif)
+
+(narrate failing to look #up)
+	You see nothing unexpected above.
+
+(narrate failing to look #down)
+	You see nothing unexpected below.
+
+(narrate failing to look #in)
+	Your introspection reveals nothing.
+
+(narrate failing to look #out)
+	There's no obvious way out of here.
+
+(narrate failing to look $)
+	You see nothing unexpected in that direction.
+
+%% LOOK <rel> <obj>
+
+(grammar [look/l [in inside into through] [single]] for [look #in $])
+(grammar [look/l [on upon] [single]] for [look #on $])
+(grammar [look/l behind [single]] for [look #behind $])
+(grammar [look/l under [single]] for [look #under $])
+
+(unlikely [look #in $Obj])
+	~(container $Obj)
+
+(unlikely [look #on $Obj])
+	~(supporter $Obj)
+
+%% Reachability not required, but visibility:
+
+~(action [look $ $] requires $ to be touched)
+(refuse [look $ $Obj]) (when $Obj is out of sight)
+%% This is the only action in the standard library that refuses based on visibility, so it's implemented as a specific rule here instead of a more general (action $ requires $ to be seen). If more actions require it in the future, though, that could easily change.
+
+(before [look #in (opaque $Obj)])
+	($Obj is closed)
+	(first try [open $Obj])
+
+(instead of [look #in (current room $)])
+	(try [look])
+
+(instead of [look #in $Obj])
+	{ (room $Obj) (or) (door $Obj) }
+	(current room $Here)
+	{
+		(from $Here go $Dir to $Obj)
+	(or)
+		(from $Here through $Door to $Obj)
+		(from $Here go $Dir to $Door)
+	}
+	(direction $Dir)
+	(try [look $Dir])
+
+(prevent [look #in $Obj])
+	~(container $Obj)
+	(The $Obj) can't contain things.
+
+(prevent [look #in (opaque $Obj)])
+	($Obj is closed)
+	~(current scope ceiling $Obj)
+	(if) (openable $Obj) (then)
+		(The $Obj is) closed.
+	(else)
+		You can't look inside (the $Obj).
+	(endif)
+
+(prevent [look #behind (room $Obj)])
+	Looking behind (the $Obj) doesn't make sense.
+
+(prevent [look #under $Obj])
+	($Obj is #wornby $Actor)
+	~(current player $Actor)
+	(animate $Actor)
+	(The $Actor) might not like that.
+
+(perform [look $Rel $Obj])
+	(collect $C)
+		*($C is $Rel $Obj)
+		(now) ($C is revealed)
+	(into $List)
+	(if) (empty $List) (then)
+		(if) (#in = $Rel) (then)
+			(The $Obj is) empty.
+		(else)
+			(if) ($Rel is one of [#under #behind]) (then)
+				You find
+			(else)
+				There's
+			(endif)
+			nothing (present-name $Rel) (the $Obj).
+		(endif)
+	(else)
+		(Name $Rel) (the $Obj) you see (a $List). (notice $List)
+	(endif)
+
+%% FIND <obj>
+
+%% FIND takes the player to the room that currently contains the object.
+%% For objects that move around autonomously, it may be a good idea to override
+%% this rule, to say e.g. "you don't know where the cat might be right now".
+%% Note that floating objects, including doors, will remain in the room where
+%% they were last encountered. This will usually put the player on the expected
+%% side of doors.
+
+(grammar [find [any]] for [find $])
+(grammar [look/l for [any]] for [find $])
+
+(unlikely [find $Obj])
+	($Obj is nowhere)
+
+~(action [find $] requires $ to be present)
+
+(prevent [find (not here $Obj)])
+	You don't know where to find (the $Obj).
+
+(prevent [find $Obj])
+	(when $Obj is already held)
+
+(prevent [find $Obj])
+	($Obj is in room $Room)
+	(current room $Room)
+	(The $Obj) (is $Obj)
+	(if) ($Obj is $Rel $Loc) ~(room $Loc) (then)
+		(name $Rel) (the $Loc)
+	(else)
+		here
+	(endif)
+	.
+
+(prevent [find $Obj])
+	($Obj is in room $Room)
+	(current room $Here)
+	~(shortest path from $Here to $Room is $)
+	You don't know how to get to (the $Obj) from here.
+
+(perform [find $Obj])
+	(if) ($Obj is in room $Room) (then)
+		(line) \( attempting to go to (the $Room) \) (line)
+		(try [go to $Room])
+	(else)
+		You don't know where to find (the $Obj).
+	(endif)
+
+%% EXAMINE <obj>
+
+(grammar [examine/x/watch/describe/check/look/l [object]] for [examine $])
+(grammar [look/l at [object]] for [examine $])
+
+(understand [who am i] as [examine $Player])
+	(current player $Player)
+
+~(action [examine $] requires $ to be touched)
+
+(instead of [examine (room $Obj)])
+	(current room $Here)
+	~($Here = $Obj)
+	(if)
+		(from $Here go $Dir to $Obj)
+	(then)
+		(try [look $Dir])
+	(elseif)
+		(from $Here through $Door to $Obj)
+		~($Door blocks light)
+		(from $Here go $Dir to $Door)
+	(then)
+		(try [look $Dir])
+	(else)
+		You can't get a good view of (the $Obj) from here.
+	(endif)
+
+(perform [examine $Obj])
+	(current player $Player)
+	($Player is nested #in $Obj)
+	(look $Obj)
+
+(perform [examine $Obj])
+	(descr $Obj)
+	(if) (supporter $Obj) (then)
+		(if) (fungibility enabled) (then)
+			(collect $Child)
+				*($Child is #on $Obj)
+			(into $OnList)
+			(fungibility-enabled appearance $OnList #on $Obj)
+		(else)
+			(exhaust) {
+				*($Child is #on $Obj)
+				(par)
+				(appearance $Child #on $Obj)
+				(notice $Child)
+			}
+		(endif)
+	(endif)
+	(if) (container $Obj) ~{ (opaque $Obj) ($Obj is closed) } (then)
+		(if) (fungibility enabled) (then)
+			(collect $Child)
+				*($Child is #in $Obj)
+			(into $InList)
+			(fungibility-enabled appearance $InList #in $Obj)
+		(else)
+			(exhaust) {
+				*($Child is #in $Obj)
+				(par)
+				(appearance $Child #in $Obj)
+				(notice $Child)
+			}
+		(endif)
+	(endif)
+	(par)
+
+%% LOOK
+
+(grammar [look/l] for [look])
+(grammar [look/l around] for [look])
+(grammar [where am i] for [look])
+
+(describe action [look])
+	look around
+
+%% We want to reset (moving long distances) just before the final [look]
+(before [look])
+	(last step of movement)
+	(now) ~(moving long distances)
+	(now) ~(last step of movement)
+
+%% And (looking after moving) just after
+(on every tick)
+	(now) ~(looking after moving)
+
+(perform [look])
+	(current player $Player)
+	($Player is $Rel $Loc)
+	{ (verbosity level $Verbosity) (or) ($Verbosity = 2) } %% Just in case
+	(div @roomheader) (location headline)
+	(if)
+		(looking after moving)
+		{
+			($Verbosity = 0) (or) %% Verbosity 0: when moving at all
+			(current room $Room) ($Room is visited) ($Verbosity < 2) (or) %% Verbosity 1: when visited
+			(moving long distances) ($Verbosity < 3) %% Verbosity 2: when moving long distances
+		}
+	(then)
+		%% No room description, keep it brief
+		(par)
+	(elseif) (player can see) (then)
+		(current scope ceiling $Ceil)
+		(look $Ceil)
+		(make appearances $Rel $Loc)
+		(par)
+	(else)
+		(narrate darkness)
+	(endif)
+
+%% SEARCH <obj>
+
+(grammar [search [object]] for [search $])
+
+(instead of [search (current room $R)])
+	(try [look])
+
+(prevent [search (animate $Obj)])
+	~(current player $Obj)
+	(The $Obj) might not like that.
+
+(perform [search $O])
+	(if) (opaque $O) ($O is closed) (then)
+		($InList = [])
+	(else)
+		(collect $C) *($C is #in $O) (reveal $C) (into $InList)
+	(endif)
+	(collect $C) *($C is #on $O) (reveal $C) (into $OnList)
+	(collect $C) *($C is #behind $O) (reveal $C) (into $BehindList)
+	(if) ($O has relation #wornby) (then)
+		($UnderList = [])
+	(else)
+		(collect $C) *($C is #under $O) (reveal $C) (into $UnderList)
+	(endif)
+	(if) (nonempty $InList) (then)
+		(if) ($InList = [$InObj]) (then)
+			(A $InObj) (is $InObj) in (the $O).
+		(else)
+			In (the $O) you find (a $InList).
+		(endif)
+		(notice $InList)
+	(endif)
+	(if) (nonempty $OnList) (then)
+		(if) ($OnList = [$OnObj]) (then)
+			(A $OnObj) (is $OnObj) on (the $O).
+		(else)
+			On (the $O) you find (a $OnList).
+		(endif)
+		(notice $OnList)
+	(endif)
+	(if) (nonempty $BehindList) (then)
+		You find (a $BehindList) behind (the $O).
+		(notice $BehindList)
+	(endif)
+	(if) (nonempty $UnderList) (then)
+		You find (a $UnderList) under (the $O).
+		(notice $UnderList)
+	(endif)
+	(if)
+		(empty $InList)
+		(empty $OnList)
+		(empty $BehindList)
+		(empty $UnderList)
+	(then)
+		You find nothing of interest.
+	(endif)
+
+%% FEEL <obj>
+
+(grammar [feel/touch/finger/rub/prod [object]] for [feel $])
+
+(perform [feel $Obj])
+	(feel $Obj)
+
+%% LISTEN TO <obj>
+%% LISTEN
+
+(grammar [listen/hear [single]] for [listen to $])
+(grammar [listen to [single]] for [listen to $])
+
+%% Don't require reachability:
+~(action [listen to $] requires $ to be touched)
+
+(perform [listen to $Obj])
+	(if) (current player $Obj) (then)
+		You can hear the familiar rumble of your blood stream
+		and the faint whine of your nervous system.
+	(elseif) (animate $Obj) (then)
+		(The $Obj) (is $Obj) silent.
+	(elseif) (room $Obj) (then)
+		You hear nothing in particular.
+	(else)
+		You hear no particular sound coming from (the $Obj).
+	(endif)
+
+(grammar [listen/hear] for [listen])
+
+(instead of [listen])
+	(current room $Room)
+	(try [listen to $Room])
+
+%% KISS <obj>
+
+(grammar [kiss/love [animate]] for [kiss $])
+
+(prevent [kiss $Obj])
+	(current player $Player)
+	{
+		($Obj = $Player)
+	(or)
+		($Obj is part of $Player)
+	}
+	Your feelings for yourself are primarily of a platonic nature.
+
+(perform [kiss (animate $Obj)])
+	(The $Obj) (doesn't $Obj) seem receptive to that sort of thing.
+	(tick) (stop)
+
+(perform [kiss $Obj])
+	(The $Obj is) unmoved by your display of affection.
+
+%% HUG <obj>
+
+(grammar [hug/embrace [animate]] for [hug $])
+
+(perform [hug $Obj])
+	(try [kiss $Obj])
+
+%% JUMP
+
+(grammar [jump/skip/hop/bounce/exercise] for [jump])
+
+(perform [jump])
+	You enjoy a bit of jumping on the spot.
+
+%% DANCE
+
+(grammar [dance/jive/shake/twirl/spin] for [dance])
+
+(perform [dance])
+	You practise your moves.
+
+%% WAVE <obj>
+%% WAVE
+
+(grammar [wave [held]] for [wave $])
+(grammar [wave] for itself)
+
+(unlikely [wave $Obj])
+	(current player $Player)
+	~($Obj is #heldby $Player)
+	~($Obj is part of $Player)
+
+(before [wave $Obj])
+	(ensure $Obj is held)
+
+(prevent [wave $Obj])
+	(current player $Player)
+	~($Obj is part of $Player)
+	(when $Obj isn't directly held)
+
+(perform [wave $Obj])
+	You wave (the $Obj) in the air, with no apparent consequences.
+
+(perform [wave])
+	You wave your hands in the air.
+
+%% SING
+
+(grammar [sing/hum] for [sing])
+
+(perform [sing])
+	You hum a few notes.
+
+%% THROW <obj> AT <obj>
+%% THROW <obj>
+%% THROW <obj> <dir>
+
+(grammar [throw/toss [held] [at on to in into onto] [single]] for [throw $ at $])
+(grammar [throw/toss [held]] for [throw $])
+(grammar [throw/toss away [held]] for [throw $])
+
+(understand [throw/toss | $Words] as [throw $Obj $Dir])
+	(last $Words $Last)
+	(parse direction [$Last] $Dir)
+	(reverse $Words [$ | $RevWords])
+	(reverse $RevWords $Left)
+	*(understand $Left as object $Obj preferably held)
+
+(unlikely [throw $Obj | $])
+	(current player $Actor)
+	~($Obj has ancestor $Actor)
+
+(perform [throw $Obj])
+	At what?
+	(asking for object in [throw $Obj at []])
+
+(instead of [throw $Obj $Dir])
+	(current room $Here)
+	(if) (from $Here go $Dir to object $Target) (then)
+		(try [throw $Obj at $Target])
+	(else)
+		(try [throw $Obj])
+	(endif)
+
+%% The target doesn't have to be reachable:
+(action [throw $Obj at $] requires $Obj to be touched) (just)
+
+(before [throw $Obj at $])
+	(current player $Actor)
+	($Obj has ancestor $Actor)
+	(ensure $Obj is held)
+
+(prevent [throw $Obj at $])
+	~(current player $Obj)
+	(when $Obj isn't directly held)
+
+(perform [throw $Obj at $Target])
+	Throwing (the $Obj) at (the $Target) would achieve little.
+	(tick) (stop)
+
+%% THINK
+
+(grammar [think] for itself)
+
+(perform [think])
+	That would be a good first step.
+	(line) \( Try HINT if you are desperate. \) (line)
+
+%% SLEEP
+
+(grammar [sleep/nap/dream] for [sleep])
+(grammar [take nap] for [sleep])
+(grammar [take a nap] for [sleep])
+(grammar [fall asleep] for [sleep])
+
+(perform [sleep])
+	You're not all that sleepy.
+
+%% TAKE <obj>
+%% TAKE <obj> FROM <obj>
+
+(grammar [take/grab/snatch/steal/acquire/hold/gather/get/pick/remove [takable child] from [single]] for [take $ from $])
+
+(grammar [take/grab/snatch/steal/acquire/hold/gather/get/pick [takable]] for [take $])
+(grammar [pick up [takable]] for [take $])
+
+(unlikely [take ~(item $)])
+
+(unlikely [take $Obj])
+	($Obj has relation $Rel)
+	($Rel is one of [#partof #heldby #wornby])
+
+(unlikely [take $Obj from $Parent])
+	~($Obj has ancestor $Parent)
+
+(prevent [take $Obj from $Parent])
+	~($Obj has ancestor $Parent)
+	(if) (animate $Parent) (then)
+		(The $Parent) (does $Parent) not have (the $Obj).
+	(elseif) (container $Parent) (then)
+		(The $Obj) (isn't $Obj) in (the $Parent).
+	(elseif) (supporter $Parent) (then)
+		(The $Obj) (isn't $Obj) on (the $Parent).
+	(else)
+		That's not where (the $Obj) (is $Obj).
+	(endif)
+
+(perform [take $Obj from $])
+	(try [take $Obj])
+
+(before [take (item $Obj)])
+	(current player $Player)
+	($Player has ancestor $Obj)
+	(first try [leave $Obj])
+
+(prevent [take $Obj])
+	(when $Obj is already held)
+	(or) (when $Obj is already worn)
+	(or) (when $Obj is fine where it is)
+	(or) (when $Obj is part of something)
+	(or) (when $Obj is held by someone)
+	(or) (when $Obj is worn by someone)
+	(or) (when $Obj can't be taken)
+
+(narrate taking $Obj)
+	(current player $Actor)
+	You take (the $Obj)
+	(if) ($Obj is $Rel $Parent) ~($Actor has ancestor $Parent) (then)
+		(reverse-name $Rel) (the $Parent)
+	(endif)
+	.
+
+(perform [take $Obj])
+	(narrate taking $Obj)
+	(current player $Actor)
+	(now) ($Obj is #heldby $Actor)
+	(now) ($Obj is handled)
+
+%% REMOVE <obj>
+
+(grammar [remove/doff/shed/loosen/disrobe/undress [worn]] for [remove $])
+(grammar [take off [worn]] for [remove $])
+(grammar [take [worn] off] for [remove $])
+
+(unlikely [remove $Obj])
+	(current player $Player)
+	~($Obj is #wornby $Player)
+
+(before [remove $Obj])
+	($Obj is #under $Cover)
+	(current player $Player)
+	($Cover is worn by $Player)
+	(first try [remove $Cover])
+
+(instead of [remove $Obj])
+	~(wearable $Obj)
+	~($Obj has relation #partof)
+	(item $Obj)
+	(try [take $Obj])
+
+(prevent [remove $Obj])
+	(when $Obj is part of something)
+
+(prevent [remove $Obj])
+	($Obj is #under $Cover)
+	(current player $Player)
+	($Cover is worn by $Player)
+	You'd have to remove (the $Cover) first.
+
+(prevent [remove $Obj])
+	(current player $Player)
+	~($Obj is #wornby $Player)
+	But you aren't wearing (the $Obj).
+
+(narrate removing $Obj)
+	You take off (the $Obj).
+
+(perform [remove $Obj])
+	(narrate removing $Obj)
+	(current player $Player)
+	(exhaust) {
+		*($Sub is #under $Obj)
+		(now) ($Sub is #wornby $Player)
+		(now) ($Sub is handled)
+	}
+	(now) ($Obj is #heldby $Player)
+	(now) ($Obj is handled)
+
+%% WEAR <obj>
+
+(grammar [wear/don [held]] for [wear $])
+(grammar [put on [held]] for [wear $])
+(grammar [put [held] on] for [wear $])
+
+(unlikely [wear $Obj])
+	~(wearable $Obj)
+
+(unlikely [wear $Obj])
+	(current player $Player)
+	($Obj is worn by $Player)
+
+(before [wear $Obj])
+	(current player $Player)
+	~($Obj is worn by $Player)
+	(if)
+		*($Worn is worn by $Player bottom-up)
+		(wearing $Obj removes $Worn)
+	(then)
+		(first try [remove $Worn])
+	(endif)
+
+(before [wear $Obj])
+	(wearable $Obj)
+	(current player $Player)
+	~($Obj is worn by $Player)
+	(ensure $Obj is held)
+
+(prevent [wear $Obj])
+	(when $Obj is already worn)
+
+(prevent [wear $Obj])
+	~(wearable $Obj)
+	(The $Obj) can't be worn.
+
+(prevent [wear $Obj])
+	(current player $Player)
+	*($Worn is worn by $Player bottom-up)
+	(wearing $Obj removes $Worn)
+	You can't do that while wearing (the $Worn).
+
+(prevent [wear $Obj])
+	(when $Obj isn't directly held)
+
+(narrate wearing $Obj)
+	You put on (the $Obj).
+
+(perform [wear $Obj])
+	(narrate wearing $Obj)
+	(current player $Player)
+	(exhaust) {
+		*($Worn is #wornby $Player)
+		(wearing $Obj covers $Worn)
+		(now) ($Worn is #under $Obj)
+		(now) ($Worn is handled)
+	}
+	(now) ($Obj is #wornby $Player)
+	(now) ($Obj is handled)
+
+%% PUT <obj> <rel> <obj>
+
+(grammar [put/lay/drop/hide/stash/stuff/insert [held] [in inside into through] [single]] for [put $ #in $])
+(grammar [put/lay/drop [held] [on onto atop upon] [single]] for [put $ #on $])
+(grammar [put/lay/drop/hide/stash/stuff [held] behind [single]] for [put $ #behind $])
+(grammar [put/lay/drop/hide/stash/stuff [held] under [single]] for [put $ #under $])
+
+(unlikely [put $Obj $ $])
+	(current player $Actor)
+	~($Obj has ancestor $Actor)
+
+(unlikely [put $ #on $Dest])
+	~(supporter $Dest)
+
+(unlikely [put $ #in $Dest])
+	~(container $Dest)
+
+(unlikely [put $Obj $ $Obj])
+
+(unlikely [put $Obj $ $Dest])
+	($Dest has ancestor $Obj)
+
+(unlikely [put $Obj $Rel $Dest])
+	($Obj is $Rel $Dest)
+
+(before [put $Obj $Rel $Dest])
+	~($Obj is $Rel $Dest)
+	(ensure $Obj is held)
+
+(before [put $ #in $Dest])
+	($Dest is closed)
+	(first try [open $Dest])
+
+(instead of [put (current player $) #in $Dest])
+	(try [enter $Dest])
+
+(instead of [put (current player $) #on $Dest])
+	(try [climb $Dest])
+
+(instead of [put $Obj $Rel $Dest])
+	(current player $Player)
+	($Player is $Rel $Dest)
+	(try [drop $Obj])
+
+(prevent [put $Obj $Rel $Dest])
+	(when $Obj is already $Rel $Dest)
+	(or) (when $Obj isn't directly held)
+
+(prevent [put $Obj $Rel $Dest])
+	($Dest is nested $OldRel $Obj)
+	(The $Obj) can't be placed
+	(if) ~($OldRel is one of [#in #on]) (then)
+		(towards-name $Rel) something that's
+	(endif)
+	(present-name $OldRel) (itself $Obj).
+
+(prevent [put $Obj $Rel $Obj])
+	You can't put (the $Obj) (towards-name $Rel) (itself $Obj).
+
+(prevent [put $ $Rel $Dest])
+	(when $Dest won't accept $Rel)
+
+(prevent [put $ #in $Dest])
+	(when $Dest is closed)
+
+(narrate putting $Obj $Rel $Dest)
+	You put (the $Obj) (name $Rel) (the $Dest).
+
+(perform [put $Obj $Rel $Dest])
+	(narrate putting $Obj $Rel $Dest)
+	(now) ($Obj is $Rel $Dest)
+	(now) ($Obj is handled)
+
+%% DROP <obj>
+
+(grammar [put/lay/drop [held]] for [drop $])
+(grammar [put/lay/drop/set down [held]] for [drop $])
+(grammar [put/lay/drop/set [held] down] for [drop $])
+(grammar [let go of [held]] for [drop $])
+
+(unlikely [drop $Obj])
+	(current player $Actor)
+	~($Obj has ancestor $Actor)
+
+(before [drop $Obj])
+	(current player $Actor)
+	($Obj has ancestor $Actor)
+	~($Obj has relation #partof)
+	(ensure $Obj is held)
+
+(prevent [drop $Obj])
+	(when $Obj is part of something)
+	(or) (when $Obj isn't directly held)
+
+(narrate dropping $Obj)
+	(current player $Actor)
+	($Actor is $Rel $Loc)
+	(The $Obj) fall(s $Obj)
+	(if) ($Rel = #on) (then)
+		onto (the $Loc).
+	(else)
+		to the ground.
+	(endif)
+
+(perform [drop $Obj])
+	(narrate dropping $Obj)
+	(current player $Actor)
+	($Actor is $Rel $Loc)
+	(now) ($Obj is $Rel $Loc)
+	(now) ($Obj is handled)
+
+%% INVENTORY
+
+(grammar [inventory/i/inv] for [inventory])
+(grammar [take/get inventory] for [inventory])
+
+(describe action [inventory])
+	take inventory
+
+(perform [inventory])
+	(current player $Player)
+	(collect $C) *($C is #heldby $Player) (into $HeldList)
+	(collect $C) *($C is worn by $Player top-down) (into $WornList)
+	(if) (empty $HeldList) (then)
+		(narrate holding nothing)
+	(else)
+		You have (a $HeldList).
+	(endif)
+	(if) (empty $WornList) (then)
+		(narrate wearing nothing)
+	(else)
+		You're wearing (a $WornList).
+	(endif)
+	(line)
+
+(narrate holding nothing)
+	You have no possessions.
+
+(narrate wearing nothing)
+
+%% EXITS
+
+(grammar [exits/map] for [exits])
+(grammar [list exits] for [exits])
+(grammar [list the exits] for [exits])
+
+(describe action [exits])
+	list the exits
+
+(prevent [exits])
+	~(player can see)
+	You can't be sure of where the exits are in the darkness.
+
+(perform [exits])
+	(current room $Room)
+	(if)
+		~{
+			*(from $Room go $Dir to $Target)
+			(direction $Dir)
+			{ (room $Target) (or) (door $Target) }
+		}
+	(then)
+		There are no obvious exits here.
+	(else)
+		Obvious exits are: (line)
+		(exhaust) {
+			*(from $Room go $Dir to $Target)
+			(direction $Dir)
+			(if) (door $Target) (or) (room $Target) (then)
+				(if) (library links enabled) (then)
+					(link) (Name $Dir)
+				(else)
+					(Name $Dir)
+				(endif)
+				(if) (door $Target) (then)
+					through (the $Target)
+					(if) ($Target is closed) (then)
+						\(currently closed\)
+					(elseif)
+						(from $Room through $Target to $R)
+					(then)
+						(describe remote room $R)
+					(endif)
+				(else)
+					(describe remote room $Target)
+				(endif)
+				. (line)
+			(endif)
+		}
+	(endif)
+
+(describe remote room $Room)
+	(if) ($Room is visited) (then)
+		to
+		(if) (light reaches ceiling $Room) (then)
+			(the $Room)
+		(else)
+			darkness
+		(endif)
+	(endif)
+
+%% EXIST (misspelled EXITS, just for the giggles)
+
+(grammar [exist] for itself)
+
+(perform [exist])
+	So you do.
+
+%% WAIT
+
+(grammar [wait/z] for [wait])
+
+(perform [wait])
+	A moment slips away.
+
+%% GIVE <obj> TO <obj>
+%% GIVE <obj>
+
+(grammar [give/offer/proffer [held] to [animate]] for [give $ to $])
+(grammar [give/offer/proffer [animate] [held]] for [give $ to $] reversed)
+
+(grammar [give/offer/proffer [held]] for [give $])
+
+(unlikely [give $Obj to $Obj])
+
+(unlikely [give $Obj to $])
+	(current player $Player)
+	~($Obj has ancestor $Player)
+
+(unlikely [give $ to $Dest])
+	~(animate $Dest)
+
+(unlikely [give $])
+
+(perform [give $Obj])
+	To whom?
+	(asking for object in [give $Obj to []])
+
+(before [give $Obj to $])
+	(ensure $Obj is held)
+
+(prevent [give $Obj to $])
+	(when $Obj isn't directly held)
+
+(perform [give $ to $Dest])
+	(if) (animate $Dest) (then)
+		(The $Dest) (doesn't $Dest) appear to be interested.
+	(else)
+		Giving things to (the $Dest) doesn't appear to work.
+	(endif)
+	(tick) (stop)
+
+%% SHOW <obj> TO <obj>
+%% SHOW <obj>
+
+(grammar [show [held] to [animate]] for [show $ to $])
+(grammar [show [animate] [held]] for [show $ to $] reversed)
+
+(grammar [show [held]] for [show $])
+
+(unlikely [show $Obj to $Obj])
+
+(unlikely [show $Obj to $])
+	(item $Obj)
+	(current player $Actor)
+	~($Obj is nested #heldby $Actor)
+
+(unlikely [show $ to $Dest])
+	~(animate $Dest)
+
+(unlikely [show $])
+
+(action [show $Obj to $] requires $Obj to be touched) (just)
+
+(perform [show $Obj])
+	To whom?
+	(asking for object in [show $Obj to []])
+
+(before [show $Obj to $])
+	(item $Obj)
+	(ensure $Obj is held)
+
+(prevent [show $Obj to $])
+	(item $Obj)
+	(when $Obj isn't directly held)
+
+(perform [show $ to $Dest])
+	(if) (animate $Dest) (then)
+		(The $Dest) (doesn't $Dest) appear to be interested.
+	(else)
+		Showing things to (the $Dest) has no effect.
+	(endif)
+	(tick) (stop)
+
+%% OPEN <obj>
+
+(grammar [open/unwrap/uncover [object]] for [open $])
+
+(unlikely [open $Obj])
+	~(openable $Obj) (or) ($Obj is open)
+
+(before [open $Obj])
+	($Obj is closed)
+	($Obj is locked)
+	(current player $Player)
+	*($Key is nested #heldby $Player)
+	($Key unlocks $Obj)
+	~($Key is hidden)
+	(first try [unlock $Obj with $Key])
+
+(prevent [open $Obj])
+	~(openable $Obj)
+	(The $Obj) (doesn't $Obj) open.
+
+(prevent [open (openable $Obj)])
+	($Obj is open)
+	(The $Obj is) already open.
+
+(prevent [open $Obj])
+	($Obj is locked)
+	(The $Obj is) locked.
+
+(narrate opening $Obj)
+	You open (the $Obj)
+	(current player $Player)
+	(if) ~($Player is nested #in $Obj) (then)
+		(collect $Child)
+			*($Child is #in $Obj)
+			(reveal $Child)
+		(into $List)
+		(if) (nonempty $List) (then)
+			, revealing (a $List)
+			(notice $List)
+		(endif)
+	(endif)
+	.
+
+(perform [open $Obj])
+	(narrate opening $Obj)
+	(now) ($Obj is open)
+
+%% CLOSE <obj>
+
+(grammar [close/shut/cover [object]] for [close $])
+
+(unlikely [close $Obj])
+	~(openable $Obj) (or) ($Obj is closed)
+
+(prevent [close $Obj])
+	~(openable $Obj)
+	(The $Obj) can't be closed.
+
+(prevent [close $Obj])
+	($Obj is closed)
+	(The $Obj is) already closed.
+
+(narrate closing $Obj)
+	You close (the $Obj).
+
+(perform [close $Obj])
+	(narrate closing $Obj)
+	(now) ($Obj is closed)
+
+%% UNLOCK <obj> WITH <obj>
+%% UNLOCK <obj>
+
+(grammar [unlock [object] with [single held]] for [unlock $ with $])
+(grammar [unlock [object]] for [unlock $])
+
+(unlikely [unlock $Obj | $])
+	~(lockable $Obj) (or) ($Obj is unlocked)
+
+(before [unlock $ with $Key])
+	(ensure $Key is held)
+
+(instead of [unlock $Obj])
+	(current player $Player)
+	*($Key is nested #heldby $Player)
+	($Key unlocks $Obj)
+	~($Key is hidden)
+	(line) \(with (the $Key)\) (line)
+	(try [unlock $Obj with $Key])
+
+(prevent [unlock $Obj | $])
+	~(lockable $Obj)
+	(The $Obj) can't be unlocked.
+
+(prevent [unlock (lockable $Obj) | $])
+	($Obj is unlocked)
+	(The $Obj is) already unlocked.
+
+(perform [unlock $Obj])
+	With what?
+	(asking for object in [unlock $Obj with []])
+
+(prevent [unlock $Obj with $Key])
+	~($Key unlocks $Obj)
+	You fail to unlock (the $Obj) with (the $Key).
+
+(narrate unlocking $Obj with $Key)
+	You unlock (the $Obj) with (the $Key).
+
+(perform [unlock $Obj with $Key])
+	(narrate unlocking $Obj with $Key)
+	(now) ($Obj is unlocked)
+
+%% LOCK <obj> WITH <obj>
+%% LOCK <obj>
+
+(grammar [lock [object] with [single held]] for [lock $ with $])
+(grammar [lock [object]] for [lock $])
+
+(unlikely [lock $Obj | $])
+	~(lockable $Obj)
+	(or) ($Obj is locked)
+
+(before [lock $ with $Key])
+	(ensure $Key is held)
+
+(before [lock (lockable $Obj) with $])
+	(openable $Obj)
+	($Obj is open)
+	(first try [close $Obj])
+
+(instead of [lock $Obj])
+	(current player $Player)
+	*($Key is nested #heldby $Player)
+	($Key unlocks $Obj)
+	~($Key is hidden)
+	(line) \(with (the $Key)\) (line)
+	(try [lock $Obj with $Key])
+
+(prevent [lock $Obj | $])
+	~(lockable $Obj)
+	(The $Obj) can't be locked.
+
+(prevent [lock (lockable $Obj) | $])
+	($Obj is locked)
+	(The $Obj is) already locked.
+
+(perform [lock $Obj])
+	With what?
+	(asking for object in [lock $Obj with []])
+
+(prevent [lock $Obj with $Key])
+	~($Key unlocks $Obj)
+	You fail to lock (the $Obj) with (the $Key).
+
+(narrate locking $Obj with $Key)
+	You lock (the $Obj) with (the $Key).
+
+(perform [lock $Obj with $Key])
+	(narrate locking $Obj with $Key)
+	(now) ($Obj is locked)
+
+%% SWITCH ON <obj>
+
+(grammar [turn/switch on [object]] for [switch on $])
+(grammar [turn/switch [object] on] for [switch on $])
+
+(unlikely [switch on $Obj])
+	~(switchable $Obj) (or) ($Obj is on)
+
+(describe action [switch on $Obj])
+	switch (the full $Obj) on
+
+(prevent [switch on $Obj])
+	~(switchable $Obj)
+	(The $Obj) can't be switched on.
+
+(prevent [switch on $Obj])
+	($Obj is on)
+	(The $Obj is) already on.
+
+(narrate switching on $Obj)
+	You switch (the $Obj) on.
+
+(perform [switch on $Obj])
+	(narrate switching on $Obj)
+	(now) ($Obj is on)
+
+%% SWITCH OFF <obj>
+
+(grammar [turn/switch off [object]] for [switch off $])
+(grammar [turn/switch [object] off] for [switch off $])
+
+(unlikely [switch off $Obj])
+	~(switchable $Obj) (or) ($Obj is off)
+
+(describe action [switch off $Obj])
+	switch (the full $Obj) off
+
+(prevent [switch off $Obj])
+	($Obj is off)
+	(The $Obj is) already off.
+
+(prevent [switch off $Obj])
+	~(switchable $Obj)
+	(The $Obj) can't be turned off.
+
+(narrate switching off $Obj)
+	You switch (the $Obj) off.
+
+(perform [switch off $Obj])
+	(narrate switching off $Obj)
+	(now) ($Obj is off)
+
+%% SWITCH <obj>
+
+(grammar [switch [object]] for [switch $])
+
+(unlikely [switch ~(switchable $)])
+
+(instead of [switch (switchable $Obj)])
+	(if) ($Obj is on) (then)
+		(try [switch off $Obj])
+	(else)
+		(try [switch on $Obj])
+	(endif)
+
+(perform [switch $Obj])
+	(The $Obj) can't be switched on or off.
+	(tick) (stop)
+
+%% SQUEEZE <obj>
+
+(grammar [squeeze/squash [object]] for [squeeze $])
+
+(perform [squeeze $Obj])
+	You give (the $Obj) a bit of a squeeze.
+
+%% FIX <obj>
+
+(grammar [fix/repair/mend [object]] for [fix $])
+
+(unlikely [fix $Obj])
+	($Obj is in order)
+
+(prevent [fix $Obj])
+	($Obj is in order)
+	You can't find anything wrong with (the $Obj).
+
+(perform [fix $Obj])
+	You don't know how to repair (the $Obj).
+	(tick) (stop)
+
+%% TASTE <obj>
+
+(grammar [taste/lick/relish/savour [object]] for [taste $])
+
+(unlikely [taste $Obj])
+	~(edible $Obj)
+	~(potable $Obj)
+
+(prevent [taste $Obj])
+	~(edible $Obj)
+	~(potable $Obj)
+	Don't be gross.
+
+(perform [taste $Obj])
+	You savour the taste of (the $Obj).
+
+%% FLY
+
+(grammar [fly] for itself)
+
+(perform [fly])
+	You lack the ability.
+
+%% BITE <obj>
+
+(grammar [bite/chew/gnaw [single]] for [bite $])
+(grammar [gnaw at [single]] for [bite $])
+
+(perform [bite (animate $Obj)])
+	(try [attack $Obj])
+
+(perform [bite $Obj])
+	(try [eat $Obj])
+
+%% EAT <obj>
+
+(grammar [eat/devour/ingest/munch/swallow [object]] for [eat $])
+
+(unlikely [eat $Obj])
+	~(edible $Obj)
+	~(potable $Obj)
+
+(before [eat $Obj])
+	{ (edible $Obj) (or) (potable $Obj) }
+	(item $Obj)
+	(ensure $Obj is held)
+
+(instead of [eat $Obj])
+	~(edible $Obj)
+	(potable $Obj)
+	(try [drink $Obj])
+
+(prevent [eat $Obj])
+	(current player $Player)
+	{
+		($Obj = $Player)
+	(or)
+		($Obj is part of $Player)
+	}
+	Cannibalism isn't the answer to this one.
+
+(prevent [eat $Obj])
+	~(edible $Obj)
+	(The $Obj) (isn't $Obj) edible.
+
+(prevent [eat $Obj])
+	(item $Obj)
+	(when $Obj isn't directly held)
+
+(narrate eating $Obj)
+	You eat (the $Obj).
+
+(perform [eat $Obj])
+	(narrate eating $Obj)
+	(now) ($Obj is nowhere)
+	(now) ($Obj is handled)
+
+%% DRINK <obj>
+
+(grammar [drink/sip/quaff [object]] for [drink $])
+(grammar [drink/sip from [object]] for [drink $])
+
+(unlikely [drink $Obj])
+	~(potable $Obj)
+
+(before [drink $Obj])
+	{ (edible $Obj) (or) (potable $Obj) }
+	(item $Obj)
+	(ensure $Obj is held)
+
+(prevent [drink $Obj])
+	~(potable $Obj)
+	You can't drink (the $Obj).
+
+(prevent [drink $Obj])
+	(item $Obj)
+	(when $Obj isn't directly held)
+
+(perform [drink $Obj])
+	You take a sip from (the $Obj).
+
+%% CUT <obj> WITH <obj>
+%% CUT <obj>
+
+(grammar [cut/sever/slice/prune/chop [object] with [single]] for [cut $ with $])
+(grammar [cut/sever/slice/prune/chop [object]] for [cut $])
+(grammar [cut/slice/chop off [object]] for [cut $])
+(grammar [cut/slice/chop [object] off] for [cut $])
+
+(unlikely [cut $ with $Obj])
+	~(sharp $Obj)
+
+(perform [cut $Obj])
+	With what?
+	(asking for object in [cut $Obj with []])
+
+(prevent [cut $ with $Obj])
+	~(sharp $Obj)
+	(The $Obj is) too blunt for that. %% Funny when Obj is the player.
+
+(perform [cut $Obj with $])
+	You consider cutting
+	(if) (current player $Player) ($Obj is part of $Player) (then)
+		off
+	(endif)
+	(the $Obj), but reject the idea.
+
+%% USE <obj>
+
+(understand [use | $Words] as $Action)
+	*(understand $Words as single object $Obj)
+	(if)
+		(implicit action is $Implicit)
+		~(implicit action wants direction)
+	(then)
+		(recover implicit action $Implicit $Obj into $Action)
+	(else)
+		($Action = [use $Obj])
+	(endif)
+
+(instead of [use (door $Door)])
+	(try [enter $Door])
+
+(perform [use $])
+	How? Please be more specific.
+	(stop)
+
+%% CONSULT <obj> ABOUT <topic>
+
+(grammar [consult [object] about [topic]] for [consult $ about $])
+(grammar [look up [topic] in [object]] for [consult $ about $] reversed)
+
+(describe action [consult $Obj about $Topic])
+	consult (the full $Obj) about (describe topic $Topic)
+
+(unlikely [consult $Obj about $])
+	~(consultable $Obj)
+
+(action [consult $Obj about $] requires $Obj to be present) (just)
+(action [consult $Obj about $] requires $Obj to be touched) (just)
+
+(prevent [consult $Obj about $])
+	~(consultable $Obj)
+	You can't look things up in (the $Obj).
+
+(perform [consult $Obj about $Topic])
+	You find no information about (describe topic $Topic) in (the $Obj).
+
+%% ASK/TELL <obj> ABOUT <topic> (redirected to TALK TO <obj> ABOUT <topic> by default)
+
+(grammar [ask [animate] about [topic]] for [ask $ about $])
+(grammar [tell [animate] about [topic]] for [tell $ about $])
+
+(describe action [ask $Person about $Topic])
+	ask (the full $Person) about (describe topic $Topic)
+
+(describe action [tell $Person about $Topic])
+	tell (the full $Person) about (describe topic $Topic)
+
+(grammar [ask [animate]] for [ask $])
+(grammar [tell [animate]] for [tell $])
+
+(describe action [ask $Person])
+	ask (the full $Person) something
+
+(describe action [tell $Person])
+	tell (the full $Person) something
+
+(unlikely [ask/tell $Obj about $])
+	~(animate $Obj)
+
+%% Don't require reachability (or the presence of the topic):
+
+(action [ask $Obj | $] requires $Obj to be present) (just)
+~(action [ask $ | $] requires $ to be touched)
+
+(action [tell $Obj | $] requires $Obj to be present) (just)
+~(action [tell $ | $] requires $ to be touched)
+
+(perform [ask/tell $Person about $Topic])
+	(try [talk to $Person about $Topic])
+
+(perform [ask/tell $Obj])
+	(try [talk to $Obj])
+
+%% TALK TO <obj> ABOUT <topic>
+%% TALK TO <obj>
+%% TALK
+
+(grammar [talk/speak to [animate] about [topic]] for [talk to $ about $])
+(grammar [talk/speak to [animate]] for [talk to $])
+(grammar [talk/speak [animate]] for [talk to $])
+(grammar [talk] for itself)
+
+(describe action [talk to $Person about $Topic])
+	talk to (the full $Person) about (describe topic $Topic)
+
+(unlikely [talk to $Obj | $])
+	~(animate $Obj)
+
+(perform [talk])
+	To whom?
+	(asking for object in [talk to []])
+
+%% Don't require reachability:
+
+(action [talk to $Obj | $] requires $Obj to be present) (just)
+~(action [talk to $ | $] requires $ to be touched)
+
+(perform [talk to $Obj about $])
+	(try [talk to $Obj])
+
+(perform [talk to (current player $)])
+	You mumble a few well-chosen words to yourself.
+
+(perform [talk to $])
+	There is no reply.
+
+%% CURSE
+
+(grammar [curse/swear] for [curse])
+
+(perform [curse])
+	You mumble a few well-chosen words to yourself.
+
+%% PRAY
+
+(grammar [pray] for itself)
+
+(perform [pray])
+	There is no answer.
+
+%% SHRUG
+
+(grammar [shrug] for itself)
+
+(perform [shrug])
+	You shrug indifferently.
+
+%% CALL <obj> (redirected to TALK TO by default)
+%% CALL (redirected to CALL TO by default)
+%% Stories containing a phone would override these.
+
+(grammar [call [animate]] for [call $])
+(grammar [call/shout to [animate]] for [call $])
+(grammar [call] for itself)
+
+(unlikely [call $Obj])
+	~(animate $Obj)
+
+~(action [call $] requires $ to be touched)
+
+(perform [call (current player $)])
+	Why call when you're already right here?
+	(tick) (stop)
+
+(perform [call $Obj])
+	(try [talk to $Obj])
+
+(perform [call])
+	Call whom?
+	(asking for object in [call []])
+
+%% GREET <obj> (redirected to TALK TO by default)
+%% GREET
+
+(grammar [greet/hello/hi/hey [animate]] for [greet $])
+(grammar [greet/hello/hi/hey] for [greet])
+
+(unlikely [greet $Obj])
+	~(animate $Obj)
+
+~(action [greet $] requires $ to be touched)
+
+(perform [greet $Obj])
+	(try [talk to $Obj])
+
+(perform [greet])
+	You say hello to nobody in particular.
+
+%% TELL <obj> TO | <action>
+
+(understand [tell/ask | $Words] as [tell $Actor to | $Action])
+	*(split $Words by [, to] into $Left and $Right)
+	*(understand $Left as single object $Actor preferably animate)
+	(current actor $OldActor)
+	(now) (current actor $Actor)
+	(rewrite $Right into $Simplified)
+	(collect $A)
+		*(understand $Simplified as $A)
+	(into $List)
+	(now) (current actor $OldActor)
+	*($Action is one of $List)
+
+(understand [ask | $Words] as [tell $Actor to give $Obj to $Player])
+	*(split $Words by [for] into $Left and $Right)
+	*(understand $Left as single object $Actor preferably animate)
+	*(understand $Right as object $Obj preferably child of $Actor)
+	(current player $Player)
+
+%% The rule for "name comma action" is further down in the file.
+
+(unlikely [tell $Addressee to | $])
+	~(animate $Addressee)
+
+(describe action [tell $Actor to give $Obj to (current player $)])
+	ask (the full $Actor) for (the full $Obj)
+
+(describe action [tell $Actor to tell (current player $) about $Topic])
+	ask (the full $Actor) about (describe topic $Topic)
+
+(describe action [tell $Actor to | $Action])
+	tell (the full $Actor) to (describe action $Action)
+
+(unlikely [tell $Obj to | $])
+	~(animate $Obj)
+
+(action [tell $NPC to | $] requires $NPC to be present) (just)
+~(action [tell $ to | $] requires $ to be touched)
+
+(instead of [tell $NPC to greet])
+	(try [greet $NPC])
+
+(instead of [tell $NPC to tell (current player $) about $Topic])
+	(try [ask $NPC about $Topic])
+
+(perform [tell $Actor to | $])
+	(if) (animate $Actor) (then)
+		(The $Actor) refuse(s $Actor).
+	(else)
+		(The $Actor) (doesn't $Actor) take orders.
+	(endif)
+
+%% SMELL <obj>
+%% SMELL
+
+(grammar [smell/sniff/inhale [object]] for [smell $])
+(grammar [smell/sniff/inhale] for [smell])
+
+~(action [smell $] requires $ to be touched)
+
+(perform [smell $Obj])
+	(The $Obj) smell(s $Obj) as expected.
+
+(perform [smell])
+	You sniff at the air, perceiving nothing out of the ordinary.
+
+%% WAKE UP
+
+(grammar [wake up] for itself)
+(grammar [wake/awake/awaken] for [wake up])
+
+(understand [pinch | $Words] as [wake up])
+	*(understand $Words as single object $Obj)
+	(current player $Player)
+	{
+		($Obj = $Player)
+	(or)
+		($Obj is part of $Player)
+	}
+
+(perform [wake up])
+	You try to will yourself to wake up, but nothing obvious happens.
+
+%% CLIMB <obj>
+
+(grammar [climb/mount/scale [single]] for [climb $])
+(grammar [go/get/step/climb up [on onto] [single]] for [climb $])
+(grammar [go/get/step/climb/stand/lie [on onto] [single]] for [climb $])
+(grammar [go/get/step/climb/stand/lie on top of [single]] for [climb $])
+(grammar [sit/stand/lie on [single]] for [climb $])
+(grammar [sit/stand/lie down on [single]] for [climb $])
+(grammar [jump to/onto [single]] for [climb $])
+
+(unlikely [climb $Obj])
+	~(actor supporter $Obj)
+
+(unlikely [climb $Obj])
+	(current player $Actor)
+	($Obj has ancestor $Actor)
+
+(unlikely [climb $Obj])
+	(current player $Actor)
+	($Actor is nested #on $Obj)
+
+(describe action [climb $Obj])
+	get onto (the full $Obj)
+
+(instead of [climb (room $Room)])
+	~(actor supporter $Room)
+	(try [go #up])
+
+(instead of [climb (actor container $Obj)])
+	~(actor supporter $Obj)
+	(seat $Obj)
+	(try [enter $Obj])
+
+(prevent [climb $Obj])
+	(current player $Actor)
+	{
+		(when $Actor is already #on $Obj)
+		(or) (when $Obj won't accept actor #on)
+	}
+
+(prevent [climb $Dest])
+	(current player $Actor)
+	($Dest is nested $OldRel $Actor)
+	You can't get onto something that's (present-name $OldRel) yourself.
+
+(narrate climbing $Obj)
+	You get onto (the $Obj).
+
+(perform [climb $Obj])
+	(narrate climbing $Obj)
+	(move player to #on $Obj)
+
+%% ENTER <obj>
+
+(grammar [enter/cross [single]] for [enter $])
+(grammar [go/get/enter/climb/jump/sit/lie [in into inside] [single]] for [enter $])
+
+(understand [go | $Words] as [enter $Obj])
+	*(understand $Words as single object $Obj)
+	{ (door $Obj) (or) ~(room $Obj) (actor container $Obj) }
+
+(unlikely [enter $Obj])
+	~(actor container $Obj)
+	~(door $Obj)
+
+(unlikely [enter $Obj])
+	(current player $Actor)
+	($Obj has ancestor $Actor)
+
+(unlikely [enter $Obj])
+	(current player $Actor)
+	($Actor is nested #in $Obj)
+
+~(very unlikely [enter $])
+
+(describe action [enter $Obj])
+	get into (the full $Obj)
+
+%% Rooms are generally not present
+~(action [enter (room $)] requires $ to be present)
+
+(before [enter (actor container $Obj)])
+	($Obj is closed)
+	(first try [open $Obj])
+
+(instead of [enter (room $Room)])
+	(current room $Here)
+	~($Here = $Room)
+	(if)
+		(from $Here go $Dir to $Room)
+	(or)
+		(from $Here through $Door to $Room)
+		(from $Here go $Dir to $Door)
+	(then)
+		(direction $Dir) %% Assure the compiler that $Dir is bound.
+		(try [go $Dir])
+	(else)
+		(The $Room) (isn't $Room) here.
+		(tick) (stop)
+	(endif)
+
+(instead of [enter (door $Obj)])
+	(current room $Room)
+	(from $Room go $Dir to $Obj)
+	(direction $Dir) %% Assure the compiler that $Dir is bound.
+	(try [go $Dir])
+
+(instead of [enter (wearable $Obj)])
+	(try [wear $Obj])
+
+(instead of [enter (actor supporter $Obj)])
+	~(actor container $Obj)
+	(seat $Obj)
+	(try [climb $Obj])
+
+(prevent [enter $Obj])
+	(current player $Actor)
+	{
+		(when $Actor is already #in $Obj)
+		(or) (prevent entering $Obj)
+	}
+
+(prevent [enter $Dest])
+	(current player $Actor)
+	($Dest is nested $OldRel $Actor)
+	You can't get into something that's (present-name $OldRel) yourself.
+
+(perform [enter $Obj])
+	(narrate entering $Obj)
+	(move player to #in $Obj)
+
+%% SIT
+
+(grammar [sit] for itself)
+
+(unlikely [sit])
+
+(perform [sit])
+	On what?
+	(asking for object in [climb []])
+
+%% STAND
+
+(grammar [stand] for itself)
+(grammar [stand up] for [stand])
+
+(describe action [stand])
+	stand up
+
+(instead of [stand])
+	(current player $Player)
+	($Player has parent $Obj)
+	~(room $Obj)
+	(try [leave $Obj])
+
+(perform [stand])
+	You're already standing up.
+	(tick) (stop)
+
+%% LEAVE <obj>
+%% LEAVE
+
+(grammar [leave/exit [single]] for [leave $])
+(grammar [get/jump/go [out off] of [single]] for [leave $])
+(grammar [get/jump/go off [single]] for [leave $])
+
+(understand [u/up] as [leave])
+	(current player $Player)
+	($Player has parent $Obj)
+	(seat $Obj)
+
+(understand [go/get u/up] as [leave])
+	(current player $Player)
+	($Player has parent $Obj)
+	(seat $Obj)
+
+(understand [d/down] as [leave])
+	(current player $Player)
+	($Player is #on $Obj)
+	~(seat $Obj)
+
+(understand [go/get/climb d/down] as [leave])
+	(current player $Player)
+	($Player is #on $Obj)
+	~(seat $Obj)
+
+(understand [out] as [leave])
+	(current player $Player)
+	($Player is #in $Obj)
+	~(room $Obj)
+
+(understand [go/get out] as [leave])
+	(current player $Player)
+	($Player is #in $Obj)
+	~(room $Obj)
+
+(grammar [leave/exit] for [leave])
+(grammar [get/jump [out off]] for [leave])
+
+(describe action [leave $Obj])
+	(current player $Player)
+	($Player is $Rel $Obj)
+	get (reverse-name $Rel) (the $Obj)
+
+(describe action [leave])
+	(current player $Player)
+	($Player is $Rel $Obj)
+	~(room $Obj)
+	get (reverse-name $Rel) (the $Obj)
+
+(unlikely [leave $Obj])
+	(current player $Actor)
+	~{
+		($Actor has ancestor $Obj)
+	(or)
+		($Obj is worn by $Actor)
+	}
+
+~(very unlikely [leave (current room $)])
+
+(refuse [leave (room $Room)])
+	~(current room $Room)
+	But you aren't in (the $Room).
+
+(perform [leave])
+	(current player $Player)
+	($Player has parent $Obj)
+	(if) (room $Obj) (then)
+		(try [go #out])
+	(else)
+		(try [leave $Obj])
+	(endif)
+
+(before [leave $Obj])
+	(current player $Actor)
+	($Actor has ancestor $Obj)
+	(recursively leave descendants of $Obj)
+
+(before [leave $Obj])
+	($Obj is closed)
+	(current player $Player)
+	($Player is #in $Obj)
+	(first try [open $Obj])
+
+(instead of [leave $Obj])
+	(current player $Actor)
+	($Obj is worn by $Actor)
+	(try [remove $Obj])
+
+(instead of [leave (current room $)])
+	(try [go #out])
+
+(prevent [leave $Obj])
+	(current player $Player)
+	~($Player has parent $Obj)
+	You're not
+	(if) (supporter $Obj) (then)
+		(if) (container $Obj) (then)
+			in or
+		(endif)
+		on top of
+	(else)
+		inside
+	(endif)
+	(the $Obj).
+
+(narrate leaving $Obj)
+	You
+	(current player $Player)
+	(if) ($Player is $Rel $Obj) (then)
+		get (reverse-name $Rel)
+	(else)
+		leave
+	(endif)
+	(the $Obj).
+
+(perform [leave $Obj])
+	(narrate leaving $Obj)
+	($Obj is $NewRel $NewObj)
+	(move player to $NewRel $NewObj)
+
+%% GO TO <room>
+
+%% It is only possible to go to visited rooms and non-hidden objects in this
+%% way.
+
+(understand [go to | $Words] as [go to $Room])
+	*(understand $Words as room name $Room)
+
+(understand [go/approach | $Words] as [go to $Room])
+	*(understand $Words as room name $Room)
+
+(understand $Words as room name $Room)
+	(filter $Words into $Filtered)
+	(nonempty $Filtered)
+	(determine object $Room)
+		*(room $Room)
+		($Room is visited)
+	(from words)
+		*(dict $Room)
+	(matching all of $Filtered)
+
+(unlikely [go to $]) %% Prefer default actions on objects to default actions on rooms, if both are enabled
+	(default actions enabled)
+	(default actions apply to rooms)
+(very unlikely [go to $Room]) %% Don't call it very unlikely just because it involves a room
+	(just) (current room $Room) %% But going to the current room should still be very unlikely
+
+%% Rooms generally aren't present
+~(action [go to $] requires $ to be present)
+
+%% Utility like (last $) that also returns the everything-but-last of the list
+%% In other words, it's the opposite of ($List = [$Head | $Rest])
+(interface (split last element from $<List into $>Rest and $>Last))
+(split last element from [$Last] into [] and $Last)
+(split last element from [$Head | $OldRest] into [$Head | $NewRest] and $Last)
+	(split last element from $OldRest into $NewRest and $Last)
+
+(perform [go to $Room])
+	(current room $Here)
+	(if) ($Here = $Room) (then)
+		You are already in (the $Room).
+		(tick) (stop)
+	(elseif)
+		(shortest path from $Here to $Room is $FullPath)
+		(split last element from $FullPath into $Path and $Final)
+	(then)
+		(exhaust) {
+			*($Dir is one of $Path)
+			(now) (moving long distances) %% Switch to a more minimal reporting style
+			(try [go $Dir])
+			(tick)
+			(par)
+		}
+		(now) (last step of movement) %% And switch back for the last step
+		(try [go $Final])
+	(else)
+		You don't know how to get to (the $Room) from here.
+		(tick) (stop)
+	(endif)
+
+%% Navigation by direction:
+
+%% What the player types is eventually translated into one of:
+
+%% [leave $Room $Dir]
+%% [leave $Room $Dir by $Vehicle]
+%% [leave $Room $Dir with $Obj]
+
+%% These are generally the ones to override/extend.
+
+%% The default rules for the aforementioned actions invoke '(prevent entering
+%% $Room)' and '(narrate entering $Room)'. These predicates can of course also
+%% be overridden. Thus, entering a room is not an action of its own, but is
+%% an inherent part of leaving a room.
+
+%% GO <direction>
+
+%% The rule for just typing a list of directions (without a verb) is further
+%% down in the file.
+
+(grammar [go/walk/crawl/leave/get/climb [direction]] for [go $])
+(grammar [go/walk/crawl [to further] [direction]] for [go $])
+(grammar [go/walk/crawl] for [go #out])
+(grammar [enter] for [go #in])
+
+(understand [climb] as [go $Dir])
+	(current room $Room)
+	*($Dir is one of [#up #down])
+	(from $Room go $Dir to $)
+
+(unlikely-complex [go $DirList] 0)
+	(just)
+	(if) (direction $DirList) (then)
+		($Dir = $DirList)
+	(else)
+		%% Only consider the first direction in the list.
+		([+ $Dir | $] = $DirList)
+	(endif)
+	(unlikely [go $Dir])
+
+(unlikely [go $Dir])
+	(current room $Room)
+	~{
+		(from $Room go $Dir to $Target)
+		{ (room $Target) (or) (door $Target) (or) (direction $Target) }
+	}
+
+(before [go $])
+	(recursively leave non-vehicles)
+
+(before [go $Dir])
+	(current room $Room)
+	(from $Room go $Dir to $Target)
+	(door $Target)
+	($Target is closed)
+	(first try [open $Target])
+
+(prevent [go $])
+	(current player $Actor)
+	($Actor is $Rel $Obj)
+	~(room $Obj)
+	~(vehicle $Obj)
+	(when $Actor is $Rel $Obj)
+
+(perform [go $Dir])
+	(current player $Actor)
+	(current room $Room)
+	(if) ($Actor has parent $Room) (then)
+		(try [leave $Room $Dir])
+	(else)
+		($Actor has parent $Vehicle)
+		(try [leave $Room $Dir by $Vehicle])
+	(endif)
+
+%% PUSH <obj> <dir>
+
+(grammar [push/move/shove/shift/press/roll [single] [direction]] for [push $ $])
+
+(unlikely [push $Obj $])
+	~(pushable $Obj)
+
+(before [push $ $])
+	(recursively leave non-vehicles)
+
+(before [push $ $Dir])
+	(current room $Room)
+	(from $Room go $Dir to $Target)
+	(door $Target)
+	($Target is closed)
+	(first try [open $Target])
+
+(prevent [push $Obj $])
+	~(pushable $Obj)
+	(The $Obj) can't be pushed from place to place.
+
+(prevent [push $ $])
+	(current player $Actor)
+	($Actor is $Rel $Obj)
+	~{ ($Rel = #in) (room $Obj) }
+	(when $Actor is $Rel $Obj)
+
+(perform [push $Obj $Dir])
+	(current room $Room)
+	(try [leave $Room $Dir with $Obj])
+
+%% PUSH <obj>
+
+(grammar [push/move/shove/shift/press [object]] for [push $])
+
+(perform [push (pushable $Obj)])
+	In what direction?
+	(asking for direction in [push $Obj []])
+
+(perform [push (room $)])
+	Pushing on your surroundings has no effect.
+
+(perform [push (item $Obj)])
+	You give (the $Obj) a bit of a push.
+
+(perform [push $Obj])
+	You apply a bit of force to (the $Obj), but (it $Obj doesn't) budge.
+
+%% PULL <obj>
+
+(grammar [pull/yank/drag/tug/tow [object]] for [pull $])
+(grammar [pull/yank/drag/tug/tow on [object]] for [pull $])
+
+(perform [pull $Obj])
+	You yank at (the $Obj), but
+	(if) (item $Obj) (then)
+		nothing noteworthy happens.
+	(else)
+		(it $Obj) won't budge.
+	(endif)
+
+%% TURN <obj>
+
+(grammar [turn/rotate/twist/screw/unscrew [object]] for [turn $])
+
+(prevent [turn (room $Obj)])
+	You can't turn (the $Obj).
+
+(perform [turn $Obj])
+	Turning (the $Obj) has no apparent effect.
+
+%% READ <obj>
+
+(grammar [read [object]] for [read $])
+
+(prevent [read $])
+	~(player can see)
+	It is too dark to read.
+
+(perform [read $Obj])
+	There's nothing written on (the $Obj).
+
+%% FLUSH <obj>
+%% FLUSH
+
+(grammar [flush [object]] for [flush $])
+(grammar [flush] for itself)
+
+(perform [flush $Obj])
+	You don't know how to flush (the $Obj).
+	(tick) (stop)
+
+(perform [flush])
+	Flush what?
+	(asking for object in [flush []])
+
+%% SWIM IN <obj>
+%% SWIM
+
+(grammar [swim/bathe in [single]] for [swim in $])
+(grammar [swim/bathe] for [swim])
+
+(perform [swim])
+	In what?
+	(asking for object in [swim in []])
+
+%% CLEAN <obj>
+
+(grammar [clean/brush/shine/polish/sweep/dust/wipe/scrub [object]] for [clean $])
+
+(perform [clean $Obj])
+	You make a half-hearted attempt at cleaning (the $Obj).
+
+%% TIE <obj> TO <obj>
+%% TIE <obj>
+
+(understand [tie/bind/attach/fasten | $Words] as [tie $A to $B])
+	*(split $Words by [to on onto around] into $Left and $Right)
+	*(understand $Left as single object $A)
+	(if) ($Right = [itself]) (then)
+		($B = $A)
+	(else)
+		*(understand $Right as single object $B)
+	(endif)
+
+(understand [tie/bind/attach/fasten | $Words] as [tie $Obj])
+	*(understand $Words as single object $Obj)
+
+(unlikely [tie $])
+
+(perform [tie $Obj])
+	To what?
+	(asking for object in [tie $Obj to []])
+
+(perform [tie $A to $B])
+	There's no obvious way to tie (the $A) to (the $B).
+	(tick) (stop)
+
+%% UNTIE <obj> FROM <obj>
+%% UNTIE <obj>
+
+(understand [untie | $Words] as [untie $A from $B])
+	*(split $Words by [from] into $Left and $Right)
+	*(understand $Left as single object $A)
+	(if) ($Right = [itself]) (then)
+		($B = $A)
+	(else)
+		*(understand $Right as single object $B)
+	(endif)
+
+(unlikely [untie $Obj from $])
+	(unlikely [untie $Obj])
+
+(understand [untie | $Words] as [untie $Obj])
+	*(understand $Words as non-all object $Obj)
+
+(perform [untie $Obj])
+	(The $Obj) (isn't $Obj) tied to anything.
+	(tick) (stop)
+
+(perform [untie $Obj from $OtherObj])
+	(The $Obj) (isn't $Obj) tied to (the $OtherObj).
+	(tick) (stop)
+
+%% ATTACK <obj> WITH <obj>
+%% ATTACK <obj>
+
+(grammar [attack/break/smash/hit/slap/kick/fight/torture/wreck/crack/destroy/murder/kill/punch/thump [single] with [single held]] for [attack $ with $])
+(grammar [attack/break/smash/hit/slap/kick/fight/torture/wreck/crack/destroy/murder/kill/punch/thump [single]] for [attack $])
+
+(unlikely [attack $ with $Obj])
+	~(item $Obj)
+
+(unlikely [attack $ with $Obj])
+	(current player $Actor)
+	~($Obj has ancestor $Actor)
+
+(before [attack $ with $Obj])
+	(ensure $Obj is held)
+
+(prevent [attack $ with $Obj])
+	(when $Obj isn't directly held)
+
+(perform [attack $Obj with $])
+	(try [attack $Obj])
+
+(perform [attack $Obj])
+	You consider attacking (the $Obj), but reject the idea.
+
+%% LEAVE <room> <dir>
+%% LEAVE <room> <dir> BY <vehicle>
+%% LEAVE <room> <dir> WITH <object>
+
+(instead of [leave $Room $Dir])
+	(from $Room go $Dir to $Target)
+	(direction $Target)
+	(try [leave $Room $Target])
+
+(prevent [leave $Room $Dir])
+	(if) (from $Room go $Dir to $Target) (then)
+		(if) (door $Target) (then)
+			{
+				(when $Target blocks passage)
+			(or)
+				(from $Room through $Target to $OtherRoom)
+				(prevent entering $OtherRoom)
+			}
+		(elseif) (room $Target) (then)
+			(prevent entering $Target)
+		(else)
+			(narrate failing to leave $Room $Dir)
+		(endif)
+	(else)
+		(if) ($Dir is one of [#out #in]) (then)
+			In what direction?
+			(asking for direction in [go []])
+		(else)
+			(narrate failing to leave $Room $Dir)
+		(endif)
+	(endif)
+
+%% If this is a step in a long-distance movement, keep the reporting short and sweet
+(narrate leaving $ $Dir)
+	(moving long distances)
+	\( (name $Dir) \) (line)
+
+(narrate leaving $Room $Dir)
+	You
+	(if) ($Dir is one of [#up #down]) (then)
+		climb
+	(elseif) (player can see) (then)
+		walk
+	(else)
+		feel your way
+	(endif)
+	(name $Dir)
+	(if) (from $Room go $Dir to $Target) (door $Target) (then)
+		through (the $Target)
+	(endif)
+	.
+
+(perform [leave $Room $Dir])
+	(narrate leaving $Room $Dir)
+	(from $Room go $Dir to room $Target)
+	(enter $Target)
+
+(instead of [leave $Room $Dir with $Obj])
+	(from $Room go $Dir to $Target)
+	(direction $Target)
+	(try [leave $Room $Target with $Obj])
+
+(prevent [leave $Room $Dir with $])
+	(prevent [leave $Room $Dir])
+
+(narrate leaving $ $Dir with $Obj)
+	You push (the $Obj) (name $Dir).
+	(par)
+
+(perform [leave $Room $Dir with $PushObj])
+	(narrate leaving $Room $Dir with $PushObj)
+	(from $Room go $Dir to room $NewRoom)
+	(now) ($PushObj is #in $NewRoom)
+	(now) ($PushObj is handled)
+	(enter $NewRoom)
+
+(instead of [leave $Room $Dir by $Obj])
+	(from $Room go $Dir to $Target)
+	(direction $Target)
+	(try [leave $Room $Target by $Obj])
+
+(prevent [leave $Room $Dir by $])
+	(prevent [leave $Room $Dir])
+
+%% As above
+(narrate leaving $ $Dir by $)
+	(moving long distances)
+	\( (name $Dir) \) (line)
+
+(narrate leaving $ $Dir by $Obj)
+	You drive (the $Obj) (name $Dir).
+	(par)
+
+(perform [leave $Room $Dir by $Vehicle])
+	(narrate leaving $Room $Dir by $Vehicle)
+	(from $Room go $Dir to room $NewRoom)
+	(enter $NewRoom by $Vehicle)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Commands
+
+(interface (command $<Action))
+
+@(understand command $Action)
+	(understand $Action)
+	(command $Action)
+
+(describe action (command $Action))
+	issue the (exhaust) { *($Word is one of $Action) $Word } command
+
+%% QUIT
+
+(command [quit])
+(understand [quit/q] as [quit])
+(prevent [quit])
+	~(interpreter supports quit)
+	(div @meta) { In this interpreter, close the window to quit the game. }
+(perform [quit])
+	(div @meta) { Really quit? \(y (no space) / (no space) n\) }
+	(if) (yesno) (then)
+		(div @meta) (display quit message)
+		(quit)
+	(endif)
+	(stop)
+
+(display quit message)
+	Thanks for playing!
+
+%% RESTART
+
+(understand command [restart])
+(perform [restart])
+	(div @meta) {
+		Restart the game from the beginning? \(
+		(if) (library links enabled) (then) (link) y (else) y (endif)
+		(no space) / (no space)
+		(if) (library links enabled) (then) (link) n (else) n (endif)
+		\)
+	}
+	(if) (yesno) (then)
+		(restart)
+		(div @meta) { Failed to restart. }
+	(endif)
+	(stop)
+
+%% SAVE
+
+(understand command [save])
+(perform [save])
+	(if) (save $ComingBack) (then)
+		(if) ($ComingBack = 1) (then)
+			(roman)
+			(div @meta) { Game state restored successfully. }
+			(div @roomheader) (location headline)
+		(else)
+			(div @meta) { Game state saved successfully. }
+		(endif)
+	(else)
+		(div @meta) { Failed to save the game state. }
+	(endif)
+	(stop)
+
+%% RESTORE
+
+(understand command [restore])
+(perform [restore])
+	(restore)
+	(div @meta) { Failed to restore the game state. }
+	(stop)
+
+%% UNDO
+
+(command [undo])
+(perform [undo])
+	(if) ~(interpreter supports undo) (then)
+		(div @meta) { This interpreter doesn't support undo. }
+	(elseif) (undo) (then)
+		(div @meta) { Failed to undo last turn. }
+	(else)
+		(div @meta) { There are no more turns to undo! }
+	(endif)
+	(stop)
+
+(narrate undoing $Words)
+	(div @meta) { Undoing the last turn \( (print words $Words) \). }
+	(line)
+	(location headline)
+
+%% TRANSCRIPT
+
+(command [transcript on])
+(understand [transcript/script on] as [transcript on])
+(understand [transcript/script] as [transcript on])
+
+(perform [transcript on])
+	(div @meta) {
+		(if) (transcript on) (then)
+			Transcript enabled.
+		(elseif) (transcript active) (then)
+			%% Do nothing, transcripting is already active
+		(else)
+			Failed to enable transcript.
+			(stop)
+		(endif)
+	}
+
+(command [transcript off])
+(understand [transcript/script off] as [transcript off])
+
+(perform [transcript off])
+	(transcript off)
+	(div @meta) { Transcript disabled. }
+
+%% SCORE
+
+(understand command [score])
+	(scoring enabled)
+
+(perform [score])
+	(scoring enabled)
+	(current score $Score)
+	(div @meta) {
+		You currently have $Score
+		(if) ($Score = 1) (then) point (else) points (endif)
+		(if) (maximum score $Max) (then)
+			out of a maximum of $Max
+		(endif)
+		.
+	}
+
+%% NOTIFY
+
+(understand command [notify on])
+	(scoring enabled)
+
+(perform [notify on])
+	(scoring enabled)
+	(now) (score notifications are on)
+	(div @meta) { Enabling score notifications. }
+
+(understand command [notify off])
+	(scoring enabled)
+
+(perform [notify off])
+	(scoring enabled)
+	(now) ~(score notifications are on)
+	(div @meta) { Score notifications have been turned off. }
+
+%% PRONOUNS
+
+(understand command [pronouns])
+(perform [pronouns])
+	(div @meta) {
+		"Me" refers to yourself. (line)
+		(collect $Obj)
+			(player's it refers to $Obj)
+		(or)
+			(narrator's it refers to $Obj)
+		(into $ItList)
+		(if) (nonempty $ItList) (then) "It" refers to (or-listing $ItList). (line) (endif)
+		(if) (her refers to $Her) (then) "Her" refers to (the $Her). (line) (endif)
+		(if) (him refers to $Him) (then) "Him" refers to (the $Him). (line) (endif)
+		(if) (them refers to $Them) (then) "Them" refers to (the $Them). (line) (endif)
+	}
+
+%% VERBOSE / BRIEF / SUPERBRIEF / SUPERVERBOSE
+
+(global variable (verbosity level $))
+%% 0 = superbrief (never show room details)
+%% 1 = brief (show room details only when unvisited)
+%% 2 = verbose (show room details except when moving long distances)
+%% 3 = superverbose (always show room details)
+
+%% If the author doesn't specify, we start with "verbose"
+(startup)
+	~(verbosity level $)
+	(now) (verbosity level 2)
+
+(understand command [superbrief])
+(perform [superbrief])
+	(now) (verbosity level 0)
+	(div @meta) { (story title or default) is now in SUPERBRIEF mode. Location details will never be shown while moving, even on a first visit. }
+
+(understand command [brief])
+(perform [brief])
+	(now) (verbosity level 1)
+	(div @meta) { (story title or default) is now in BRIEF mode. Location details will not be shown when moving to a previously-visited area. }
+
+(understand command [verbose])
+(perform [verbose])
+	(now) (verbosity level 2)
+	(div @meta) { (story title or default) is now in VERBOSE mode. Location details will not be shown when travelling long distances, but will be shown after normal movement. }
+
+(understand command [superverbose])
+(perform [superverbose])
+	(now) (verbosity level 3)
+	(div @meta) { (story title or default) is now in SUPERVERBOSE mode. Location details will always be shown when moving. }
+
+%% VERSION
+
+(understand command [version])
+(understand [banner] as [version])
+(perform [version])
+	(banner)
