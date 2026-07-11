@@ -256,66 +256,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Rat
 
-%% GO TO <room>
-
-%% It is only possible to go to visited rooms and non-hidden objects in this
-%% way.
-
-(understand [go to | $Words] as [go to $Room])
-	*(understand $Words as room name $Room)
-
-(understand [go/approach | $Words] as [go to $Room])
-	*(understand $Words as room name $Room)
-
-(understand $Words as room name $Room)
-	(filter $Words into $Filtered)
-	(nonempty $Filtered)
-	(determine object $Room)
-		*(room $Room)
-		($Room is visited)
-	(from words)
-		*(dict $Room)
-	(matching all of $Filtered)
-
-(unlikely [go to $]) %% Prefer default actions on objects to default actions on rooms, if both are enabled
-	(default actions enabled)
-	(default actions apply to rooms)
-(very unlikely [go to $Room]) %% Don't call it very unlikely just because it involves a room
-	(just) (current room $Room) %% But going to the current room should still be very unlikely
-
-%% Rooms generally aren't present
-~(action [go to $] requires $ to be present)
-
-%% Utility like (last $) that also returns the everything-but-last of the list
-%% In other words, it's the opposite of ($List = [$Head | $Rest])
-(interface (split last element from $<List into $>Rest and $>Last))
-(split last element from [$Last] into [] and $Last)
-(split last element from [$Head | $OldRest] into [$Head | $NewRest] and $Last)
-	(split last element from $OldRest into $NewRest and $Last)
-
-(perform [go to $Room])
-	(current room $Here)
-	(if) ($Here = $Room) (then)
-		You are already in (the $Room).
-		(tick) (stop)
-	(elseif)
-		(shortest path from $Here to $Room is $FullPath)
-		(split last element from $FullPath into $Path and $Final)
-	(then)
-		(exhaust) {
-			*($Dir is one of $Path)
-			(now) (moving long distances) %% Switch to a more minimal reporting style
-			(try [go $Dir])
-			(tick)
-			(par)
-		}
-		(now) (last step of movement) %% And switch back for the last step
-		(try [go $Final])
-	(else)
-		You don't know how to get to (the $Room) from here.
-		(tick) (stop)
-	(endif)
-
 %% Navigation by direction:
 
 %% What the player types is eventually translated into one of:
@@ -390,7 +330,105 @@
 		(try [leave $Room $Dir by $Vehicle])
 	(endif)
 
-(action [go | $] is valid for #rat/#chameleon)
+%% LEAVE <room> <dir>
+%% LEAVE <room> <dir> BY <vehicle>
+%% LEAVE <room> <dir> WITH <object>
+
+(instead of [leave $Room $Dir])
+	(from $Room go $Dir to $Target)
+	(direction $Target)
+	(try [leave $Room $Target])
+
+(prevent [leave $Room $Dir])
+	(if) (from $Room go $Dir to $Target) (then)
+		(if) (door $Target) (then)
+			{
+				(when $Target blocks passage)
+			(or)
+				(from $Room through $Target to $OtherRoom)
+				(prevent entering $OtherRoom)
+			}
+		(elseif) (room $Target) (then)
+			(prevent entering $Target)
+		(else)
+			(narrate failing to leave $Room $Dir)
+		(endif)
+	(else)
+		(if) ($Dir is one of [#out #in]) (then)
+			In what direction?
+			(asking for direction in [go []])
+		(else)
+			(narrate failing to leave $Room $Dir)
+		(endif)
+	(endif)
+
+%% If this is a step in a long-distance movement, keep the reporting short and sweet
+(narrate leaving $ $Dir)
+	(moving long distances)
+	\( (name $Dir) \) (line)
+
+(narrate leaving $Room $Dir)
+	You
+	(if) ($Dir is one of [#up #down]) (then)
+		climb
+	(elseif) (player can see) (then)
+		walk
+	(else)
+		feel your way
+	(endif)
+	(name $Dir)
+	(if) (from $Room go $Dir to $Target) (door $Target) (then)
+		through (the $Target)
+	(endif)
+	.
+
+(perform [leave $Room $Dir])
+	(narrate leaving $Room $Dir)
+	(from $Room go $Dir to room $Target)
+	(enter $Target)
+
+(instead of [leave $Room $Dir with $Obj])
+	(from $Room go $Dir to $Target)
+	(direction $Target)
+	(try [leave $Room $Target with $Obj])
+
+(prevent [leave $Room $Dir with $])
+	(prevent [leave $Room $Dir])
+
+(narrate leaving $ $Dir with $Obj)
+	You push (the $Obj) (name $Dir).
+	(par)
+
+(perform [leave $Room $Dir with $PushObj])
+	(narrate leaving $Room $Dir with $PushObj)
+	(from $Room go $Dir to room $NewRoom)
+	(now) ($PushObj is #in $NewRoom)
+	(now) ($PushObj is handled)
+	(enter $NewRoom)
+
+(instead of [leave $Room $Dir by $Obj])
+	(from $Room go $Dir to $Target)
+	(direction $Target)
+	(try [leave $Room $Target by $Obj])
+
+(prevent [leave $Room $Dir by $])
+	(prevent [leave $Room $Dir])
+
+%% As above
+(narrate leaving $ $Dir by $)
+	(moving long distances)
+	\( (name $Dir) \) (line)
+
+(narrate leaving $ $Dir by $Obj)
+	You drive (the $Obj) (name $Dir).
+	(par)
+
+(perform [leave $Room $Dir by $Vehicle])
+	(narrate leaving $Room $Dir by $Vehicle)
+	(from $Room go $Dir to room $NewRoom)
+	(enter $NewRoom by $Vehicle)
+
+(action [go/leave | $] is valid for #rat/#chameleon)
 
 %% SABOTAGE <obj>
 
@@ -427,116 +465,77 @@
 
 %% LOOK
 
-(grammar [look/l] for [look])
-(grammar [look/l around] for [look])
-(grammar [where am i] for [look])
+(default action $Obj [examine $Obj])
+(narrate entering $Room) (try [examine $Room])
 
-(describe action [look])
-	look around
-
-%% We want to reset (moving long distances) just before the final [look]
-(before [look])
-	(last step of movement)
-	(now) ~(moving long distances)
-	(now) ~(last step of movement)
-
-%% And (looking after moving) just after
-(on every tick)
-	(now) ~(looking after moving)
-
-(perform [look])
-	(current player $Player)
-	($Player is $Rel $Loc)
-	{ (verbosity level $Verbosity) (or) ($Verbosity = 2) } %% Just in case
+(describe room $Room)
 	(div @roomheader) (location headline)
-	(if)
-		(looking after moving)
-		{
-			($Verbosity = 0) (or) %% Verbosity 0: when moving at all
-			(current room $Room) ($Room is visited) ($Verbosity < 2) (or) %% Verbosity 1: when visited
-			(moving long distances) ($Verbosity < 3) %% Verbosity 2: when moving long distances
-		}
-	(then)
-		%% No room description, keep it brief
-		(par)
-	(elseif) (player can see) (then)
-		(current scope ceiling $Ceil)
-		(look $Ceil)
-		(make appearances $Rel $Loc)
-		(par)
+	(current scope ceiling $Ceil)
+	(look $Ceil)
+	(make appearances #in $Room)
+	(par)
+
+(understand [examine/x/watch/describe/check/look/l/view | $Words] as [examine $Room])
+	(understand $Words as room name $Room)
+(understand [look/l at | $Words] as [examine $Room])
+	(understand $Words as room name $Room)
+
+(understand $Words as room name $Room)
+	(filter $Words into $Filtered)
+	(nonempty $Filtered)
+	(determine object $Room)
+		*(room $Room)
+		%% Don't require visited
+	(from words)
+		*(dict $Room)
+	(matching all of $Filtered)
+
+(prevent [examine $Room])
+	~(in bounds for this act $Room)
+	(if) ($Room is visited) (then)
+		TODO that room isn't accessible right now
 	(else)
-		(narrate darkness)
+		TODO Spider doesn't have eyes there
 	(endif)
 
-(action [look] is valid for #rat/#chameleon/#spider)
+(perform [examine $Room])
+	(describe room $Room)
+
+(add $Room to scope)
+	*(in bounds for this act $Room)
 
 %% EXAMINE <obj>
 
-(grammar [examine/x/watch/describe/check/look/l [object]] for [examine $])
+(grammar [examine/x/watch/describe/check/look/l/view [object]] for [examine $])
 (grammar [look/l at [object]] for [examine $])
 
-(understand [who am i] as [examine $Player])
-	(current player $Player)
-
 ~(action [examine $] requires $ to be touched)
-
-(instead of [examine (room $Obj)])
-	(current room $Here)
-	~($Here = $Obj)
-	(if)
-		(from $Here go $Dir to $Obj)
-	(then)
-		(try [look $Dir])
-	(elseif)
-		(from $Here through $Door to $Obj)
-		~($Door blocks light)
-		(from $Here go $Dir to $Door)
-	(then)
-		(try [look $Dir])
-	(else)
-		You can't get a good view of (the $Obj) from here.
-	(endif)
-
-(perform [examine $Obj])
-	(current player $Player)
-	($Player is nested #in $Obj)
-	(look $Obj)
 
 (perform [examine $Obj])
 	(descr $Obj)
 	(if) (supporter $Obj) (then)
-		(if) (fungibility enabled) (then)
-			(collect $Child)
-				*($Child is #on $Obj)
-			(into $OnList)
-			(fungibility-enabled appearance $OnList #on $Obj)
-		(else)
-			(exhaust) {
-				*($Child is #on $Obj)
-				(par)
-				(appearance $Child #on $Obj)
-				(notice $Child)
-			}
-		(endif)
+		(exhaust) {
+			*($Child is #on $Obj)
+			(par)
+			(appearance $Child #on $Obj)
+			(notice $Child)
+		}
 	(endif)
 	(if) (container $Obj) ~{ (opaque $Obj) ($Obj is closed) } (then)
-		(if) (fungibility enabled) (then)
-			(collect $Child)
-				*($Child is #in $Obj)
-			(into $InList)
-			(fungibility-enabled appearance $InList #in $Obj)
-		(else)
-			(exhaust) {
-				*($Child is #in $Obj)
-				(par)
-				(appearance $Child #in $Obj)
-				(notice $Child)
-			}
-		(endif)
+		(exhaust) {
+			*($Child is #in $Obj)
+			(par)
+			(appearance $Child #in $Obj)
+			(notice $Child)
+		}
 	(endif)
 	(par)
 
 (action [examine $] is valid for #rat/#chameleon/#spider)
+
+(add $Obj to scope)
+	*(in bounds for this act $Room)
+	*($Obj has ancestor $Room)
 
 %% HACK <obj>
 
@@ -561,7 +560,9 @@
 	TODO people are already following!
 
 (prevent [mingle])
-	TODO people not around!
+	(#chameleon is in room $Room)
+	~(#crowd is in room $Room)
+	TODO People not there!
 
 (perform [mingle])
 	TODO it works!

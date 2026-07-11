@@ -7,6 +7,8 @@
 (protagonist *)
 (letter for *) R
 %% neuter
+(current player *)
+(* is #in #garden2)
 
 #spider
 (protagonist *)
@@ -17,6 +19,7 @@
 (protagonist *)
 (female *)
 (letter for *) J
+(* is #in #garden2)
 
 #chameleon
 (protagonist *)
@@ -28,3 +31,8 @@
 (animate *)
 (male *)
 (letter for *) B
+
+(intro)
+	(banner)
+	(update environment around player)
+	(try [examine #garden2])
