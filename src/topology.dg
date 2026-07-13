@@ -78,6 +78,7 @@
 (from * go #east to #glasgild)
 (from * go #south to #dine1)
 (* is available in act 1/2/3/4)
+(default butler room for act 1 is *) (random from 1 to 2 into 1)
 
 #glasgild
 (room *)
@@ -86,6 +87,7 @@
 (from * go #west to #grangild)
 (from * go #south to #dine2)
 (* is available in act 1/2/3/4)
+(default butler room for act 1 is *)
 
 #dine1
 (room *)
@@ -114,9 +116,14 @@
 (from * go #east to #garden2)
 (origin *) %% Might as well set our coordinate system's origin here
 (* is available in act 0)
+(default butler room for act 0 is *)
 
-%% TODO NAME NEEDED
-%% provides access to mansion
+(name *) terrace
+(look *) The dining room to the north opens seamlessly out into a wide flagstoned terrace, sloping down to the garden path to the east.
+
+(prevent [leave * #north])
+	~(jackdaw has entered)
+	TODO handle Jackdaw first
 
 #garden2
 (room *)
@@ -125,16 +132,32 @@
 (* is available in act 0)
 
 %% south walk
+(name *) south walk
+(look *) The path meanders back and forth between tall ({hedges}), making sure there's no line of sight between the terrace to the west and the garden proper to the east.
+
+#hedges
+(name *) hedges
+(dict *) hedge
+(plural *)
+(descr *) Deliberately too tall to see past. If you can never see the edges, then the garden will seem even larger than it really is.
+(* is #in #garden2)
 
 #garden3
 (room *)
 (from * go #west to #garden2)
 (* is available in act 0)
 
-%% south garden
+(name *) south garden
+(look *) The hedge walls open up here but still wall it in on all sides. Heaven forfend anyone see the landscaping or the ({water feature}) without an invitation.
 %% sabotage: water feature
 
 #fountain
 (name *) water feature
+(dict *) fountain
 (* is #in #garden3)
 (sabotage target *)
+(descr *)
+	It's shaped like a tiny mountain in the middle of the garden, with water cascading down on all sides.
+	(if) (* is broken) (then)
+		And also currently spraying a dozen feet in the air.
+	(endif)

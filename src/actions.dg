@@ -244,6 +244,8 @@
 		(The $Actor) (doesn't $Actor) take orders.
 	(endif)
 
+(action [tell $ to | $] is valid for *(protagonist $))
+
 %% WAIT
 
 (grammar [wait/z] for [wait])
@@ -273,8 +275,7 @@
 
 %% GO <direction>
 
-%% The rule for just typing a list of directions (without a verb) is further
-%% down in the file.
+%% The rule for just typing a list of directions (without a verb) is in stdlib.dg
 
 (grammar [go/walk/crawl/leave/get/climb [direction]] for [go $])
 (grammar [go/walk/crawl [to further] [direction]] for [go $])
@@ -362,11 +363,6 @@
 		(endif)
 	(endif)
 
-%% If this is a step in a long-distance movement, keep the reporting short and sweet
-(narrate leaving $ $Dir)
-	(moving long distances)
-	\( (name $Dir) \) (line)
-
 (narrate leaving $Room $Dir)
 	You
 	(if) ($Dir is one of [#up #down]) (then)
@@ -387,47 +383,6 @@
 	(from $Room go $Dir to room $Target)
 	(enter $Target)
 
-(instead of [leave $Room $Dir with $Obj])
-	(from $Room go $Dir to $Target)
-	(direction $Target)
-	(try [leave $Room $Target with $Obj])
-
-(prevent [leave $Room $Dir with $])
-	(prevent [leave $Room $Dir])
-
-(narrate leaving $ $Dir with $Obj)
-	You push (the $Obj) (name $Dir).
-	(par)
-
-(perform [leave $Room $Dir with $PushObj])
-	(narrate leaving $Room $Dir with $PushObj)
-	(from $Room go $Dir to room $NewRoom)
-	(now) ($PushObj is #in $NewRoom)
-	(now) ($PushObj is handled)
-	(enter $NewRoom)
-
-(instead of [leave $Room $Dir by $Obj])
-	(from $Room go $Dir to $Target)
-	(direction $Target)
-	(try [leave $Room $Target by $Obj])
-
-(prevent [leave $Room $Dir by $])
-	(prevent [leave $Room $Dir])
-
-%% As above
-(narrate leaving $ $Dir by $)
-	(moving long distances)
-	\( (name $Dir) \) (line)
-
-(narrate leaving $ $Dir by $Obj)
-	You drive (the $Obj) (name $Dir).
-	(par)
-
-(perform [leave $Room $Dir by $Vehicle])
-	(narrate leaving $Room $Dir by $Vehicle)
-	(from $Room go $Dir to room $NewRoom)
-	(enter $NewRoom by $Vehicle)
-
 (action [go/leave | $] is valid for #rat/#chameleon)
 
 %% SABOTAGE <obj>
@@ -447,6 +402,16 @@
 %% Jackdaw
 
 (grammar [proceed] for itself)
+
+(prevent [proceed])
+	(current act 0)
+	(#butler is in room #garden1)
+	No. Butler is in the way.
+
+(perform [proceed])
+	(current act 0)
+	Jackdaw slips inside.
+	(now) (jackdaw has entered)
 
 (perform [proceed])
 	TODO Proceed!

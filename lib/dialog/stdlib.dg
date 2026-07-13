@@ -434,7 +434,7 @@
 		($Obj = $Point)
 	(endif)
 
-(the (current room $))	this location
+%% (the (current room $))	this location %% REMOVED
 
 (name (door $))		door
 

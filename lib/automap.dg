@@ -252,16 +252,7 @@
 	%% Room
 	(if) (usable room $Room at [$X $Y $Z]) (then)
 		(collect words)
-			(if) (implicit action is $) ~(implicit action wants direction) (then)
-				%% We're disambiguating, just give the name
-				(the $Room)
-			(else)
-				(if) (current room $Room) (then)
-					look at (the $Room)
-				(else)
-					go to (the $Room)
-				(endif)
-			(endif)
+			view (the $Room)
 		(into $Command)
 		(if) (use hyperlinks in map) (then)
 			(link $Command) (full room glyph $Room)

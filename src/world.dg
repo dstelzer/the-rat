@@ -2,35 +2,74 @@
 %% Protagonists
 
 (animate *(protagonist $))
+(add *(protagonist $) to scope)
 
 #rat
 (protagonist *)
+(name *) Rat
 (letter for *) R
 %% neuter
 (current player *)
 (* is #in #garden2)
 
+(occupied $Room)
+	(#butler is in room $Room) (or) (#crowd is in room $Room)
+
+(late on every tick)
+	(* is in room $Room)
+	(if) (occupied $Room) ~(rat is hiding) (then)
+		The Rat must hide!
+		(now) (rat is hiding)
+	(elseif) ~(occupied $Room) (rat is hiding) (then)
+		The Rat can emerge from hiding!
+		(now) ~(rat is hiding)
+	(endif)
+
+(prevent [leave/sabotage | $])
+	(current player *)
+	(rat is hiding)
+	Cannot! The Rat is hiding!
+
+(prevent entering $Room)
+	(occupied $Room)
+	(current player *)
+	Cannot! (The $Room) is occupied!
+
 #spider
 (protagonist *)
+(name *) Spider
 (male *)
 (letter for *) S
 
 #jackdaw
 (protagonist *)
+(name *) Jackdaw
 (female *)
 (letter for *) J
-(* is #in #garden2)
 
 #chameleon
 (protagonist *)
+(name *) Chameleon
 (female *)
 (letter for *) C
 
 #butler
 (protagonist *) (current act 4)
+(name *) butler
 (animate *)
 (male *)
 (letter for *) B
+(* is #in #garden1)
+(appearance *)
+	(current goal $)
+	({The butler}) is moving with purpose toward his next task.
+(appearance *)
+	({The butler}) is hard at work on final preparations.
+(descr *)
+	(current goal $Goal)
+	He's hurrying toward (the $Goal).
+(descr *)
+	A house like this would normally have half a dozen staff, and now all these tasks fall to him. It's no wonder he never has a chance to rest.
 
 (intro)
 	(banner)

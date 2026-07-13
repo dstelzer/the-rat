@@ -13,6 +13,7 @@
 	(now) ~(actor was explicitly indicated)
 
 (instead of $Action)
+	~(command $Action)
 	(current player $Actor)
 	~(action $Action is valid for $Actor)
 	(if) (actor was explicitly indicated) (then)

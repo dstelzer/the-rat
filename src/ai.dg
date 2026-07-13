@@ -16,11 +16,13 @@
 (update current goal to $New)
 	(now) (current goal $New)
 	The butler's goal changes to (the $New)!
+	(now) (butler is distracted)
 (unset current goal)
 	~(current goal $)
 (unset current goal)
 	(now) ~(current goal $)
 	The butler returns to his default task.
+	(now) (butler is distracted)
 
 %% How long will it take to deal with something?
 %% If it requires a tool he is not carrying, it's the sum of:
@@ -34,7 +36,7 @@
 
 (search for new goals)
 	(collect $Target)
-		*($Target is sabotaged)
+		*($Target is broken)
 	(into $Targets)
 	(if) (empty $Targets) (then)
 		(unset current goal)
@@ -147,12 +149,16 @@
 (global variable (butler's current path $))
 
 (take one step toward the current goal)
+	(butler is distracted) %% Set this flag to delay him for one turn
+	(now) ~(butler is distracted)
+
+(take one step toward the current goal)
 	(current goal $Goal)
 	(#butler is in room $Start)
 	
 	(if) ($Goal is in room $Start) (then)
 		The butler fixes (the $Goal).
-		(now) ~($Goal is sabotaged)
+		(now) ($Goal is in order)
 	(elseif) ($Goal requires tool $Tool) ($Tool is in room $Start) (then)
 		(if) ($Other is #heldby #butler) (then)
 			The butler drops (the $Other).
@@ -175,18 +181,17 @@
 		(at most once) {
 			(now) (tentatively avoiding occupied rooms)
 			(shortest path from $Start to $GoalRoom is $Path)
-			($Path = [$Next | $])
+			($Path = [$Dir | $])
+			(from $Start go $Dir to $Next)
 		(or)
 			(now) ~(tentatively avoiding occupied rooms)
 			(shortest path from $Start to $GoalRoom is $Path)
-			($Path = [$Next | $])
-			
+			($Path = [$Dir | $])
+			(from $Start go $Dir to $Next)
 		(or)
 			ERROR: Could not find a path from (the $Start) to (the $GoalRoom) when carrying out the plan!
 			(fail)
 		}
-		
-		%% We also want to store the "second path" in 
 		
 		(if)
 			(tentatively avoiding occupied rooms)
@@ -204,8 +209,6 @@
 			The butler moves from (the $Start) to (the $Next).
 		(endif)
 		
-		(move #butler to $Next)
-		
 		%% We also need to mark out the path, including the second step if necessary
 		(if) (object $SecondGoalRoom) (then)
 			(at most once) {
@@ -220,11 +223,48 @@
 				(fail)
 			}
 			(append $Path $Path2 $TotalPath)
-			(now) (butler's current path $TotalPath)
+			(set butler's path to $TotalPath)
 		(else)
-			(now) (butler's current path $Path)
+			(set butler's path to $Path)
 		(endif)
+		
+		%% And the goal of this whole thing!
+		(move #butler to $Next)
+		
 	(endif)
+
+(take one step toward the current goal)
+	~(current goal $)
+	(#butler is in room $Start)
+	(current act $Act)
+	(default butler room for act $Act is $Goal)
+	(if) ($Start = $Goal) (then)
+		%% Do nothing
+	(elseif)
+		(now) ~(tentatively avoiding occupied rooms)
+		(shortest path from $Start to $Goal is [$Dir|$])
+		(from $Start go $Dir to $Next)
+	(then)
+		The butler moves from (the $Start) to (the $Next) to resume his duties
+		(if) ~($Goal = $Next) (then)
+			at (the $Goal)
+		(endif)
+		.
+		(move #butler to $Next)
+	(else)
+		ERROR: Butler cannot return to his default duties at (the $Goal)!
+		(fail)
+	(endif)
+
+(set butler's path to $Dirs)
+	(#butler is in room $Start)
+	(convert direction list $Dirs to room list $Path starting at $Start)
+	(now) (butler's current path $Path)
+
+(convert direction list [] to room list [] starting at $)
+(convert direction list [$DHead|$DTail] to room list [$Next|$RTail] starting at $Start)
+	(from $Start go $DHead to $Next)
+	(convert direction list $DTail to room list $RTail starting at $Next)
 
 (interface (move $<X to $<Y))
 (move $X to $Y) %% TODO - this will eventually need to be changed for Rat's hiding behavior
@@ -234,6 +274,6 @@
 %% We use (exhaust) here to free heap memory afterward because this uses a *lot*
 %% The relevant calculations all get stored in long-term memory anyway
 
-(late on every tick)
+(on every tick)
 	(exhaust) (search for new goals)
 	(exhaust) (take one step toward the current goal)
