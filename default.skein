@@ -1,0 +1,95 @@
+seed: 63600
+engine: :dgdebug
+--------------------------------------------------------------------------------
+id: 0
+label: START
+--------------------------------------------------------------------------------
+[1m[36mWarning:[0m[36m Object #crowd was used, but never declared as topic.
+[0m[1m[36mWarning:[0m[36m src/world.dg, line 105: Possible typo: A query is made to '(hack target $)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/ai.dg, line 74: Possible typo: A query is made to '($ requires tool $)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m lib/versalink.dg, line 96: Possible typo: A rule is defined for '(option paragraph)', but this predicate is never queried and has no interface definition.
+[0m[1m[36mWarning:[0m[36m lib/dialog/stdlib.dg, line 2363: Possible typo: A rule is defined for '(when $ is $ $)', but this predicate is never queried and has no interface definition.
+[0m[1m[36mWarning:[0m[36m src/actions.dg, line 328: Possible typo: Local variable $Room only appears once.
+[0m[1m[36mWarning:[0m[36m src/actions.dg, line 328: Possible typo: Local variable $Dir only appears once.
+[0m[1m[36mWarning:[0m[36m src/actions.dg, line 350: Possible typo: Local variable $Room only appears once.
+[0m[1m[36mWarning:[0m[36m src/actions.dg, line 350: Possible typo: Local variable $Dir only appears once.
+[0m
+
+[38;2;33;186;186mTesting. Lorem ipsum dolor sit amet. Are all of you seeing this?
+[39m
+[38;2;181;169;38mYes. Seeing.
+[39m
+[38;2;24;170;73myeah
+[39m
+[38;2;191;28;191mPerfectly!
+[39m
+[<Yes>] / [<No>]> 
+--------------------------------------------------------------------------------
+id: 1784004447370
+parent-id: 0
+command: yes
+--------------------------------------------------------------------------------
+> yes
+
+[38;2;33;186;186mThat is a yes. Are we in position? Rat?
+[39m
+[38;2;181;169;38mThe rat is prepared. The cameras are placed. In the garden it hides.
+[39m
+[38;2;33;186;186mJackdaw?
+[39m
+[38;2;24;170;73myeah
+[39m
+[38;2;33;186;186mChameleon?
+[39m
+[38;2;191;28;191mI have never been more ready. Sincerely, even though I'm about to do nothing for an hour and a half waiting for the gala to start.
+[39m
+[38;2;33;186;186mFox?
+[39m
+[<Yes>] / [<No>]> 
+--------------------------------------------------------------------------------
+id: 1784004447371
+parent-id: 1784004447370
+command: no
+prompt: keystroke
+--------------------------------------------------------------------------------
+> no
+
+[38;2;24;170;73mand what about you spider
+position and all that?
+[39m
+[38;2;33;186;186mWell, yes. For completeness, I am in the control room two blocks away. All systems running smoothly. I have eyes on the outer garden. Ninety minutes until the largest gathering of New Gothenburg's patrician class I have ever seen.
+[39m
+[38;2;191;28;191mNinety minutes until we pull off the heist of the century.
+[39m
+[38;2;24;170;73mlets ----ing go
+[39m
+<[] [[ Continue ]]>
+--------------------------------------------------------------------------------
+id: 1784004447372
+parent-id: 1784004447371
+command: space
+--------------------------------------------------------------------------------
+[1mPrologue: Getting Oriented
+[0m
+[38;2;33;186;186mFox, you should be seeing a map of the south gardens. Rat is at the R, Jackdaw is...
+[39m
+[38;2;24;170;73mclose enough to the door, thats all that matters
+[39m
+[38;2;33;186;186mFine. And the butler is at the B. Text communication is running; we are at your command.
+[39m
+[38;2;181;169;38mThe rat is prepared to obey every word. Tell it to go. Tell it to sabotage.
+[39m
+[38;2;33;186;186mBy which it means compass directions, so that we do not waste time with "your right or my right". And for Jackdaw...
+[39m
+[38;2;24;170;73mjust get the butler away from the door and say "proceed"
+thats all you have to do
+[39m
+[38;2;191;28;191mAllez!
+[39m
+[38;2;33;186;186mLooking at Rat's location...
+[0m[1m[38;2;33;186;186mSouth walk[0m[38;2;33;186;186m
+The path meanders back and forth between tall [<hedges>], making sure there's no line of sight between the terrace to the west and the garden proper to the east.
+
+[39m[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[east] east>], [<[west] west>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m

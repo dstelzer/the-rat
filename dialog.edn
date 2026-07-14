@@ -8,6 +8,7 @@
 	{:main	["src/meta.dg"
 			 "src/world.dg"
 			 "src/topology.dg"
+			 "src/interface.dg"
 			 "src/ai.dg"
 			 "src/input.dg"
 			 "src/actions.dg"

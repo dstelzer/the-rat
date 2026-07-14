@@ -1,0 +1,36 @@
+(redraw status bar)
+	(inline status bar @inline) {
+		(exhaust) *(status bar line)
+	}
+
+(style class @inline) %% TODO
+
+(style class @statusline)
+	margin-left: 1em;
+	text-indent: -1em;
+
+(style class @center)
+	text-align: center;
+
+(pause)
+	(if) (interpreter supports links) (then)
+		(if) (interpreter supports inline status bar) (then)
+			(inline status bar @inline) (div @center) (link []) { \[\[ (space) Continue (space) \]\] }
+		(else)
+			(div @center) (link []) { \* \* \* }
+		(endif)
+	(else)
+		(if) (interpreter supports inline status bar) (then)
+			(inline status bar @inline) (div @center) { Press any key to continue }
+		(else)
+			(div @center) { \* \* \* }
+		(endif)
+	(endif)
+	(get key $)
+
+(style class @header)
+	font-size: larger;
+	font-weight: bold;
+	text-align: center;
+	margin-top: 1.75em;
+	margin-bottom: 1em;

@@ -150,36 +150,7 @@
 
 %% VERBOSE / BRIEF / SUPERBRIEF / SUPERVERBOSE
 
-(global variable (verbosity level $))
-%% 0 = superbrief (never show room details)
-%% 1 = brief (show room details only when unvisited)
-%% 2 = verbose (show room details except when moving long distances)
-%% 3 = superverbose (always show room details)
-
-%% If the author doesn't specify, we start with "verbose"
-(startup)
-	~(verbosity level $)
-	(now) (verbosity level 2)
-
-(understand command [superbrief])
-(perform [superbrief])
-	(now) (verbosity level 0)
-	(div @meta) { (story title or default) is now in SUPERBRIEF mode. Location details will never be shown while moving, even on a first visit. }
-
-(understand command [brief])
-(perform [brief])
-	(now) (verbosity level 1)
-	(div @meta) { (story title or default) is now in BRIEF mode. Location details will not be shown when moving to a previously-visited area. }
-
-(understand command [verbose])
-(perform [verbose])
-	(now) (verbosity level 2)
-	(div @meta) { (story title or default) is now in VERBOSE mode. Location details will not be shown when travelling long distances, but will be shown after normal movement. }
-
-(understand command [superverbose])
-(perform [superverbose])
-	(now) (verbosity level 3)
-	(div @meta) { (story title or default) is now in SUPERVERBOSE mode. Location details will always be shown when moving. }
+%% Disabled, see below
 
 %% VERSION
 
@@ -238,11 +209,7 @@
 	(try [ask $NPC about $Topic])
 
 (perform [tell $Actor to | $])
-	(if) (animate $Actor) (then)
-		(The $Actor) refuse(s $Actor).
-	(else)
-		(The $Actor) (doesn't $Actor) take orders.
-	(endif)
+	(div @spider) It does not seem that (the $Actor) will take orders from us.
 
 (action [tell $ to | $] is valid for *(protagonist $))
 
@@ -251,7 +218,15 @@
 (grammar [wait/z] for [wait])
 
 (perform [wait])
-	A moment slips away.
+	(select)
+		(div @chameleon) { So, darling, what comes next? }
+	(or)
+		(div @jackdaw) { dot dot dot }
+	(or)
+		(div @spider) { All systems ready. }
+	(or)
+		(div @rat) { The rat waits. }
+	(at random)
 
 (action [wait] is valid for *(protagonist $)) %% All characters can do it
 
@@ -304,23 +279,6 @@
 		{ (room $Target) (or) (door $Target) (or) (direction $Target) }
 	}
 
-(before [go $])
-	(recursively leave non-vehicles)
-
-(before [go $Dir])
-	(current room $Room)
-	(from $Room go $Dir to $Target)
-	(door $Target)
-	($Target is closed)
-	(first try [open $Target])
-
-(prevent [go $])
-	(current player $Actor)
-	($Actor is $Rel $Obj)
-	~(room $Obj)
-	~(vehicle $Obj)
-	(when $Actor is $Rel $Obj)
-
 (perform [go $Dir])
 	(current player $Actor)
 	(current room $Room)
@@ -356,7 +314,11 @@
 		(endif)
 	(else)
 		(if) ($Dir is one of [#out #in]) (then)
-			In what direction?
+			(if) (current player #rat) (then)
+				(div @rat) { The rat will go. But which way? }
+			(else)
+				(div @chameleon) { Yes, but which way exactly? }
+			(endif)
 			(asking for direction in [go []])
 		(else)
 			(narrate failing to leave $Room $Dir)
@@ -364,19 +326,31 @@
 	(endif)
 
 (narrate leaving $Room $Dir)
-	You
-	(if) ($Dir is one of [#up #down]) (then)
-		climb
-	(elseif) (player can see) (then)
-		walk
-	(else)
-		feel your way
-	(endif)
-	(name $Dir)
-	(if) (from $Room go $Dir to $Target) (door $Target) (then)
-		through (the $Target)
-	(endif)
-	.
+	(current player #rat)
+	(div @rat) {
+		(select)
+			The rat
+		(or)
+			It
+		(or)
+			The rat, it
+		(then purely at random)
+		(select)
+			moves
+		(or)
+			goes
+		(or)
+			is moving
+		(or)
+			is going
+		(purely at random)
+		.
+	}
+
+(narrate leaving $Room $Dir)
+	(div @chameleon) {
+		TODO!
+	}
 
 (perform [leave $Room $Dir])
 	(narrate leaving $Room $Dir)
@@ -390,11 +364,14 @@
 (grammar [sabotage/break/wreck [single]] for [sabotage $])
 
 (prevent [sabotage ~(sabotage target $Obj)])
-	TODO there is no way to sabotage (the $Obj).
+	(div @rat) { The rat assesses. But (the $Obj) , (it $Obj) offer(s $Obj) nothing. No means of destruction. }
 
 (perform [sabotage $Obj])
-	TODO sabotaged!
+	(narrate sabotaging $Obj)
 	(now) ($Obj is broken)
+
+(narrate sabotaging $Obj) %% Fallback
+	(div @rat) { (The $Obj) , it yields. It opens. It breaks. }
 
 (action [sabotage $] is valid for #rat)
 
@@ -406,11 +383,13 @@
 (prevent [proceed])
 	(current act 0)
 	(#butler is in room #garden1)
-	No. Butler is in the way.
+	(div @jackdaw) { like i said (line) get the butler out of the way first }
 
 (perform [proceed])
 	(current act 0)
-	Jackdaw slips inside.
+	(div @jackdaw) { on it }
+	(div @spider) { She is in! }
+	(div @jackdaw) { down in the basement ready to rob this place blind }
 	(now) (jackdaw has entered)
 
 (perform [proceed])
@@ -434,6 +413,10 @@
 (narrate entering $Room) (try [examine $Room])
 
 (describe room $Room)
+	(select)
+		Looking at Rat's location...
+	(or)
+	(stopping)
 	(div @roomheader) (location headline)
 	(current scope ceiling $Ceil)
 	(look $Ceil)
@@ -458,13 +441,13 @@
 (prevent [examine $Room])
 	~(in bounds for this act $Room)
 	(if) ($Room is visited) (then)
-		TODO that room isn't accessible right now
+		(div @spider) { Not relevant at the moment. }
 	(else)
-		TODO Spider doesn't have eyes there
+		(div @spider) { For the moment, I am afraid I have no eyes there. }
 	(endif)
 
 (perform [examine $Room])
-	(describe room $Room)
+	(div @spider) (describe room $Room)
 
 (add $Room to scope)
 	*(in bounds for this act $Room)
@@ -477,24 +460,26 @@
 ~(action [examine $] requires $ to be touched)
 
 (perform [examine $Obj])
-	(descr $Obj)
-	(if) (supporter $Obj) (then)
-		(exhaust) {
-			*($Child is #on $Obj)
-			(par)
-			(appearance $Child #on $Obj)
-			(notice $Child)
-		}
-	(endif)
-	(if) (container $Obj) ~{ (opaque $Obj) ($Obj is closed) } (then)
-		(exhaust) {
-			*($Child is #in $Obj)
-			(par)
-			(appearance $Child #in $Obj)
-			(notice $Child)
-		}
-	(endif)
-	(par)
+	(div @spider) {
+		(descr $Obj)
+		(if) (supporter $Obj) (then)
+			(exhaust) {
+				*($Child is #on $Obj)
+				(par)
+				(appearance $Child #on $Obj)
+				(notice $Child)
+			}
+		(endif)
+		(if) (container $Obj) ~{ (opaque $Obj) ($Obj is closed) } (then)
+			(exhaust) {
+				*($Child is #in $Obj)
+				(par)
+				(appearance $Child #in $Obj)
+				(notice $Child)
+			}
+		(endif)
+		(par)
+	}
 
 (action [examine $] is valid for #rat/#chameleon/#spider)
 

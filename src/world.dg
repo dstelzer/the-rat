@@ -231,7 +231,7 @@
 	(div @jackdaw) { and what about you spider (line) position and all that? }
 	(div @spider) { Well, yes. For completeness, I am in the control room two blocks away. All systems running smoothly. I have eyes on the outer garden. Ninety minutes until the largest gathering of New Gothenburg's patrician class I have ever seen. }
 	(div @chameleon) { Ninety minutes until we pull off the heist of the century. }
-	(div @jackdaw) { lets ----ing go }
+	(div @jackdaw) { lets (space) ----ing go }
 	
 	(pause)
 	(div @header) { Prologue: Getting Oriented }
@@ -243,10 +243,3 @@
 	(div @spider) { By which it means compass directions, so that we do not waste time with "your right or my right". And for Jackdaw... }
 	(div @jackdaw) { just get the butler away from the door and say "proceed" (line) thats all you have to do }
 	(div @chameleon) { Allez! }
-
-(redraw status bar)
-	(inline status bar @inline) {
-		(exhaust) *(status bar line)
-	}
-
-(pause) (get key $)
