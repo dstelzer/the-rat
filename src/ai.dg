@@ -15,13 +15,36 @@
 	ERROR: Tried to set the butler's current goal to \[\]!
 (update current goal to $New)
 	(now) (current goal $New)
-	The butler's goal changes to (the $New)!
+	(div @spider) {
+		The butler is assessing—(no space)
+		(select)
+			looking at (the $New) now.
+		(or)
+			focusing on (the $New).
+		(or)
+			turning to (the $New).
+		(at random)
+		(select)
+			I have marked his likely path on the map.
+		(or)
+		(stopping)
+	}
 	(now) (butler is distracted)
 (unset current goal)
 	~(current goal $)
 (unset current goal)
 	(now) ~(current goal $)
-	The butler returns to his default task.
+	(div @spider) {
+		The butler is assessing again.
+		(select)
+			No crises
+		(or)
+			Nothing amiss
+		(or)
+			Nothing out of place now
+		(at random)
+		, so he can focus on his usual tasks.
+	}
 	(now) (butler is distracted)
 
 %% How long will it take to deal with something?
@@ -157,14 +180,14 @@
 	(#butler is in room $Start)
 	
 	(if) ($Goal is in room $Start) (then)
-		The butler fixes (the $Goal).
+		(narrate fixing $Goal)
 		(now) ($Goal is in order)
 	(elseif) ($Goal requires tool $Tool) ($Tool is in room $Start) (then)
 		(if) ($Other is #heldby #butler) (then)
-			The butler drops (the $Other).
+			(div @spider) { The butler is putting down (the $Other) . }
 			(now) ($Other is #in $Start)
 		(else)
-			The butler picks up (the $Tool).
+			(div @spider) { The butler is picking up (the $Tool) . }
 			(now) ($Tool is #heldby #butler)
 		(endif)
 	(else)
@@ -197,16 +220,16 @@
 			(tentatively avoiding occupied rooms)
 			~(avoiding occupied rooms)
 		(then) %% Not avoiding before, but avoiding now
-			The butler moves from (the $Start) to (the $Next), no longer needing to keep up appearances for the guests.
+			(div @spider) { It looks like the butler is letting his guard down, now that there is no need to keep up appearances for the guests. Moving from (the $Start) to (the $Next) now. }
 			(now) (avoiding occupied rooms)
 		(elseif)
 			~(tentatively avoiding occupied rooms)
 			(avoiding occupied rooms)
 		(then) %% Avoiding before, not avoiding now
-			The butler eyes the possible routes to (the $Target), but doesn't see one that will entirely avoid the guests. So with a redoubled air of professionalism he moves from (the $Start) to (the $Next).
+			(div @spider) { The butler seems to be evaluating routes. He straightened his shoulders—he's preparing to go past the guests. Now moving from (the $Start) to (the $Next) . }
 			(now) ~(avoiding occupied rooms)
 		(else)
-			The butler moves from (the $Start) to (the $Next).
+			(div @spider) { The butler is moving from (the $Start) to (the $Next) . }
 		(endif)
 		
 		%% We also need to mark out the path, including the second step if necessary
@@ -245,11 +268,14 @@
 		(shortest path from $Start to $Goal is [$Dir|$])
 		(from $Start go $Dir to $Next)
 	(then)
-		The butler moves from (the $Start) to (the $Next) to resume his duties
-		(if) ~($Goal = $Next) (then)
-			at (the $Goal)
-		(endif)
-		.
+		(div @spider) {
+			The butler is heading back
+			(if) ~($Goal = $Next) (then)
+				toward (the $Goal)
+			(endif)
+			to resume his duties.
+			Going from (the $Start) to (the $Next) .
+		}
 		(move #butler to $Next)
 	(else)
 		ERROR: Butler cannot return to his default duties at (the $Goal)!

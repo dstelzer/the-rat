@@ -375,6 +375,13 @@
 
 (action [sabotage $] is valid for #rat)
 
+(after [examine (sabotage target $Target)])
+	(if) ($Target is broken) (then)
+		(div @rat) { Damaged. In need of repair. }
+	(else)
+		(div @rat) { Vulnerable. (It $Target) could be opened. Changed. }
+	(endif)
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Jackdaw
 
@@ -438,7 +445,7 @@
 		*(dict $Room)
 	(matching all of $Filtered)
 
-(prevent [examine $Room])
+(prevent [examine (room $Room)])
 	~(in bounds for this act $Room)
 	(if) ($Room is visited) (then)
 		(div @spider) { Not relevant at the moment. }
@@ -446,7 +453,7 @@
 		(div @spider) { For the moment, I am afraid I have no eyes there. }
 	(endif)
 
-(perform [examine $Room])
+(perform [examine (room $Room)])
 	(div @spider) (describe room $Room)
 
 (add $Room to scope)
@@ -454,12 +461,15 @@
 
 %% EXAMINE <obj>
 
+(default actions enabled)
+(default action $Obj [examine $Obj])
+
 (grammar [examine/x/watch/describe/check/look/l/view [object]] for [examine $])
 (grammar [look/l at [object]] for [examine $])
 
 ~(action [examine $] requires $ to be touched)
 
-(perform [examine $Obj])
+(perform [examine ~(room $Obj)])
 	(div @spider) {
 		(descr $Obj)
 		(if) (supporter $Obj) (then)
@@ -539,91 +549,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Butler
 
-%% TAKE <obj>
-
-(grammar [take/grab/snatch/steal/acquire/hold/gather/get/pick [takable]] for [take $])
-(grammar [pick up [takable]] for [take $])
-
-(unlikely [take ~(item $)])
-
-(unlikely [take $Obj])
-	($Obj has relation $Rel)
-	($Rel is one of [#partof #heldby #wornby])
-
-(before [take (item $Obj)])
-	(current player $Player)
-	($Player has ancestor $Obj)
-	(first try [leave $Obj])
-
-(prevent [take $Obj])
-	(when $Obj is already held)
-	(or) (when $Obj is already worn)
-	(or) (when $Obj is fine where it is)
-	(or) (when $Obj is part of something)
-	(or) (when $Obj is held by someone)
-	(or) (when $Obj is worn by someone)
-	(or) (when $Obj can't be taken)
-
-(narrate taking $Obj)
-	(current player $Actor)
-	You take (the $Obj)
-	(if) ($Obj is $Rel $Parent) ~($Actor has ancestor $Parent) (then)
-		(reverse-name $Rel) (the $Parent)
-	(endif)
-	.
-
-(perform [take $Obj])
-	(narrate taking $Obj)
-	(current player $Actor)
-	(now) ($Obj is #heldby $Actor)
-	(now) ($Obj is handled)
-
-(action [take $] is valid for #butler)
-
-%% DROP <obj>
-
-(grammar [put/lay/drop [held]] for [drop $])
-(grammar [put/lay/drop/set down [held]] for [drop $])
-(grammar [put/lay/drop/set [held] down] for [drop $])
-(grammar [let go of [held]] for [drop $])
-
-(unlikely [drop $Obj])
-	(current player $Actor)
-	~($Obj has ancestor $Actor)
-
-(before [drop $Obj])
-	(current player $Actor)
-	($Obj has ancestor $Actor)
-	~($Obj has relation #partof)
-	(ensure $Obj is held)
-
-(prevent [drop $Obj])
-	(when $Obj is part of something)
-	(or) (when $Obj isn't directly held)
-
-(narrate dropping $Obj)
-	(current player $Actor)
-	($Actor is $Rel $Loc)
-	(The $Obj) fall(s $Obj)
-	(if) ($Rel = #on) (then)
-		onto (the $Loc).
-	(else)
-		to the ground.
-	(endif)
-
-(perform [drop $Obj])
-	(narrate dropping $Obj)
-	(current player $Actor)
-	($Actor is $Rel $Loc)
-	(now) ($Obj is $Rel $Loc)
-	(now) ($Obj is handled)
-
-(action [drop $] is valid for #butler)
-
-%% ATTEND TO <obj>
-
-(grammar [attend to [single]] for [attend to $])
-
-(perform [attend to $Obj])
-	TODO!
-	(now) ~($Obj is broken)
+(narrate fixing $Obj) %% Fallback
+	(div @spider) { The butler is working on repairing (the $Obj) . }

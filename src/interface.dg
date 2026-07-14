@@ -1,4 +1,16 @@
 (redraw status bar)
+	(if) (interpreter supports status bar) (then)
+		(map of current layer needs $Lines lines)
+		(status bar @status with height $Lines)
+			(automap)
+	(else)
+		(draw automap outside of status bar if applicable)
+	(endif)
+	(if) (interpreter supports inline status bar) (then)
+		(suggestion bar)
+	(endif)
+
+(suggestion bar)
 	(inline status bar @inline) {
 		(exhaust) *(status bar line)
 	}

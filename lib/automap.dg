@@ -472,13 +472,3 @@
 	%% Do nothing
 (draw automap outside of status bar if applicable)
 	(div @mapholder) (automap)
-
-%% For now, let's just put those rules in this file!
-(redraw status bar)
-	(if) (interpreter supports status bar) (then)
-		(map of current layer needs $Lines lines)
-		(status bar @status with height $Lines)
-			(automap)
-	(else)
-		(draw automap outside of status bar if applicable)
-	(endif)
