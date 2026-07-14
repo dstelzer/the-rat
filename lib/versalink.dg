@@ -1,0 +1,173 @@
+(draconic extension version $Closure) ($Closure = {Versatile Linking 1.0})
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 
+%% This extension does a few different things.
+%% 
+%% First, it offers (color link $) and (color link $ $), a way of making links that appear in a different color on Z-machine (which doesn’t support hyperlinks).
+%% This means you can highlight keywords on both platforms, even if links are disabled.
+%% An optional BRACKETS ON mode displays them with brackets instead of colors, for screen reader support.
+%% The predicates ($) and ($ $) are also redefined to call these.
+%% 
+%% Second, it offers (vlink $) and (vlink $ $), an extension of the above that can deal with all sorts of different argument types.
+%% You can generally pass anything you want to these predicates and it’ll be handled in a useful way.
+%% 
+%% Finally, it offers (command link $), which handles some weirdness around nesting spans and links to make a link appear in fixed-pitch font.
+%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 
+%% A summary of the API:
+%% 
+%% (color link $Closure)		displays $Closure as a highlighted link
+%% (color link $Words $Closure)	displays $Closure as a highlighted link pointing to $Words
+%% (command link $Closure)		displays $Closure as a fixed-pitch link
+%%
+%% (vlink $Closure)			= (color link $Closure)
+%% (vlink $Words)			= (vlink {(print words $Words)})
+%% (vlink $Object)			= (vlink {(link name $Object)} {(the $Object)})
+%% (vlink $Words $Any)		like (vlink $Any) but for words $Words
+%% (vlink $Closure $Any)	collects words from Closure, then (vlink $Words $Any)
+%%
+%% WARNING: Dialog makes it impossible to distinguish at runtime a list starting with a number from a closure.
+%% If you pass (vlink $) a list of words starting with a number, it will interpret it as a closure instead of a list of words.
+%% So avoid that!
+%%
+%% ($Player)				= (color link [me] {(tagged name $Player)})
+%% ($Object)				= (color link {(tagged name $Object)}) **not** (vlink $Object)!
+%% ($Closure)				= (color link $Closure)
+%% 
+%% ($Object $Closure)		= (vlink {(tagged name $Object)} $Closure)
+%% 
+%% (link name $Player)		= me
+%% (link name $Your)		= my (tagged name $Your)
+%% (link name $Object)		= (the $Object)
+%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+(in debugger) (fail) %% Change this when debugging to keep links from being unreadable: brackets on top of brackets can just be too much!
+
+%% First, the zlink implementation from Wise-Woman’s Dog
+%% TODO: it would be nice to put [u]...[/u] around this in the transcript
+
+(style class @link) %% A link to an object or room, which we want to highlight on Z-machine and in the transcript, as well as on Å-machine (where it’ll be formatted as a proper link no matter what we do)
+	color: \#c95c03; %% This color should be fairly visible in both dark and light color schemes; if it doesn’t work for someone, they can use brackets
+
+(interface (color link $<Closure))
+(interface (color link $<Link $<Closure))
+
+%% BRACKETS setting will replace the color with [brackets]
+(color link $Closure)
+	(brackets enabled)
+	\[ (link) (query $Closure) \]
+(color link $Link $Closure)
+	(brackets enabled)
+	\[ (link $Link) (query $Closure) \]
+
+%% To keep the text from becoming unreadable in the debugger, where links are already shown in brackets
+(color link $Closure)
+	(in debugger)
+	(link) (query $Closure)
+(color link $Link $Closure)
+	(in debugger)
+	(link $Link) (query $Closure)
+
+%% Default implementation for Z-machine and Å-machine
+(color link $Closure)
+	(span @link) { (link) (query $Closure) }
+(color link $Link $Closure)
+	(span @link) { (link $Link) (query $Closure) }
+
+%% Then (1.5th?), the way to turn brackets on and off
+
+(understand command [brackets off])
+(perform [brackets off])
+	(now) ~(brackets enabled)
+	(div @meta) {
+		(color link {Links}) will now be highlighted in a special color.
+		Use (command link {BRACKETS ON}) to mark them with explicit brackets.
+	}
+(understand command [brackets on])
+(perform [brackets on])
+	(now) (brackets enabled)
+	(div @meta) {
+		(color link {Links}) will now be marked with brackets.
+		Use (command link {BRACKETS OFF}) to go back to color highlighting.
+	}
+(option paragraph)
+	(if) (brackets enabled) (then)
+		({Links}) will be shown in brackets. Use (command link {BRACKETS OFF}) to switch to (span @link) color .
+	(else)
+		({Links}) will be shown in a different color. Use (command link {BRACKETS ON}) to switch to \[brackets\].
+	(endif)
+
+(startup) %% Test interpreter capabilities for default
+	(if) (interpreter supports color) (then)
+		(now) ~(brackets enabled)
+	(else)
+		(now) (brackets enabled)
+	(endif)
+
+%% And since “links” gets displayed as a link...
+
+(understand command [links])
+(perform [links])
+	(div @meta) {Yep, just like that!}
+
+%% Second, the ($) and ($ $) implementation extended from Wise-Woman’s Dog
+
+%% Closures are lists starting with numbers - this may hit some false positives, but will *not* get false positives on lists of objects, which is what matters here
+(closure [(number $) | $])
+
+%% (interface ($<What))
+%% (interface ($<Words $<What))
+
+((current player $Player))	(color link [me] {(tagged name $Player)})
+((object $Object))			(color link {(tagged name $Object)})
+((closure $Closure))		(color link $Closure)
+
+((object $Object) (closure $Closure))	(vlink {(tagged name $Object)} $Closure)
+
+%% We also make this an alias for ($) and ($ $)
+(maybe link $Object)			(color link {(tagged name $Object)})
+(maybe link $Object $Closure)	(vlink {(tagged name $Object)} {(query $Closure $Object)})
+
+%% Third, the versatile (vlink $) and (vlink $ $) implementation
+
+(interface (vlink $<What))
+(interface (vlink $<Link $<What))
+
+(vlink (closure $Closure))		(color link $Closure)
+(vlink (list $Words))			(vlink {(print words $Words)})
+(vlink (object $Object))		(vlink {(link name $Object)} {(the $Object)})
+
+(vlink (closure $Closure) $Any)		(collect words) (query $Closure) (into $Words)
+									(word-vlink $Words $Any)
+(vlink $Words $Any)					(word-vlink $Words $Any)
+
+(interface (word-vlink $<Words $<What))
+
+%% Using a separate predicate here ensures that a $Words list starting with a number doesn’t cause an infinite loop
+(word-vlink $Words (closure $Closure))	(color link $Words $Closure)
+(word-vlink $Words (list $Words2))		(color link $Words {(print words $Words2)})
+(word-vlink $Words (object $Object))	(color link $Words {(the $Object)})
+
+%% Fourth, (link name $) to deal with personal pronouns in (vlink $Object)
+%% While (the $) is how something should be shown to the player, (link name $) is how it should be typed in a command: X ME, not X YOURSELF
+
+(interface (link name $<Obj))
+
+(link name (current player $))		me
+(link name (your $Your))			my (tagged name $Your)
+(link name $Object)					(the $Object)
+
+%% Finally, (command link $) is like (color link $) but in a fixed-pitch font
+%% To avoid a weird bug with spans inside closures, we have to put the closure inside a span instead - this predicate makes sure it doesn’t happen the wrong way around
+
+(interface (command link $<Closure))
+
+(style class @command)
+	font-family: monospace;
+%%	font-style: normal;
+
+(command link $Closure)
+	(span @command) (color link $Closure)

@@ -12,6 +12,7 @@
 			 "src/input.dg"
 			 "src/actions.dg"
 			 "lib/automap.dg"
+			 "lib/versalink.dg"
 			 "lib/draclib.dg"]
 	:test    ["test" "lib/dialog/test"]
 	:debug   ["lib/dialog/debug" "platform/debug.dg"]

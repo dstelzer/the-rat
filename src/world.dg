@@ -12,28 +12,76 @@
 (current player *)
 (* is #in #garden2)
 
+(style class @rat)
+	color: yellow;
+	margin-top: 1em;
+	margin-bottom: 1em;
+(style class @ratcolor)
+	color: yellow;
+
 (occupied $Room)
 	(#butler is in room $Room) (or) (#crowd is in room $Room)
 
 (late on every tick)
 	(* is in room $Room)
 	(if) (occupied $Room) ~(rat is hiding) (then)
-		The Rat must hide!
+		(div @rat) {
+			People approach! The rat must hide!
+		}
 		(now) (rat is hiding)
 	(elseif) ~(occupied $Room) (rat is hiding) (then)
-		The Rat can emerge from hiding!
+		(div @rat) {
+			The rat is alone, and free to act.
+		}
 		(now) ~(rat is hiding)
 	(endif)
 
 (prevent [leave/sabotage | $])
 	(current player *)
 	(rat is hiding)
-	Cannot! The Rat is hiding!
+	(div @rat) {
+		The rat cannot! It hides; it would be seen!
+	}
 
 (prevent entering $Room)
 	(occupied $Room)
 	(current player *)
-	Cannot! (The $Room) is occupied!
+	(div @rat) {
+		No! Impossible! The rat would be seen.
+	}
+
+(rat-link direction $Dir)
+	(collect words)
+		(if) ~(current player #rat) (then)
+			Rat ,
+		(endif)
+		(name $Dir)
+	(into $Link)
+	(vlink $Link {(name $Dir)})
+
+(status bar line)
+	(div @statusline) {
+		(span @ratcolor) {
+			(span @bold) { Rat } :
+			(#rat is in room $Room)
+			(collect $Dir)
+				*(direction $Dir)
+				(from $Room go $Dir to $Next)
+				(in bounds for this act $Next)
+			(into $List)
+			(listing $List {(rat-link direction $_)} @, @the 0)
+			(if) *($Obj has ancestor $Room) (sabotage target $Obj) (then)
+				;
+				(collect words)
+					(if) ~(current player #rat) (then)
+						Rat ,
+					(endif)
+					sabotage (the $Obj)
+				(into $Link)
+				(vlink $Link {sabotage (the $Obj)})
+			(endif)
+		}
+	}
 
 #spider
 (protagonist *)
@@ -41,17 +89,78 @@
 (male *)
 (letter for *) S
 
+(style class @spider)
+	color: cyan;
+	margin-top: 1em;
+	margin-bottom: 1em;
+
+(style class @spidercolor)
+	color: cyan;
+
+(status bar line)
+	(div @statusline) {
+		(span @spidercolor) {
+			(span @bold) { Spider } :
+			view any room or object
+			(if) (hack target $Obj) (then)
+				;
+				(collect words)
+					(if) ~(current player #spider) (then)
+						Spider ,
+					(endif)
+					hack (the $Obj)
+				(into $Link)
+				(vlink $Link {hack (the $Obj)})
+			(endif)
+		}
+	}
+
 #jackdaw
 (protagonist *)
 (name *) Jackdaw
 (female *)
 (letter for *) J
 
+(style class @jackdaw)
+	color: green;
+	margin-top: 1em;
+	margin-bottom: 1em;
+
+(style class @jackdawcolor)
+	color: green;
+
+(status bar line)
+	(div @statusline) {
+		(span @jackdawcolor) {
+			(span @bold) { Jackdaw } :
+			(collect words)
+				(if) ~(current player #jackdaw) (then)
+					Jackdaw ,
+				(endif)
+				proceed
+			(into $Link)
+			(vlink $Link {proceed})
+			;
+			(collect words)
+				(if) ~(current player #jackdaw) (then)
+					Jackdaw ,
+				(endif)
+				score
+			(into $Link2)
+			(vlink $Link2 {score})
+		}
+	}
+
 #chameleon
 (protagonist *)
 (name *) Chameleon
 (female *)
 (letter for *) C
+
+(style class @chameleon)
+	color: magenta;
+	margin-top: 1em;
+	margin-bottom: 1em;
 
 #butler
 (protagonist *) (current act 4)
@@ -72,6 +181,72 @@
 	A house like this would normally have half a dozen staff, and now all these tasks fall to him. It's no wonder he never has a chance to rest.
 
 (intro)
-	(banner)
+	(introductory cutscene)
 	(update environment around player)
 	(try [examine #garden2])
+
+(get an initial comment)
+	*(repeat forever)
+	(save undo $)
+	({Yes}) / ({No}) >
+	(get input $Words)
+	(if) (empty $Words) (then)
+		(select)
+			(div @spider) { Fox? Are you there? }
+		(or)
+			(div @spider) { Testing? Do you see anything? }
+		(or)
+			(div @jackdaw) { this job is off to a great start good job everyone }
+		(or)
+			(div @chameleon) { Still nothing. Such a shame, I was just about to start telling you all about the Bryce Wyatt affair... }
+		(or)
+			(div @chameleon) { Please, dear, say something. Anything? }
+		(or)
+			(div @rat) { The cables are traced. Connections good. }
+		(or)
+			(div @spider) { Well, there is no real point continuing on without working communications. All right, team. Pack it up. }
+			(game over { Your heist has failed })
+		(stopping)
+		(fail)
+	(endif) %% Otherwise succeed
+
+(introductory cutscene)
+	(div @spider) { Testing. Lorem ipsum dolor sit amet. Are all of you seeing this? }
+	(div @rat) { Yes. Seeing. }
+	(div @jackdaw) { yeah }
+	(div @chameleon) { Perfectly! }
+	
+	(get an initial comment)
+	
+	(div @spider) { That is a yes. Are we in position? Rat? }
+	(div @rat) { The rat is prepared. The cameras are placed. In the garden it hides. }
+	(div @spider) { Jackdaw? }
+	(div @jackdaw) { yeah }
+	(div @spider) { Chameleon? }
+	(div @chameleon) { I have never been more ready. Sincerely, even though I'm about to do nothing for an hour and a half waiting for the gala to start. }
+	(div @spider) { Fox? }
+	
+	(get an initial comment)
+	
+	(div @jackdaw) { and what about you spider (line) position and all that? }
+	(div @spider) { Well, yes. For completeness, I am in the control room two blocks away. All systems running smoothly. I have eyes on the outer garden. Ninety minutes until the largest gathering of New Gothenburg's patrician class I have ever seen. }
+	(div @chameleon) { Ninety minutes until we pull off the heist of the century. }
+	(div @jackdaw) { lets ----ing go }
+	
+	(pause)
+	(div @header) { Prologue: Getting Oriented }
+	
+	(div @spider) { Fox, you should be seeing a map of the south gardens. Rat is at the R, Jackdaw is... }
+	(div @jackdaw) { close enough to the door, thats all that matters }
+	(div @spider) { Fine. And the butler is at the B. Text communication is running; we are at your command. }
+	(div @rat) { The rat is prepared to obey every word. Tell it to go. Tell it to sabotage. }
+	(div @spider) { By which it means compass directions, so that we do not waste time with "your right or my right". And for Jackdaw... }
+	(div @jackdaw) { just get the butler away from the door and say "proceed" (line) thats all you have to do }
+	(div @chameleon) { Allez! }
+
+(redraw status bar)
+	(inline status bar @inline) {
+		(exhaust) *(status bar line)
+	}
+
+(pause) (get key $)
