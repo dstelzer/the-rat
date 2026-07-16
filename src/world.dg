@@ -229,7 +229,7 @@
 	(get an initial comment)
 	
 	(div @jackdaw) { and what about you spider (line) position and all that? }
-	(div @spider) { Well, yes. For completeness, I am in the control room two blocks away. All systems running smoothly. I have eyes on the outer garden. Ninety minutes until the largest gathering of New Gothenburg's patrician class I have ever seen. }
+	(div @spider) { Well, yes. For completeness, I am in the control room two blocks away. All systems running smoothly. I have eyes on the outer garden. Ninety minutes until the largest gathering of New Gothenburg's patrician class that I have ever seen. }
 	(div @chameleon) { Ninety minutes until we pull off the heist of the century. }
 	(div @jackdaw) { lets (space) ----ing go }
 	
@@ -237,9 +237,25 @@
 	(div @header) { Prologue: Getting Oriented }
 	
 	(div @spider) { Fox, you should be seeing a map of the south gardens. Rat is at the R, Jackdaw is... }
-	(div @jackdaw) { close enough to the door, thats all that matters }
+	(div @jackdaw) { close enough to the door (line) thats all that matters }
 	(div @spider) { Fine. And the butler is at the B. Text communication is running; we are at your command. }
 	(div @rat) { The rat is prepared to obey every word. Tell it to go. Tell it to sabotage. }
 	(div @spider) { By which it means compass directions, so that we do not waste time with "your right or my right". And for Jackdaw... }
-	(div @jackdaw) { just get the butler away from the door and say "proceed" (line) thats all you have to do }
+	(div @jackdaw) { just get the butler away from the door and say "proceed" thats all you have to do }
 	(div @chameleon) { Allez! }
+
+(start act one)
+	(div @rat) { The rat moves. The way is clear. The mansion is open. }
+	(div @spider) { Or in other words... }
+	(div @chameleon) { (span @italic) { We're in. } }
+	(banner)
+	(div @jackdaw) { im in the wine cellar and theres bottles here worth more than a house (line) and also security worth more than a house }
+	(div @spider) { That should not be a problem. With only a single butler around, all Rat has to do is keep him occupied. }
+	(div @rat) { Yes. The rat can. The rat will. }
+	(div @spider) { Once the butler is distracted, Fox will tell you when to (span @bold) proceed . }
+	(div @chameleon) { Simple and elegant. I like it. }
+	(div @jackdaw) { as per my last email (line) lets ----ing go }
+	(now) (current act 1)
+	(move #rat to #dine1)
+	(move #butler to #dine2)
+	(try [examine #dine1])

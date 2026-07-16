@@ -3291,13 +3291,14 @@
 	(now) ~(previous node $)
 	(stop)
 
-(interface (available $<Obj))
+%% (interface (available $<Obj))
+%% name needed for quipmachinery.dg
 
-(available (sticky $))
+%% (available (sticky $))
 
-(available $Node)		~($Node is choice-exhausted)
+%% (available $Node)		~($Node is choice-exhausted)
 
-(sticky *(terminating $))
+%% (sticky *(terminating $))
 
 (interface ($<Object flows to $>Target))
 

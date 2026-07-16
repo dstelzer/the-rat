@@ -1,0 +1,99 @@
+%% The machinery for selecting and presenting quips
+
+%% Whichever quip we're currently presenting is stored here
+(global variable (current quip $))
+%% And how far we've advanced through it, for multi-part quips
+(global variable (current quip position $))
+
+%% For the selection process, we need some utilities
+(repeat $N times)
+	($N > 0)
+	{
+		%% Succeed once
+	(or)
+		($N minus 1 into $Nm1)
+		*(repeat $Nm1 times)
+	}
+
+%% A quip is an object that provides a few specific predicates
+
+%% (quip $) marks it as a quip
+(interface (quip $>Quip))
+
+%% (locked $) puts conditions on when it can show
+(interface (locked $<Quip))
+
+%% ($ depends on $) is a shorthand for the above: a quip is locked if any of its prereqs are not visited
+(locked $Quip)
+	*($Quip depends on $Prereq)
+	($Prereq is unvisited)
+
+%% ($ has priority $) returns a number showing how important it is; default 1
+(interface ($<Quip has priority $>Priority))
+((quip $) has priority 1)
+
+%% ($ line $N) prints line number $N from it, starting at 1; failure means the end of the quip
+(interface ($<Quip line $<Number))
+%% With syntactic sugar for one-line quips
+@($Quip line) ($Quip line 1)
+
+%% The dynamic flag ($ is visited) means that a quip is exhausted, but that's implemented in the standard library
+
+%% Finally, ($ involves $) optionally lets quips chain into each other by prioritizing ones that "involve" the same people or objects
+(interface ($<Quip involves $>Topic))
+
+%% We can use this to select a new quip at (weighted) random
+(select a new quip at random)
+	(collect $Quip)
+		*(quip $Quip)
+		~(locked $Quip)
+		~($Quip is visited)
+		($Quip has priority $Priority)
+		(if) ($Quip is discourse-relevant) (then) %% Currently the (if) means this only searches for *one* matching topic; this could be changed to reward *every* matching topic, so two matches > one match
+			($Priority plus 2 into $NewPriority)
+			*(repeat $NewPriority times)
+		(else)
+			*(repeat $Priority times)
+		(endif)
+	(into $QuipList)
+	(log) { Quip list: $QuipList }
+	(randomly select $NewQuip from $QuipList)
+	(now) (current quip $NewQuip)
+	(now) ($NewQuip is visited)
+	(now) (current quip position 0)
+	(log) { Chose $NewQuip }
+
+($New is discourse-relevant)
+	(current quip $Old)
+	*($Old involves $Topic)
+	($New involves $Topic)
+
+%% The other side of the coin is printing the lines
+(show the current quip)
+	(current quip $Quip) %% Only run if we have a quip
+	(current quip position $Old)
+	($Old plus 1 into $New)
+	(now) (current quip position $New)
+	($Quip line $New) %% This will fail if we've reached the end
+
+%% And we have to do this every turn
+
+(late on every tick)
+	~(current act 0) %% Don't do this during the tutorial
+	(at most once) {
+		(show the current quip)
+	(or)
+		(select a new quip at random)
+	}
+
+%% We also don't want new quips coming in a constant stream, so we have a couple of "null quips" in the rotation
+
+#q-null-1
+(quip *)
+(available *)
+(* line 1) (now) (* is unvisited)
+
+#q-null-2
+(quip *)
+(available *)
+(* line 1/2) (now) (* is unvisited)

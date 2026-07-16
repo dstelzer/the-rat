@@ -325,7 +325,7 @@
 		(endif)
 	(endif)
 
-(narrate leaving $Room $Dir)
+(narrate leaving $ $) %% $Room $Dir
 	(current player #rat)
 	(div @rat) {
 		(select)
@@ -347,7 +347,7 @@
 		.
 	}
 
-(narrate leaving $Room $Dir)
+(narrate leaving $ $)
 	(div @chameleon) {
 		TODO!
 	}
@@ -549,5 +549,16 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Butler
 
-(narrate fixing $Obj) %% Fallback
+(narrate fixing $Obj) %% Fallback - individual objects should have their own descriptions
 	(div @spider) { The butler is working on repairing (the $Obj) . }
+
+%% Since we cut out a bunch of stdlib machinery, we need to silence some compiler warnings here too
+(interface (when $< is already held))
+(interface (when $< is already worn))
+(interface (when $< isn't directly held))
+(interface (when $< is part of something))
+(interface (when $< is held by someone))
+(interface (when $< is worn by someone))
+(interface (when $< is fine where it is))
+(interface (when $< can't be taken))
+(interface (when $< is $< $<))

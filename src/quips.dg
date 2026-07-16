@@ -1,0 +1,168 @@
+%% See quipmachinery.dg for how this should work
+%% A quip definition should look like:
+%% #q-whatever
+%% (available *) When it should be available
+%% (* has priority NUMBER) If it should be weighted more heavily (default 1)
+%% (* line 1) The first line of the quip
+%% (* line 2) The second line of the quip
+%% You can also use (* line) if it has only a single line
+%% (* involves TOPIC) If it involves any topics, used for discourse structure
+
+#q-1-comms
+(quip *)
+(* involves #t-comms)
+(* line 1)
+	(div @chameleon) { So, not to ask a stupid question, but I (span @italic) am curious. Why are we doing all of this via text? }
+	(div @spider) { Bandwidth. The less data needs to be transmitted, the better it can be hidden and secured. This system uses approximately one bit per letter, or one byte per word. Voice would be an order of magnitude more. }
+	(div @jackdaw) { plus he sent that in like two seconds so either he types faster than liszt or he had it written up and ready to go }
+	(div @spider) { It all comes down to information theory. And in this case a large corpus of my writing and a chorded keyboard. }
+	(div @jackdaw) { i regret asking }
+	(div @chameleon) { I don't. }
+(* line 2)
+	(div @spider) { Besides, the one bit per letter is only an average. Some people's messages can be compressed even further. It all comes down to how predictable they are—for example, Jackdaw is about to say "---- (space) you". }
+	(div @jackdaw) { wow (space) ---- (space) you }
+
+#q-1-profanity
+(quip *)
+(* involves #t-comms)
+(* line)
+	(div @jackdaw) { why cant i say (space) ---- (space) btw (line) are you really that much of a prude }
+	(div @spider) { I spent the last two years of my life building profanity detection systems for text-based social media. I am not letting that go to waste just because my former employer decided to pivot to disgustingly basic neural networks. }
+	(div @chameleon) { I don't mind. It just means we have to be creative about it. Try saying that (space) --- (space) --- (space) -- (space) - (space) ---------, but (space) ---- (space) --- (space) --- (space) ----- (space) -- (space) --------- (space) -----. \( No offense, of course. \) }
+	%% Sarah provided: you may be a masochist, but even you are weary of suffering fools
+	(div @jackdaw) { wow i take it back thats some good tech }
+
+#q-1-backstory
+(quip *)
+(* has priority 2)
+(* involves #t-gala/#t-count/#t-llm)
+(* line 1)
+	(div @jackdaw) { so why are all the rich (space) -------- (space) coming tonight anyway }
+	(div @chameleon) { Not just any one-percenters—(no space) (span @italic) investors . }
+	(div @spider) { Exactly. The Count and his new business partner have launched something they claim is going to change the world, and these are all the people supporting it. }
+	(div @chameleon) { And the party is a ploy to get them to support it even more, because there aren't enough zeroes in the bank account yet. }
+(* line 2)
+	(div @rat) { The world will be changed? How? By who? }
+	(div @spider) { The Count's working with a Silicon Valley type for this. An up-and-coming 100x rockstar, they call her. Beyond that, details are scarce. }
+	(div @chameleon) { So maybe we'll learn tonight. }
+	(div @jackdaw) { or maybe the whole thing is the next crypto nfts }
+	(div @spider) { It's possible. But for now, the money is here—and within our reach. }
+
+#q-1-butler
+(quip *)
+(* depends on #q-1-backstory)
+(* has priority 2)
+(* involves #t-gala/#t-butler/#t-count)
+(* line 1)
+	(div @spider) { What I do not understand is why such a high-profile event only has a single person on staff. I am grateful, certainly. But puzzled all the same. }
+	(div @chameleon) { Oh, that part's easy to explain. The Count can never hold onto employees for long. The say he drains the life out of them. He probably had a dozen last month and now he's down to one again. }
+	(div @jackdaw) { that ones pretty good though }
+(* line 2)
+	(div @chameleon) { Do you know him? The one employee who's left? }
+	(div @rat) { The rat has heard of this one. Yes. Skilled. Very skilled. Tireless. }
+	(div @jackdaw) { and apparently has the patience of a saint }
+	(div @chameleon) { I wonder if I could get an interview with him... }
+
+#q-1-valet
+(quip *)
+(* depends on #q-1-butler)
+(* involves #t-butler)
+(* involves #t-count)
+(* line)
+	(div @jackdaw) { hang on (line) isnt a butler like the head of the staff (line) meaning more than one person total }
+	(div @chameleon) { Technically speaking, I believe this man would be more of a valet. }
+	(div @spider) { Or perhaps a butler-valet? }
+	(div @chameleon) { I've always liked the term "batman" myself. Or "factotum". }
+	(div @spider) { Accuracy aside, I already used V on the map for Count Vespertilion. }
+	(div @chameleon) { What about C? }
+	(div @rat) { That would be Chameleon. You. }
+	(div @jackdaw) { well you can also read the B as batman if you want }
+
+#q-1-count
+(quip *)
+(* depends on #q-1-backstory)
+(* involves #t-count)
+(* has priority 2)
+(* line 1)
+	(div @rat) { The rat does not know the title. The Count. }
+	(div @spider) { I think it is some European thing. }
+	(div @chameleon) { Oh no, we have counties here in the States too. Count Vespertilion is the highest democratically-elected official in Vespertilion County. One step higher than the Mayor of New Gothenburg. }
+	(div @spider) { He was elected? }
+	(div @chameleon) { Every four years. He's run unopposed for decades. }
+(* line 2)
+	(div @jackdaw) { wait if count vespertilion is a title then whats his actual name }
+	(div @chameleon) { It's also his name. He changed it when he was first running for office, and apparently it worked. }
+
+#q-1-llm
+(quip *)
+(* depends on #q-1-backstory)
+(* involves #t-llm)
+(* line 1)
+	(div @chameleon) { So who is this 100x Silicon Valley rockstar? }
+	(div @spider) { Luna L. Meresankh, of PyramidAI fame. }
+	(div @chameleon) { Oh, her! Made headlines for shattering the glass ceiling and all that? People are calling her the next Edison. }
+	(div @spider) { She does, I will admit, have a rare talent for stealing her employees' work. And using the courts to silence anyone who refuses to be bought out. }
+(* line 2)
+	(div @jackdaw) { what does the l stand for anyway }
+	(div @spider) { Luna L. Meresankh. }
+	(div @jackdaw) { no the l in the middle }
+	(div @spider) { It stands for Luna L. Meresankh. }
+%% TODO: something about her not actually being Egyptian?
+
+#q-1-guestlist
+(quip *)
+(* involves #t-malatesta/#t-tension/#t-constantine)
+(* has priority $N) %% Raise the priority as more quips are visited
+	(accumulate 2)
+		*(quip $Quip)
+		($Quip is visited)
+	(into $Nm1)
+	($N > 0) %% Fall back to 1 if this would produce 0
+(* line)
+	(div @spider) { Do we have confirmation of the final guest list? }
+	(div @rat) { The Doctor. Malatesta. He will be there. }
+	(div @chameleon) { Ari Tension, the new owner of the New Gothenburg Post. }
+	(div @jackdaw) { that industrialist (line) constantine quinn }
+	(div @chameleon) { And of course, me. }
+	(div @spider) { Once I have added you to the list, yes. Which is waiting on Jackdaw. }
+	(div @jackdaw) { working on it hold your horses (line) just buy me time }
+
+#q-1-malatesta
+(quip *)
+(* involves #t-malatesta)
+(* depends on #q-1-guestlist)
+(* line)
+	TODO
+
+#q-2-grudge %% TODO where to put this?
+(quip *)
+(* depends on #q-1-backstory/#q-1-llm/#TODO)
+~(current act 1)
+(* involves #t-count)
+(* line)
+	(div @chameleon) { It seems we all had reasons to sign on for this job, above and beyond the money. }
+	(div @rat) { So yes. It seems. }
+	(div @chameleon) { But it makes me wonder about the Count. Did anyone have a grudge against him, or was he just a convenient target? }
+	(div @jackdaw) { you should ask fox }
+	(div @spider) { Oh? }
+	(link) Yes / (link) No > (get input $)
+	(div @chameleon) { Curious... }
+	(div @jackdaw) { therell be time to pry later focus on the job now }
+	(div @chameleon) {
+		(if) (current act 1) (then)
+			Easy to say when you're not on standby for another hour! Besides,
+		(else)
+			But
+		(endif)
+		Fox is far more interesting.
+	}
+
+%% Put topics down here to silence compiler warnings
+#t-comms %% The communication system you're using
+#t-gala %% The event itself
+#t-butler %% The long-suffering butler
+#t-count %% The Count himself
+#t-llm %% LLM, the Silicon Valley hotshot
+#t-malatesta %% Malatesta, the mad scientist
+#t-tension %% A. Tension, the media mogul
+#t-constantine %% Constantine Quinn, the refrigerator magnate
