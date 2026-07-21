@@ -34,17 +34,21 @@
 	~(current goal $)
 (unset current goal)
 	(now) ~(current goal $)
-	(div @spider) {
-		The butler is assessing again.
-		(select)
-			No crises
-		(or)
-			Nothing amiss
-		(or)
-			Nothing out of place now
-		(at random)
-		, so he can focus on his usual tasks.
-	}
+	(if) (heist in progress) (then)
+		(stop the heist)
+	(else)
+		(div @spider) {
+			The butler is assessing again.
+			(select)
+				No crises
+			(or)
+				Nothing amiss
+			(or)
+				Nothing out of place now
+			(at random)
+			, so he can focus on his usual tasks.
+		}
+	(endif)
 	(now) (butler is distracted)
 
 %% How long will it take to deal with something?
@@ -170,6 +174,52 @@
 %% We also record the path we're currently using for the user interface
 
 (global variable (butler's current path $))
+(calculate and store the butler's path)
+	(current goal $Goal)
+	(#butler is in room $Start)
+	
+	(if) ($Goal requires tool $Tool) (then)
+		($Tool is in room $GoalRoom)
+		($Goal is in room $SecondGoalRoom)
+		($Target = $Tool)
+	(else)
+		($Goal is in room $GoalRoom)
+		($SecondGoalRoom = [])
+		($Target = $Goal)
+	(endif)
+	
+	%% First half
+	(at most once) {
+		(now) (tentatively avoiding occupied rooms)
+		(shortest path from $Start to $GoalRoom is $Path)
+	(or)
+		(now) ~(tentatively avoiding occupied rooms)
+		(shortest path from $Start to $GoalRoom is $Path)
+	(or)
+		ERROR: Could not find a path from (the $Start) to (the $GoalRoom) when plotting a course on the map!
+		(fail)
+	}
+	
+	%% Second half
+	(if) (object $SecondGoalRoom) (then)
+		(at most once) {
+			(now) (tentatively avoiding occupied rooms)
+			(shortest path from $GoalRoom to $SecondGoalRoom is $Path2)
+		(or)
+			(now) ~(tentatively avoiding occupied rooms)
+			(shortest path from $GoalRoom to $SecondGoalRoom is $Path2)
+			
+		(or)
+			ERROR: Could not find a path from (the $GoalRoom) to (the $SecondGoalRoom) when plotting the second half for the UI!
+			(fail)
+		}
+		(append $Path $Path2 $TotalPath)
+		(set butler's path to $TotalPath)
+	(else)
+		(set butler's path to $Path)
+	(endif)
+(calculate and store the butler's path) %% Don't fail
+	(now) ~(butler's current path $) %% Just clear the variable
 
 (take one step toward the current goal)
 	(butler is distracted) %% Set this flag to delay him for one turn
@@ -193,23 +243,17 @@
 	(else)
 		(if) ($Goal requires tool $Tool) (then)
 			($Tool is in room $GoalRoom)
-			($Goal is in room $SecondGoalRoom)
-			($Target = $Tool)
 		(else)
 			($Goal is in room $GoalRoom)
-			($SecondGoalRoom = [])
-			($Target = $Goal)
 		(endif)
 		
 		(at most once) {
 			(now) (tentatively avoiding occupied rooms)
-			(shortest path from $Start to $GoalRoom is $Path)
-			($Path = [$Dir | $])
+			(shortest path from $Start to $GoalRoom is [$Dir | $])
 			(from $Start go $Dir to $Next)
 		(or)
 			(now) ~(tentatively avoiding occupied rooms)
-			(shortest path from $Start to $GoalRoom is $Path)
-			($Path = [$Dir | $])
+			(shortest path from $Start to $GoalRoom is [$Dir | $])
 			(from $Start go $Dir to $Next)
 		(or)
 			ERROR: Could not find a path from (the $Start) to (the $GoalRoom) when carrying out the plan!
@@ -232,25 +276,6 @@
 			(div @spider) { The butler is moving from (the $Start) to (the $Next) . }
 		(endif)
 		
-		%% We also need to mark out the path, including the second step if necessary
-		(if) (object $SecondGoalRoom) (then)
-			(at most once) {
-				(now) (tentatively avoiding occupied rooms)
-				(shortest path from $GoalRoom to $SecondGoalRoom is $Path2)
-			(or)
-				(now) ~(tentatively avoiding occupied rooms)
-				(shortest path from $GoalRoom to $SecondGoalRoom is $Path2)
-				
-			(or)
-				ERROR: Could not find a path from (the $GoalRoom) to (the $SecondGoalRoom) when plotting the second half for the UI!
-				(fail)
-			}
-			(append $Path $Path2 $TotalPath)
-			(set butler's path to $TotalPath)
-		(else)
-			(set butler's path to $Path)
-		(endif)
-		
 		%% And the goal of this whole thing!
 		(move #butler to $Next)
 		
@@ -269,12 +294,13 @@
 		(from $Start go $Dir to $Next)
 	(then)
 		(div @spider) {
-			The butler is heading back
+			The butler is moving
 			(if) ~($Goal = $Next) (then)
-				toward (the $Goal)
+				through (the $Next) toward
+			(else)
+				to
 			(endif)
-			to resume his duties.
-			Going from (the $Start) to (the $Next) .
+			(the $Goal) .
 		}
 		(move #butler to $Next)
 	(else)
@@ -293,7 +319,7 @@
 	(convert direction list $DTail to room list $RTail starting at $Next)
 
 (interface (move $<X to $<Y))
-(move $X to $Y) %% TODO - this will eventually need to be changed for Rat's hiding behavior
+(move $X to $Y) %% In case more behavior has to be linked into this later
 	(now) ($X is #in $Y)
 
 %% And finally we put it all together!
@@ -302,4 +328,5 @@
 
 (on every tick)
 	(exhaust) (search for new goals)
+	(exhaust) (calculate and store the butler's path)
 	(exhaust) (take one step toward the current goal)

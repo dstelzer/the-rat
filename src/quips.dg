@@ -116,7 +116,7 @@
 	(accumulate 2)
 		*(quip $Quip)
 		($Quip is visited)
-	(into $Nm1)
+	(into $N)
 	($N > 0) %% Fall back to 1 if this would produce 0
 (* line)
 	(div @spider) { Do we have confirmation of the final guest list? }

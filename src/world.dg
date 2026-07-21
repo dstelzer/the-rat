@@ -173,12 +173,12 @@
 	(current goal $)
 	({The butler}) is moving with purpose toward his next task.
 (appearance *)
-	({The butler}) is hard at work on final preparations.
+	({The butler}) is hard at work making ready for the party.
 (descr *)
 	(current goal $Goal)
 	He's hurrying toward (the $Goal).
 (descr *)
-	A house like this would normally have half a dozen staff, and now all these tasks fall to him. It's no wonder he never has a chance to rest.
+	A house like this would normally have half a dozen staff at least, and now all these tasks fall to him. It's no wonder he never has a chance to rest.
 
 (intro)
 	(introductory cutscene)

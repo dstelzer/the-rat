@@ -399,15 +399,143 @@
 	(div @jackdaw) { down in the basement ready to rob this place blind }
 	(now) (jackdaw has entered)
 
+(prevent [proceed])
+	(heist in progress)
+	(div @jackdaw) { im already proceeding you dont have to tell me again }
+
+(prevent [proceed])
+	(current act $Act)
+	($Act > 0)
+	~(any prizes left in act $Act)
+	(div @jackdaw) { love the opportunity but theres nothing left to nab here }
+
 (perform [proceed])
-	TODO Proceed!
+	(start the heist)
+	(div @jackdaw) {
+		(select)
+			roger
+		(or)
+			on it
+		(or)
+			proceeding
+		(or)
+			thats a go
+		(or)
+			lets go
+		(at random)
+	}
 
 (action [proceed] is valid for #jackdaw)
 
+%% Not quite an action but similar to one - this is called from prizemachinery.dg
+
+(heist succeeds with result $Time)
+	(div @spider) {
+		(select)
+			He is accessing the security. Jackdaw, get out!
+		(or)
+			Security is being checked again.
+		(or)
+			(select)
+				Time.
+			(or)
+				Time is up.
+			(or)
+				Security active again.
+			(at random)
+		(stopping)
+	}
+	(div @jackdaw) {
+		(select)
+			out (line) with seconds to spare (line) how long was that?
+		(or)
+			im out (line)
+			time?
+		(or)
+			(select)
+				done
+			(or)
+				out
+			(or)
+				thanks
+			(at random)
+		(stopping)
+	}
+	(div @spider) {
+		(select)
+			The butler was distracted for
+		(or)
+			Security was down for
+		(or)
+			That distraction lasted
+		(or)
+		(or)
+			That was
+		(then at random)
+		$Time minute(s $Time).
+	}
+	(current act $Act)
+	(if)
+		($Time turns in act $Act earns $Prize)
+	(then) %% Should always succeed
+	(else)
+		ERROR: No prize available! What went wrong?
+		(fail)
+	(endif)
+	(div @jackdaw) {
+		grabbed (a $Prize)
+		(if) ($Prize is worth $K thousand dollars) (then)
+			(line)
+			estimated value ($K thousand dollars)
+		(endif)
+	}
+	(prize conversation about $Prize)
+	(if) ~(any prizes left in act $Act) (then)
+		(div @jackdaw) {
+			also thats pretty much everything for this room (line)
+			scoured it clean (line)
+			(if) ($Act < 4) (then)
+				see if you can get me into the next one
+			(else)
+				anything else or are we done here?
+			(endif)
+		}
+	(endif)
+	(now) (no quip this turn) %% There's been enough conversation that we don't want an extra quip on top of it
+
+%% Overload these predicates for number -> noun as well as noun -> verb
+%% Someday I want to put this into the standard library proper
+(s 1)
+(s (number $)) (no space)s
+
 (grammar [score] for itself)
 
+(prevent [score])
+	(current act 0)
+	(div @jackdaw) { i havent scored anything yet (line) get me in the building first }
+
+(prevent [score])
+	~{
+		*(prize $Prize)
+		($Prize is handled)
+	}
+	(div @jackdaw) { havent scored anything yet (line) get the butler distracted and then tell me when }
+
 (perform [score])
-	TODO Score!
+	(div @jackdaw) {
+		ok heres what ive got
+		(accumulate $K)
+			*(prize $Prize)
+			($Prize is handled)
+			($Prize is worth $K thousand dollars)
+			(line) (name $Prize) (space) - (space) ($K thousand dollars)
+		(into $Total)
+		(line) for a total of (span @bold) ($Total thousand dollars)
+		(line) (assess the value of $Total)
+	}
+
+(assess the value of $N)
+	\( TODO assess how much $N (no space)k is compared to the total \)
 
 (action [score] is valid for #jackdaw)
 
@@ -502,7 +630,9 @@
 (grammar [hack [single]] for [hack $])
 
 (prevent [hack ~(hack target $Obj)])
-	TODO not a target.
+	(div @spider) {
+		I am not seeing anything about (the $Obj) that I can access remotely.
+	}
 
 %% No default PERFORM rule
 
@@ -552,7 +682,7 @@
 (narrate fixing $Obj) %% Fallback - individual objects should have their own descriptions
 	(div @spider) { The butler is working on repairing (the $Obj) . }
 
-%% Since we cut out a bunch of stdlib machinery, we need to silence some compiler warnings here too
+%% Since we cut out a bunch of stdlib machinery, we need to silence some compiler warnings here too; none of these are ever queried so they'll be cut by dead code elimination
 (interface (when $< is already held))
 (interface (when $< is already worn))
 (interface (when $< isn't directly held))

@@ -17,9 +17,36 @@
 (from * go #east to #gild2)
 (* is available in act 1/2/3/4)
 
-%% trophy room
-%% sabotage: knock something down from high up?
-%% requires: rod
+(name *) trophy room
+(look *) The gold walls here are mostly covered by steel: ({weapons}) of every shape and kind, trophies of the Count's defeated enemies. The room stretches two stories high and the upper reaches are lost in shadow.
+
+#weapons
+(name *) weapons
+(dict *) longsword longswords wedding ring rings redistricting map maps claymore claymores wooden peg pegs flimsy battleaxe battle axe
+(* is #in #gild1)
+(descr *)
+	Everything from longswords to wedding rings to redistricting maps to claymores \( both kinds \) , held on the wall by flimsy wooden pegs.
+	(if) (* is broken) (then)
+		One of those pegs has been knocked loose, setting a battleaxe swinging free at neck height.
+	(endif)
+(sabotage target *)
+(* requires tool #rod) ~(current act 1)
+
+(narrate sabotaging *)
+	(div @rat) { Many handholds. The rat can climb. Small pegs. Easy to pull free. And the axe begins to swing! }
+	(div @spider) { A battleaxe has come loose and is now swinging around at neck height. }
+(narrate fixing *)
+	(div @spider) { The butler is swinging a curtain rod with remarkable agility, trying to parry the battleaxe and get its motion under control. Eventually he manages to block its edge and push it carefully back up onto the pegs. }
+
+#rod
+(name *) curtain rod
+(item *)
+(* is #in #gild1)
+(descr *) Six feet of metal with a knob on either end, and no curtains in sight.
+(appearance * #in #gild1)
+	The newest acquisition seems to be a ({curtain rod}) mounted near the floor.
+(appearance *)
+	A ({curtain rod}) has been propped up in an out-of-the-way corner.
 
 #gild2
 (room *)
@@ -27,9 +54,35 @@
 (from * go #west to #gild1)
 (* is available in act 1/2/3/4)
 
-%% gold-plated bathroom
-%% sabotage: toilet
-%% requires: newspaper
+(name *) gold-plated bathroom
+(look *) Everything in the gilded wing is covered in some kind of gold, and the bathrooms are no exception. Even the ({toilet}) is polished to a bright shine.
+
+#toilet
+(name *) toilet
+(* is #in #gild2)
+(descr *)
+	Covered in intricate rose-on-electrum designs. How much work must go into keeping this shiny every day?
+	(if) (* is broken) (then)
+		It is currently spraying water across the room.
+	(endif)
+(sabotage target *)
+(* requires tool #newspaper) ~(current act 1)
+(narrate sabotaging *)
+	(div @rat) { Gold pipes. Not different from normal pipes. The rat twists, and inserts, and reconnects, and is done. }
+	(div @spider) { And water is currently spraying halfway across the room. Good job. }
+(narrate fixing *)
+	(div @spider) { The butler is kneeling down in the puddle and reconnecting the pipes. Then a few pages of the New Gothenburg Post get repurposed as a mop to transfer the water back into the toilet bowl. }
+
+#newspaper
+(name *) newspaper
+(dict *) copy of the New Gothenburg Post
+(item *)
+(* is #in #gild2)
+(descr *) From the latest numbers, the New Gothenburg Post is the most popular paper in the city. It is well known for being thick and absorbent, among other good qualities.
+(appearance * #in #gild2)
+	The only non-gilded object is the ({newspaper}) supplied for reading.
+(appearance *)
+	A ({newspaper}) has been pushed unobtrusively into a corner.
 
 #gran1
 (room *)
@@ -51,6 +104,16 @@
 %% sabotage: cages (release the bats!)
 %% requires: rod (with cage on the end)
 
+(prevent entering #gran1/#gran2)
+	(current act 1)
+	(div @chameleon) { Careful there! }
+	(div @rat) { Occupied? }
+	(div @chameleon) { The Count is likely moving around in the Granite Wing. }
+	(div @jackdaw) { is he harder to avoid than the butler? }
+	(div @spider) { He should not be, no. }
+	(div @chameleon) { But if he's alerted to sabotage before the party starts, he might change his plans. }
+	(div @jackdaw) { point }
+
 #glas1
 (room *)
 (from * go #west to #glasgild)
@@ -71,6 +134,16 @@
 %% sabotage: smart systems (automatic sensors)
 %% requires: tray (as a mirror)
 
+(prevent entering #glas1/#glas2)
+	(current act 1)
+	(div @chameleon) { Careful there! }
+	(div @rat) { Occupied? }
+	(div @chameleon) { LLM is likely moving around in the Glass Wing. }
+	(div @jackdaw) { is she harder to avoid than the butler? }
+	(div @spider) { She should not be, no. }
+	(div @chameleon) { But if she's alerted to sabotage before the party starts, she might change her plans. }
+	(div @jackdaw) { point }
+
 #grangild
 (room *)
 (from * go #west to #gran1)
@@ -78,7 +151,15 @@
 (from * go #east to #glasgild)
 (from * go #south to #dine1)
 (* is available in act 1/2/3/4)
-(default butler room for act 1 is *) (random from 1 to 2 into 1)
+(default butler room for act 1 is *) %% Move every third turn on average
+	(if) (#butler is in room *) (then)
+		~(random from 1 to 3 into 3) %% 2/3 chance
+	(else)
+		(random from 1 to 3 into 1) %% 1/3 chance
+	(endif)
+
+(name *) granite-gilded passage
+(look *) Four corridors join here at a small hub, where the huge stone blocks of the Granite Wing to the west clash with the too-shiny ornaments of the Gilded Wing to the north.
 
 #glasgild
 (room *)
@@ -87,18 +168,72 @@
 (from * go #west to #grangild)
 (from * go #south to #dine2)
 (* is available in act 1/2/3/4)
-(default butler room for act 1 is *)
+(default butler room for act 1 is *) %% If the rule for #grangild fails
+
+(name *) glass-gilded passage
+(look *) Four corridors join here at a small hub, where the sharp-edged rectangles of the Glass Wing to the east clash with the too-shiny ornaments of the Gilded Wing to the north.
+
+(after [examine #grangild/#glasgild]) %% Comment on the wing names
+	(accumulate 1)
+		(#grangild is visited) (or) (#glasgild is visited)
+	(into $N) %% How many of the wings are visited?
+	(if) ($N = 1) (then) %% Visiting the first one
+		(select)
+			(div @jackdaw) { do both of them really need to start with g }
+			(div @chameleon) { It does seem like there could have been more...(no space) (span @italic) creativity involved. }
+			(div @rat) { It fits. The names match. A symmetry. }
+			(div @jackdaw) { we could even just call them north east and west (line) i thought you loved compass directions }
+			(now) (no quip this turn)
+		(or)
+		(stopping)
+	(elseif) ($N = 2) (then) %% Visiting the second one
+		(select)
+			(div @jackdaw) { granite gilded glass (line) seriously }
+			(div @chameleon) { Why not Gothic, Rococo, and Modernist? }
+			(div @jackdaw) { modernist covers so much though (line) this is specifically international style (line) and this is too much gold even for rococo }
+			(div @chameleon) { Gothenburg Neo-Rococo, perhaps? }
+			(div @spider) { Let us use the existing names for this mission. }
+			(div @jackdaw) { oh no are these words not in your compression dictionary? }
+			(now) (no quip this turn)
+		(or)
+		(stopping)
+	(endif)
 
 #dine1
 (room *)
 (from * go #west to #gran2)
 (from * go #north to #grangild)
 (from * go #east to #dine2)
-%% No connection south
+%% No connection south, since you never go back out there
 (* is available in act 0/1/3/4)
 
-%% patio
-%% sabotage: TODO
+(name *) dining patio
+(look *) Half inside, half outside, with no door in between. The north end of the patio is surrounded by the other rooms of the mansion, while the south end with the ({piano}) is in the middle of the garden. Maintaining a consistent temperature must cost a fortune.
+
+#piano
+(name *) piano
+(* is #in #dine1)
+(descr *)
+	~(current act 1)
+	The electronics have been locked down to prevent any further sabotage.
+(descr *)
+	No entertainer has been booked for tonight, but the electronics in the piano claim they can replicate any virtuoso's finest performance.
+	(if) (* is broken) (then)
+		They are currently replicating something else entirely.
+	(endif)
+(sabotage target *) (current act 1)
+(narrate sabotaging *)
+	(div @rat) { It will play. But what? }
+	(select)
+		(div @chameleon) { The Wrong Note Etude. }
+	(or)
+		(div @spider) { Rick Astley. }
+	(or)
+		(div @jackdaw) { every note all at the same time max volume over and over }
+	(at random)
+	(div @rat) { It is done. }
+(narrate fixing *)
+	(div @spider) { The butler flips a switch under the piano and it falls silent. }
 
 #dine2
 (room *)
@@ -106,6 +241,32 @@
 (from * go #north to #glasgild)
 (from * go #west to #dine1)
 (* is available in act 1/3/4)
+
+(name *) ballroom
+(look *) The eastern half of the dining area is properly enclosed, but with floor-to-ceiling windows along the south wall to keep it connected to the gardens. During the day, it is well-lit with sunlight; at night, the ({chandelier}) fills in.
+
+#chandelier
+(name *) chandelier
+(dict *) crank ratchet
+(* is #in #dine2)
+(descr *)
+	~(current act 1)
+	The crank has been removed to prevent any further sabotage.
+(descr *)
+	A crank in one corner controls the height, currently
+	(if) (* is broken) (then)
+		four feet off the ground
+	(else)
+		high overhead
+	(endif)
+	.
+(sabotage target *) (current act 1)
+(narrate sabotaging *)
+	(div @rat) { The crank is on a ratchet. The rat trips it, and. Voila! }
+	(div @chameleon) { What was that sound?! }
+	(div @spider) { That was the chandelier crashing down and landing on the tables. }
+(narrate fixing *)
+	(div @spider) { The butler laboriously cranks the chandelier back up to the ceiling and fixes the ratchet in place. }
 
 %% dining room
 %% sabotage: lower chandelier
@@ -119,7 +280,7 @@
 (default butler room for act 0 is *)
 
 (name *) terrace
-(look *) The dining room to the north opens seamlessly out into a wide flagstoned terrace, sloping down to the garden path to the east.
+(look *) The dining patio to the north opens into a wide flagstoned terrace, sloping down to the garden path to the east.
 
 (prevent [leave * #north])
 	(current act 0)

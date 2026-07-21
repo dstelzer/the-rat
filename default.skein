@@ -4,8 +4,9 @@ id: 0
 label: START
 --------------------------------------------------------------------------------
 [1m[36mWarning:[0m[36m Object #crowd was used, but never declared as topic.
+[0m[1m[36mWarning:[0m[36m Object #TODO was used, but never declared as topic.
 [0m[1m[36mWarning:[0m[36m src/world.dg, line 105: Possible typo: A query is made to '(hack target $)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/ai.dg, line 97: Possible typo: A query is made to '($ requires tool $)', but there is no matching rule or interface definition.
+[0m[1m[36mWarning:[0m[36m src/ai.dg, line 101: Possible typo: A query is made to '($ requires tool $)', but there is no matching rule or interface definition.
 [0m[1m[36mWarning:[0m[36m lib/versalink.dg, line 96: Possible typo: A rule is defined for '(option paragraph)', but this predicate is never queried and has no interface definition.
 [0m
 
@@ -162,7 +163,7 @@ command: sabotage it
 [0m[50m                                   |          
                                  -( )-        
                                    |          
-                                  (B)-( )-{R} 
+                                  (B)-(.)-{R} 
 [0m
 [38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[west] west>]; [<[sabotage the water feature] sabotage the water feature>][39m
 [38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: view any room or object[39m
@@ -259,7 +260,24 @@ command: wait
 
 [38;2;33;186;186mAll systems ready.
 [39m
-[38;2;33;186;186mThe butler is heading back toward the terrace to resume his duties. Going from the south garden to the south walk.
+[38;2;33;186;186mThe butler is moving to the south walk to attend to other duties at the terrace.
+[39m
+[38;2;181;169;38mThe rat is alone, and free to act.
+[39m
+[0m[50m                                   |          
+                                 -( )-        
+                                   |          
+                                  ( )-(B)-(R) 
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[west] west>]; [<[sabotage the water feature] sabotage the water feature>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> wait
+
+[38;2;33;186;186mAll systems ready.
+[39m
+[38;2;33;186;186mThe butler is moving through the south walk to attend to ordinary duties at the terrace.
 [39m
 [38;2;181;169;38mThe rat is alone, and free to act.
 [39m
@@ -280,7 +298,22 @@ command: wait
 
 [38;2;181;169;38mThe rat waits.
 [39m
-[38;2;33;186;186mThe butler is heading back to resume his duties. Going from the south walk to the terrace.
+[38;2;33;186;186mThe butler is moving to attend to other duties at the terrace.
+[39m
+[0m[50m                                   |          
+                                 -( )-        
+                                   |          
+                                  (B)-( )-(R) 
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[west] west>]; [<[sabotage the water feature] sabotage the water feature>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> wait
+
+[38;2;181;169;38mThe rat waits.
+[39m
+[38;2;33;186;186mThe butler is moving to attend to ordinary duties at the terrace.
 [39m
 [0m[50m                                   |          
                                  -( )-        
@@ -304,7 +337,7 @@ command: sabotage the water feature
 [0m[50m                                   |          
                                  -( )-        
                                    |          
-                                  (B)-( )-{R} 
+                                  (B)-(.)-{R} 
 [0m
 [38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[west] west>]; [<[sabotage the water feature] sabotage the water feature>][39m
 [38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: view any room or object[39m
@@ -413,8 +446,8 @@ The dining room to the north opens seamlessly out into a wide flagstoned terrace
 
 The butler is assessing again. Nothing out of place now, so he can focus on his usual tasks.
 [39m
-[0m[36mQuip list: [#q-1-comms #q-1-profanity #q-1-backstory #q-1-backstory #q-null-1 #q-null-2]
-Chose #q-null-2
+[0m[36mQuip list: [#q-1-comms #q-1-profanity #q-1-backstory #q-1-backstory #q-1-guestlist #q-null-1 #q-null-2]
+Chose #q-1-backstory
 [0m
 [0m[50m                                    ( )-( ) 
                                      |   |  
@@ -426,244 +459,27 @@ Chose #q-null-2
 [38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: view any room or object[39m
 [38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
 --------------------------------------------------------------------------------
-id: 1784146667264
+id: 1784602049793
 parent-id: 1784048551585
-command: z
+command: w
 --------------------------------------------------------------------------------
-> z
+> w
 
-[38;2;181;169;38mThe rat waits.
+[38;2;191;28;191mCareful there!
 [39m
-[38;2;33;186;186mThe butler is heading back toward the location to resume his duties. Going from the location to the location.
+[38;2;181;169;38mOccupied?
 [39m
-[0m[50m                                    ( )-( ) 
-                                     |   |  
-                                   -( )-(B)-
-                                     |   |  
-                                   -(R)-( )-
-[0m
-[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[east] east>][39m
-[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: view any room or object[39m
-[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
---------------------------------------------------------------------------------
-id: 1784146667265
-parent-id: 1784146667264
-command: z
---------------------------------------------------------------------------------
-> z
-
-[38;2;33;186;186mAll systems ready.
+[38;2;191;28;191mThe Count is likely moving around in the Granite Wing.
 [39m
-[0m[50m                                    ( )-( ) 
-                                     |   |  
-                                   -( )-(B)-
-                                     |   |  
-                                   -(R)-( )-
-[0m
-[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[east] east>][39m
-[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: view any room or object[39m
-[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
---------------------------------------------------------------------------------
-id: 1784146667266
-parent-id: 1784146667265
-command: z
---------------------------------------------------------------------------------
-> z
-
-[38;2;191;28;191mSo, darling, what comes next?
+[38;2;24;170;73mis he harder to avoid than the butler?
 [39m
-[38;2;33;186;186mThe butler is heading back to resume his duties. Going from the location to the location.
+[38;2;33;186;186mHe should not be, no.
 [39m
-[0m[36mQuip list: [#q-1-comms #q-1-profanity #q-1-backstory #q-1-backstory #q-null-1 #q-null-2]
-Chose #q-1-profanity
-[0m
-[0m[50m                                    ( )-( ) 
-                                     |   |  
-                                   -(B)-( )-
-                                     |   |  
-                                   -(R)-( )-
-[0m
-[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[east] east>][39m
-[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: view any room or object[39m
-[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
---------------------------------------------------------------------------------
-id: 1784146667267
-parent-id: 1784146667266
-command: z
---------------------------------------------------------------------------------
-> z
-
-[38;2;33;186;186mAll systems ready.
+[38;2;191;28;191mBut if he's alerted to sabotage before the party starts, he might change his plans.
 [39m
-[38;2;33;186;186mThe butler is heading back to resume his duties. Going from the location to the location.
+[38;2;24;170;73mpoint
 [39m
-[38;2;24;170;73mwhy cant i say ---- btw
-are you really that much of a prude
-[39m
-[38;2;33;186;186mI spent the last two years of my life building profanity detection systems for text-based social media. I am not letting that go to waste just because my former employer decided to pivot to disgustingly basic neural networks.
-[39m
-[38;2;191;28;191mI don't mind. It just means we have to be creative about it. Try saying that --- --- -- - ---------, but ---- --- --- ----- -- --------- -----. (No offense, of course.)
-[39m
-[38;2;24;170;73mwow i take it back thats some good tech
-[39m
-[0m[50m                                    ( )-( ) 
-                                     |   |  
-                                   -( )-(B)-
-                                     |   |  
-                                   -(R)-( )-
-[0m
-[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[east] east>][39m
-[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: view any room or object[39m
-[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
---------------------------------------------------------------------------------
-id: 1784146667268
-parent-id: 1784146667267
-command: z
---------------------------------------------------------------------------------
-> z
-
-[38;2;24;170;73mdot dot dot
-[39m
-[38;2;33;186;186mThe butler is heading back to resume his duties. Going from the location to the location.
-[39m
-[0m[36mQuip list: [#q-1-comms #q-1-comms #q-1-comms #q-1-backstory #q-1-backstory #q-null-1 #q-null-2]
-Chose #q-1-comms
-[0m
-[0m[50m                                    ( )-( ) 
-                                     |   |  
-                                   -(B)-( )-
-                                     |   |  
-                                   -(R)-( )-
-[0m
-[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[east] east>][39m
-[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: view any room or object[39m
-[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
---------------------------------------------------------------------------------
-id: 1784146667269
-parent-id: 1784146667268
-command: z
---------------------------------------------------------------------------------
-> z
-
-[38;2;33;186;186mAll systems ready.
-[39m
-[38;2;191;28;191mSo, not to ask a stupid question, but I [0m[4m[38;2;191;28;191mam[0m[38;2;191;28;191m curious. Why are we doing all of this via text?
-[39m
-[38;2;33;186;186mBandwidth. The less data needs to be transmitted, the better it can be hidden and secured. This system uses approximately one bit per letter, or one byte per word. Voice would be an order of magnitude more.
-[39m
-[38;2;24;170;73mplus he sent that in like two seconds so either he types faster than liszt or he had it written up and ready to go
-[39m
-[38;2;33;186;186mIt all comes down to information theory. And in this case a large corpus of my writing and a chorded keyboard.
-[39m
-[38;2;24;170;73mi regret asking
-[39m
-[38;2;191;28;191mI don't.
-[39m
-[0m[50m                                    ( )-( ) 
-                                     |   |  
-                                   -(B)-( )-
-                                     |   |  
-                                   -(R)-( )-
-[0m
-[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[east] east>][39m
-[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: view any room or object[39m
-[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
---------------------------------------------------------------------------------
-id: 1784146667270
-parent-id: 1784146667269
-command: z
---------------------------------------------------------------------------------
-> z
-
-[38;2;24;170;73mdot dot dot
-[39m
-[38;2;33;186;186mThe butler is heading back to resume his duties. Going from the location to the location.
-[39m
-[38;2;33;186;186mBesides, the one bit per letter is only an average. Some people's messages can be compressed even further. It all comes down to how predictable they are—for example, Jackdaw is about to say "---- you".
-[39m
-[38;2;24;170;73mwow ---- you
-[39m
-[0m[50m                                    ( )-( ) 
-                                     |   |  
-                                   -( )-(B)-
-                                     |   |  
-                                   -(R)-( )-
-[0m
-[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[east] east>][39m
-[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: view any room or object[39m
-[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
---------------------------------------------------------------------------------
-id: 1784146667271
-parent-id: 1784146667270
-command: z
---------------------------------------------------------------------------------
-> z
-
-[38;2;33;186;186mAll systems ready.
-[39m
-[38;2;33;186;186mThe butler is heading back to resume his duties. Going from the location to the location.
-[39m
-[0m[36mQuip list: [#q-1-backstory #q-1-backstory #q-null-1 #q-null-2]
-Chose #q-null-1
-[0m
-[0m[50m                                    ( )-( ) 
-                                     |   |  
-                                   -(B)-( )-
-                                     |   |  
-                                   -(R)-( )-
-[0m
-[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[east] east>][39m
-[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: view any room or object[39m
-[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
---------------------------------------------------------------------------------
-id: 1784146667272
-parent-id: 1784146667271
-command: z
---------------------------------------------------------------------------------
-> z
-
-[38;2;24;170;73mdot dot dot
-[39m
-[0m[50m                                    ( )-( ) 
-                                     |   |  
-                                   -(B)-( )-
-                                     |   |  
-                                   -(R)-( )-
-[0m
-[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[east] east>][39m
-[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: view any room or object[39m
-[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
---------------------------------------------------------------------------------
-id: 1784146667273
-parent-id: 1784146667272
-command: z
---------------------------------------------------------------------------------
-> z
-
-[38;2;181;169;38mThe rat waits.
-[39m
-[0m[36mQuip list: [#q-1-backstory #q-1-backstory #q-null-1 #q-null-2]
-Chose #q-1-backstory
-[0m
-[0m[50m                                    ( )-( ) 
-                                     |   |  
-                                   -(B)-( )-
-                                     |   |  
-                                   -(R)-( )-
-[0m
-[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[east] east>][39m
-[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: view any room or object[39m
-[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
---------------------------------------------------------------------------------
-id: 1784146667274
-parent-id: 1784146667273
-command: z
---------------------------------------------------------------------------------
-> z
-
-[38;2;33;186;186mAll systems ready.
-[39m
-[38;2;33;186;186mThe butler is heading back to resume his duties. Going from the location to the location.
+[38;2;33;186;186mThe butler is moving through the location to attend to ordinary duties at the location.
 [39m
 [38;2;24;170;73mso why are all the rich -------- coming tonight anyway
 [39m
@@ -676,189 +492,6 @@ command: z
 [0m[50m                                    ( )-( ) 
                                      |   |  
                                    -( )-(B)-
-                                     |   |  
-                                   -(R)-( )-
-[0m
-[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[east] east>][39m
-[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: view any room or object[39m
-[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
---------------------------------------------------------------------------------
-id: 1784146667275
-parent-id: 1784146667274
-command: z
---------------------------------------------------------------------------------
-> z
-
-[38;2;181;169;38mThe rat waits.
-[39m
-[38;2;33;186;186mThe butler is heading back to resume his duties. Going from the location to the location.
-[39m
-[38;2;181;169;38mThe world will be changed? How? By who?
-[39m
-[38;2;33;186;186mThe Count's working with a Silicon Valley type for this. An up-and-coming 100x rockstar, they call her. Beyond that, details are scarce.
-[39m
-[38;2;191;28;191mSo maybe we'll learn tonight.
-[39m
-[38;2;24;170;73mor maybe the whole thing is the next crypto nfts
-[39m
-[38;2;33;186;186mIt's possible. But for now, the money is here—and within our reach.
-[39m
-[0m[50m                                    ( )-( ) 
-                                     |   |  
-                                   -(B)-( )-
-                                     |   |  
-                                   -(R)-( )-
-[0m
-[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[east] east>][39m
-[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: view any room or object[39m
-[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
---------------------------------------------------------------------------------
-id: 1784146667276
-parent-id: 1784146667275
-command: z
---------------------------------------------------------------------------------
-> z
-
-[38;2;33;186;186mAll systems ready.
-[39m
-[0m[36mQuip list: [#q-1-butler #q-1-butler #q-1-butler #q-1-butler #q-1-count #q-1-count #q-1-count #q-1-count #q-1-llm #q-1-llm #q-1-llm #q-null-1 #q-null-2]
-Chose #q-1-llm
-[0m
-[0m[50m                                    ( )-( ) 
-                                     |   |  
-                                   -(B)-( )-
-                                     |   |  
-                                   -(R)-( )-
-[0m
-[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[east] east>][39m
-[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: view any room or object[39m
-[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
---------------------------------------------------------------------------------
-id: 1784146667277
-parent-id: 1784146667276
-command: z
---------------------------------------------------------------------------------
-> z
-
-[38;2;191;28;191mSo, darling, what comes next?
-[39m
-[0m[50m                                    ( )-( ) 
-                                     |   |  
-                                   -(B)-( )-
-                                     |   |  
-                                   -(R)-( )-
-[0m
-[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[east] east>][39m
-[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: view any room or object[39m
-[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
---------------------------------------------------------------------------------
-id: 1784146667278
-parent-id: 1784146667277
-command: z
---------------------------------------------------------------------------------
-> z
-
-[38;2;24;170;73mdot dot dot
-[39m
-[0m[36mQuip list: [#q-1-butler #q-1-butler #q-1-count #q-1-count #q-null-1 #q-null-2]
-Chose #q-1-butler
-[0m
-[0m[50m                                    ( )-( ) 
-                                     |   |  
-                                   -(B)-( )-
-                                     |   |  
-                                   -(R)-( )-
-[0m
-[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[east] east>][39m
-[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: view any room or object[39m
-[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
---------------------------------------------------------------------------------
-id: 1784146667279
-parent-id: 1784146667278
-command: z
---------------------------------------------------------------------------------
-> z
-
-[38;2;191;28;191mSo, darling, what comes next?
-[39m
-[38;2;33;186;186mWhat I do not understand is why such a high-profile event only has a single person on staff. I am grateful, certainly. But puzzled all the same.
-[39m
-[38;2;191;28;191mOh, that part's easy to explain. The Count can never hold onto employees for long. The say he drains the life out of them. He probably had a dozen last month and now he's down to one again.
-[39m
-[38;2;24;170;73mthat ones pretty good though
-[39m
-[0m[50m                                    ( )-( ) 
-                                     |   |  
-                                   -(B)-( )-
-                                     |   |  
-                                   -(R)-( )-
-[0m
-[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[east] east>][39m
-[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: view any room or object[39m
-[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
---------------------------------------------------------------------------------
-id: 1784146667280
-parent-id: 1784146667279
-command: z
---------------------------------------------------------------------------------
-> z
-
-[38;2;33;186;186mAll systems ready.
-[39m
-[38;2;33;186;186mThe butler is heading back to resume his duties. Going from the location to the location.
-[39m
-[38;2;191;28;191mDo you know him? The one employee who's left?
-[39m
-[38;2;181;169;38mThe rat has heard of this one. Yes. Skilled. Very skilled. Tireless.
-[39m
-[38;2;24;170;73mand apparently has the patience of a saint
-[39m
-[38;2;191;28;191mI wonder if I could get an interview with him...
-[39m
-[0m[50m                                    ( )-( ) 
-                                     |   |  
-                                   -( )-(B)-
-                                     |   |  
-                                   -(R)-( )-
-[0m
-[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[east] east>][39m
-[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: view any room or object[39m
-[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
---------------------------------------------------------------------------------
-id: 1784146667281
-parent-id: 1784146667280
-command: z
---------------------------------------------------------------------------------
-> z
-
-[38;2;191;28;191mSo, darling, what comes next?
-[39m
-[38;2;33;186;186mThe butler is heading back to resume his duties. Going from the location to the location.
-[39m
-[0m[36mQuip list: [#q-1-valet #q-1-valet #q-1-valet #q-1-count #q-1-count #q-1-count #q-1-count #q-null-1 #q-null-2]
-Chose #q-null-1
-[0m
-[0m[50m                                    ( )-( ) 
-                                     |   |  
-                                   -(B)-( )-
-                                     |   |  
-                                   -(R)-( )-
-[0m
-[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[east] east>][39m
-[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: view any room or object[39m
-[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
---------------------------------------------------------------------------------
-id: 1784146667282
-parent-id: 1784146667281
-command: z
---------------------------------------------------------------------------------
-> z
-
-[38;2;24;170;73mdot dot dot
-[39m
-[0m[50m                                    ( )-( ) 
-                                     |   |  
-                                   -(B)-( )-
                                      |   |  
                                    -(R)-( )-
 [0m

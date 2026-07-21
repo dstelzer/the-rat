@@ -70,6 +70,9 @@
 
 %% The other side of the coin is printing the lines
 (show the current quip)
+	(no quip this turn) %% Set this flag to silence the quips for one turn
+	(now) ~(no quip this turn)
+(show the current quip)
 	(current quip $Quip) %% Only run if we have a quip
 	(current quip position $Old)
 	($Old plus 1 into $New)

@@ -1,0 +1,76 @@
+%% In the game, you tell Jackdaw when to start stealing, then she works until the butler finishes his tasks and checks the cams again
+%% You get a prize based on how many turns of distraction you bought her
+%% So the purpose of this file is to determine the appropriate prize for a given number of turns: the most valuable available prize whose value is ≤ that number of turns
+
+%% Once a prize is earned, it will be marked "handled"; a prize that has not been earned yet is "pristine"
+%% Each prize also provides a few predicates:
+
+%% Marks that it's a prize
+(interface (prize $>))
+
+%% Which act it's available in
+(interface ($>Prize available in act $>Act))
+
+%% How much time it takes to steal
+(interface ($>Prize requires $>Time turns))
+
+%% How much money it's worth, in thousands
+(interface ($<Prize is worth $>Money thousand dollars))
+
+%% An optional conversation printed after stealing it
+(interface (prize conversation about $<Prize))
+(prize conversation about $) %% Nothing by default, don't fail
+
+%% We also need some utility predicates to make the rest of this work
+
+%% This one unifies its second parameter with (e.g.) 5, 4, 3, 2, 1, 0 in order
+(count down from $In into $Out)
+	($Out = $In)
+	(or)
+	($In minus 1 into $Inm1)
+	*(count down from $Inm1 into $Out)
+
+%% This one prints a dollar amount in thousands
+($Amount thousand dollars)
+	($Amount < 1000)
+	\$ (no space)
+	$Amount
+	, (no space)
+	000
+($Amount thousand dollars)
+	($Amount divided by 1000 into $Upper)
+	($Amount modulo 1000 into $Lower)
+	\$ (no space)
+	$Upper
+	, (no space)
+	$Lower
+	, (no space)
+	000
+
+%% Now, the prize machinery itself!
+(any prizes left in act $Act)
+	*($Prize available in act $Act)
+	($Prize is pristine)
+
+($Time turns in act $Act earns $Prize)
+	(at most once) { %% Return only a single prize per query
+		*(count down from $Time into $TimeCounter) %% 5, 4, 3, 2, 1, 0
+		*($Prize available in act $Act)
+		($Prize is pristine)
+		($Prize requires $TimeCounter turns)
+	}
+	(now) ($Prize is handled)
+
+(global variable (heist timer $))
+(start the heist)
+	(now) (heist timer 0)
+(heist in progress)
+	(heist timer $)
+(early on every tick)
+	(heist timer $Old) %% Fails if no heist in progress
+	($Old plus 1 into $New)
+	(now) (heist timer $New)
+(stop the heist)
+	(heist timer $Total)
+	(now) ~(heist timer $)
+	(heist succeeds with result $Total)
