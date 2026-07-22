@@ -4,7 +4,7 @@
 %% Debugger formatting
 
 (style class @body)
-%%	background-color: black; %% Makes a mess in dgt
+	background-color: black;
 
 (startup) (body style @body)
 
