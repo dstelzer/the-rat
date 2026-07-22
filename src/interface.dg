@@ -1,7 +1,7 @@
 (redraw status bar)
 	(if) (interpreter supports status bar) (then)
 		(map of current layer needs $Lines lines)
-		(status bar @status with height $Lines)
+		(status bar @mainstatus with height $Lines)
 			(automap)
 	(else)
 		(draw automap outside of status bar if applicable)
