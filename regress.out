@@ -1,0 +1,1199 @@
+Warning: Object #crowd was used, but never declared as topic.
+Warning: Object #TODO was used, but never declared as topic.
+Warning: lib/versalink.dg, line 96: Possible typo: A rule is defined for
+'(option paragraph)', but this predicate is never queried and has no interface
+definition.
+
+
+Testing. Lorem ipsum dolor sit amet. Are all of you seeing this?
+
+Yes. Seeing.
+
+yeah
+
+Perfectly!
+
+[<Yes>] / [<No>]> yes
+That is a yes. Are we in position? Rat?
+
+The rat is prepared. The cameras are placed. In the garden it hides.
+
+Jackdaw?
+
+yeah
+
+Chameleon?
+
+I have never been more ready. Sincerely, even though I'm about to do nothing
+for an hour and a half waiting for the gala to start.
+
+Fox?
+
+[<Yes>] / [<No>]> yes
+and what about you spider
+position and all that?
+
+Well, yes. For completeness, I am in the control room two blocks away. All
+systems running smoothly. I have eyes on the outer garden. Ninety minutes until
+the largest gathering of New Gothenburg's patrician class that I have ever
+seen.
+
+Ninety minutes until we pull off the heist of the century.
+
+lets ----ing go
+
+<[] [[ Continue ]]>
+Prologue: Getting Oriented
+
+Fox, you should be seeing a map of the south gardens. Rat is at the R, Jackdaw
+is...
+
+close enough to the door
+thats all that matters
+
+Fine. And the butler is at the B. Text communication is running; we are at your
+command.
+
+The rat is prepared to obey every word. Tell it to go. Tell it to sabotage.
+
+By which it means compass directions, so that we do not waste time with "your
+right or my right". And for Jackdaw...
+
+just get the butler away from the door and say "proceed" thats all you have to
+do
+
+Allez!
+
+Looking at Rat's location...
+South walk
+The path meanders back and forth between tall [<hedges>], making sure there's
+no line of sight between the terrace to the west and the garden proper to the
+east.
+
+                                   |          
+                                 -( )-        
+                                   |          
+                                  (B)-(R)-( ) 
+
+Rat: [<[east] east>], [<[west] west>]
+Spider: [<wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+> hedges
+Deliberately too tall to see past. If you can never see the edges, then the
+garden will seem even larger than it really is.
+
+                                   |          
+                                 -( )-        
+                                   |          
+                                  (B)-(R)-( ) 
+
+Rat: [<[east] east>], [<[west] west>]
+Spider: [<wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+> w
+No! Impossible! The rat would be seen.
+
+                                   |          
+                                 -( )-        
+                                   |          
+                                  (B)-(R)-( ) 
+
+Rat: [<[east] east>], [<[west] west>]
+Spider: [<wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+> e
+The rat moves.
+
+South garden
+The hedge walls open up here but still wall it in on all sides. Heaven forfend
+anyone see the landscaping or the [<water feature>] without an invitation.
+
+                                   |          
+                                 -( )-        
+                                   |          
+                                  (B)-( )-(R) 
+
+Rat: [<[west] west>]; [<[sabotage the water feature] sabotage the water
+feature>]
+Spider: [<wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+> water feature
+It's shaped like a tiny mountain in the middle of the garden, with water
+cascading down on all sides.
+
+Vulnerable. It could be opened. Changed.
+
+                                   |          
+                                 -( )-        
+                                   |          
+                                  (B)-( )-(R) 
+
+Rat: [<[west] west>]; [<[sabotage the water feature] sabotage the water
+feature>]
+Spider: [<wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+> sabotage it
+The water feature, it yields. It opens. It breaks.
+
+The butler is assessing—looking at the water feature now. I have marked his
+likely path on the map.
+
+                                   |          
+                                 -( )-        
+                                   |          
+                                  (B)-(.)-{R} 
+
+Rat: [<[west] west>]; [<[sabotage the water feature] sabotage the water
+feature>]
+Spider: [<wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+> z
+All systems ready.
+
+The butler is moving from the terrace to the south walk.
+
+                                   |          
+                                 -( )-        
+                                   |          
+                                  ( )-(B)-{R} 
+
+Rat: [<[west] west>]; [<[sabotage the water feature] sabotage the water
+feature>]
+Spider: [<wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+> jackdaw, proceed
+on it
+
+She is in!
+
+down in the basement ready to rob this place blind
+
+The butler is moving from the south walk to the south garden.
+
+People approach! The rat must hide!
+
+                                   |          
+                                 -( )-        
+                                   |          
+                                  ( )-( )-{B} 
+
+Rat: [<[rat , west] west>]; [<[rat , sabotage the water feature] sabotage the
+water feature>]
+Spider: [<wait>]; view any room or object
+Jackdaw: [<[proceed] proceed>]; [<[score] score>]
+> z
+So, darling, what comes next?
+
+The butler is working on repairing the water feature.
+
+                                   |          
+                                 -( )-        
+                                   |          
+                                  ( )-( )-(B) 
+
+Rat: [<[rat , west] west>]; [<[rat , sabotage the water feature] sabotage the
+water feature>]
+Spider: [<wait>]; view any room or object
+Jackdaw: [<[proceed] proceed>]; [<[score] score>]
+> z
+The rat waits.
+
+The butler is assessing again. Nothing out of place now, so he can focus on his
+usual tasks.
+
+                                   |          
+                                 -( )-        
+                                   |          
+                                  ( )-( )-(B) 
+
+Rat: [<[rat , west] west>]; [<[rat , sabotage the water feature] sabotage the
+water feature>]
+Spider: [<wait>]; view any room or object
+Jackdaw: [<[proceed] proceed>]; [<[score] score>]
+> z
+All systems ready.
+
+The butler is moving through the south walk toward the terrace.
+
+The rat is alone, and free to act.
+
+                                   |          
+                                 -( )-        
+                                   |          
+                                  ( )-(B)-(R) 
+
+Rat: [<[rat , west] west>]; [<[rat , sabotage the water feature] sabotage the
+water feature>]
+Spider: [<wait>]; view any room or object
+Jackdaw: [<[proceed] proceed>]; [<[score] score>]
+> z
+The rat waits.
+
+The butler is moving to the terrace.
+
+                                   |          
+                                 -( )-        
+                                   |          
+                                  (B)-( )-(R) 
+
+Rat: [<[rat , west] west>]; [<[rat , sabotage the water feature] sabotage the
+water feature>]
+Spider: [<wait>]; view any room or object
+Jackdaw: [<[proceed] proceed>]; [<[score] score>]
+> sabotage the water feature
+The water feature, it yields. It opens. It breaks.
+
+The butler is assessing—turning to the water feature.
+
+                                   |          
+                                 -( )-        
+                                   |          
+                                  (B)-(.)-{R} 
+
+Rat: [<[west] west>]; [<[sabotage the water feature] sabotage the water
+feature>]
+Spider: [<wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+> w
+It is going.
+
+South walk
+The path meanders back and forth between tall [<hedges>], making sure there's
+no line of sight between the terrace to the west and the garden proper to the
+east.
+
+The butler is moving from the terrace to the south walk.
+
+People approach! The rat must hide!
+
+                                   |          
+                                 -( )-        
+                                   |          
+                                  ( )-(B)-{.} 
+
+Rat: [<[east] east>], [<[west] west>]
+Spider: [<wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+> z
+dot dot dot
+
+The butler is moving from the south walk to the south garden.
+
+The rat is alone, and free to act.
+
+                                   |          
+                                 -( )-        
+                                   |          
+                                  ( )-(R)-{B} 
+
+Rat: [<[east] east>], [<[west] west>]
+Spider: [<wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+> w
+The rat, it is going.
+
+Terrace
+The dining patio to the north opens into a wide flagstoned terrace, sloping
+down to the garden path to the east.
+
+The butler is working on repairing the water feature.
+
+                                   |          
+                                 -( )-        
+                                   |          
+                                  (R)-( )-(B) 
+
+Rat: [<[north] north>], [<[east] east>]
+Spider: [<wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+> n
+The rat moves. The way is clear. The mansion is open.
+
+Or in other words...
+
+We're in.
+
+The Rat
+An authorized tribute by Daniel M. Stelzer.
+Release 0. Serial number DEBUG.
+Dialog Interactive Debugger (dgdebug) version 1c/02-dev. Library version 1.2.3.
+Draconis extensions: Automap 1.2 and Versatile Linking 1.0.
+
+<[] [[ Continue ]]>
+
+im in the wine cellar and theres bottles here worth more than a house
+and also security worth more than a house
+
+That should not be a problem. With only a single butler around, all Rat has to
+do is keep him occupied.
+
+Yes. The rat can. The rat will.
+
+Once the butler is distracted, Fox will tell you when to proceed.
+
+Simple and elegant. I like it.
+
+as per my last email
+lets ----ing go
+
+Terrace
+The dining patio to the north opens into a wide flagstoned terrace, sloping
+down to the garden path to the east.
+
+The butler is assessing again. Nothing amiss, so he can focus on his usual
+tasks.
+
+Quip list: [#q-1-comms #q-1-profanity #q-1-backstory #q-1-backstory #q-1-
+guestlist #q-null-1 #q-null-2]
+Chose #q-1-comms
+
+                                    ( )-( ) 
+                                     |   |  
+                                   -( )-( )-
+                                     |   |  
+                                   -(B)-(R)-
+
+Rat: [<[north] north>], [<[west] west>]; [<[sabotage the chandelier] sabotage
+the chandelier>]
+Spider: [<wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+> chandelier
+A crank in one corner controls the height, currently high overhead.
+
+Vulnerable.
+
+The butler is moving through the granite-gilded passage toward the glass-gilded
+passage.
+
+So, not to ask a stupid question, but I am curious. Why are we doing all of
+this via text?
+
+Bandwidth. The less data needs to be transmitted, the better it can be hidden
+and secured. This system uses approximately one bit per letter, or one byte per
+word. Voice would be an order of magnitude more.
+
+plus he sent that in like two seconds so either he types faster than liszt or
+he had it written up and ready to go
+
+It all comes down to information theory. And in this case a large corpus of my
+writing and a chorded keyboard.
+
+i regret asking
+
+I don't.
+
+                                    ( )-( ) 
+                                     |   |  
+                                   -(B)-( )-
+                                     |   |  
+                                   -( )-(R)-
+
+Rat: [<[north] north>], [<[west] west>]; [<[sabotage the chandelier] sabotage
+the chandelier>]
+Spider: [<wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+> sabotage crank
+The crank is on a ratchet. The rat trips it, and. Voila!
+
+What was that sound?!
+
+That was the chandelier crashing down and landing on the tables.
+
+The butler is assessing—looking at the chandelier now.
+
+Besides, the one bit per letter is only an average. Some people's messages can
+be compressed even further. It all comes down to how predictable they are—for
+example, Jackdaw is about to say "---- you".
+
+wow ---- you
+
+                                    ( )-( ) 
+                                     |   |  
+                                   -(B)-(.)-
+                                     |   |  
+                                   -( )-{R}-
+
+Rat: [<[north] north>], [<[west] west>]; [<[sabotage the chandelier] sabotage
+the chandelier>]
+Spider: [<wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+> jackdaw, proceed
+thats a go
+
+The butler is moving from the granite-gilded passage to the glass-gilded
+passage.
+
+                                    ( )-( ) 
+                                     |   |  
+                                   -( )-(B)-
+                                     |   |  
+                                   -( )-{R}-
+
+Rat: [<[rat , north] north>], [<[rat , west] west>]; [<[rat , sabotage the
+chandelier] sabotage the chandelier>]
+Spider: [<wait>]; view any room or object
+Jackdaw: [<[proceed] proceed>]; [<[score] score>]
+> w
+It goes.
+
+Dining patio
+Half inside, half outside, with no door in between. The north end of the patio
+is surrounded by the other rooms of the mansion, while the south end with the
+[<piano>] is in the middle of the garden. Maintaining a consistent temperature
+must cost a fortune.
+
+The butler is moving from the glass-gilded passage to the ballroom.
+
+Quip list: [#q-1-profanity #q-1-profanity #q-1-profanity #q-1-backstory #q-1-
+backstory #q-1-guestlist #q-1-guestlist #q-null-1 #q-null-2]
+Chose #q-null-1
+
+                                    ( )-( ) 
+                                     |   |  
+                                   -( )-( )-
+                                     |   |  
+                                   -(R)-{B}-
+
+Rat: [<[north] north>], [<[east] east>]; [<[sabotage the piano] sabotage the
+piano>]
+Spider: [<wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+> sabotage piano
+hey wait no not yet
+dont draw the butlers attention to the state of everything while im actively
+robbing the place
+
+The butler laboriously cranks the chandelier back up to the ceiling and fixes
+the ratchet in place.
+
+                                    ( )-( ) 
+                                     |   |  
+                                   -( )-( )-
+                                     |   |  
+                                   -(R)-(B)-
+
+Rat: [<[north] north>], [<[east] east>]; [<[sabotage the piano] sabotage the
+piano>]
+Spider: [<wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+> n
+The rat moves.
+
+Granite-gilded passage
+Four corridors join here at a small hub, where the huge stone blocks of the
+Granite Wing to the west clash with the too-shiny ornaments of the Gilded Wing
+to the north.
+
+do both of them really need to start with g
+
+It does seem like there could have been more...creativity involved.
+
+It fits. The names match. A symmetry.
+
+we could even just call them north east and west
+i thought you loved compass directions
+
+He is accessing the security. Jackdaw, get out!
+
+out
+with seconds to spare
+how long was that?
+
+The butler was distracted for 4 minutes. Debugging note: remember this number!
+
+grabbed a bottle of chateau lafite
+estimated value $1,000
+
+I admire your restraint in not making a pun about the billionaires liking feet.
+
+well i cant now can i
+thanks for that
+
+You could try with "toe"?
+
+it just wouldnt be the same now
+
+                                    ( )-( ) 
+                                     |   |  
+                                   -(R)-( )-
+                                     |   |  
+                                   -( )-(B)-
+
+Rat: [<[north] north>], [<[south] south>], [<[east] east>]
+Spider: [<wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+> n
+The rat, it is moving.
+
+Trophy room
+The gold walls here are mostly covered by steel: [<weapons>] of every shape and
+kind, trophies of the Count's defeated enemies. The room stretches two stories
+high and the upper reaches are lost in shadow.
+
+The newest acquisition seems to be a [<curtain rod>] mounted near the floor.
+
+The butler is moving to the glass-gilded passage.
+
+Quip list: [#q-1-profanity #q-1-backstory #q-1-backstory #q-1-guestlist #q-1-
+guestlist #q-null-1 #q-null-2]
+Chose #q-1-guestlist
+
+                                    (R)-( ) 
+                                     |   |  
+                                   -( )-(B)-
+                                     |   |  
+                                   -( )-( )-
+
+Rat: [<[south] south>], [<[east] east>]; [<[sabotage the weapons] sabotage the
+weapons>]
+Spider: [<wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+> weapons
+Everything from longswords to wedding rings to redistricting maps to claymores
+(both kinds), held on the wall by flimsy wooden pegs.
+
+Vulnerable.
+
+Do we have confirmation of the final guest list?
+
+The doctor. Malatesta. He will be there.
+
+Ari Tension, the new owner and editor of the New Gothenburg Post.
+
+that industrialist
+constantine quinn
+
+And of course, me.
+
+Once I have added you to the list, yes. Which is waiting on Jackdaw.
+
+working on it hold your horses
+just buy me time
+
+                                    (R)-( ) 
+                                     |   |  
+                                   -( )-(B)-
+                                     |   |  
+                                   -( )-( )-
+
+Rat: [<[south] south>], [<[east] east>]; [<[sabotage the weapons] sabotage the
+weapons>]
+Spider: [<wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+> sabotage weapons
+Many handholds. The rat can climb. Small pegs. Easy to pull free. And the axe
+begins to swing!
+
+A battleaxe has come loose and is now swinging around at neck height.
+
+The butler is assessing—turning to the weapons.
+
+                                    {R}-(.) 
+                                     |   |  
+                                   -( )-(B)-
+                                     |   |  
+                                   -( )-( )-
+
+Rat: [<[south] south>], [<[east] east>]; [<[sabotage the weapons] sabotage the
+weapons>]
+Spider: [<wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+> s
+The rat, it moves.
+
+Granite-gilded passage
+Four corridors join here at a small hub, where the huge stone blocks of the
+Granite Wing to the west clash with the too-shiny ornaments of the Gilded Wing
+to the north.
+
+The butler is moving from the glass-gilded passage to the gold-plated bathroom.
+
+Quip list: [#q-1-profanity #q-1-backstory #q-1-backstory #q-1-malatesta #q-1-
+malatesta #q-1-malatesta #q-1-tension #q-1-tension #q-1-tension #q-1-
+constantine #q-1-constantine #q-1-constantine #q-null-1 #q-null-2]
+Chose #q-null-2
+
+                                    {.}-(B) 
+                                     |   |  
+                                   -(R)-( )-
+                                     |   |  
+                                   -( )-( )-
+
+Rat: [<[north] north>], [<[south] south>], [<[east] east>]
+Spider: [<wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+> s
+The rat is going.
+
+Dining patio
+Half inside, half outside, with no door in between. The north end of the patio
+is surrounded by the other rooms of the mansion, while the south end with the
+[<piano>] is in the middle of the garden. Maintaining a consistent temperature
+must cost a fortune.
+
+The butler is moving from the gold-plated bathroom to the trophy room.
+
+                                    {B}-( ) 
+                                     |   |  
+                                   -( )-( )-
+                                     |   |  
+                                   -(R)-( )-
+
+Rat: [<[north] north>], [<[east] east>]; [<[sabotage the piano] sabotage the
+piano>]
+Spider: [<wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+> sabotage piano
+It will play. But what?
+
+every note all at the same time max volume over and over
+
+It is done.
+
+The butler is swinging a curtain rod with remarkable agility, trying to parry
+the battleaxe and get its motion under control. Eventually he manages to block
+its edge and push it carefully back up onto the pegs.
+
+                                    (B)-( ) 
+                                     |   |  
+                                   -( )-( )-
+                                     |   |  
+                                   -{R}-( )-
+
+Rat: [<[north] north>], [<[east] east>]; [<[sabotage the piano] sabotage the
+piano>]
+Spider: [<wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+> proceed
+on it
+
+The butler is assessing—focusing on the piano.
+
+Quip list: [#q-1-profanity #q-1-backstory #q-1-backstory #q-1-malatesta #q-1-
+tension #q-1-constantine #q-null-1 #q-null-2]
+Chose #q-1-backstory
+
+                                    (B)-( ) 
+                                     |   |  
+                                   -(.)-( )-
+                                     |   |  
+                                   -{R}-( )-
+
+Rat: [<[rat , north] north>], [<[rat , east] east>]; [<[rat , sabotage the
+piano] sabotage the piano>]
+Spider: [<wait>]; view any room or object
+Jackdaw: [<[proceed] proceed>]; [<[score] score>]
+> e
+It is going.
+
+Ballroom
+The eastern half of the dining area is properly enclosed, but with floor-to-
+ceiling windows along the south wall to keep it connected to the gardens.
+During the day, it is well-lit with sunlight; at night, the [<chandelier>]
+fills in.
+
+The butler is moving from the trophy room to the granite-gilded passage.
+
+so why are all the rich -------- coming tonight anyway
+
+Not just any one-percenters—investors.
+
+Exactly. The Count and his new business partner have launched something they
+claim is going to change the world, and these are all the people supporting it.
+
+And the party is a ploy to get them to support it even more, because there
+aren't enough zeroes in the bank account yet.
+
+                                    ( )-( ) 
+                                     |   |  
+                                   -(B)-( )-
+                                     |   |  
+                                   -{.}-(R)-
+
+Rat: [<[north] north>], [<[west] west>]; [<[sabotage the chandelier] sabotage
+the chandelier>]
+Spider: [<wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+> n
+It goes.
+
+Glass-gilded passage
+Four corridors join here at a small hub, where the sharp-edged rectangles of
+the Glass Wing to the east clash with the too-shiny ornaments of the Gilded
+Wing to the north.
+
+granite gilded glass
+seriously
+
+Why not Gothic, Rococo, and Modernist?
+
+modernist covers so much though
+this is specifically international style
+and this is too much gold even for rococo
+
+Gothenburg Neo-Rococo, perhaps?
+
+Let us use the existing names for this mission.
+
+oh no are these words not in your compression dictionary?
+
+The butler is moving from the granite-gilded passage to the dining patio.
+
+                                    ( )-( ) 
+                                     |   |  
+                                   -( )-(R)-
+                                     |   |  
+                                   -{B}-( )-
+
+Rat: [<[north] north>], [<[south] south>], [<[west] west>]
+Spider: [<wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+> n
+It goes.
+
+Gold-plated bathroom
+Everything in the gilded wing is covered in some kind of gold, and the
+bathrooms are no exception. Even the [<toilet>] is polished to a bright shine.
+
+The only non-gilded object is the [<newspaper>] supplied for reading.
+
+The butler flips a switch under the piano and it falls silent.
+
+The world will be changed? How? By who?
+
+The Count's working with a Silicon Valley type for this. An up-and-coming 100x
+rockstar, they call her. Beyond that, details are scarce.
+
+So maybe we'll learn tonight.
+
+or maybe the whole thing is the next crypto nfts
+
+It's possible. But for now, the money is here—and within our reach.
+
+                                    ( )-(R) 
+                                     |   |  
+                                   -( )-( )-
+                                     |   |  
+                                   -(B)-( )-
+
+Rat: [<[south] south>], [<[west] west>]; [<[sabotage the toilet] sabotage the
+toilet>]
+Spider: [<wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+> w
+The rat is going.
+
+Trophy room
+The gold walls here are mostly covered by steel: [<weapons>] of every shape and
+kind, trophies of the Count's defeated enemies. The room stretches two stories
+high and the upper reaches are lost in shadow.
+
+The newest acquisition seems to be a [<curtain rod>] mounted near the floor.
+
+Security is being checked again.
+
+im out
+time?
+
+Security was down for 5 minutes. Debugging note: remember this number!
+
+grabbed a bottle of assaratum
+estimated value $2,000
+
+It's real?!
+
+I have never heard of that one. Is it any good?
+
+It's an old legend about fermenting human blood into alcohol, for use in cult
+rituals.
+
+real apparently yes
+good probably not
+
+I mostly expected this to be a pun on "ass".
+
+i dont lie when it comes to wine
+
+                                    (R)-( ) 
+                                     |   |  
+                                   -( )-( )-
+                                     |   |  
+                                   -(B)-( )-
+
+Rat: [<[south] south>], [<[east] east>]; [<[sabotage the weapons] sabotage the
+weapons>]
+Spider: [<wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+> sabotage weapons
+Many handholds. The rat can climb. Small pegs. Easy to pull free. And the axe
+begins to swing!
+
+A battleaxe has come loose and is now swinging around at neck height.
+
+The butler is assessing—turning to the weapons.
+
+                                    {R}-( ) 
+                                     |   |  
+                                   -(.)-( )-
+                                     |   |  
+                                   -(B)-( )-
+
+Rat: [<[south] south>], [<[east] east>]; [<[sabotage the weapons] sabotage the
+weapons>]
+Spider: [<wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+> e
+The rat, it goes.
+
+Gold-plated bathroom
+Everything in the gilded wing is covered in some kind of gold, and the
+bathrooms are no exception. Even the [<toilet>] is polished to a bright shine.
+
+The only non-gilded object is the [<newspaper>] supplied for reading.
+
+The butler is moving from the dining patio to the granite-gilded passage.
+
+Quip list: [#q-1-profanity #q-1-butler #q-1-butler #q-1-butler #q-1-butler #q-
+1-count #q-1-count #q-1-count #q-1-count #q-1-llm #q-1-llm #q-1-llm #q-1-
+malatesta #q-1-tension #q-1-constantine #q-null-1 #q-null-2]
+Chose #q-1-count
+
+                                    {.}-(R) 
+                                     |   |  
+                                   -(B)-( )-
+                                     |   |  
+                                   -( )-( )-
+
+Rat: [<[south] south>], [<[west] west>]; [<[sabotage the toilet] sabotage the
+toilet>]
+Spider: [<wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+> sabotage toilet
+Gold pipes. Not different from normal pipes. The rat twists, and inserts, and
+reconnects, and is done.
+
+And water is currently spraying halfway across the room. Good job.
+
+The butler is moving from the granite-gilded passage to the trophy room.
+
+The rat does not know the title. The Count.
+
+I think it is some European thing.
+
+Oh no, we have counties here in the States too. Count Vespertilion is the
+highest democratically-elected official in Vespertilion County. One step higher
+than the Mayor of New Gothenburg.
+
+He was elected?
+
+Every four years. He's run unopposed for decades.
+
+                                    {B}-{R} 
+                                     |   |  
+                                   -( )-( )-
+                                     |   |  
+                                   -( )-( )-
+
+Rat: [<[south] south>], [<[west] west>]; [<[sabotage the toilet] sabotage the
+toilet>]
+Spider: [<wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+> s
+The rat moves.
+
+Glass-gilded passage
+Four corridors join here at a small hub, where the sharp-edged rectangles of
+the Glass Wing to the east clash with the too-shiny ornaments of the Gilded
+Wing to the north.
+
+The butler is swinging a curtain rod with remarkable agility, trying to parry
+the battleaxe and get its motion under control. Eventually he manages to block
+its edge and push it carefully back up onto the pegs.
+
+wait if count vespertilion is a title then whats his actual name
+
+It's also his name. He changed it when he was first running for office, and
+apparently it worked.
+
+                                    (B)-{ } 
+                                     |   |  
+                                   -( )-(R)-
+                                     |   |  
+                                   -( )-( )-
+
+Rat: [<[north] north>], [<[south] south>], [<[west] west>]
+Spider: [<wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+> s
+The rat, it moves.
+
+Ballroom
+The eastern half of the dining area is properly enclosed, but with floor-to-
+ceiling windows along the south wall to keep it connected to the gardens.
+During the day, it is well-lit with sunlight; at night, the [<chandelier>]
+fills in.
+
+The butler is assessing—looking at the toilet now.
+
+                                    (B)-{.} 
+                                     |   |  
+                                   -( )-( )-
+                                     |   |  
+                                   -( )-(R)-
+
+Rat: [<[north] north>], [<[west] west>]; [<[sabotage the chandelier] sabotage
+the chandelier>]
+Spider: [<wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+> sabotage chandelier
+The crank is on a ratchet. The rat trips it, and. Voila!
+
+What was that sound?!
+
+That was the chandelier crashing down and landing on the tables.
+
+The butler is moving from the trophy room to the gold-plated bathroom.
+
+Quip list: [#q-1-profanity #q-1-butler #q-1-butler #q-1-butler #q-1-butler #q-
+1-llm #q-1-malatesta #q-1-tension #q-1-constantine #q-null-1 #q-null-2]
+Chose #q-1-llm
+
+                                    ( )-{B} 
+                                     |   |  
+                                   -( )-( )-
+                                     |   |  
+                                   -( )-{R}-
+
+Rat: [<[north] north>], [<[west] west>]; [<[sabotage the chandelier] sabotage
+the chandelier>]
+Spider: [<wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+> w
+It moves.
+
+Dining patio
+Half inside, half outside, with no door in between. The north end of the patio
+is surrounded by the other rooms of the mansion, while the south end with the
+[<piano>] is in the middle of the garden. Maintaining a consistent temperature
+must cost a fortune.
+
+The butler is kneeling down in the puddle and reconnecting the pipes. Then a
+few pages of the New Gothenburg Post get repurposed as a mop to transfer the
+water back into the toilet bowl.
+
+So who is this 100x Silicon Valley rockstar?
+
+Luna L. Meresankh, of PyramidAI fame.
+
+Oh, her! Made headlines for shattering the glass ceiling and all that? People
+are calling her the next Edison.
+
+She does, I will admit, have a rare talent for stealing her employees' work.
+And using the courts to silence anyone who refuses to be bought out.
+
+                                    ( )-(B) 
+                                     |   |  
+                                   -( )-( )-
+                                     |   |  
+                                   -(R)-{ }-
+
+Rat: [<[north] north>], [<[east] east>]; [<[sabotage the piano] sabotage the
+piano>]
+Spider: [<wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+> sabotage piano
+It will play. But what?
+
+Rick Astley.
+
+It is done.
+
+The butler is assessing—focusing on the chandelier.
+
+what does the l stand for anyway
+
+Luna L. Meresankh.
+
+no the l in the middle
+
+It stands for Luna L. Meresankh.
+
+                                    ( )-(B) 
+                                     |   |  
+                                   -( )-(.)-
+                                     |   |  
+                                   -{R}-{.}-
+
+Rat: [<[north] north>], [<[east] east>]; [<[sabotage the piano] sabotage the
+piano>]
+Spider: [<wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+> proceed
+thats a go
+
+The butler is moving from the gold-plated bathroom to the glass-gilded passage.
+
+                                    ( )-( ) 
+                                     |   |  
+                                   -( )-(B)-
+                                     |   |  
+                                   -{R}-{.}-
+
+Rat: [<[rat , north] north>], [<[rat , east] east>]; [<[rat , sabotage the
+piano] sabotage the piano>]
+Spider: [<wait>]; view any room or object
+Jackdaw: [<[proceed] proceed>]; [<[score] score>]
+> n
+The rat, it moves.
+
+Granite-gilded passage
+Four corridors join here at a small hub, where the huge stone blocks of the
+Granite Wing to the west clash with the too-shiny ornaments of the Gilded Wing
+to the north.
+
+The butler is moving from the glass-gilded passage to the ballroom.
+
+Quip list: [#q-1-profanity #q-1-butler #q-1-butler #q-1-malatesta #q-1-
+tension #q-1-constantine #q-null-1 #q-null-2]
+Chose #q-null-2
+
+                                    ( )-( ) 
+                                     |   |  
+                                   -(R)-( )-
+                                     |   |  
+                                   -{ }-{B}-
+
+Rat: [<[north] north>], [<[south] south>], [<[east] east>]
+Spider: [<wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+> n
+The rat goes.
+
+Trophy room
+The gold walls here are mostly covered by steel: [<weapons>] of every shape and
+kind, trophies of the Count's defeated enemies. The room stretches two stories
+high and the upper reaches are lost in shadow.
+
+The newest acquisition seems to be a [<curtain rod>] mounted near the floor.
+
+The butler laboriously cranks the chandelier back up to the ceiling and fixes
+the ratchet in place.
+
+                                    (R)-( ) 
+                                     |   |  
+                                   -( )-( )-
+                                     |   |  
+                                   -{ }-(B)-
+
+Rat: [<[south] south>], [<[east] east>]; [<[sabotage the weapons] sabotage the
+weapons>]
+Spider: [<wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+> curtain rod
+Six feet of metal with a knob on either end, and no curtains in sight.
+
+The butler is assessing—looking at the piano now.
+
+                                    (R)-( ) 
+                                     |   |  
+                                   -( )-( )-
+                                     |   |  
+                                   -{.}-(B)-
+
+Rat: [<[south] south>], [<[east] east>]; [<[sabotage the weapons] sabotage the
+weapons>]
+Spider: [<wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+> e
+It is moving.
+
+Gold-plated bathroom
+Everything in the gilded wing is covered in some kind of gold, and the
+bathrooms are no exception. Even the [<toilet>] is polished to a bright shine.
+
+The only non-gilded object is the [<newspaper>] supplied for reading.
+
+The butler is moving from the ballroom to the dining patio.
+
+Quip list: [#q-1-profanity #q-1-butler #q-1-butler #q-1-malatesta #q-1-
+tension #q-1-constantine #q-null-1 #q-null-2]
+Chose #q-1-malatesta
+
+                                    ( )-(R) 
+                                     |   |  
+                                   -( )-( )-
+                                     |   |  
+                                   -{B}-( )-
+
+Rat: [<[south] south>], [<[west] west>]; [<[sabotage the toilet] sabotage the
+toilet>]
+Spider: [<wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+> newspaper
+From the latest numbers, the New Gothenburg Post is the most popular paper in
+the city. It is well known for being thick and absorbent, among other good
+qualities.
+
+The butler flips a switch under the piano and it falls silent.
+
+You said that Malatesta will be there? The biologist?
+
+Yes. He will attend. The rat knows.
+
+Is he really the sort of person the Count would hope to court?
+
+Oh, definitely. Not the Count, maybe, but Meresankh. He has the sort of "move
+fast and break things" ethos that Silicon Valley types love.
+
+"Move fast and break things"...in human biology?
+
+lots of things there to break
+
+                                    ( )-(R) 
+                                     |   |  
+                                   -( )-( )-
+                                     |   |  
+                                   -(B)-( )-
+
+Rat: [<[south] south>], [<[west] west>]; [<[sabotage the toilet] sabotage the
+toilet>]
+Spider: [<wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+> toilet
+Covered in intricate rose-on-electrum designs. How much work must go into
+keeping this shiny every day?
+
+Vulnerable.
+
+Security active again.
+
+done
+
+That distraction lasted 7 minutes. Debugging note: remember this number!
+
+grabbed a wifi router
+
+Fantastic work. This is exactly what I need. Just attach the device I gave you
+and I can set to work.
+
+hes about to say nothing is secure when someone has physical access
+ha
+see
+when youre typing three sentences i can sometimes fit in one
+
+Well. Anyway. Regardless. Breaking this will take some time, and Jackdaw will
+need to stay nearby, so it will likely mean the end of our work in the wine
+cellar. Fox, tell me when it is time to act.
+
+                                    ( )-(R) 
+                                     |   |  
+                                   -( )-( )-
+                                     |   |  
+                                   -(B)-( )-
+
+Rat: [<[south] south>], [<[west] west>]; [<[sabotage the toilet] sabotage the
+toilet>]
+Spider: [<wait>]; view any room or object; [<[spider , hack the wifi router]
+hack the wifi router>]
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+> 

@@ -12,7 +12,7 @@
 (late on every tick) %% The mark only lasts one turn
 	(now) ~(actor was explicitly indicated)
 
-(instead of $Action)
+(try $Action)
 	~(command $Action)
 	(current player $Actor)
 	~(action $Action is valid for $Actor)

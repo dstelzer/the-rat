@@ -4,7 +4,7 @@ debug: $(FILES) platform/debug.dg
 	dgdebug platform/debug.dg $(FILES)
 
 rat.z5: $(FILES) platform/z.dg
-	dialogc -t z5 -o rat.z5 
+	dialogc -t z5 -o rat.z5 platform/z.dg $(FILES)
 
 rat.aastory: $(FILES) platform/web.dg
 	dialogc -t aa -o rat.aastory platform/web.dg $(FILES)
@@ -16,3 +16,9 @@ web: rat.aastory modweb
 
 vvv.log: $(FILES)
 	dgdebug -vvv $(FILES) > vvv.log
+
+regress.out: $(FILES) platform/debug.dg regress.in
+	dgdebug -qD -s 1234 platform/debug.dg $(FILES) <regress.in >regress.out
+
+regress: regress.out
+	meld regress.out regress.gold

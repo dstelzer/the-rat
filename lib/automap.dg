@@ -292,6 +292,7 @@
 (room glyph $Room) %% Butler's discarded tools
 	*($Obj has ancestor $Room)
 	(item $Obj)
+	($Obj is handled)
 	\*
 (room glyph $Room) %% Butler's current path
 	(butler's current path $Path)

@@ -151,12 +151,8 @@
 (from * go #east to #glasgild)
 (from * go #south to #dine1)
 (* is available in act 1/2/3/4)
-(default butler room for act 1 is *) %% Move every third turn on average
-	(if) (#butler is in room *) (then)
-		~(random from 1 to 3 into 3) %% 2/3 chance
-	(else)
-		(random from 1 to 3 into 1) %% 1/3 chance
-	(endif)
+(default butler room for act 1 is *) %% Alternate between the rooms
+	(butler alternator is set) %% See ai.dg for explanation
 
 (name *) granite-gilded passage
 (look *) Four corridors join here at a small hub, where the huge stone blocks of the Granite Wing to the west clash with the too-shiny ornaments of the Gilded Wing to the north.
@@ -168,12 +164,15 @@
 (from * go #west to #grangild)
 (from * go #south to #dine2)
 (* is available in act 1/2/3/4)
-(default butler room for act 1 is *) %% If the rule for #grangild fails
+(default butler room for act 1 is *)
+	(butler alternator is unset)
 
 (name *) glass-gilded passage
 (look *) Four corridors join here at a small hub, where the sharp-edged rectangles of the Glass Wing to the east clash with the too-shiny ornaments of the Gilded Wing to the north.
 
-(after [examine #grangild/#glasgild]) %% Comment on the wing names
+(early on every tick) %% Comment on the wing names
+	(#rat is in room $Room)
+	($Room is one of [#grangild #glasgild])
 	(accumulate 1)
 		(#grangild is visited) (or) (#glasgild is visited)
 	(into $N) %% How many of the wings are visited?

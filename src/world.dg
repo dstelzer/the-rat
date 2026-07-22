@@ -238,7 +238,7 @@
 	(div @rat) { Yes. The rat can. The rat will. }
 	(div @spider) { Once the butler is distracted, Fox will tell you when to (span @bold) proceed . }
 	(div @chameleon) { Simple and elegant. I like it. }
-	(div @jackdaw) { as per my last email (line) lets ----ing go }
+	(div @jackdaw) { as per my last email (line) lets (space)----ing go }
 	(now) (current act 1)
 	(move #rat to #dine2)
 	(move #butler to #dine1)

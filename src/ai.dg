@@ -288,7 +288,7 @@
 	(current act $Act)
 	(default butler room for act $Act is $Goal)
 	(if) ($Start = $Goal) (then)
-		%% Do nothing
+		(invert the butler alternator) %% See below
 	(elseif)
 		(now) ~(tentatively avoiding occupied rooms)
 		(shortest path from $Start to $Goal is [$Dir|$])
@@ -308,6 +308,15 @@
 		ERROR: Butler cannot return to his default duties at (the $Goal)!
 		(fail)
 	(endif)
+
+%% Every turn the butler has nothing to do, this flag gets toggled. Its purpose is to keep the butler moving from place to place: his current goal room should vary based on this flag.
+(invert the butler alternator)
+	(if) (butler alternator is set) (then)
+		(now) ~(butler alternator is set)
+	(else)
+		(now) (butler alternator is set)
+	(endif)
+@(butler alternator is unset) ~(butler alternator is set)
 
 (set butler's path to $Dirs)
 	(#butler is in room $Start)
