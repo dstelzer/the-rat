@@ -1,0 +1,29 @@
+%% Web styling
+
+(style class @rat)
+	border: 1px solid goldenrod;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+(style class @ratcolor)
+	color: goldenrod;
+
+(style class @spider)
+	border: 1px solid cyan;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+(style class @spidercolor)
+	color: cyan;
+
+(style class @jackdaw)
+	border: 1px solid green;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+(style class @jackdawcolor)
+	color: green;
+
+(style class @chameleon)
+	border: 1px solid magenta;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+(style class @chameleoncolor)
+	color: magenta;

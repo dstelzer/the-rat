@@ -12,13 +12,6 @@
 (current player *)
 (* is #in #garden2)
 
-(style class @rat)
-	color: yellow;
-	margin-top: 1em;
-	margin-bottom: 1em;
-(style class @ratcolor)
-	color: yellow;
-
 (occupied $Room)
 	(#butler is in room $Room) (or) (#crowd is in room $Room)
 
@@ -88,19 +81,14 @@
 (name *) Spider
 (male *)
 (letter for *) S
-
-(style class @spider)
-	color: cyan;
-	margin-top: 1em;
-	margin-bottom: 1em;
-
-(style class @spidercolor)
-	color: cyan;
+(have * refuse $)
+	(div @spider) { That is not something I can do myself. }
 
 (status bar line)
 	(div @statusline) {
 		(span @spidercolor) {
 			(span @bold) { Spider } :
+			({wait}) ;
 			view any room or object
 			(if) (hack target $Obj) (then)
 				;
@@ -120,14 +108,10 @@
 (name *) Jackdaw
 (female *)
 (letter for *) J
-
-(style class @jackdaw)
-	color: green;
-	margin-top: 1em;
-	margin-bottom: 1em;
-
-(style class @jackdawcolor)
-	color: green;
+(have * refuse [go | $])
+	(div @jackdaw) { when you want me to go you have to say proceed (line) spider wanted it unambiguous }
+(have * refuse $)
+	(div @jackdaw) { i dont need micromanaging i just need you to tell me when to act and leave the rest to me }
 
 (status bar line)
 	(div @statusline) {
@@ -156,11 +140,8 @@
 (name *) Chameleon
 (female *)
 (letter for *) C
-
-(style class @chameleon)
-	color: magenta;
-	margin-top: 1em;
-	margin-bottom: 1em;
+(have * refuse $)
+	(div @chameleon) { I'm sure I'd love to, but I think someone else might be better-suited for that. }
 
 #butler
 (protagonist *) (current act 4)
@@ -169,6 +150,8 @@
 (male *)
 (letter for *) B
 (* is #in #garden1)
+(have * refuse $)
+	(div @spider) { The butler shakes his head, ever so slightly. }
 (appearance *)
 	(current goal $)
 	({The butler}) is moving with purpose toward his next task.
@@ -249,6 +232,7 @@
 	(div @spider) { Or in other words... }
 	(div @chameleon) { (span @italic) { We're in. } }
 	(banner)
+	(pause)
 	(div @jackdaw) { im in the wine cellar and theres bottles here worth more than a house (line) and also security worth more than a house }
 	(div @spider) { That should not be a problem. With only a single butler around, all Rat has to do is keep him occupied. }
 	(div @rat) { Yes. The rat can. The rat will. }
@@ -256,6 +240,6 @@
 	(div @chameleon) { Simple and elegant. I like it. }
 	(div @jackdaw) { as per my last email (line) lets ----ing go }
 	(now) (current act 1)
-	(move #rat to #dine1)
-	(move #butler to #dine2)
-	(try [examine #dine1])
+	(move #rat to #dine2)
+	(move #butler to #dine1)
+	(try [examine #dine2])

@@ -150,7 +150,7 @@
 
 %% VERBOSE / BRIEF / SUPERBRIEF / SUPERVERBOSE
 
-%% Disabled, see below
+%% Disabled
 
 %% VERSION
 
@@ -209,7 +209,7 @@
 	(try [ask $NPC about $Topic])
 
 (perform [tell $Actor to | $])
-	(div @spider) It does not seem that (the $Actor) will take orders from us.
+	(div @spider) { It does not seem that (the $Actor) will take orders from us. }
 
 (action [tell $ to | $] is valid for *(protagonist $))
 
@@ -363,6 +363,15 @@
 
 (grammar [sabotage/break/wreck [single]] for [sabotage $])
 
+(prevent [sabotage $])
+	(#rat is in room $Room)
+	(occupied $Room)
+	(div @rat) { No! The rat cannot! It would be seen! }
+
+(prevent [sabotage $])
+	(heist in progress)
+	(div @jackdaw) { hey wait no not yet (line) dont draw the butlers attention to the state of everything while im actively robbing the place }
+
 (prevent [sabotage ~(sabotage target $Obj)])
 	(div @rat) { The rat assesses. But (the $Obj) , (it $Obj) offer(s $Obj) nothing. No means of destruction. }
 
@@ -379,7 +388,13 @@
 	(if) ($Target is broken) (then)
 		(div @rat) { Damaged. In need of repair. }
 	(else)
-		(div @rat) { Vulnerable. (It $Target) could be opened. Changed. }
+		(div @rat) {
+			Vulnerable.
+			(select)
+				(It $Target) could be opened. Changed.
+			(or)
+			(stopping)
+		}
 	(endif)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -473,6 +488,7 @@
 			That was
 		(then at random)
 		$Time minute(s $Time).
+		(span @bold) { Debugging note: remember this number! }
 	}
 	(current act $Act)
 	(if)

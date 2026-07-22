@@ -44,6 +44,9 @@
 
 %% We can use this to select a new quip at (weighted) random
 (select a new quip at random)
+	(delay selection by one tick)
+	(now) ~(delay selection by one tick)
+(select a new quip at random)
 	(collect $Quip)
 		*(quip $Quip)
 		~(locked $Quip)
@@ -61,6 +64,7 @@
 	(now) (current quip $NewQuip)
 	(now) ($NewQuip is visited)
 	(now) (current quip position 0)
+	(now) (delay selection by one tick) %% Add an extra short delay between quips
 	(log) { Chose $NewQuip }
 
 ($New is discourse-relevant)
@@ -90,13 +94,17 @@
 	}
 
 %% We also don't want new quips coming in a constant stream, so we have a couple of "null quips" in the rotation
+%% null-1 has no lines and immediately replaces itself with a new one
+%% null-2 has one blank line before replacing itself
+%% Both of them unset their own visited flag so that they can be drawn unlimited times - which also means there's no edge case when no quips are available
 
 #q-null-1
 (quip *)
-(available *)
-(* line 1) (now) (* is unvisited)
+(* line)
+	(now) (* is unvisited)
+	(fail) %% Draw a new quip immediately
 
 #q-null-2
 (quip *)
-(available *)
-(* line 1/2) (now) (* is unvisited)
+(* line)
+	(now) (* is unvisited)

@@ -43,9 +43,9 @@
 (item *)
 (* is #in #gild1)
 (descr *) Six feet of metal with a knob on either end, and no curtains in sight.
-(appearance * #in #gild1)
+(appearance *) (* is pristine)
 	The newest acquisition seems to be a ({curtain rod}) mounted near the floor.
-(appearance *)
+(appearance *) (* is handled)
 	A ({curtain rod}) has been propped up in an out-of-the-way corner.
 
 #gild2
@@ -79,9 +79,9 @@
 (item *)
 (* is #in #gild2)
 (descr *) From the latest numbers, the New Gothenburg Post is the most popular paper in the city. It is well known for being thick and absorbent, among other good qualities.
-(appearance * #in #gild2)
+(appearance *) (* is pristine)
 	The only non-gilded object is the ({newspaper}) supplied for reading.
-(appearance *)
+(appearance *) (* is handled)
 	A ({newspaper}) has been pushed unobtrusively into a corner.
 
 #gran1

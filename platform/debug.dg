@@ -1,1 +1,37 @@
+%% Special flag for formatting
 (in debugger)
+
+%% Debugger formatting
+
+(style class @body)
+%%	background-color: black; %% Makes a mess in dgt
+
+(startup) (body style @body)
+
+(style class @rat)
+	color: yellow;
+	margin-top: 1em;
+	margin-bottom: 1em;
+(style class @ratcolor)
+	color: yellow;
+
+(style class @spider)
+	color: cyan;
+	margin-top: 1em;
+	margin-bottom: 1em;
+(style class @spidercolor)
+	color: cyan;
+
+(style class @jackdaw)
+	color: green;
+	margin-top: 1em;
+	margin-bottom: 1em;
+(style class @jackdawcolor)
+	color: green;
+
+(style class @chameleon)
+	color: magenta;
+	margin-top: 1em;
+	margin-bottom: 1em;
+(style class @chameleoncolor)
+	color: magenta;

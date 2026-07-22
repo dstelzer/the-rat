@@ -2,7 +2,7 @@
 
 (prevent [tell $Actor to | $])
 	~(protagonist $Actor)
-	TODO not a protagonist
+	(div @spider) { (The $Actor) (isn't $Actor) one of our crew. }
 
 (perform [tell $Actor to | $Action])
 	(now) (actor was explicitly indicated)
@@ -17,7 +17,7 @@
 	(current player $Actor)
 	~(action $Action is valid for $Actor)
 	(if) (actor was explicitly indicated) (then)
-		Error message
+		(have $Actor refuse $Action)
 	(else)
 		(collect $Option) %% Who could that action be meant for?
 			*(action $Action is valid for $Option)
@@ -31,12 +31,11 @@
 		(if) (empty $Options) (then)
 			Uh oh! Action (describe action $Action) is not valid for anyone! Please report!
 		(elseif) ($Options = [$Single]) (then)
-			Assume you're talking to (the $Single)...
 			(try [tell $Single to | $Action])
 		(elseif) ($OnStage = [$Single]) (then)
-			Assume you're talking to (the $Single); it's ambiguous, but only they are on-stage...
 			(try [tell $Single to | $Action])
 		(else)
-			Uh oh! Ambiguity! Did you mean (or-listing $Options)?
+			(div @spider) { Is that instruction meant for (or-listing $Options) ? }
+			(tick) (stop)
 		(endif)
 	(endif)

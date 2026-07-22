@@ -239,6 +239,7 @@
 		(else)
 			(div @spider) { The butler is picking up (the $Tool) . }
 			(now) ($Tool is #heldby #butler)
+			(now) ($Tool is handled)
 		(endif)
 	(else)
 		(if) ($Goal requires tool $Tool) (then)

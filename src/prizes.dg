@@ -1,6 +1,7 @@
-#p-1-a-2
+#p-1-short-a
 (prize *)
-(* requires 2 turns)
+(* available in act 1)
+(* requires 3 turns)
 (* is worth 1 thousand dollars)
 (name *) bottle of chateau lafite
 (prize conversation about *)
@@ -9,9 +10,10 @@
 	(div @chameleon) { You could try with "toe"? }
 	(div @jackdaw) { it just wouldnt be the same now }
 
-#p-1-b-2
+#p-1-short-b
 (prize *)
-(* requires 2 turns)
+(* available in act 1)
+(* requires 3 turns)
 (* is worth 1 thousand dollars)
 (name *) japanese whiskey with an incomprehensible name
 (prize conversation about *)
@@ -20,9 +22,20 @@
 	(div @rat) { Is this one of worth? Not ruined? }
 	(div @jackdaw) { enough people just want it as a status symbol, itll sell fine }
 
-#p-1-a-4
+#p-1-short-c
 (prize *)
-(* requires 4 turns)
+(* available in act 1)
+(* requires 3 turns)
+(* is worth 1 thousand dollars)
+(name *) bottle of centuries-old vinegar
+(prize conversation about *)
+	(div @spider) { Why would he be storing vinegar in the wine cellar? }
+	(div @jackdaw) { it was wine at one point but its definitely not any more }
+
+#p-1-med-a
+(prize *)
+(* available in act 1)
+(* requires 5 turns)
 (* is worth 2 thousand dollars)
 (name *) bottle of assaratum
 (prize conversation about *)
@@ -33,20 +46,22 @@
 	(div @spider) { I mostly expected this to be a pun on "ass". }
 	(div @jackdaw) { i dont lie when it comes to wine }
 
-#p-1-b-4
+#p-1-med-b
 (prize *)
-(* requires 4 turns)
+(* available in act 1)
+(* requires 5 turns)
 (* is worth 2 thousand dollars)
 (name *) pope-blessed communion wine
 (prize conversation about *)
 	(div @rat) { The Pope bottles? }
 	(div @jackdaw) { with enough bribery anything is possible }
 	(div @chameleon) { Or someone is simply lying. }
-	(div @jackdaw) { either way itll sell }
+	(div @jackdaw) { either way itll sell (line) im only grabbing stuff that will move }
 
-#p-1-b-5
+#p-1-end
 (prize *)
-(* requires 5 turns)
+(* available in act 1)
+(* requires 7 turns)
 (name *) wifi router
 (prize conversation about *)
 	(div @spider) { Fantastic work. This is exactly what I need. Just attach the device I gave you and I can set to work. }

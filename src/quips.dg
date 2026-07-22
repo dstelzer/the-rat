@@ -107,7 +107,6 @@
 	(div @spider) { Luna L. Meresankh. }
 	(div @jackdaw) { no the l in the middle }
 	(div @spider) { It stands for Luna L. Meresankh. }
-%% TODO: something about her not actually being Egyptian?
 
 #q-1-guestlist
 (quip *)
@@ -120,8 +119,8 @@
 	($N > 0) %% Fall back to 1 if this would produce 0
 (* line)
 	(div @spider) { Do we have confirmation of the final guest list? }
-	(div @rat) { The Doctor. Malatesta. He will be there. }
-	(div @chameleon) { Ari Tension, the new owner of the New Gothenburg Post. }
+	(div @rat) { The doctor. Malatesta. He will be there. }
+	(div @chameleon) { Ari Tension, the new owner and editor of the New Gothenburg Post. }
 	(div @jackdaw) { that industrialist (line) constantine quinn }
 	(div @chameleon) { And of course, me. }
 	(div @spider) { Once I have added you to the list, yes. Which is waiting on Jackdaw. }
@@ -132,12 +131,51 @@
 (* involves #t-malatesta)
 (* depends on #q-1-guestlist)
 (* line)
-	TODO
+	(div @spider) { You said that Malatesta will be there? The biologist? }
+	(div @rat) { Yes. He will attend. The rat knows. }
+	(div @spider) { Is he really the sort of person the Count would hope to court? }
+	(div @chameleon) { Oh, definitely. Not the Count, maybe, but Meresankh. He has the sort of "move fast and break things" ethos that Silicon Valley types love. }
+	(div @spider) { "Move fast and break things"...in human biology? }
+	(div @jackdaw) { lots of things there to break }
 
-#q-2-grudge %% TODO where to put this?
+#q-1-tension
 (quip *)
-(* depends on #q-1-backstory/#q-1-llm/#TODO)
-~(current act 1)
+(* involves #t-tension)
+(* depends on #q-1-guestlist)
+(* line)
+	(div @spider) { What about Tension? }
+	(div @chameleon) { The media mogul. He's been steadily buying up the press in New Gothenburg and reshaping it to align with his visions. His propaganda. }
+	(div @jackdaw) { i wondered why the post changed so much }
+	(div @chameleon) { It's all his doing. He's the new editor-in-chief. }
+
+#q-1-constantine
+(quip *)
+(* involves #t-constantine)
+(* depends on #q-1-guestlist)
+(* line 1)
+	(div @jackdaw) { and even spider has to have heard of constantine quinn (line) hes always in the press for some donation or other }
+	(div @spider) { Yes. The libraries, the museums. }
+	(div @chameleon) { That's the one. He made his fortune selling household appliances; now everyone knows him as the Refrigerator Magnate. }
+(* line 2)
+	(div @spider) { Then is he behind C&C Electronics? }
+	(div @chameleon) { That would be his daughters, Constance and Constance. His brand is Q&Q. }
+	(div @jackdaw) { seems like the names run in the family }
+	(div @chameleon) { Names usually do that, yes. }
+
+#q-1-chamguest
+(quip *)
+(* depends on #q-1-guestlist/#q-1-profanity)
+(* line)
+	(div @jackdaw) { and who is chameleon going to be (line) to get invited }
+	(div @chameleon) { Oh, you'll see when the time comes. I would hate to spoil the surprise. }
+	(div @jackdaw) { is the middle of the heist really the time to surprise your team }
+	(div @chameleon) { Is that not how the stories always go? }
+	(div @jackdaw) { spider if chameleon wrecks this will you turn off the profanity thing (line) just for a minute or so }
+
+#q-2-grudge
+(quip *)
+(* depends on #TODO)
+(locked *) (current act 1)
 (* involves #t-count)
 (* line)
 	(div @chameleon) { It seems we all had reasons to sign on for this job, above and beyond the money. }

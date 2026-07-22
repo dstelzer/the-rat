@@ -5,8 +5,6 @@ label: START
 --------------------------------------------------------------------------------
 [1m[36mWarning:[0m[36m Object #crowd was used, but never declared as topic.
 [0m[1m[36mWarning:[0m[36m Object #TODO was used, but never declared as topic.
-[0m[1m[36mWarning:[0m[36m src/world.dg, line 105: Possible typo: A query is made to '(hack target $)', but there is no matching rule or interface definition.
-[0m[1m[36mWarning:[0m[36m src/ai.dg, line 101: Possible typo: A query is made to '($ requires tool $)', but there is no matching rule or interface definition.
 [0m[1m[36mWarning:[0m[36m lib/versalink.dg, line 96: Possible typo: A rule is defined for '(option paragraph)', but this predicate is never queried and has no interface definition.
 [0m
 
@@ -19,6 +17,42 @@ label: START
 [38;2;191;28;191mPerfectly!
 [39m
 [<Yes>] / [<No>]> 
+--------------------------------------------------------------------------------
+id: 1
+parent-id: 1784680158251
+command: space
+--------------------------------------------------------------------------------
+[38;2;24;170;73mim in the wine cellar and theres bottles here worth more than a house
+and also security worth more than a house
+[39m
+[38;2;33;186;186mThat should not be a problem. With only a single butler around, all Rat has to do is keep him occupied.
+[39m
+[38;2;181;169;38mYes. The rat can. The rat will.
+[39m
+[38;2;33;186;186mOnce the butler is distracted, Fox will tell you when to [0m[1m[38;2;33;186;186mproceed[0m[38;2;33;186;186m.
+[39m
+[38;2;191;28;191mSimple and elegant. I like it.
+[39m
+[38;2;24;170;73mas per my last email
+lets----ing go
+[39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mTerrace[0m[38;2;33;186;186m
+The dining patio to the north opens into a wide flagstoned terrace, sloping down to the garden path to the east.
+
+The butler is assessing again. Nothing out of place now, so he can focus on his usual tasks.
+[39m
+[0m[36mQuip list: [#q-1-comms #q-1-profanity #q-1-backstory #q-1-backstory #q-1-guestlist #q-null-1 #q-null-2]
+Chose #q-1-backstory
+[0m
+[0m[50m                                    (*)-(*) 
+                                     |   |  
+                                   -( )-( )-
+                                     |   |  
+                                   -(B)-(R)-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[west] west>]; [<[sabotage the chandelier] sabotage the chandelier>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
 --------------------------------------------------------------------------------
 id: 1784004447370
 parent-id: 0
@@ -91,7 +125,7 @@ The path meanders back and forth between tall [<hedges>], making sure there's no
                                   (B)-(R)-( ) 
 [0m
 [38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[east] east>], [<[west] west>][39m
-[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: view any room or object[39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
 [38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
 --------------------------------------------------------------------------------
 id: 1784048551571
@@ -108,7 +142,7 @@ command: hedges
                                   (B)-(R)-( ) 
 [0m
 [38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[east] east>], [<[west] west>][39m
-[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: view any room or object[39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
 [38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
 --------------------------------------------------------------------------------
 id: 1784048551572
@@ -128,7 +162,7 @@ The hedge walls open up here but still wall it in on all sides. Heaven forfend a
                                   (B)-( )-(R) 
 [0m
 [38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[west] west>]; [<[sabotage the water feature] sabotage the water feature>][39m
-[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: view any room or object[39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
 [38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
 --------------------------------------------------------------------------------
 id: 1784048551573
@@ -147,7 +181,7 @@ command: water feature
                                   (B)-( )-(R) 
 [0m
 [38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[west] west>]; [<[sabotage the water feature] sabotage the water feature>][39m
-[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: view any room or object[39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
 [38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
 --------------------------------------------------------------------------------
 id: 1784048551574
@@ -166,7 +200,7 @@ command: sabotage it
                                   (B)-(.)-{R} 
 [0m
 [38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[west] west>]; [<[sabotage the water feature] sabotage the water feature>][39m
-[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: view any room or object[39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
 [38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
 --------------------------------------------------------------------------------
 id: 1784048551575
@@ -186,7 +220,7 @@ get the butler out of the way first
                                   ( )-(B)-{R} 
 [0m
 [38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[rat , west] west>]; [<[rat , sabotage the water feature] sabotage the water feature>][39m
-[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: view any room or object[39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
 [38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[proceed] proceed>]; [<[score] score>][39m
 --------------------------------------------------------------------------------
 id: 1784048551576
@@ -211,7 +245,7 @@ command: proceed
                                   ( )-( )-{B} 
 [0m
 [38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[rat , west] west>]; [<[rat , sabotage the water feature] sabotage the water feature>][39m
-[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: view any room or object[39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
 [38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[proceed] proceed>]; [<[score] score>][39m
 --------------------------------------------------------------------------------
 id: 1784048551577
@@ -230,7 +264,7 @@ command: rat, sabotage the water feature
                                   ( )-( )-(B) 
 [0m
 [38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[west] west>]; [<[sabotage the water feature] sabotage the water feature>][39m
-[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: view any room or object[39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
 [38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
 --------------------------------------------------------------------------------
 id: 1784048551578
@@ -249,18 +283,18 @@ command: wait
                                   ( )-( )-(B) 
 [0m
 [38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[west] west>]; [<[sabotage the water feature] sabotage the water feature>][39m
-[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: view any room or object[39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
 [38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
 --------------------------------------------------------------------------------
-id: 1784048551579
+id: 1784680158245
 parent-id: 1784048551578
-command: wait
+command: z
 --------------------------------------------------------------------------------
-> wait
+> z
 
 [38;2;33;186;186mAll systems ready.
 [39m
-[38;2;33;186;186mThe butler is moving to the south walk to attend to other duties at the terrace.
+[38;2;33;186;186mThe butler is moving through the south walk toward the terrace.
 [39m
 [38;2;181;169;38mThe rat is alone, and free to act.
 [39m
@@ -270,35 +304,18 @@ command: wait
                                   ( )-(B)-(R) 
 [0m
 [38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[west] west>]; [<[sabotage the water feature] sabotage the water feature>][39m
-[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: view any room or object[39m
-[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-> wait
-
-[38;2;33;186;186mAll systems ready.
-[39m
-[38;2;33;186;186mThe butler is moving through the south walk to attend to ordinary duties at the terrace.
-[39m
-[38;2;181;169;38mThe rat is alone, and free to act.
-[39m
-[0m[50m                                   |          
-                                 -( )-        
-                                   |          
-                                  ( )-(B)-(R) 
-[0m
-[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[west] west>]; [<[sabotage the water feature] sabotage the water feature>][39m
-[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: view any room or object[39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
 [38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
 --------------------------------------------------------------------------------
-id: 1784048551580
-parent-id: 1784048551579
-command: wait
+id: 1784680158246
+parent-id: 1784680158245
+command: z
 --------------------------------------------------------------------------------
-> wait
+> z
 
 [38;2;181;169;38mThe rat waits.
 [39m
-[38;2;33;186;186mThe butler is moving to attend to other duties at the terrace.
+[38;2;33;186;186mThe butler is moving to the terrace.
 [39m
 [0m[50m                                   |          
                                  -( )-        
@@ -306,26 +323,11 @@ command: wait
                                   (B)-( )-(R) 
 [0m
 [38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[west] west>]; [<[sabotage the water feature] sabotage the water feature>][39m
-[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: view any room or object[39m
-[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-> wait
-
-[38;2;181;169;38mThe rat waits.
-[39m
-[38;2;33;186;186mThe butler is moving to attend to ordinary duties at the terrace.
-[39m
-[0m[50m                                   |          
-                                 -( )-        
-                                   |          
-                                  (B)-( )-(R) 
-[0m
-[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[west] west>]; [<[sabotage the water feature] sabotage the water feature>][39m
-[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: view any room or object[39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
 [38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
 --------------------------------------------------------------------------------
-id: 1784048551581
-parent-id: 1784048551580
+id: 1784680158247
+parent-id: 1784680158246
 command: sabotage the water feature
 --------------------------------------------------------------------------------
 > sabotage the water feature
@@ -340,14 +342,14 @@ command: sabotage the water feature
                                   (B)-(.)-{R} 
 [0m
 [38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[west] west>]; [<[sabotage the water feature] sabotage the water feature>][39m
-[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: view any room or object[39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
 [38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
 --------------------------------------------------------------------------------
-id: 1784048551582
-parent-id: 1784048551581
-command: west
+id: 1784680158248
+parent-id: 1784680158247
+command: w
 --------------------------------------------------------------------------------
-> west
+> w
 
 [38;2;181;169;38mIt is going.
 [39m
@@ -364,14 +366,14 @@ The butler is moving from the terrace to the south walk.
                                   ( )-(B)-{.} 
 [0m
 [38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[east] east>], [<[west] west>][39m
-[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: view any room or object[39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
 [38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
 --------------------------------------------------------------------------------
-id: 1784048551583
-parent-id: 1784048551582
-command: wait
+id: 1784680158249
+parent-id: 1784680158248
+command: z
 --------------------------------------------------------------------------------
-> wait
+> z
 
 [38;2;33;186;186mAll systems ready.
 [39m
@@ -385,19 +387,19 @@ command: wait
                                   ( )-(R)-{B} 
 [0m
 [38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[east] east>], [<[west] west>][39m
-[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: view any room or object[39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
 [38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
 --------------------------------------------------------------------------------
-id: 1784048551584
-parent-id: 1784048551583
-command: west
+id: 1784680158250
+parent-id: 1784680158249
+command: w
 --------------------------------------------------------------------------------
-> west
+> w
 
 [38;2;181;169;38mThe rat, it is moving.
 [39m
 [38;2;33;186;186m[0m[1m[38;2;33;186;186mTerrace[0m[38;2;33;186;186m
-The dining room to the north opens seamlessly out into a wide flagstoned terrace, sloping down to the garden path to the east.
+The dining patio to the north opens into a wide flagstoned terrace, sloping down to the garden path to the east.
 
 The butler is working on repairing the water feature.
 [39m
@@ -407,14 +409,15 @@ The butler is working on repairing the water feature.
                                   (R)-( )-(B) 
 [0m
 [38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[east] east>][39m
-[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: view any room or object[39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
 [38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
 --------------------------------------------------------------------------------
-id: 1784048551585
-parent-id: 1784048551584
-command: north
+id: 1784680158251
+parent-id: 1784680158250
+command: n
+prompt: keystroke
 --------------------------------------------------------------------------------
-> north
+> n
 
 [38;2;181;169;38mThe rat moves. The way is clear. The mansion is open.
 [39m
@@ -423,63 +426,21 @@ command: north
 [38;2;191;28;191m[0m[4m[38;2;191;28;191mWe're in.[0m[38;2;191;28;191m
 [39m
 [0m[1mThe Rat
-[0mAn authorized sequel by Daniel M. Stelzer.
+[0mAn authorized tribute by Daniel M. Stelzer.
 Release 0. Serial number DEBUG.
 Dialog Interactive Debugger (dgdebug) version 1c/02-dev. Library version 1.2.3. Draconis extensions: Automap 1.2 and Versatile Linking 1.0. Debugging extension 1.2.2-dev.
 
-[38;2;24;170;73mim in the wine cellar and theres bottles here worth more than a house
-and also security worth more than a house
-[39m
-[38;2;33;186;186mThat should not be a problem. With only a single butler around, all Rat has to do is keep him occupied.
-[39m
-[38;2;181;169;38mYes. The rat can. The rat will.
-[39m
-[38;2;33;186;186mOnce the butler is distracted, Fox will tell you when to [0m[1m[38;2;33;186;186mproceed[0m[38;2;33;186;186m.
-[39m
-[38;2;191;28;191mSimple and elegant. I like it.
-[39m
-[38;2;24;170;73mas per my last email
-lets----ing go
-[39m
-[38;2;33;186;186m[0m[1m[38;2;33;186;186mTerrace[0m[38;2;33;186;186m
-The dining room to the north opens seamlessly out into a wide flagstoned terrace, sloping down to the garden path to the east.
-
-The butler is assessing again. Nothing out of place now, so he can focus on his usual tasks.
-[39m
-[0m[36mQuip list: [#q-1-comms #q-1-profanity #q-1-backstory #q-1-backstory #q-1-guestlist #q-null-1 #q-null-2]
-Chose #q-1-backstory
-[0m
-[0m[50m                                    ( )-( ) 
-                                     |   |  
-                                   -( )-( )-
-                                     |   |  
-                                   -(R)-(B)-
-[0m
-[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[east] east>][39m
-[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: view any room or object[39m
-[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+<[] [[ Continue ]]>
 --------------------------------------------------------------------------------
-id: 1784602049793
-parent-id: 1784048551585
-command: w
+id: 1784680158252
+parent-id: 1
+command: z
 --------------------------------------------------------------------------------
-> w
+> z
 
-[38;2;191;28;191mCareful there!
+[38;2;181;169;38mThe rat waits.
 [39m
-[38;2;181;169;38mOccupied?
-[39m
-[38;2;191;28;191mThe Count is likely moving around in the Granite Wing.
-[39m
-[38;2;24;170;73mis he harder to avoid than the butler?
-[39m
-[38;2;33;186;186mHe should not be, no.
-[39m
-[38;2;191;28;191mBut if he's alerted to sabotage before the party starts, he might change his plans.
-[39m
-[38;2;24;170;73mpoint
-[39m
-[38;2;33;186;186mThe butler is moving through the location to attend to ordinary duties at the location.
+[38;2;33;186;186mThe butler is moving through the granite-gilded passage toward the glass-gilded passage.
 [39m
 [38;2;24;170;73mso why are all the rich -------- coming tonight anyway
 [39m
@@ -489,12 +450,2095 @@ command: w
 [39m
 [38;2;191;28;191mAnd the party is a ploy to get them to support it even more, because there aren't enough zeroes in the bank account yet.
 [39m
-[0m[50m                                    ( )-( ) 
+[0m[50m                                    (*)-(*) 
+                                     |   |  
+                                   -(B)-( )-
+                                     |   |  
+                                   -( )-(R)-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[west] west>]; [<[sabotage the chandelier] sabotage the chandelier>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+--------------------------------------------------------------------------------
+id: 1784680158253
+parent-id: 1784680158252
+command: w
+--------------------------------------------------------------------------------
+> w
+
+[38;2;181;169;38mThe rat, it is going.
+[39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mDining patio[0m[38;2;33;186;186m
+Half inside, half outside, with no door in between. The north end of the patio is surrounded by the other rooms of the mansion, while the south end with the [<piano>] is in the middle of the garden. Maintaining a consistent temperature must cost a fortune.
+
+[38;2;181;169;38mThe world will be changed? How? By who?
+[39m
+[38;2;33;186;186mThe Count's working with a Silicon Valley type for this. An up-and-coming 100x rockstar, they call her. Beyond that, details are scarce.
+[39m
+[38;2;191;28;191mSo maybe we'll learn tonight.
+[39m
+[38;2;24;170;73mor maybe the whole thing is the next crypto nfts
+[39m
+[38;2;33;186;186mIt's possible. But for now, the money is here—and within our reach.
+[39m
+[0m[50m                                    (*)-(*) 
+                                     |   |  
+                                   -(B)-( )-
+                                     |   |  
+                                   -(R)-( )-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[east] east>]; [<[sabotage the piano] sabotage the piano>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+--------------------------------------------------------------------------------
+id: 1784680158254
+parent-id: 1784680158253
+command: n
+--------------------------------------------------------------------------------
+> n
+
+[38;2;181;169;38mNo! Impossible! The rat would be seen.
+[39m
+[0m[50m                                    (*)-(*) 
+                                     |   |  
+                                   -(B)-( )-
+                                     |   |  
+                                   -(R)-( )-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[east] east>]; [<[sabotage the piano] sabotage the piano>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+--------------------------------------------------------------------------------
+id: 1784680158255
+parent-id: 1784680158254
+command: e
+--------------------------------------------------------------------------------
+> e
+
+[38;2;24;170;73mdot dot dot
+[39m
+[0m[36mQuip list: [#q-1-comms #q-1-profanity #q-1-butler #q-1-butler #q-1-butler #q-1-butler #q-1-count #q-1-count #q-1-count #q-1-count #q-1-llm #q-1-llm #q-1-llm #q-1-guestlist #q-1-guestlist #q-null-1 #q-null-2]
+Chose #q-1-butler
+[0m
+[0m[50m                                    (*)-(*) 
+                                     |   |  
+                                   -(B)-( )-
+                                     |   |  
+                                   -(R)-( )-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[east] east>]; [<[sabotage the piano] sabotage the piano>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> e
+
+[38;2;181;169;38mIt is moving.
+[39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mBallroom[0m[38;2;33;186;186m
+The eastern half of the dining area is properly enclosed, but with floor-to-ceiling windows along the south wall to keep it connected to the gardens. During the day, it is well-lit with sunlight; at night, the [<chandelier>] fills in.
+
+The butler is moving to the glass-gilded passage.
+[39m
+[0m[36mQuip list: [#q-1-comms #q-1-profanity #q-1-butler #q-1-butler #q-1-butler #q-1-butler #q-1-count #q-1-count #q-1-count #q-1-count #q-1-llm #q-1-llm #q-1-llm #q-1-guestlist #q-1-guestlist #q-null-1 #q-null-2]
+Chose #q-1-butler
+[0m
+[0m[50m                                    (*)-(*) 
+                                     |   |  
+                                   -( )-(B)-
+                                     |   |  
+                                   -( )-(R)-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[west] west>]; [<[sabotage the chandelier] sabotage the chandelier>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+--------------------------------------------------------------------------------
+id: 1784680158256
+parent-id: 1784680158255
+command: sabotage chandelier
+--------------------------------------------------------------------------------
+> sabotage piano
+
+[38;2;181;169;38mIt will play. But what?
+[39m
+[38;2;33;186;186mRick Astley.
+[39m
+[38;2;181;169;38mIt is done.
+[39m
+[38;2;33;186;186mThe butler is assessing—looking at the piano now.
+[39m
+[38;2;33;186;186mWhat I do not understand is why such a high-profile event only has a single person on staff. I am grateful, certainly. But puzzled all the same.
+[39m
+[38;2;191;28;191mOh, that part's easy to explain. The Count can never hold onto employees for long. The say he drains the life out of them. He probably had a dozen last month and now he's down to one again.
+[39m
+[38;2;24;170;73mthat ones pretty good though
+[39m
+[0m[50m                                    (*)-(*) 
+                                     |   |  
+                                   -(B)-( )-
+                                     |   |  
+                                   -{R}-( )-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[east] east>]; [<[sabotage the piano] sabotage the piano>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> sabotage chandelier
+
+[38;2;181;169;38mThe crank is on a ratchet. The rat trips it, and. Voila!
+[39m
+[38;2;191;28;191mWhat was that sound?!
+[39m
+[38;2;33;186;186mThat was the chandelier crashing down and landing on the tables.
+[39m
+[38;2;33;186;186mThe butler is assessing—looking at the chandelier now.
+[39m
+[38;2;33;186;186mWhat I do not understand is why such a high-profile event only has a single person on staff. I am grateful, certainly. But puzzled all the same.
+[39m
+[38;2;191;28;191mOh, that part's easy to explain. The Count can never hold onto employees for long. The say he drains the life out of them. He probably had a dozen last month and now he's down to one again.
+[39m
+[38;2;24;170;73mthat ones pretty good though
+[39m
+[0m[50m                                    (*)-(*) 
+                                     |   |  
+                                   -( )-(B)-
+                                     |   |  
+                                   -( )-{R}-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[west] west>]; [<[sabotage the chandelier] sabotage the chandelier>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+--------------------------------------------------------------------------------
+id: 1784680158257
+parent-id: 1784680158256
+command: n
+--------------------------------------------------------------------------------
+> n
+
+[38;2;181;169;38mIt goes.
+[39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mGlass-gilded passage[0m[38;2;33;186;186m
+Four corridors join here at a small hub, where the sharp-edged rectangles of the Glass Wing to the east clash with the too-shiny ornaments of the Gilded Wing to the north.
+
+The butler is moving from the granite-gilded passage to the glass-gilded passage.
+[39m
+[38;2;181;169;38mPeople approach! The rat must hide!
+[39m
+[38;2;33;186;186mWhat I do not understand is why such a high-profile event only has a single person on staff. I am grateful, certainly. But puzzled all the same.
+[39m
+[38;2;191;28;191mOh, that part's easy to explain. The Count can never hold onto employees for long. The say he drains the life out of them. He probably had a dozen last month and now he's down to one again.
+[39m
+[38;2;24;170;73mthat ones pretty good though
+[39m
+[0m[50m                                    (*)-(*) 
+                                     |   |  
+                                   -( )-(B)-
+                                     |   |  
+                                   -( )-{.}-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[south] south>], [<[west] west>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> n
+
+[38;2;181;169;38mNo! Impossible! The rat would be seen.
+[39m
+[38;2;33;186;186mThe butler is moving from the glass-gilded passage to the ballroom.
+[39m
+[38;2;181;169;38mPeople approach! The rat must hide!
+[39m
+[38;2;191;28;191mDo you know him? The one employee who's left?
+[39m
+[38;2;181;169;38mThe rat has heard of this one. Yes. Skilled. Very skilled. Tireless.
+[39m
+[38;2;24;170;73mand apparently has the patience of a saint
+[39m
+[38;2;191;28;191mI wonder if I could get an interview with him...
+[39m
+[0m[50m                                    (*)-(*) 
+                                     |   |  
+                                   -( )-( )-
+                                     |   |  
+                                   -( )-{B}-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[west] west>]; [<[sabotage the chandelier] sabotage the chandelier>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+--------------------------------------------------------------------------------
+id: 1784680158258
+parent-id: 1784680158257
+command: z
+--------------------------------------------------------------------------------
+> z
+
+[38;2;33;186;186mAll systems ready.
+[39m
+[38;2;33;186;186mThe butler is moving from the glass-gilded passage to the ballroom.
+[39m
+[38;2;181;169;38mThe rat is alone, and free to act.
+[39m
+[38;2;191;28;191mDo you know him? The one employee who's left?
+[39m
+[38;2;181;169;38mThe rat has heard of this one. Yes. Skilled. Very skilled. Tireless.
+[39m
+[38;2;24;170;73mand apparently has the patience of a saint
+[39m
+[38;2;191;28;191mI wonder if I could get an interview with him...
+[39m
+[0m[50m                                    (*)-(*) 
+                                     |   |  
+                                   -( )-(R)-
+                                     |   |  
+                                   -( )-{B}-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[south] south>], [<[west] west>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> z
+
+[38;2;24;170;73mdot dot dot
+[39m
+[38;2;33;186;186mThe butler laboriously cranks the chandelier back up to the ceiling and fixes the ratchet in place.
+[39m
+[0m[50m                                    (*)-(*) 
+                                     |   |  
+                                   -( )-( )-
+                                     |   |  
+                                   -( )-(B)-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[west] west>]; [<[sabotage the chandelier] sabotage the chandelier>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+--------------------------------------------------------------------------------
+id: 1784680158259
+parent-id: 1784680158258
+command: n
+--------------------------------------------------------------------------------
+> n
+
+[38;2;181;169;38mIt moves.
+[39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mGold-plated bathroom[0m[38;2;33;186;186m
+Everything in the gilded wing is covered in some kind of gold, and the bathrooms are no exception. Even the [<toilet>] is polished to a bright shine.
+
+The only non-gilded object is the [<newspaper>] supplied for reading.
+
+The butler laboriously cranks the chandelier back up to the ceiling and fixes the ratchet in place.
+[39m
+[0m[36mQuip list: [#q-1-comms #q-1-profanity #q-1-valet #q-1-valet #q-1-valet #q-1-count #q-1-count #q-1-count #q-1-count #q-1-llm #q-1-guestlist #q-1-guestlist #q-1-guestlist #q-1-guestlist #q-null-1 #q-null-2]
+Chose #q-null-1
+[0m
+[0m[50m                                    (*)-(R) 
+                                     |   |  
+                                   -( )-( )-
+                                     |   |  
+                                   -( )-(B)-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[south] south>], [<[west] west>]; [<[sabotage the toilet] sabotage the toilet>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> n
+
+[38;2;181;169;38mThe rat cannot! It hides; it would be seen!
+[39m
+[38;2;33;186;186mThe butler is assessing again. No crises, so he can focus on his usual tasks.
+[39m
+[0m[36mQuip list: [#q-1-comms #q-1-profanity #q-1-valet #q-1-valet #q-1-valet #q-1-count #q-1-count #q-1-count #q-1-count #q-1-llm #q-1-guestlist #q-1-guestlist #q-1-guestlist #q-1-guestlist #q-null-1 #q-null-2]
+Chose #q-1-valet
+[0m
+[0m[50m                                    (*)-(*) 
+                                     |   |  
+                                   -( )-( )-
+                                     |   |  
+                                   -( )-(B)-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[west] west>]; [<[sabotage the chandelier] sabotage the chandelier>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+--------------------------------------------------------------------------------
+id: 1784680158261
+parent-id: 1784680158259
+command: toilet
+--------------------------------------------------------------------------------
+> toilet
+
+[38;2;33;186;186mCovered in intricate rose-on-electrum designs. How much work must go into keeping this shiny every day?
+
+[38;2;181;169;38mVulnerable.
+[39m
+[38;2;33;186;186mThe butler is assessing again. No crises, so he can focus on his usual tasks.
+[39m
+[0m[36mQuip list: [#q-1-comms #q-1-profanity #q-1-valet #q-1-count #q-1-count #q-1-llm #q-1-guestlist #q-1-guestlist #q-1-guestlist #q-1-guestlist #q-null-1 #q-null-2]
+Chose #q-1-comms
+[0m
+[0m[50m                                    (*)-(R) 
+                                     |   |  
+                                   -( )-( )-
+                                     |   |  
+                                   -( )-(B)-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[south] south>], [<[west] west>]; [<[sabotage the toilet] sabotage the toilet>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> toilet
+[0m[4m(I'm sorry, I didn't understand what you wanted to do.)
+[0m
+[0m[50m                                    (*)-(*) 
+                                     |   |  
+                                   -( )-( )-
+                                     |   |  
+                                   -( )-(B)-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[west] west>]; [<[sabotage the chandelier] sabotage the chandelier>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+--------------------------------------------------------------------------------
+id: 1784680158262
+parent-id: 1784680158261
+command: newspaper
+--------------------------------------------------------------------------------
+> newspaper
+
+[38;2;33;186;186mFrom the latest numbers, the New Gothenburg Post is the most popular paper in the city. It is well known for being thick and absorbent, among other good qualities.
+
+The butler is moving to the glass-gilded passage.
+[39m
+[38;2;191;28;191mSo, not to ask a stupid question, but I [0m[4m[38;2;191;28;191mam[0m[38;2;191;28;191m curious. Why are we doing all of this via text?
+[39m
+[38;2;33;186;186mBandwidth. The less data needs to be transmitted, the better it can be hidden and secured. This system uses approximately one bit per letter, or one byte per word. Voice would be an order of magnitude more.
+[39m
+[38;2;24;170;73mplus he sent that in like two seconds so either he types faster than liszt or he had it written up and ready to go
+[39m
+[38;2;33;186;186mIt all comes down to information theory. And in this case a large corpus of my writing and a chorded keyboard.
+[39m
+[38;2;24;170;73mi regret asking
+[39m
+[38;2;191;28;191mI don't.
+[39m
+[0m[50m                                    (*)-(R) 
+                                     |   |  
+                                   -( )-(B)-
+                                     |   |  
+                                   -( )-( )-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[south] south>], [<[west] west>]; [<[sabotage the toilet] sabotage the toilet>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> newspaper
+[0m[4m(I'm sorry, I didn't understand what you wanted to do.)
+[0m
+[0m[50m                                    (*)-(*) 
+                                     |   |  
+                                   -( )-( )-
+                                     |   |  
+                                   -( )-(B)-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[west] west>]; [<[sabotage the chandelier] sabotage the chandelier>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+--------------------------------------------------------------------------------
+id: 1784680158263
+parent-id: 1784680158262
+command: w
+--------------------------------------------------------------------------------
+> w
+
+[38;2;181;169;38mIt moves.
+[39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mTrophy room[0m[38;2;33;186;186m
+The gold walls here are mostly covered by steel: [<weapons>] of every shape and kind, trophies of the Count's defeated enemies. The room stretches two stories high and the upper reaches are lost in shadow.
+
+The newest acquisition seems to be a [<curtain rod>] mounted near the floor.
+
+Besides, the one bit per letter is only an average. Some people's messages can be compressed even further. It all comes down to how predictable they are—for example, Jackdaw is about to say "---- you".
+[39m
+[38;2;24;170;73mwow ---- you
+[39m
+[0m[50m                                    (R)-(*) 
+                                     |   |  
+                                   -( )-(B)-
+                                     |   |  
+                                   -( )-( )-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[south] south>], [<[east] east>]; [<[sabotage the weapons] sabotage the weapons>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> w
+
+[38;2;181;169;38mThe rat cannot! It hides; it would be seen!
+[39m
+[38;2;33;186;186mThe butler is moving to the glass-gilded passage.
+[39m
+[38;2;181;169;38mThe rat is alone, and free to act.
+[39m
+[38;2;24;170;73mhang on
+isnt a butler like the head of the staff
+meaning more than one person total
+[39m
+[38;2;191;28;191mTechnically speaking, I believe this man would be more of a valet.
+[39m
+[38;2;33;186;186mOr perhaps a butler-valet?
+[39m
+[38;2;191;28;191mI've always liked the term "batman" myself. Or "factotum".
+[39m
+[38;2;33;186;186mAccuracy aside, I already used V on the map for Count Vespertilion.
+[39m
+[38;2;191;28;191mWhat about C?
+[39m
+[38;2;181;169;38mThat would be Chameleon. You.
+[39m
+[38;2;24;170;73mwell you can also read the B as batman if you want
+[39m
+[0m[50m                                    (*)-(*) 
+                                     |   |  
+                                   -( )-(B)-
+                                     |   |  
+                                   -( )-(R)-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[west] west>]; [<[sabotage the chandelier] sabotage the chandelier>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+--------------------------------------------------------------------------------
+id: 1784680158264
+parent-id: 1784680158263
+command: weapons
+--------------------------------------------------------------------------------
+> weapons
+
+[38;2;33;186;186mEverything from longswords to wedding rings to redistricting maps to claymores (both kinds), held on the wall by flimsy wooden pegs.
+
+[38;2;181;169;38mVulnerable.
+[39m
+[0m[36mQuip list: [#q-1-profanity #q-1-profanity #q-1-profanity #q-1-valet #q-1-count #q-1-count #q-1-llm #q-1-guestlist #q-1-guestlist #q-1-guestlist #q-1-guestlist #q-1-guestlist #q-1-guestlist #q-null-1 #q-null-2]
+Chose #q-1-guestlist
+[0m
+[0m[50m                                    (R)-(*) 
+                                     |   |  
+                                   -( )-(B)-
+                                     |   |  
+                                   -( )-( )-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[south] south>], [<[east] east>]; [<[sabotage the weapons] sabotage the weapons>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> weapons
+
+[38;2;33;186;186mEverything from longswords to wedding rings to redistricting maps to claymores (both kinds), held on the wall by flimsy wooden pegs.
+
+[38;2;181;169;38mVulnerable.
+[39m
+[0m[50m                                    (*)-(*) 
+                                     |   |  
+                                   -( )-(B)-
+                                     |   |  
+                                   -( )-(R)-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[west] west>]; [<[sabotage the chandelier] sabotage the chandelier>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+--------------------------------------------------------------------------------
+id: 1784680158265
+parent-id: 1784680158264
+command: sabotage the weapons
+--------------------------------------------------------------------------------
+> sabotage the weapons
+
+[38;2;181;169;38mMany handholds. The rat can climb. Small pegs. Easy to pull free. And the axe begins to swing!
+[39m
+[38;2;33;186;186mA battleaxe has come loose and is now swinging around at neck height.
+[39m
+[38;2;33;186;186mThe butler is assessing—focusing on the weapons.
+[39m
+[38;2;33;186;186mDo we have confirmation of the final guest list?
+[39m
+[38;2;181;169;38mThe doctor. Malatesta. He will be there.
+[39m
+[38;2;191;28;191mAri Tension, the new owner and editor of the New Gothenburg Post.
+[39m
+[38;2;24;170;73mthat industrialist
+constantine quinn
+[39m
+[38;2;191;28;191mAnd of course, me.
+[39m
+[38;2;33;186;186mOnce I have added you to the list, yes. Which is waiting on Jackdaw.
+[39m
+[38;2;24;170;73mworking on it hold your horses
+just buy me time
+[39m
+[0m[50m                                    {R}-(*) 
+                                     |   |  
+                                   -( )-(B)-
+                                     |   |  
+                                   -( )-( )-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[south] south>], [<[east] east>]; [<[sabotage the weapons] sabotage the weapons>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> sabotage the weapons
+The weapons isn't here.
+
+[0m[50m                                    (*)-(*) 
+                                     |   |  
+                                   -( )-(B)-
+                                     |   |  
+                                   -( )-(R)-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[west] west>]; [<[sabotage the chandelier] sabotage the chandelier>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+--------------------------------------------------------------------------------
+id: 1784680158266
+parent-id: 1784680158265
+command: jackdaw, proceed
+--------------------------------------------------------------------------------
+> jackdaw, proceed
+
+[38;2;24;170;73mon it
+[39m
+[38;2;33;186;186mThe butler is moving from the glass-gilded passage to the gold-plated bathroom.
+[39m
+[0m[36mQuip list: [#q-1-profanity #q-1-valet #q-1-count #q-1-count #q-1-llm #q-1-malatesta #q-1-malatesta #q-1-malatesta #q-1-tension #q-1-tension #q-1-tension #q-1-constantine #q-1-constantine #q-1-constantine #q-null-1 #q-null-2]
+Chose #q-1-tension
+[0m
+[0m[50m                                    {R}-(B) 
+                                     |   |  
+                                   -( )-( )-
+                                     |   |  
+                                   -( )-( )-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[rat , south] south>], [<[rat , east] east>]; [<[rat , sabotage the weapons] sabotage the weapons>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[proceed] proceed>]; [<[score] score>][39m
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> jackdaw, proceed
+
+[38;2;24;170;73mthats a go
+[39m
+[38;2;33;186;186mThe butler is moving to the granite-gilded passage.
+[39m
+[0m[36mQuip list: [#q-1-comms #q-1-profanity #q-1-count #q-1-count #q-1-count #q-1-count #q-1-llm #q-1-guestlist #q-1-guestlist #q-1-guestlist #q-1-guestlist #q-1-guestlist #q-1-guestlist #q-null-1 #q-null-2]
+Chose #q-1-count
+[0m
+[0m[50m                                    (*)-(*) 
+                                     |   |  
+                                   -(B)-( )-
+                                     |   |  
+                                   -( )-(R)-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[rat , north] north>], [<[rat , west] west>]; [<[rat , sabotage the chandelier] sabotage the chandelier>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[proceed] proceed>]; [<[score] score>][39m
+--------------------------------------------------------------------------------
+id: 1784680158267
+parent-id: 1784680158266
+command: z
+--------------------------------------------------------------------------------
+> z
+
+[38;2;181;169;38mThe rat waits.
+[39m
+[38;2;33;186;186mThe butler is moving from the gold-plated bathroom to the trophy room.
+[39m
+[38;2;181;169;38mPeople approach! The rat must hide!
+[39m
+[38;2;33;186;186mWhat about Tension?
+[39m
+[38;2;191;28;191mThe media mogul. He's been steadily buying up the press in New Gothenburg and reshaping it to align with his visions. His propaganda.
+[39m
+[38;2;24;170;73mi wondered why the post changed so much
+[39m
+[38;2;191;28;191mIt's all his doing. He's the new editor-in-chief.
+[39m
+[0m[50m                                    {B}-(*) 
+                                     |   |  
+                                   -( )-( )-
+                                     |   |  
+                                   -( )-( )-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[rat , south] south>], [<[rat , east] east>]; [<[rat , sabotage the weapons] sabotage the weapons>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[proceed] proceed>]; [<[score] score>][39m
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> z
+
+[38;2;33;186;186mAll systems ready.
+[39m
+[38;2;181;169;38mThe rat does not know the title. The Count.
+[39m
+[38;2;33;186;186mI think it is some European thing.
+[39m
+[38;2;191;28;191mOh no, we have counties here in the States too. Count Vespertilion is the highest democratically-elected official in Vespertilion County. One step higher than the Mayor of New Gothenburg.
+[39m
+[38;2;33;186;186mHe was elected?
+[39m
+[38;2;191;28;191mEvery four years. He's run unopposed for decades.
+[39m
+[0m[50m                                    (*)-(*) 
+                                     |   |  
+                                   -(B)-( )-
+                                     |   |  
+                                   -( )-(R)-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[rat , north] north>], [<[rat , west] west>]; [<[rat , sabotage the chandelier] sabotage the chandelier>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[proceed] proceed>]; [<[score] score>][39m
+--------------------------------------------------------------------------------
+id: 1784680158268
+parent-id: 1784680158267
+command: z
+--------------------------------------------------------------------------------
+> z
+
+[38;2;191;28;191mSo, darling, what comes next?
+[39m
+[38;2;33;186;186mThe butler is swinging a curtain rod with remarkable agility, trying to parry the battleaxe and get its motion under control. Eventually he manages to block its edge and push it carefully back up onto the pegs.
+[39m
+[0m[36mQuip list: [#q-1-profanity #q-1-valet #q-1-count #q-1-count #q-1-llm #q-1-malatesta #q-1-constantine #q-null-1 #q-null-2]
+Chose #q-1-valet
+[0m
+[0m[50m                                    (B)-(*) 
+                                     |   |  
+                                   -( )-( )-
+                                     |   |  
+                                   -( )-( )-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[rat , south] south>], [<[rat , east] east>]; [<[rat , sabotage the weapons] sabotage the weapons>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[proceed] proceed>]; [<[score] score>][39m
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> z
+
+[38;2;181;169;38mThe rat waits.
+[39m
+[38;2;24;170;73mwait if count vespertilion is a title then whats his actual name
+[39m
+[38;2;191;28;191mIt's also his name. He changed it when he was first running for office, and apparently it worked.
+[39m
+[0m[50m                                    (*)-(*) 
+                                     |   |  
+                                   -(B)-( )-
+                                     |   |  
+                                   -( )-(R)-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[rat , north] north>], [<[rat , west] west>]; [<[rat , sabotage the chandelier] sabotage the chandelier>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[proceed] proceed>]; [<[score] score>][39m
+--------------------------------------------------------------------------------
+id: 1784680158269
+parent-id: 1784680158268
+command: z
+--------------------------------------------------------------------------------
+> z
+
+[38;2;24;170;73mdot dot dot
+[39m
+[38;2;33;186;186mHe is accessing the security. Jackdaw, get out!
+[39m
+[38;2;24;170;73mout
+with seconds to spare
+how long was that?
+[39m
+[38;2;33;186;186mThe butler was distracted for 4 minutes. [0m[1m[38;2;33;186;186mDebugging note: remember this number![0m[38;2;33;186;186m
+[39m
+[38;2;24;170;73mgrabbed a bottle of chateau lafite
+estimated value $1,000
+[39m
+[38;2;33;186;186mI admire your restraint in not making a pun about the billionaires liking feet.
+[39m
+[38;2;24;170;73mwell i cant now can i
+thanks for that
+[39m
+[38;2;191;28;191mYou could try with "toe"?
+[39m
+[38;2;24;170;73mit just wouldnt be the same now
+[39m
+[0m[50m                                    (B)-(*) 
+                                     |   |  
+                                   -( )-( )-
+                                     |   |  
+                                   -( )-( )-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[rat , south] south>], [<[rat , east] east>]; [<[rat , sabotage the weapons] sabotage the weapons>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[proceed] proceed>]; [<[score] score>][39m
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> z
+
+[38;2;33;186;186mAll systems ready.
+[39m
+[38;2;33;186;186mThe butler is moving to the glass-gilded passage.
+[39m
+[0m[50m                                    (*)-(*) 
+                                     |   |  
+                                   -( )-(B)-
+                                     |   |  
+                                   -( )-(R)-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[rat , north] north>], [<[rat , west] west>]; [<[rat , sabotage the chandelier] sabotage the chandelier>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[proceed] proceed>]; [<[score] score>][39m
+--------------------------------------------------------------------------------
+id: 1784680158270
+parent-id: 1784680158269
+command: z
+--------------------------------------------------------------------------------
+> z
+
+[38;2;191;28;191mSo, darling, what comes next?
+[39m
+[38;2;33;186;186mThe butler is moving to the granite-gilded passage.
+[39m
+[38;2;181;169;38mThe rat is alone, and free to act.
+[39m
+[38;2;24;170;73mhang on
+isnt a butler like the head of the staff
+meaning more than one person total
+[39m
+[38;2;191;28;191mTechnically speaking, I believe this man would be more of a valet.
+[39m
+[38;2;33;186;186mOr perhaps a butler-valet?
+[39m
+[38;2;191;28;191mI've always liked the term "batman" myself. Or "factotum".
+[39m
+[38;2;33;186;186mAccuracy aside, I already used V on the map for Count Vespertilion.
+[39m
+[38;2;191;28;191mWhat about C?
+[39m
+[38;2;181;169;38mThat would be Chameleon. You.
+[39m
+[38;2;24;170;73mwell you can also read the B as batman if you want
+[39m
+[0m[50m                                    (R)-(*) 
+                                     |   |  
+                                   -(B)-( )-
+                                     |   |  
+                                   -( )-( )-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[rat , south] south>], [<[rat , east] east>]; [<[rat , sabotage the weapons] sabotage the weapons>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[proceed] proceed>]; [<[score] score>][39m
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> z
+
+[38;2;181;169;38mThe rat waits.
+[39m
+[0m[36mQuip list: [#q-1-comms #q-1-profanity #q-1-llm #q-1-guestlist #q-1-guestlist #q-1-guestlist #q-1-guestlist #q-1-guestlist #q-1-guestlist #q-1-guestlist #q-1-guestlist #q-null-1 #q-null-2]
+Chose #q-1-guestlist
+[0m
+[0m[50m                                    (*)-(*) 
+                                     |   |  
+                                   -( )-(B)-
+                                     |   |  
+                                   -( )-(R)-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[rat , north] north>], [<[rat , west] west>]; [<[rat , sabotage the chandelier] sabotage the chandelier>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[proceed] proceed>]; [<[score] score>][39m
+--------------------------------------------------------------------------------
+id: 1784680158271
+parent-id: 1784680158270
+command: e
+--------------------------------------------------------------------------------
+> e
+
+[38;2;181;169;38mThe rat moves.
+[39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mGold-plated bathroom[0m[38;2;33;186;186m
+Everything in the gilded wing is covered in some kind of gold, and the bathrooms are no exception. Even the [<toilet>] is polished to a bright shine.
+
+The only non-gilded object is the [<newspaper>] supplied for reading.
+
+[0m[36mQuip list: [#q-1-profanity #q-1-count #q-1-count #q-1-count #q-1-count #q-1-llm #q-1-malatesta #q-1-constantine #q-null-1 #q-null-2]
+Chose #q-1-count
+[0m
+[0m[50m                                    (*)-(R) 
+                                     |   |  
+                                   -(B)-( )-
+                                     |   |  
+                                   -( )-( )-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[south] south>], [<[west] west>]; [<[sabotage the toilet] sabotage the toilet>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> e
+
+[38;2;191;28;191mCareful there!
+[39m
+[38;2;181;169;38mOccupied?
+[39m
+[38;2;191;28;191mLLM is likely moving around in the Glass Wing.
+[39m
+[38;2;24;170;73mis she harder to avoid than the butler?
+[39m
+[38;2;33;186;186mShe should not be, no.
+[39m
+[38;2;191;28;191mBut if she's alerted to sabotage before the party starts, she might change her plans.
+[39m
+[38;2;24;170;73mpoint
+[39m
+[38;2;33;186;186mDo we have confirmation of the final guest list?
+[39m
+[38;2;181;169;38mThe doctor. Malatesta. He will be there.
+[39m
+[38;2;191;28;191mAri Tension, the new owner and editor of the New Gothenburg Post.
+[39m
+[38;2;24;170;73mthat industrialist
+constantine quinn
+[39m
+[38;2;191;28;191mAnd of course, me.
+[39m
+[38;2;33;186;186mOnce I have added you to the list, yes. Which is waiting on Jackdaw.
+[39m
+[38;2;24;170;73mworking on it hold your horses
+just buy me time
+[39m
+[0m[50m                                    (*)-(*) 
+                                     |   |  
+                                   -( )-(B)-
+                                     |   |  
+                                   -( )-(R)-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[west] west>]; [<[sabotage the chandelier] sabotage the chandelier>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+--------------------------------------------------------------------------------
+id: 1784680158272
+parent-id: 1784680158271
+command: sabotage toilet
+--------------------------------------------------------------------------------
+> sabotage toilet
+
+[38;2;181;169;38mGold pipes. Not different from normal pipes. The rat twists, and inserts, and reconnects, and is done.
+[39m
+[38;2;33;186;186mAnd water is currently spraying halfway across the room. Good job.
+[39m
+[38;2;33;186;186mThe butler is assessing—turning to the toilet.
+[39m
+[38;2;181;169;38mThe rat does not know the title. The Count.
+[39m
+[38;2;33;186;186mI think it is some European thing.
+[39m
+[38;2;191;28;191mOh no, we have counties here in the States too. Count Vespertilion is the highest democratically-elected official in Vespertilion County. One step higher than the Mayor of New Gothenburg.
+[39m
+[38;2;33;186;186mHe was elected?
+[39m
+[38;2;191;28;191mEvery four years. He's run unopposed for decades.
+[39m
+[0m[50m                                    (*)-{R} 
+                                     |   |  
+                                   -(B)-( )-
+                                     |   |  
+                                   -( )-( )-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[south] south>], [<[west] west>]; [<[sabotage the toilet] sabotage the toilet>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> sabotage toilet
+[0m[4m(I only understood you as far as wanting to sabotage something.)
+[0m
+[0m[50m                                    (*)-(*) 
+                                     |   |  
+                                   -( )-(B)-
+                                     |   |  
+                                   -( )-(R)-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[west] west>]; [<[sabotage the chandelier] sabotage the chandelier>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+--------------------------------------------------------------------------------
+id: 1784680158273
+parent-id: 1784680158272
+command: s
+--------------------------------------------------------------------------------
+> s
+
+[38;2;181;169;38mThe rat, it goes.
+[39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mGlass-gilded passage[0m[38;2;33;186;186m
+Four corridors join here at a small hub, where the sharp-edged rectangles of the Glass Wing to the east clash with the too-shiny ornaments of the Gilded Wing to the north.
+
+[38;2;24;170;73mdo both of them really need to start with g
+[39m
+[38;2;191;28;191mIt does seem like there could have been more...[0m[4m[38;2;191;28;191mcreativity[0m[38;2;191;28;191m involved.
+[39m
+[38;2;181;169;38mIt fits. The names match. A symmetry.
+[39m
+[38;2;24;170;73mwe could even just call them north east and west
+i thought you loved compass directions
+[39m
+[38;2;33;186;186mThe butler is moving from the granite-gilded passage to the trophy room.
+[39m
+[0m[50m                                    (B)-{*} 
+                                     |   |  
+                                   -( )-(R)-
+                                     |   |  
+                                   -( )-( )-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[south] south>], [<[west] west>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> s
+There doesn't appear to be an exit in that direction.
+
+[38;2;33;186;186mThe butler is moving to the granite-gilded passage.
+[39m
+[0m[50m                                    (*)-(*) 
+                                     |   |  
+                                   -(B)-( )-
+                                     |   |  
+                                   -( )-(R)-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[west] west>]; [<[sabotage the chandelier] sabotage the chandelier>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+--------------------------------------------------------------------------------
+id: 1784680158274
+parent-id: 1784680158273
+command: s
+--------------------------------------------------------------------------------
+> s
+
+[38;2;181;169;38mThe rat moves.
+[39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mBallroom[0m[38;2;33;186;186m
+The eastern half of the dining area is properly enclosed, but with floor-to-ceiling windows along the south wall to keep it connected to the gardens. During the day, it is well-lit with sunlight; at night, the [<chandelier>] fills in.
+
+The butler is moving from the trophy room to the gold-plated bathroom.
+[39m
+[38;2;24;170;73mwait if count vespertilion is a title then whats his actual name
+[39m
+[38;2;191;28;191mIt's also his name. He changed it when he was first running for office, and apparently it worked.
+[39m
+[0m[50m                                    (*)-{B} 
+                                     |   |  
+                                   -( )-( )-
+                                     |   |  
+                                   -( )-(R)-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[west] west>]; [<[sabotage the chandelier] sabotage the chandelier>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> s
+There doesn't appear to be an exit in that direction.
+
+[38;2;33;186;186mThe butler is moving to the glass-gilded passage.
+[39m
+[0m[36mQuip list: [#q-1-comms #q-1-profanity #q-1-llm #q-1-malatesta #q-1-malatesta #q-1-malatesta #q-1-tension #q-1-tension #q-1-tension #q-1-constantine #q-1-constantine #q-1-constantine #q-null-1 #q-null-2]
+Chose #q-1-llm
+[0m
+[0m[50m                                    (*)-(*) 
+                                     |   |  
+                                   -( )-(B)-
+                                     |   |  
+                                   -( )-(R)-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[west] west>]; [<[sabotage the chandelier] sabotage the chandelier>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+--------------------------------------------------------------------------------
+id: 1784680158275
+parent-id: 1784680158274
+command: w
+--------------------------------------------------------------------------------
+> w
+
+[38;2;181;169;38mThe rat, it is moving.
+[39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mDining patio[0m[38;2;33;186;186m
+Half inside, half outside, with no door in between. The north end of the patio is surrounded by the other rooms of the mansion, while the south end with the [<piano>] is in the middle of the garden. Maintaining a consistent temperature must cost a fortune.
+
+The butler is kneeling down in the puddle and reconnecting the pipes. Then a few pages of the New Gothenburg Post get repurposed as a mop to transfer the water back into the toilet bowl.
+[39m
+[0m[36mQuip list: [#q-1-profanity #q-1-llm #q-1-malatesta #q-1-constantine #q-null-1 #q-null-2]
+Chose #q-1-constantine
+[0m
+[0m[50m                                    (*)-(B) 
+                                     |   |  
+                                   -( )-( )-
+                                     |   |  
+                                   -(R)-( )-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[east] east>]; [<[sabotage the piano] sabotage the piano>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> w
+
+[38;2;181;169;38mIt is moving.
+[39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mDining patio[0m[38;2;33;186;186m
+Half inside, half outside, with no door in between. The north end of the patio is surrounded by the other rooms of the mansion, while the south end with the [<piano>] is in the middle of the garden. Maintaining a consistent temperature must cost a fortune.
+
+The butler is moving to the granite-gilded passage.
+[39m
+[38;2;191;28;191mSo who is this 100x Silicon Valley rockstar?
+[39m
+[38;2;33;186;186mLuna L. Meresankh, of PyramidAI fame.
+[39m
+[38;2;191;28;191mOh, her! Made headlines for shattering the glass ceiling and all that? People are calling her the next Edison.
+[39m
+[38;2;33;186;186mShe does, I will admit, have a rare talent for stealing her employees' work. And using the courts to silence anyone who refuses to be bought out.
+[39m
+[0m[50m                                    (*)-(*) 
+                                     |   |  
+                                   -(B)-( )-
+                                     |   |  
+                                   -(R)-( )-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[east] east>]; [<[sabotage the piano] sabotage the piano>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+--------------------------------------------------------------------------------
+id: 1784680158276
+parent-id: 1784680158275
+command: sabotage piano
+--------------------------------------------------------------------------------
+> sabotage piano
+
+[38;2;181;169;38mIt will play. But what?
+[39m
+[38;2;191;28;191mThe Wrong Note Etude.
+[39m
+[38;2;181;169;38mIt is done.
+[39m
+[38;2;33;186;186mThe butler is assessing—focusing on the piano.
+[39m
+[38;2;24;170;73mand even spider has to have heard of constantine quinn
+hes always in the press for some donation or other
+[39m
+[38;2;33;186;186mYes. The libraries, the museums.
+[39m
+[38;2;191;28;191mThat's the one. He made his fortune selling household appliances; now everyone knows him as the Refrigerator Magnate.
+[39m
+[0m[50m                                    (*)-(B) 
+                                     |   |  
+                                   -(.)-(.)-
+                                     |   |  
+                                   -{R}-( )-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[east] east>]; [<[sabotage the piano] sabotage the piano>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> sabotage piano
+
+[38;2;24;170;73mhey wait no not yet
+dont draw the butlers attention to the state of everything while im actively robbing the place
+[39m
+[38;2;24;170;73mwhat does the l stand for anyway
+[39m
+[38;2;33;186;186mLuna L. Meresankh.
+[39m
+[38;2;24;170;73mno the l in the middle
+[39m
+[38;2;33;186;186mIt stands for Luna L. Meresankh.
+[39m
+[0m[50m                                    (*)-(*) 
+                                     |   |  
+                                   -(B)-( )-
+                                     |   |  
+                                   -(R)-( )-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[east] east>]; [<[sabotage the piano] sabotage the piano>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+--------------------------------------------------------------------------------
+id: 1784680158277
+parent-id: 1784680158276
+command: proceed
+--------------------------------------------------------------------------------
+> proceed
+
+[38;2;24;170;73mlets go
+[39m
+[38;2;33;186;186mThe butler is moving from the gold-plated bathroom to the glass-gilded passage.
+[39m
+[38;2;33;186;186mThen is he behind C&C Electronics?
+[39m
+[38;2;191;28;191mThat would be his daughters, Constance and Constance. His brand is Q&Q.
+[39m
+[38;2;24;170;73mseems like the names run in the family
+[39m
+[38;2;191;28;191mNames usually do that, yes.
+[39m
+[0m[50m                                    (*)-(*) 
+                                     |   |  
+                                   -(.)-(B)-
+                                     |   |  
+                                   -{R}-( )-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[rat , north] north>], [<[rat , east] east>]; [<[rat , sabotage the piano] sabotage the piano>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[proceed] proceed>]; [<[score] score>][39m
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> proceed
+
+[38;2;24;170;73mim already proceeding you dont have to tell me again
+[39m
+[0m[50m                                    (*)-(*) 
+                                     |   |  
+                                   -(B)-( )-
+                                     |   |  
+                                   -(R)-( )-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[rat , north] north>], [<[rat , east] east>]; [<[rat , sabotage the piano] sabotage the piano>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[proceed] proceed>]; [<[score] score>][39m
+--------------------------------------------------------------------------------
+id: 1784680158278
+parent-id: 1784680158277
+command: n
+--------------------------------------------------------------------------------
+> n
+
+[38;2;181;169;38mIt goes.
+[39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mGranite-gilded passage[0m[38;2;33;186;186m
+Four corridors join here at a small hub, where the huge stone blocks of the Granite Wing to the west clash with the too-shiny ornaments of the Gilded Wing to the north.
+
+The butler is moving from the glass-gilded passage to the granite-gilded passage.
+[39m
+[38;2;181;169;38mPeople approach! The rat must hide!
+[39m
+[0m[36mQuip list: [#q-1-profanity #q-1-llm #q-1-malatesta #q-null-1 #q-null-2]
+Chose #q-1-profanity
+[0m
+[0m[50m                                    (*)-(*) 
+                                     |   |  
+                                   -(B)-( )-
+                                     |   |  
+                                   -{.}-( )-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[south] south>], [<[east] east>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> n
+
+[38;2;181;169;38mNo! Impossible! The rat would be seen.
+[39m
+[0m[36mQuip list: [#q-1-comms #q-1-profanity #q-1-malatesta #q-1-tension #q-1-constantine #q-null-1 #q-null-2]
+Chose #q-null-1
+[0m
+[0m[50m                                    (*)-(*) 
+                                     |   |  
+                                   -(B)-( )-
+                                     |   |  
+                                   -(R)-( )-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[east] east>]; [<[sabotage the piano] sabotage the piano>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+--------------------------------------------------------------------------------
+id: 1784680158279
+parent-id: 1784680158278
+command: z
+--------------------------------------------------------------------------------
+> z
+
+[38;2;24;170;73mdot dot dot
+[39m
+[38;2;33;186;186mThe butler is moving from the granite-gilded passage to the dining patio.
+[39m
+[38;2;181;169;38mThe rat is alone, and free to act.
+[39m
+[38;2;24;170;73mwhy cant i say ---- btw
+are you really that much of a prude
+[39m
+[38;2;33;186;186mI spent the last two years of my life building profanity detection systems for text-based social media. I am not letting that go to waste just because my former employer decided to pivot to disgustingly basic neural networks.
+[39m
+[38;2;191;28;191mI don't mind. It just means we have to be creative about it. Try saying that --- --- -- - ---------, but ---- --- --- ----- -- --------- -----. (No offense, of course.)
+[39m
+[38;2;24;170;73mwow i take it back thats some good tech
+[39m
+[0m[50m                                    (*)-(*) 
+                                     |   |  
+                                   -(R)-( )-
+                                     |   |  
+                                   -{B}-( )-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[south] south>], [<[east] east>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> z
+
+[38;2;24;170;73mdot dot dot
+[39m
+[0m[50m                                    (*)-(*) 
+                                     |   |  
+                                   -(B)-( )-
+                                     |   |  
+                                   -(R)-( )-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[east] east>]; [<[sabotage the piano] sabotage the piano>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+--------------------------------------------------------------------------------
+id: 1784680158280
+parent-id: 1784680158279
+command: n
+--------------------------------------------------------------------------------
+> n
+
+[38;2;181;169;38mThe rat, it is moving.
+[39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mTrophy room[0m[38;2;33;186;186m
+The gold walls here are mostly covered by steel: [<weapons>] of every shape and kind, trophies of the Count's defeated enemies. The room stretches two stories high and the upper reaches are lost in shadow.
+
+The newest acquisition seems to be a [<curtain rod>] mounted near the floor.
+
+The butler flips a switch under the piano and it falls silent.
+[39m
+[0m[36mQuip list: [#q-1-llm #q-1-malatesta #q-1-chamguest #q-null-1 #q-null-2]
+Chose #q-1-llm
+[0m
+[0m[50m                                    (R)-(*) 
+                                     |   |  
+                                   -( )-( )-
+                                     |   |  
+                                   -(B)-( )-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[south] south>], [<[east] east>]; [<[sabotage the weapons] sabotage the weapons>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> n
+
+[38;2;181;169;38mNo! Impossible! The rat would be seen.
+[39m
+[38;2;33;186;186mThe butler is moving to the glass-gilded passage.
+[39m
+[0m[36mQuip list: [#q-1-comms #q-1-profanity #q-1-malatesta #q-1-tension #q-1-constantine #q-null-1 #q-null-2]
+Chose #q-1-malatesta
+[0m
+[0m[50m                                    (*)-(*) 
                                      |   |  
                                    -( )-(B)-
                                      |   |  
                                    -(R)-( )-
 [0m
-[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[east] east>][39m
-[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: view any room or object[39m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[east] east>]; [<[sabotage the piano] sabotage the piano>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
 [38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+--------------------------------------------------------------------------------
+id: 1784680158281
+parent-id: 1784680158280
+command: z
+--------------------------------------------------------------------------------
+> z
+
+[38;2;33;186;186mAll systems ready.
+[39m
+[38;2;33;186;186mSecurity is being checked again.
+[39m
+[38;2;24;170;73mim out
+time?
+[39m
+[38;2;33;186;186mSecurity was down for 5 minutes. [0m[1m[38;2;33;186;186mDebugging note: remember this number![0m[38;2;33;186;186m
+[39m
+[38;2;24;170;73mgrabbed a bottle of assaratum
+estimated value $2,000
+[39m
+[38;2;191;28;191mIt's real?!
+[39m
+[38;2;33;186;186mI have never heard of that one. Is it any good?
+[39m
+[38;2;191;28;191mIt's an old legend about fermenting human blood into alcohol, for use in cult rituals.
+[39m
+[38;2;24;170;73mreal apparently yes
+good probably not
+[39m
+[38;2;33;186;186mI mostly expected this to be a pun on "ass".
+[39m
+[38;2;24;170;73mi dont lie when it comes to wine
+[39m
+[0m[50m                                    (R)-(*) 
+                                     |   |  
+                                   -( )-( )-
+                                     |   |  
+                                   -(B)-( )-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[south] south>], [<[east] east>]; [<[sabotage the weapons] sabotage the weapons>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> z
+
+[38;2;191;28;191mSo, darling, what comes next?
+[39m
+[38;2;33;186;186mThe butler is moving to the granite-gilded passage.
+[39m
+[38;2;33;186;186mYou said that Malatesta will be there? The biologist?
+[39m
+[38;2;181;169;38mYes. He will attend. The rat knows.
+[39m
+[38;2;33;186;186mIs he really the sort of person the Count would hope to court?
+[39m
+[38;2;191;28;191mOh, definitely. Not the Count, maybe, but Meresankh. He has the sort of "move fast and break things" ethos that Silicon Valley types love.
+[39m
+[38;2;33;186;186m"Move fast and break things"...in human biology?
+[39m
+[38;2;24;170;73mlots of things there to break
+[39m
+[0m[50m                                    (*)-(*) 
+                                     |   |  
+                                   -(B)-( )-
+                                     |   |  
+                                   -(R)-( )-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[east] east>]; [<[sabotage the piano] sabotage the piano>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+--------------------------------------------------------------------------------
+id: 1784680158282
+parent-id: 1784680158281
+command: sabotage weapons
+--------------------------------------------------------------------------------
+> sabotage weapons
+
+[38;2;181;169;38mMany handholds. The rat can climb. Small pegs. Easy to pull free. And the axe begins to swing!
+[39m
+[38;2;33;186;186mA battleaxe has come loose and is now swinging around at neck height.
+[39m
+[38;2;33;186;186mThe butler is assessing—turning to the weapons.
+[39m
+[38;2;191;28;191mSo who is this 100x Silicon Valley rockstar?
+[39m
+[38;2;33;186;186mLuna L. Meresankh, of PyramidAI fame.
+[39m
+[38;2;191;28;191mOh, her! Made headlines for shattering the glass ceiling and all that? People are calling her the next Edison.
+[39m
+[38;2;33;186;186mShe does, I will admit, have a rare talent for stealing her employees' work. And using the courts to silence anyone who refuses to be bought out.
+[39m
+[0m[50m                                    {R}-(*) 
+                                     |   |  
+                                   -(.)-( )-
+                                     |   |  
+                                   -(B)-( )-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[south] south>], [<[east] east>]; [<[sabotage the weapons] sabotage the weapons>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> sabotage weapons
+The weapons isn't here.
+
+[0m[50m                                    (*)-(*) 
+                                     |   |  
+                                   -(B)-( )-
+                                     |   |  
+                                   -(R)-( )-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[east] east>]; [<[sabotage the piano] sabotage the piano>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+--------------------------------------------------------------------------------
+id: 1784680158283
+parent-id: 1784680158282
+command: e
+--------------------------------------------------------------------------------
+> e
+
+[38;2;181;169;38mThe rat, it is moving.
+[39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mGold-plated bathroom[0m[38;2;33;186;186m
+Everything in the gilded wing is covered in some kind of gold, and the bathrooms are no exception. Even the [<toilet>] is polished to a bright shine.
+
+The only non-gilded object is the [<newspaper>] supplied for reading.
+
+The butler is moving from the dining patio to the granite-gilded passage.
+[39m
+[38;2;24;170;73mwhat does the l stand for anyway
+[39m
+[38;2;33;186;186mLuna L. Meresankh.
+[39m
+[38;2;24;170;73mno the l in the middle
+[39m
+[38;2;33;186;186mIt stands for Luna L. Meresankh.
+[39m
+[0m[50m                                    {*}-(R) 
+                                     |   |  
+                                   -(B)-( )-
+                                     |   |  
+                                   -( )-( )-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[south] south>], [<[west] west>]; [<[sabotage the toilet] sabotage the toilet>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> e
+
+[38;2;181;169;38mThe rat, it is moving.
+[39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mBallroom[0m[38;2;33;186;186m
+The eastern half of the dining area is properly enclosed, but with floor-to-ceiling windows along the south wall to keep it connected to the gardens. During the day, it is well-lit with sunlight; at night, the [<chandelier>] fills in.
+
+[0m[50m                                    (*)-(*) 
+                                     |   |  
+                                   -(B)-( )-
+                                     |   |  
+                                   -( )-(R)-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[west] west>]; [<[sabotage the chandelier] sabotage the chandelier>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+--------------------------------------------------------------------------------
+id: 1784680158284
+parent-id: 1784680158283
+command: sabotage toilet
+--------------------------------------------------------------------------------
+> sabotage toilet
+
+[38;2;181;169;38mGold pipes. Not different from normal pipes. The rat twists, and inserts, and reconnects, and is done.
+[39m
+[38;2;33;186;186mAnd water is currently spraying halfway across the room. Good job.
+[39m
+[38;2;33;186;186mThe butler is moving from the granite-gilded passage to the trophy room.
+[39m
+[0m[36mQuip list: [#q-1-malatesta #q-1-chamguest #q-null-1 #q-null-2]
+Chose #q-null-1
+[0m
+[0m[50m                                    {B}-{R} 
+                                     |   |  
+                                   -( )-( )-
+                                     |   |  
+                                   -( )-( )-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[south] south>], [<[west] west>]; [<[sabotage the toilet] sabotage the toilet>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> sabotage toilet
+[0m[4m(I only understood you as far as wanting to sabotage something.)
+[0m
+[0m[50m                                    (*)-(*) 
+                                     |   |  
+                                   -(B)-( )-
+                                     |   |  
+                                   -( )-(R)-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[west] west>]; [<[sabotage the chandelier] sabotage the chandelier>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+--------------------------------------------------------------------------------
+id: 1784680158285
+parent-id: 1784680158284
+command: s
+--------------------------------------------------------------------------------
+> s
+
+[38;2;181;169;38mIt is moving.
+[39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mGlass-gilded passage[0m[38;2;33;186;186m
+Four corridors join here at a small hub, where the sharp-edged rectangles of the Glass Wing to the east clash with the too-shiny ornaments of the Gilded Wing to the north.
+
+[38;2;24;170;73mgranite gilded glass
+seriously
+[39m
+[38;2;191;28;191mWhy not Gothic, Rococo, and Modernist?
+[39m
+[38;2;24;170;73mmodernist covers so much though
+this is specifically international style
+and this is too much gold even for rococo
+[39m
+[38;2;191;28;191mGothenburg Neo-Rococo, perhaps?
+[39m
+[38;2;33;186;186mLet us use the existing names for this mission.
+[39m
+[38;2;24;170;73moh no are these words not in your compression dictionary?
+[39m
+[38;2;33;186;186mThe butler is swinging a curtain rod with remarkable agility, trying to parry the battleaxe and get its motion under control. Eventually he manages to block its edge and push it carefully back up onto the pegs.
+[39m
+[0m[50m                                    (B)-{*} 
+                                     |   |  
+                                   -( )-(R)-
+                                     |   |  
+                                   -( )-( )-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[south] south>], [<[west] west>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> s
+There doesn't appear to be an exit in that direction.
+[0m[36mQuip list: [#q-1-comms #q-1-profanity #q-1-tension #q-1-constantine #q-null-1 #q-null-2]
+Chose #q-1-profanity
+[0m
+[0m[50m                                    (*)-(*) 
+                                     |   |  
+                                   -(B)-( )-
+                                     |   |  
+                                   -( )-(R)-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[west] west>]; [<[sabotage the chandelier] sabotage the chandelier>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+--------------------------------------------------------------------------------
+id: 1784680158286
+parent-id: 1784680158285
+command: s
+--------------------------------------------------------------------------------
+> s
+
+[38;2;181;169;38mThe rat is going.
+[39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mBallroom[0m[38;2;33;186;186m
+The eastern half of the dining area is properly enclosed, but with floor-to-ceiling windows along the south wall to keep it connected to the gardens. During the day, it is well-lit with sunlight; at night, the [<chandelier>] fills in.
+
+The butler is assessing—looking at the toilet now.
+[39m
+[0m[36mQuip list: [#q-1-malatesta #q-1-chamguest #q-null-1 #q-null-2]
+Chose #q-1-malatesta
+[0m
+[0m[50m                                    (B)-{*} 
+                                     |   |  
+                                   -( )-( )-
+                                     |   |  
+                                   -( )-(R)-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[west] west>]; [<[sabotage the chandelier] sabotage the chandelier>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> s
+There doesn't appear to be an exit in that direction.
+
+[38;2;24;170;73mwhy cant i say ---- btw
+are you really that much of a prude
+[39m
+[38;2;33;186;186mI spent the last two years of my life building profanity detection systems for text-based social media. I am not letting that go to waste just because my former employer decided to pivot to disgustingly basic neural networks.
+[39m
+[38;2;191;28;191mI don't mind. It just means we have to be creative about it. Try saying that --- --- -- - ---------, but ---- --- --- ----- -- --------- -----. (No offense, of course.)
+[39m
+[38;2;24;170;73mwow i take it back thats some good tech
+[39m
+[0m[50m                                    (*)-(*) 
+                                     |   |  
+                                   -(B)-( )-
+                                     |   |  
+                                   -( )-(R)-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[west] west>]; [<[sabotage the chandelier] sabotage the chandelier>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+--------------------------------------------------------------------------------
+id: 1784680158287
+parent-id: 1784680158286
+command: sabotage chandelier
+--------------------------------------------------------------------------------
+> sabotage chandelier
+
+[38;2;181;169;38mThe crank is on a ratchet. The rat trips it, and. Voila!
+[39m
+[38;2;191;28;191mWhat was that sound?!
+[39m
+[38;2;33;186;186mThat was the chandelier crashing down and landing on the tables.
+[39m
+[38;2;33;186;186mThe butler is moving from the trophy room to the gold-plated bathroom.
+[39m
+[38;2;33;186;186mYou said that Malatesta will be there? The biologist?
+[39m
+[38;2;181;169;38mYes. He will attend. The rat knows.
+[39m
+[38;2;33;186;186mIs he really the sort of person the Count would hope to court?
+[39m
+[38;2;191;28;191mOh, definitely. Not the Count, maybe, but Meresankh. He has the sort of "move fast and break things" ethos that Silicon Valley types love.
+[39m
+[38;2;33;186;186m"Move fast and break things"...in human biology?
+[39m
+[38;2;24;170;73mlots of things there to break
+[39m
+[0m[50m                                    (*)-{B} 
+                                     |   |  
+                                   -( )-( )-
+                                     |   |  
+                                   -( )-{R}-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[west] west>]; [<[sabotage the chandelier] sabotage the chandelier>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> sabotage chandelier
+
+[38;2;24;170;73mhey wait no not yet
+dont draw the butlers attention to the state of everything while im actively robbing the place
+[39m
+[0m[50m                                    (*)-(*) 
+                                     |   |  
+                                   -(B)-( )-
+                                     |   |  
+                                   -( )-(R)-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[west] west>]; [<[sabotage the chandelier] sabotage the chandelier>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+--------------------------------------------------------------------------------
+id: 1784680158288
+parent-id: 1784680158287
+command: w
+--------------------------------------------------------------------------------
+> w
+
+[38;2;181;169;38mIt is moving.
+[39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mDining patio[0m[38;2;33;186;186m
+Half inside, half outside, with no door in between. The north end of the patio is surrounded by the other rooms of the mansion, while the south end with the [<piano>] is in the middle of the garden. Maintaining a consistent temperature must cost a fortune.
+
+The butler is kneeling down in the puddle and reconnecting the pipes. Then a few pages of the New Gothenburg Post get repurposed as a mop to transfer the water back into the toilet bowl.
+[39m
+[0m[36mQuip list: [#q-1-chamguest #q-null-1 #q-null-2]
+Chose #q-1-chamguest
+[0m
+[0m[50m                                    (*)-(B) 
+                                     |   |  
+                                   -( )-( )-
+                                     |   |  
+                                   -(R)-{ }-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[east] east>]; [<[sabotage the piano] sabotage the piano>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> w
+
+[38;2;181;169;38mThe rat, it is going.
+[39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mDining patio[0m[38;2;33;186;186m
+Half inside, half outside, with no door in between. The north end of the patio is surrounded by the other rooms of the mansion, while the south end with the [<piano>] is in the middle of the garden. Maintaining a consistent temperature must cost a fortune.
+
+[0m[36mQuip list: [#q-1-comms #q-1-comms #q-1-comms #q-1-tension #q-1-constantine #q-1-chamguest #q-null-1 #q-null-2]
+Chose #q-1-comms
+[0m
+[0m[50m                                    (*)-(*) 
+                                     |   |  
+                                   -(B)-( )-
+                                     |   |  
+                                   -(R)-( )-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[east] east>]; [<[sabotage the piano] sabotage the piano>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+--------------------------------------------------------------------------------
+id: 1784680158289
+parent-id: 1784680158288
+command: sabotage piano
+--------------------------------------------------------------------------------
+> sabotage piano
+
+[38;2;181;169;38mIt will play. But what?
+[39m
+[38;2;33;186;186mRick Astley.
+[39m
+[38;2;181;169;38mIt is done.
+[39m
+[38;2;33;186;186mThe butler is assessing—focusing on the chandelier.
+[39m
+[38;2;24;170;73mand who is chameleon going to be
+to get invited
+[39m
+[38;2;191;28;191mOh, you'll see when the time comes. I would hate to spoil the surprise.
+[39m
+[38;2;24;170;73mis the middle of the heist really the time to surprise your team
+[39m
+[38;2;191;28;191mIs that not how the stories always go?
+[39m
+[38;2;24;170;73mspider if chameleon wrecks this will you turn off the profanity thing
+just for a minute or so
+[39m
+[0m[50m                                    (*)-(B) 
+                                     |   |  
+                                   -( )-(.)-
+                                     |   |  
+                                   -{R}-{.}-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[east] east>]; [<[sabotage the piano] sabotage the piano>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> sabotage piano
+
+[38;2;24;170;73mhey wait no not yet
+dont draw the butlers attention to the state of everything while im actively robbing the place
+[39m
+[38;2;191;28;191mSo, not to ask a stupid question, but I [0m[4m[38;2;191;28;191mam[0m[38;2;191;28;191m curious. Why are we doing all of this via text?
+[39m
+[38;2;33;186;186mBandwidth. The less data needs to be transmitted, the better it can be hidden and secured. This system uses approximately one bit per letter, or one byte per word. Voice would be an order of magnitude more.
+[39m
+[38;2;24;170;73mplus he sent that in like two seconds so either he types faster than liszt or he had it written up and ready to go
+[39m
+[38;2;33;186;186mIt all comes down to information theory. And in this case a large corpus of my writing and a chorded keyboard.
+[39m
+[38;2;24;170;73mi regret asking
+[39m
+[38;2;191;28;191mI don't.
+[39m
+[0m[50m                                    (*)-(*) 
+                                     |   |  
+                                   -(B)-( )-
+                                     |   |  
+                                   -(R)-( )-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[east] east>]; [<[sabotage the piano] sabotage the piano>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+--------------------------------------------------------------------------------
+id: 1784680158290
+parent-id: 1784680158289
+command: jackdaw, proceed
+--------------------------------------------------------------------------------
+> jackdaw, proceed
+
+[38;2;24;170;73mthats a go
+[39m
+[38;2;33;186;186mThe butler is moving from the gold-plated bathroom to the glass-gilded passage.
+[39m
+[0m[36mQuip list: [#q-null-1 #q-null-2]
+Chose #q-null-1
+[0m
+[0m[50m                                    (*)-(*) 
+                                     |   |  
+                                   -( )-(B)-
+                                     |   |  
+                                   -{R}-{.}-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[rat , north] north>], [<[rat , east] east>]; [<[rat , sabotage the piano] sabotage the piano>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[proceed] proceed>]; [<[score] score>][39m
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> jackdaw, proceed
+
+[38;2;24;170;73mim already proceeding you dont have to tell me again
+[39m
+[38;2;33;186;186mBesides, the one bit per letter is only an average. Some people's messages can be compressed even further. It all comes down to how predictable they are—for example, Jackdaw is about to say "---- you".
+[39m
+[38;2;24;170;73mwow ---- you
+[39m
+[0m[50m                                    (*)-(*) 
+                                     |   |  
+                                   -(B)-( )-
+                                     |   |  
+                                   -(R)-( )-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[rat , north] north>], [<[rat , east] east>]; [<[rat , sabotage the piano] sabotage the piano>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[proceed] proceed>]; [<[score] score>][39m
+--------------------------------------------------------------------------------
+id: 1784680158291
+parent-id: 1784680158290
+command: n
+--------------------------------------------------------------------------------
+> n
+
+[38;2;181;169;38mThe rat, it moves.
+[39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mGranite-gilded passage[0m[38;2;33;186;186m
+Four corridors join here at a small hub, where the huge stone blocks of the Granite Wing to the west clash with the too-shiny ornaments of the Gilded Wing to the north.
+
+The butler is moving from the glass-gilded passage to the ballroom.
+[39m
+[0m[36mQuip list: [#q-null-1 #q-null-2]
+Chose #q-null-1
+[0m
+[0m[50m                                    (*)-(*) 
+                                     |   |  
+                                   -(R)-( )-
+                                     |   |  
+                                   -{ }-{B}-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[south] south>], [<[east] east>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> n
+
+[38;2;181;169;38mNo! Impossible! The rat would be seen.
+[39m
+[0m[50m                                    (*)-(*) 
+                                     |   |  
+                                   -(B)-( )-
+                                     |   |  
+                                   -(R)-( )-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[east] east>]; [<[sabotage the piano] sabotage the piano>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+--------------------------------------------------------------------------------
+id: 1784680158292
+parent-id: 1784680158291
+command: n
+--------------------------------------------------------------------------------
+> n
+
+[38;2;181;169;38mThe rat moves.
+[39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mTrophy room[0m[38;2;33;186;186m
+The gold walls here are mostly covered by steel: [<weapons>] of every shape and kind, trophies of the Count's defeated enemies. The room stretches two stories high and the upper reaches are lost in shadow.
+
+The newest acquisition seems to be a [<curtain rod>] mounted near the floor.
+
+The butler laboriously cranks the chandelier back up to the ceiling and fixes the ratchet in place.
+[39m
+[0m[36mQuip list: [#q-null-1 #q-null-2]
+Chose #q-null-1
+[0m
+[0m[50m                                    (R)-(*) 
+                                     |   |  
+                                   -( )-( )-
+                                     |   |  
+                                   -{ }-(B)-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[south] south>], [<[east] east>]; [<[sabotage the weapons] sabotage the weapons>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> n
+
+[38;2;181;169;38mNo! Impossible! The rat would be seen.
+[39m
+[38;2;33;186;186mThe butler is moving to the glass-gilded passage.
+[39m
+[0m[36mQuip list: [#q-1-tension #q-1-constantine #q-1-chamguest #q-null-1 #q-null-2]
+Chose #q-1-constantine
+[0m
+[0m[50m                                    (*)-(*) 
+                                     |   |  
+                                   -( )-(B)-
+                                     |   |  
+                                   -(R)-( )-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[east] east>]; [<[sabotage the piano] sabotage the piano>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+--------------------------------------------------------------------------------
+id: 1784680158293
+parent-id: 1784680158292
+command: z
+--------------------------------------------------------------------------------
+> z
+
+[38;2;191;28;191mSo, darling, what comes next?
+[39m
+[38;2;33;186;186mThe butler is assessing—looking at the piano now.
+[39m
+[0m[36mQuip list: [#q-null-1 #q-null-2]
+Chose #q-null-1
+[0m
+[0m[50m                                    (R)-(*) 
+                                     |   |  
+                                   -( )-( )-
+                                     |   |  
+                                   -{.}-(B)-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[south] south>], [<[east] east>]; [<[sabotage the weapons] sabotage the weapons>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> z
+
+[38;2;24;170;73mdot dot dot
+[39m
+[38;2;24;170;73mand even spider has to have heard of constantine quinn
+hes always in the press for some donation or other
+[39m
+[38;2;33;186;186mYes. The libraries, the museums.
+[39m
+[38;2;191;28;191mThat's the one. He made his fortune selling household appliances; now everyone knows him as the Refrigerator Magnate.
+[39m
+[0m[50m                                    (*)-(*) 
+                                     |   |  
+                                   -( )-(B)-
+                                     |   |  
+                                   -(R)-( )-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[east] east>]; [<[sabotage the piano] sabotage the piano>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+--------------------------------------------------------------------------------
+id: 1784680158294
+parent-id: 1784680158293
+command: z
+--------------------------------------------------------------------------------
+> z
+
+[38;2;24;170;73mdot dot dot
+[39m
+[38;2;33;186;186mThe butler is moving from the ballroom to the dining patio.
+[39m
+[0m[36mQuip list: [#q-null-1 #q-null-2]
+Chose #q-null-2
+[0m
+[0m[50m                                    (R)-(*) 
+                                     |   |  
+                                   -( )-( )-
+                                     |   |  
+                                   -{B}-( )-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[south] south>], [<[east] east>]; [<[sabotage the weapons] sabotage the weapons>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> z
+
+[38;2;33;186;186mAll systems ready.
+[39m
+[38;2;33;186;186mThe butler is moving to the granite-gilded passage.
+[39m
+[38;2;33;186;186mThen is he behind C&C Electronics?
+[39m
+[38;2;191;28;191mThat would be his daughters, Constance and Constance. His brand is Q&Q.
+[39m
+[38;2;24;170;73mseems like the names run in the family
+[39m
+[38;2;191;28;191mNames usually do that, yes.
+[39m
+[0m[50m                                    (*)-(*) 
+                                     |   |  
+                                   -(B)-( )-
+                                     |   |  
+                                   -(R)-( )-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[east] east>]; [<[sabotage the piano] sabotage the piano>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+--------------------------------------------------------------------------------
+id: 1784680158295
+parent-id: 1784680158294
+command: z
+--------------------------------------------------------------------------------
+> z
+
+[38;2;181;169;38mThe rat waits.
+[39m
+[38;2;33;186;186mThe butler flips a switch under the piano and it falls silent.
+[39m
+[0m[50m                                    (R)-(*) 
+                                     |   |  
+                                   -( )-( )-
+                                     |   |  
+                                   -(B)-( )-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[south] south>], [<[east] east>]; [<[sabotage the weapons] sabotage the weapons>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> z
+
+[38;2;191;28;191mSo, darling, what comes next?
+[39m
+[0m[50m                                    (*)-(*) 
+                                     |   |  
+                                   -(B)-( )-
+                                     |   |  
+                                   -(R)-( )-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[east] east>]; [<[sabotage the piano] sabotage the piano>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+--------------------------------------------------------------------------------
+id: 1784680158296
+parent-id: 1784680158295
+command: z
+--------------------------------------------------------------------------------
+> z
+
+[38;2;33;186;186mAll systems ready.
+[39m
+[38;2;33;186;186mTime.
+[39m
+[38;2;24;170;73mdone
+[39m
+[38;2;33;186;186mThat distraction lasted 7 minutes. [0m[1m[38;2;33;186;186mDebugging note: remember this number![0m[38;2;33;186;186m
+[39m
+[38;2;24;170;73mgrabbed a wifi router
+[39m
+[38;2;33;186;186mFantastic work. This is exactly what I need. Just attach the device I gave you and I can set to work.
+[39m
+[38;2;24;170;73mhes about to say nothing is secure when someone has physical access
+ha
+see
+when youre typing three sentences i can sometimes fit in one
+[39m
+[38;2;33;186;186mWell. Anyway. Regardless. Breaking this will take some time, and Jackdaw will need to stay nearby, so it will likely mean the end of our work in the wine cellar. Fox, tell me when it is time to act.
+[39m
+[0m[50m                                    (R)-(*) 
+                                     |   |  
+                                   -( )-( )-
+                                     |   |  
+                                   -(B)-( )-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[south] south>], [<[east] east>]; [<[sabotage the weapons] sabotage the weapons>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object; [<[spider , hack the wifi router] hack the wifi router>][39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> z
+
+[38;2;181;169;38mThe rat waits.
+[39m
+[38;2;33;186;186mThe butler is moving to the glass-gilded passage.
+[39m
+[0m[36mQuip list: [#q-1-tension #q-1-chamguest #q-null-1 #q-null-2]
+Chose #q-null-2
+[0m
+[0m[50m                                    (*)-(*) 
+                                     |   |  
+                                   -( )-(B)-
+                                     |   |  
+                                   -(R)-( )-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[north] north>], [<[east] east>]; [<[sabotage the piano] sabotage the piano>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>][39m
+--------------------------------------------------------------------------------
+id: 1784680158297
+parent-id: 1784680158296
+command: score
+--------------------------------------------------------------------------------
+> score
+
+[38;2;24;170;73mok heres what ive got
+bottle of chateau lafite - $1,000
+bottle of assaratum - $2,000
+for a total of [0m[1m[38;2;24;170;73m$3,000[0m[38;2;24;170;73m
+(TODO assess how much 3k is compared to the total)
+[39m
+[38;2;33;186;186mThe butler is moving through the granite-gilded passage toward the glass-gilded passage.
+[39m
+[0m[36mQuip list: [#q-null-1 #q-null-2]
+Chose #q-null-1
+[0m
+[0m[50m                                    (R)-(*) 
+                                     |   |  
+                                   -(B)-( )-
+                                     |   |  
+                                   -( )-( )-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[rat , south] south>], [<[rat , east] east>]; [<[rat , sabotage the weapons] sabotage the weapons>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object; [<[spider , hack the wifi router] hack the wifi router>][39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[proceed] proceed>]; [<[score] score>][39m
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> score
+
+[38;2;24;170;73mhavent scored anything yet
+get the butler distracted and then tell me when
+[39m
+[0m[50m                                    (*)-(*) 
+                                     |   |  
+                                   -( )-(B)-
+                                     |   |  
+                                   -(R)-( )-
+[0m
+[38;2;181;169;38m[0m[1m[38;2;181;169;38mRat[0m[38;2;181;169;38m: [<[rat , north] north>], [<[rat , east] east>]; [<[rat , sabotage the piano] sabotage the piano>][39m
+[38;2;33;186;186m[0m[1m[38;2;33;186;186mSpider[0m[38;2;33;186;186m: [<wait>]; view any room or object[39m
+[38;2;24;170;73m[0m[1m[38;2;24;170;73mJackdaw[0m[38;2;24;170;73m: [<[proceed] proceed>]; [<[score] score>][39m
