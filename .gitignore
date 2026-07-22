@@ -1,6 +1,6 @@
-out
-.cache
-*.ni
-.DS_Store
-.lsp 
-.clj-kondo/cache
+*.z5
+*.aastory
+*.zip
+*.log
+*.out
+web/*

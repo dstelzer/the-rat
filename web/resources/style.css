@@ -1,6 +1,7 @@
 /* If using Google web fonts, import them here, before anything else */
 
 /* Special things for this game! */
+/* TODO: why doesn't this work? */
 .aa-rat:first-child:before {
 	color: goldenrod;
 	font-weight: bold;

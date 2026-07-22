@@ -424,6 +424,10 @@
 	~(any prizes left in act $Act)
 	(div @jackdaw) { love the opportunity but theres nothing left to nab here }
 
+(prevent [proceed])
+	~(current goal $)
+	(div @jackdaw) { if the butler looks at the cameras now he'll see me right away (line) make a distraction or something first }
+
 (perform [proceed])
 	(start the heist)
 	(div @jackdaw) {

@@ -1,8 +1,10 @@
 FILES = src/meta.dg src/world.dg src/topology.dg src/interface.dg src/ai.dg src/input.dg src/actions.dg src/quips.dg src/prizes.dg lib/quipmachinery.dg lib/prizemachinery.dg lib/automap.dg lib/versalink.dg lib/draclib.dg lib/dialog/stdlib.dg
-OPTIONS = -r resources
+OPTIONS = -r resources -vv
+OPTIONS_DBG =
+VERSION = 0
 
 debug: $(FILES) platform/debug.dg
-	dgdebug $(OPTIONS) platform/debug.dg $(FILES)
+	dgdebug $(OPTIONS_DBG) platform/debug.dg $(FILES)
 
 rat.z5: $(FILES) platform/z.dg
 	dialogc -t z5 -o rat.z5 $(OPTIONS) platform/z.dg $(FILES)
@@ -14,12 +16,22 @@ web: rat.aastory modweb
 	rm -rf web
 	aambundle -t web rat.aastory -o web
 	cp -r modweb/* web/
+	mv web/play.html web/index.html
+
+itch.zip: web
+	rm -f itch.zip
+	( cd web && zip -r ../itch.zip . )
+
+itch: itch.zip rat.z5
+	mv itch.zip itch_$(VERSION).zip
+	mv rat.z5 z5_$(VERSION).z5
+	cp itch_$(VERSION).zip web_$(VERSION).zip
 
 vvv.log: $(FILES)
-	dgdebug -vvv $(OPTIONS) $(FILES) > vvv.log
+	dgdebug -vvv $(OPTIONS_DBG) $(FILES) > vvv.log
 
 regress.out: $(FILES) platform/debug.dg regress.in
-	dgdebug -qD -s 1234 $(OPTIONS) platform/debug.dg $(FILES) <regress.in >regress.out
+	dgdebug -qD -s 1234 $(OPTIONS_DBG) platform/debug.dg $(FILES) <regress.in >regress.out
 
 regress: regress.out
 	meld regress.out regress.gold
