@@ -70,3 +70,5 @@
 (hack target *)
 	(* is handled) %% Acquired
 	(current act 1)
+(perform [hack *])
+	This is where act 2 will begin. Coming soon! tm

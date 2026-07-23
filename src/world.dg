@@ -217,7 +217,7 @@
 	(div @jackdaw) { lets (space) ----ing go }
 	
 	(pause)
-	(div @header) { Prologue: Getting Oriented }
+	(div @header) { Prologue: Getting In }
 	
 	(div @spider) { Fox, you should be seeing a map of the south gardens. Rat is at the R, Jackdaw is... }
 	(div @jackdaw) { close enough to the door (line) thats all that matters }
@@ -231,8 +231,11 @@
 	(div @rat) { The rat moves. The way is clear. The mansion is open. }
 	(div @spider) { Or in other words... }
 	(div @chameleon) { (span @italic) { We're in. } }
+	
 	(banner)
 	(pause)
+	(div @header) { Act One: Getting Oriented }
+	
 	(div @jackdaw) { im in the wine cellar and theres bottles here worth more than a house (line) and also security worth more than a house }
 	(div @spider) { That should not be a problem. With only a single butler around, all Rat has to do is keep him occupied. }
 	(div @rat) { Yes. The rat can. The rat will. }

@@ -5,6 +5,7 @@
 
 (style class @body)
 	background-color: black;
+	color: white;
 
 (startup) (body style @body)
 
