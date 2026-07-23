@@ -26,6 +26,9 @@ itch: itch.zip rat.z5
 	mv itch.zip itch_$(VERSION).zip
 	mv rat.z5 z5_$(VERSION).z5
 	cp itch_$(VERSION).zip web_$(VERSION).zip
+	butler push itch_$(VERSION).zip dercomai/rat:online
+	butler push z5_$(VERSION).z5 dercomai/rat:z
+	butler push web_$(VERSION).zip dercomai/rat:download
 
 vvv.log: $(FILES)
 	dgdebug -vvv $(OPTIONS_DBG) $(FILES) > vvv.log
