@@ -172,6 +172,42 @@
 	(div @chameleon) { Is that not how the stories always go? }
 	(div @jackdaw) { spider if chameleon wrecks this will you turn off the profanity thing (line) just for a minute or so }
 
+#q-2-chapel
+(quip *)
+(locked *) (#gran1 is unvisited)
+(* depends on #q-1-count)
+(* involves #t-count)
+(* has priority 3)
+(* line)
+	(div @spider) { I admit I am unclear on how the chapel can hold the Vespertilion ancestors if Count is not a hereditary position. }
+	(div @chameleon) { Whenever a new Count is elected, the mansion comes along with the role. Then the chapel comes with the mansion, and the ancestors come with the chapel. }
+
+#q-2-batcote
+(quip *)
+(locked *) (#gran2 is unvisited)
+(* has priority 3)
+(* line)
+	(div @jackdaw) { also, "batcote"? really? }
+	(div @spider) { Blame Chameleon for the word. }
+	(div @chameleon) { Well, it can't really be a dovecote with no doves, can it? And an aviary implies birds. }
+
+#q-2-servers
+(quip *)
+(locked *) (#glas1 is unvisited)
+(* has priority 3)
+(* line)
+	(div @jackdaw) { if we have access to the server room why am i messing around down here at all }
+	(div @spider) { Time. The butler might walk through the server room at any point, and breaking security is not a fast process. }
+	(div @jackdaw) { you can also just say i'm better at this than rat }
+
+#q-2-office
+(quip *)
+(locked *) (#glas2 is unvisited)
+(* has priority 3)
+(* line)
+	(div @rat) { The office is smart. Automated. But why? The automation is for what? }
+	(div @spider) { Nothing especially useful, as far as I can tell. The mansion still relies on the staff for all the actual labor. }
+
 #q-2-grudge
 (quip *)
 (* depends on #TODO)

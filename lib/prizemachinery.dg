@@ -29,6 +29,14 @@
 	(or)
 	($In minus 1 into $Inm1)
 	*(count down from $Inm1 into $Out)
+@(count up to $In into $Out)
+	(count up from 0 to $In into $Out)
+(count up from $Current to $Top into $Out)
+	($Out = $Current)
+	(or)
+	($Current plus 1 into $Cp1)
+	~($Cp1 > $Top)
+	*(count up from $Cp1 to $Top into $Out)
 
 %% This one prints a dollar amount in thousands
 ($Amount thousand dollars)
@@ -38,8 +46,8 @@
 	, (no space)
 	000
 ($Amount thousand dollars)
-	($Amount divided by 1000 into $Upper)
-	($Amount modulo 1000 into $Lower)
+	($Amount divided by 1000 into $Upper) %% Millions
+	($Amount modulo 1000 into $Lower) %% Thousands
 	\$ (no space)
 	$Upper
 	, (no space)
@@ -60,6 +68,12 @@
 		($Prize requires $TimeCounter turns)
 	}
 	(now) ($Prize is handled)
+
+(minimum time for a prize in $Act is $Time)
+	*(count up to 99 into $Time) %% Arbitrary maximum that should never be hit
+	*($Prize available in act $Act)
+	($Prize is pristine)
+	($Prize requires $Time turns)
 
 (global variable (heist timer $))
 (start the heist)

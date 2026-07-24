@@ -90,11 +90,66 @@
 (from * go #south to #gran2)
 (* is available in act 2/3/4)
 
-(name *) chapel
+(name *) chapel %% unlocks #q-2-chapel in quips.dg
+(look *) Tall, austere, and dimly-lit—everything a chapel should be. A massive ({pipe organ}) dominates the end of the room and the ({bones}) of countless Vespertilion ancestors look down from niches along the walls.
 
-%% chapel ("in this chapel there are ancestors...")
-%% sabotage: organ (open valves)
-%% requires: tray (cover valves, buy time to turn it off)
+#bones
+(name *) ancestors' bones
+(* is #in #gran1)
+(descr *) Sightless eyes stare down.
+
+#organ
+(name *) pipe organ
+(* is #in #gran1)
+(sabotage target *)
+(* requires tool #tray)
+(descr *)
+	The design is as plain and functional as possible, to convey that this million-dollar musical instrument is a tool, not a luxury.
+	(if) (* is broken) (then)
+		It is currently blasting out a
+		(if) (organ note is low) (then)
+			low, rumbling
+		(else)
+			high, piercing
+		(endif)
+		(organ note $Note)
+		(note name for $Note)
+		.
+	(endif)
+
+(narrate sabotaging *)
+	(random from 1 to 5 into $Note)
+	(now) (organ note $Note)
+	(if) (random from 1 to 2 into 1) (then)
+		(now) (organ note is low)
+	(else)
+		(now) ~(organ note is low)
+	(endif)
+	(div @rat) { The rat is small. The rat moves inside. The belly of the machinery. Valves to open. Switches to twist. And the noise begins! }
+	(div @chameleon) {
+		I believe that is a
+		(if) (organ note is low) (then)
+			(select) bass (or) low (or) bottom (purely at random)
+		(else)
+			(select) treble (or) high (or) top (purely at random)
+		(endif)
+		(note name for $Note) ?
+	}
+
+(narrate fixing *)
+	(div @spider) { The butler forces his way toward the organ as if he is fighting a strong current. Using the silver tray he is able to cover two of the valves with one hand; his other hand covers a third, and he pushes the switch with his mouth. Silence rings out. }
+
+(global variable (organ note $))
+(note name for 1)
+	C-flat
+(note name for 2)
+	E-quarter-tone-sharp
+(note name for 3)
+	F-double-flat
+(note name for 4)
+	A-quarter-tone-flat
+(note name for 5)
+	B-double-sharp
 
 #gran2
 (room *)
@@ -102,9 +157,26 @@
 (from * go #north to #gran1)
 (* is available in act 2/3/4)
 
-%% aviary
-%% sabotage: cages (release the bats!)
-%% requires: rod (with cage on the end)
+(name *) batcote %% unlocks q-2-batcote
+(look *) This was probably a dovecote in the past. But without the need for messenger pigeons, the nest holes have been filled with ({cages}), and the cages filled with dozens and dozens of bats.
+
+#cages
+(name *) bat cages
+(dict *) cage bats
+(plural *)
+(* is #in #gran2)
+(descr *)
+	The bats are almost invisible in the darkness, but the squeaking suggests there are (span @italic) many .
+	(if) (* is broken) (then)
+		Several of them are now swooping overhead.
+	(endif)
+(sabotage target *)
+(* requires tool #rod)
+
+(narrate sabotaging *)
+	(div @rat) { Simple cages. Many handholds to climb. The latches open, and open, and open. }
+(narrate fixing *)
+	(div @spider) { The butler has attached a cage to the end of the curtain rod and is swinging it around, trying to recapture the bats. It is not an easy process, but the bats seem used to it and are easily subdued. }
 
 (prevent entering #gran1/#gran2)
 	(current act 1)
@@ -116,25 +188,61 @@
 	(div @chameleon) { But if he's alerted to sabotage before the party starts, he might change his plans. }
 	(div @jackdaw) { point }
 
-#glas1
+#glas1 %% has quip in quips.dg
 (room *)
 (from * go #west to #glasgild)
 (from * go #south to #glas2)
 (* is available in act 2/3/4)
 
-%% server room
-%% sabotage: fire suppression system (or coolant?)
-%% requires: newspaper
+(name *) server room
+(look *) Racks of machinery cover every wall and pile up in floor-to-ceiling pillars, all enmeshed in a web of ({coolant pipes}).
 
-#glas2
+#coolant
+(name *) coolant pipes
+(dict *) pipe web of
+(plural *)
+(* is #in #glas1)
+(descr *)
+	Servers produce heat, and these pipes are supposed to move that heat out of the building and make it someone else's problem. The wall thermometer reads 15 Celsius, so it seems to be working
+	(if) (* is broken) (then)
+		(no space)—the pool of chemicals on the floor notwithstanding
+	(endif)
+	.
+(sabotage target *)
+(* requires tool #newspaper)
+
+(narrate sabotaging *)
+	(div @rat) { So many pipes. So many connections. Pry one free, and let its lifeblood flow and pool. }
+(narrate fixing *)
+	(div @spider) { The butler is fiddling with valves and connectors to isolate the leaking section of pipe, then mopping up the freon puddles with a few more pages of the Post. }
+
+#glas2 %% has quip in quips.dg
 (room *)
 (from * go #west to #dine2)
 (from * go #north to #glas1)
 (* is available in act 2/3/4)
 
-%% minimalist office (like Zuck's identical expensive t-shirts)
-%% sabotage: smart systems (automatic sensors)
-%% requires: tray (as a mirror)
+(name *) office
+(look *) It looks like a college dorm room. A desk, a bed, a window, and a closet. According to Chameleon, though, all of this is specially commissioned from top designers and rigged from floor to ceiling with ({smart automation devices}).
+
+#devices
+(name *) smart automation devices
+(dict *) device
+(plural *)
+(* is #in #glas2)
+(descr *)
+	Every inch of the room is filled with sensors: light, pressure, temperature, and more.
+	(if) (* is broken) (then)
+		Those sensors are currently causing a bizarre series of reactions in the room.
+	(endif)
+(sabotage target *)
+(* requires tool #tray)
+
+(narrate sabotaging *)
+	(div @rat) { The sensors. They can be confused. Report errors. The system will lose consistency. }
+	(div @spider) { I am seeing the spikes now. Complete darkness in the room; blazing light in the closet. High-temperature air blowing from the bed. }
+(narrate fixing *)
+	(div @spider) { The butler is working on the office devices now. With the silver tray he can reflect light from the closet onto the right sensors, and everything is slowly coming back into alignment. }
 
 (prevent entering #glas1/#glas2)
 	(current act 1)
@@ -235,6 +343,14 @@
 	(div @rat) { It is done. }
 (narrate fixing *)
 	(div @spider) { The butler flips a switch under the piano and it falls silent. }
+
+#tray
+(name *) silver tray
+(item *)
+(descr *) The traditional tool of a butler.
+(* is #in #dine1)
+(appearance *) (* is pristine) A ({silver tray}) sits on top of the piano.
+(appearance *) (* is handled) A ({silver tray}) has been stowed discreetly in a corner.
 
 #dine2
 (room *)

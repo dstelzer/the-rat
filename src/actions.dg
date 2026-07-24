@@ -518,7 +518,8 @@
 			}
 		(endif)
 	(else) %% No prizes left for that timespan :(
-		(div @jackdaw) { ------ (line) couldnt grab anything (line) the easy stuffs gone now, i need more time }
+		{ (minimum time for a prize in $Act is $MinTime) (or) ($MinTime = 9999) }
+		(div @jackdaw) { ------ (line) couldnt grab anything (line) the easy stuffs gone now, i need more time (line) like ($MinTime) minute(s $MinTime) at least }
 	(endif)
 	(now) (no quip this turn) %% There's been enough conversation that we don't want an extra quip on top of it
 
