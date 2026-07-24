@@ -497,29 +497,28 @@
 	(current act $Act)
 	(if)
 		($Time turns in act $Act earns $Prize)
-	(then) %% Should always succeed
-	(else)
-		ERROR: No prize available! What went wrong?
-		(fail)
-	(endif)
-	(div @jackdaw) {
-		grabbed (a $Prize)
-		(if) ($Prize is worth $K thousand dollars) (then)
-			(line)
-			estimated value ($K thousand dollars)
-		(endif)
-	}
-	(prize conversation about $Prize)
-	(if) ~(any prizes left in act $Act) (then)
+	(then) %% Got a prize!
 		(div @jackdaw) {
-			also thats pretty much everything for this room (line)
-			scoured it clean (line)
-			(if) ($Act < 4) (then)
-				see if you can get me into the next one
-			(else)
-				anything else or are we done here?
+			grabbed (a $Prize)
+			(if) ($Prize is worth $K thousand dollars) (then)
+				(line)
+				estimated value ($K thousand dollars)
 			(endif)
 		}
+		(prize conversation about $Prize)
+		(if) ~(any prizes left in act $Act) (then)
+			(div @jackdaw) {
+				also thats pretty much everything for this room (line)
+				scoured it clean (line)
+				(if) ($Act < 4) (then)
+					see if you can get me into the next one
+				(else)
+					anything else or are we done here?
+				(endif)
+			}
+		(endif)
+	(else) %% No prizes left for that timespan :(
+		(div @jackdaw) { ------ (line) couldnt grab anything (line) the easy stuffs gone now, i need more time }
 	(endif)
 	(now) (no quip this turn) %% There's been enough conversation that we don't want an extra quip on top of it
 

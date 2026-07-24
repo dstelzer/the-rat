@@ -1,3 +1,13 @@
+#p-1-shortest-a %% Fallback so the first PROCEED always succeeds
+(prize *)
+(* available in act 1)
+(* requires 0 turns)
+(* is worth 1 thousand dollars)
+(name *) bottle of centuries-old vinegar
+(prize conversation about *)
+	(div @spider) { Why would he be storing vinegar in the wine cellar? }
+	(div @jackdaw) { it was wine at one point but its definitely not any more }
+
 #p-1-short-a
 (prize *)
 (* available in act 1)
@@ -21,16 +31,6 @@
 	(div @jackdaw) { absolutely not keeping them horizontal ruins them }
 	(div @rat) { Is this one of worth? Not ruined? }
 	(div @jackdaw) { enough people just want it as a status symbol, itll sell fine }
-
-#p-1-short-c
-(prize *)
-(* available in act 1)
-(* requires 3 turns)
-(* is worth 1 thousand dollars)
-(name *) bottle of centuries-old vinegar
-(prize conversation about *)
-	(div @spider) { Why would he be storing vinegar in the wine cellar? }
-	(div @jackdaw) { it was wine at one point but its definitely not any more }
 
 #p-1-med-a
 (prize *)
@@ -71,4 +71,4 @@
 	(* is handled) %% Acquired
 	(current act 1)
 (perform [hack *])
-	This is where act 2 will begin. Coming soon! tm
+	(start act two) %% world.dg

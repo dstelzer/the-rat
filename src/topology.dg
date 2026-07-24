@@ -90,6 +90,8 @@
 (from * go #south to #gran2)
 (* is available in act 2/3/4)
 
+(name *) chapel
+
 %% chapel ("in this chapel there are ancestors...")
 %% sabotage: organ (open valves)
 %% requires: tray (cover valves, buy time to turn it off)
