@@ -2,7 +2,7 @@
 %% ACT 1 - THE WINE CELLAR
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-#p-1-shortest-a %% Fallback so the first PROCEED always succeeds
+#p-1-shortest %% Fallback so the first PROCEED always succeeds, no matter what
 (prize *)
 (* available in act 1)
 (* requires 0 turns)
@@ -84,22 +84,83 @@
 %% 2 short, 2 medium, 2 long, 1 thermostat (IoT enabled)
 %% 2 each from Quinn, Malatesta, Tension
 
-#p-2-short-tension %% work laptop
+#p-2-short-tension
+(prize *)
+(* available in act 2)
+(* requires 5 turns)
+(* is worth 5 thousand dollars)
+(name *) tension's backup work laptop
+(proper *)
+(prize conversation about *)
+	(div @chameleon) { Any hint what might be on it? }
+	(div @jackdaw) { probably nothing (line) doesn't look like it's ever been opened (line) but that makes it easy to sell }
 
-#p-2-short-malatesta %% bottle of prescription drugs
+#p-2-short-malatesta
+(prize *)
+(* available in act 2)
+(* requires 5 turns)
+(* is worth 5 thousand dollars)
+(name *) bottle of cordrazine
+(prize conversation about *)
+	(div @spider) { What is that? }
+	(div @jackdaw) { little white pills }
+	(div @chameleon) { An experimental stimulant, I believe. Not easily available even by prescription. }
+	(div @jackdaw) { medical sort of thing (line) not recreational (line) but there's a black market for it }
 
-#p-2-med-constantine %% backup diamond cufflinks
+#p-2-med-constantine
+(prize *)
+(* available in act 2)
+(* requires 7 turns)
+(* is worth 10 thousand dollars)
+(name *) diamond cufflinks
+(pair *)
+(prize conversation about *)
+	(div @chameleon) { Fine jewelry, but whose, the rat wonders? }
+	(div @jackdaw) { i'd bet quinn }
+	(div @chameleon) { But he's currently wearing his diamond cufflinks? }
+	(div @jackdaw) { these are the backup pair (line) just in case }
 
-#p-2-med-tension %% hard drive of suppressed stories
+#p-2-med-tension
+(prize *)
+(* available in act 2/3) %% The personally-meaningful ones persist into act 3
+(* requires 7 turns)
+%% (* is worth 10 thousand dollars)
+(name *) neon pink solid-state drive
+(prize conversation about *)
+	(div @chameleon) { Did you say neon pink?! }
+	(div @jackdaw) { hard to miss it yeah }
+	(div @chameleon) { That would be one of the Post's backup archives. It might be filled with the stories Tension crushed. Maybe even mine. Please make sure to grab that one! }
+	(div @jackdaw) { consider it grabbed }
 
 #p-2-long-malatesta %% confidential patient data for class action lawsuit
+(prize *)
+(* available in act 2/3)
+(* requires 9 turns)
+%% (* is worth 15 thousand dollars)
+(name *) folder full of patient records
+(prize conversation about *)
+	(div @spider) { Patient records? }
+	(div @jackdaw) { confidential health data }
+	(div @spider) { Surely you do not intend to sell that to the highest bidder? }
+	(div @jackdaw) { no (line) i was listening to rat (line) nobody ever managed to take malatesta to court right? ndas and lack of evidence? }
+	(div @rat) { Proof? Proof has been found? Usable in class actions? }
+	(div @jackdaw) { maybe! only one way to find out }
 
-#p-2-long-constantine %% bundle of property deeds
+#p-2-long-constantine
+(prize *)
+(* available in act 2/3)
+(* requires 9 turns)
+(* is worth 15 thousand dollars)
+(name *) bundle of property deeds
+(prize conversation about *)
+	(div @chameleon) { Does Quinn just carry those around with him? }
+	(div @spider) { I suppose he must want to keep them secure. Under New Gothenburg law, whoever holds the deed owns the property. }
+	(div @jackdaw) { actually selling any of this is going to be hard (line) but there's one i'm hoping is in here especially }
 
 #p-2-end
 (prize *)
 (* available in act 2)
-(* requires TODO turns)
+(* requires 10 turns)
 (name *) thermostat
 (prize conversation about *)
 	(div @spider) { Fantastic. Well done, Jackdaw. }
@@ -124,19 +185,87 @@
 %% 2 from the Count, 2 from LLM, 2 misc?
 
 #p-3-med-llm %% designer t-shirt
+(prize *)
+(* available in act 3)
+(* requires 8 turns)
+(* is worth 9 thousand dollars)
+(name *) bundle of t-shirts
+(prize conversation about *)
+	(div @rat) { Thousands? For t-shirts? Must be many, so many shirts? }
+	(div @jackdaw) { just like one box full }
+	(div @spider) { Luna has them designed and custom-made from the highest-quality materials. Each one costs at least \$500. }
 
 #p-3-med-count %% key to the county
+(prize *)
+(* available in act 3)
+(* requires 8 turns)
+(* is worth 9 thousand dollars)
+(name *) key to the county
+(singleton *)
+(prize conversation about *)
+	(div @chameleon) { I've always wanted one of those! Just imagine what secrets it could unlock... }
+	(div @spider) { Is it not just symbolic? }
+	(div @chameleon) { Not in this county. It gives you permission to cross every privately-owned threshold. The Count insisted on it. }
 
-#p-3-med-llm2 %% not-Warhammer figurines
+#p-3-med-llm2
+(prize *)
+(* available in act 3)
+(* requires 8 turns)
+(* is worth 9 thousand dollars)
+(name *) case of painted figurines
+(prize conversation about *)
+	(div @chameleon) { Surely that's an overestimate? }
+	(div @jackdaw) { multiple full armies here }
+	(div @spider) { That sounds correct. It is an expensive hobby. }
 
 #p-3-long-llm %% list of training data sources
+(prize *)
+(* available in act 3)
+(* requires 11 turns)
+%% (* is worth 18 thousand dollars)
+(name *) drive labelled "top secret manifests"
+(prize conversation about *)
+	(div @spider) { You found it‽ You actually found it‽ }
+	(div @jackdaw) { yes (line) enjoy }
+	(div @rat) { She found what? What is this? }
+	(div @spider) { It is a master list of all the resources used to train the company's neural networks. Many of which are staggeringly illegal. }
+	(div @jackdaw) { wouldn't count on the courts actually caring (line) but it's something }
 
 #p-3-long-count %% leftover gold from gilding
+(prize *)
+(* available in act 3)
+(* requires 11 turns)
+(* is worth 18 thousand dollars)
+(name *) massive pile of gold
+(prize conversation about *)
+	(div @rat) { Massive? How much so? }
+	(div @jackdaw) { there's jewelry (line) bars (line) historic coins (line) looks like all the stuff they were melting down for the gilded wing (line) this must be the extra }
+	(div @chameleon) { Wouldn't \$18,000 be a bit less than a pound? }
+	(div @jackdaw) { i'm factoring in it not being pure, paying someone to make it untraceable, and most of this stuff being too heavy to lift }
 
-#p-3-long-count2 %% artwork taken down from glass wing
+#p-3-long-count2 %% artwork taken down when building glass wing
+(prize *)
+(* available in act 3)
+(* requires 11 turns)
+(* is worth 18 thousand dollars)
+(name *) stack of oil paintings
+(prize conversation about *)
+	(div @chameleon) { Anything especially good? }
+	(div @jackdaw) { no rembrandts or whatever (line) some early modern pieces (line) couple of genuine pre-raphaelites }
+	(div @spider) { They must have taken the art down when they redid the Glass Wing. }
+	(div @jackdaw) { grabbed all the rossettis (line) hard to sell but they deserve someone looking at them instead of sitting in a basement }
 
 #p-3-end
 (prize *)
 (* available in act 3)
-(* requires TODO turns)
-(name *) 
+(* requires 13 turns)
+(name *) security camera
+(prize conversation about *)
+	(div @spider) { Wonderful. From this I should be able to access the entire camera network and look for anything we might have missed. }
+	(div @jackdaw) { as long as i stand here for another 20m }
+	(div @spider) { Only fifteen, I hope. As usual I will wait for Fox's signal. }
+(hack target *)
+	(* is handled)
+	(current act 3)
+(perform [hack *])
+	(start act four) %% world.dg
