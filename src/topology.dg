@@ -334,6 +334,12 @@
 %% No connection south, since you never go back out there
 (* is available in act 0/1/3/4)
 (butler-only *) (current act 2)
+(default butler room for act 2/3/4 is *)
+	~(butler needs to greet chameleon) %% see below
+	(butler alternator is set)
+(default butler room for act 3 is $Room) %% quips.dg
+	(butler needs to greet chameleon)
+	(#chameleon is in room $Room)
 
 (name *) dining patio
 (look *) Half inside, half outside, with no door in between. The north end of the patio is surrounded by the other rooms of the mansion, while the south end with the ({piano}) is in the middle of the garden. Maintaining a consistent temperature must cost a fortune.
@@ -378,6 +384,9 @@
 (from * go #west to #dine1)
 (* is available in act 1/3/4)
 (butler-only *) (current act 2)
+(default butler room for act 2/3/4 is *)
+	~(butler needs to greet chameleon)
+	(butler alternator is unset)
 
 (name *) ballroom
 (look *) The eastern half of the dining area is properly enclosed, but with floor-to-ceiling windows along the south wall to keep it connected to the gardens. During the day, it is well-lit with sunlight; at night, the ({chandelier}) fills in.

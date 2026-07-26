@@ -58,9 +58,9 @@
 		(else)
 			*(repeat $Priority times)
 		(endif)
-	(into $QuipList)
-	(log) { Quip list: $QuipList }
-	(randomly select $NewQuip from $QuipList)
+	(into $Deck)
+	(log) { Quip deck: $Deck }
+	(randomly select $NewQuip from $Deck)
 	(now) (current quip $NewQuip)
 	(now) ($NewQuip is visited)
 	(now) (current quip position 0)
@@ -86,7 +86,8 @@
 %% And we have to do this every turn
 
 (late on every tick)
-	~(current act 0) %% Don't do this during the tutorial
+	~(current act 0) %% Don't do this during the tutorial prologue
+	~(current act 4) %% Or the epilogue
 	(at most once) {
 		(show the current quip)
 	(or)

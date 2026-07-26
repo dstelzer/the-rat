@@ -126,14 +126,14 @@
 (* involves #t-llm)
 (* line 1)
 	(div @chameleon) { So who is this 100x Silicon Valley rockstar? }
-	(div @spider) { Luna L. Meresankh, of PyramidAI fame. }
+	(div @spider) { Luna L Meresankh, of PyramidAI fame. }
 	(div @chameleon) { Oh, her! Made headlines for shattering the glass ceiling and all that? People are calling her the next Edison. }
 	(div @spider) { She does, I will admit, have a rare talent for stealing her employees' work. And using the courts to silence anyone who refuses to be bought out. }
 (* line 2)
 	(div @jackdaw) { what does the l stand for anyway }
-	(div @spider) { Luna L. Meresankh. }
+	(div @spider) { Luna L Meresankh. }
 	(div @jackdaw) { no the l in the middle }
-	(div @spider) { It stands for Luna L. Meresankh. }
+	(div @spider) { It stands for Luna L Meresankh. }
 
 #q-1-guestlist
 (quip *)

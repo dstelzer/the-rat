@@ -1,5 +1,12 @@
+%% This file is misleadingly named, but I couldn't think of a better name for it
+%% It holds the data for all the protagonists and the act transitions
+%% For the layout of the map, see topology.dg
+%% For the actions referenced here, see actions.dg
+%% For the butler's AI, see ai.dg
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Protagonists
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 (animate *(protagonist $))
 (add *(protagonist $) to scope)
@@ -143,8 +150,38 @@
 (have * refuse $)
 	(div @chameleon) { I'm sure I'd love to, but I think someone else might be better-suited for that. }
 
+(cham-link direction $Dir)
+	(collect words)
+		(if) ~(current player #chameleon) (then)
+			Chameleon ,
+		(endif)
+		(name $Dir)
+	(into $Link)
+	(vlink $Link {(name $Dir)})
+
+(status bar line)
+	(current act 3) %% not available before 3, not available in 4
+	(div @statusline) {
+		(span @chameleoncolor) {
+			(span @bold) { Chameleon } :
+			(#chameleon is in room $Room)
+			(collect $Dir)
+				*(direction $Dir)
+				(from $Room go $Dir to $Next)
+				(in bounds for this act $Next)
+			(into $List)
+			(listing $List {(cham-link direction $_)} @, @the 0)
+			;
+			(if) (people are following) (then)
+				({disengage})
+			(else)
+				({mingle})
+			(endif)
+		}
+	}
+
 #butler
-(protagonist *) (current act 4)
+(protagonist *) (butler has the earpiece)
 (name *) butler
 (animate *)
 (male *)
@@ -163,6 +200,89 @@
 (descr *)
 	A house like this would normally have half a dozen staff at least, and now all these tasks fall to him. It's no wonder he never has a chance to rest.
 
+(butler-link direction $Dir)
+	(collect words)
+		(if) ~(current player #butler) (then)
+			Butler ,
+		(endif)
+		(name $Dir)
+	(into $Link)
+	(vlink $Link {(name $Dir)})
+
+(status bar line)
+	(butler has the earpiece)
+	(div @statusline) {
+		(span @butlercolor) {
+			(span @bold) { Butler } :
+			(#butler is in room $Room)
+			(collect $Dir)
+				*(direction $Dir)
+				(from $Room go $Dir to $Next)
+				(in bounds for this act $Next)
+			(into $List)
+			(listing $List {(butler-link direction $_)} @, @the 0)
+			(exhaust) {
+				*($Obj has ancestor $Room)
+				(attend target $Obj)
+				; ({attend to (the $Obj)})
+			}
+		}
+	}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Antagonists
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+#crowd
+(name *) various guests
+(animate *)
+(plural *)
+(appearance *) The ({guests}) are milling around and talking amongst themselves.
+(descr *)
+	(if) (#vespertilion is #partof *) (then) %% Disappears for part of act 4
+		({Count Vespertilion}), the host;
+	(endif)
+	({Luna L Meresankh}), the Silicon Valley star;
+	({Constantine Quinn}), the refrigerator magnate;
+	({Dr Malatesta}), the famous biologist;
+	and ({Ari Tension}), the media mogul.
+(letter for *) V
+
+#vespertilion
+(name *) Count Vespertilion
+(proper *)
+(male *)
+(descr *) A small and angular man with wispy silver hair and an immaculate suit.
+(letter for *) V
+
+#llm
+(name *) Luna L Meresankh
+(proper *)
+(female *)
+(descr *) A tall and angular woman with a pointy face and dramatic hair.
+
+#constantine
+(name *) Constantine Quinn
+(proper *)
+(male *)
+(descr *) A rotund man in his 50s with a booming voice and a hearty laugh.
+
+#malatesta
+(name *) Dr Malatesta
+(proper *)
+(male *)
+(descr *) A small man with a round face and thick glasses that hide his eyes.
+
+#tension
+(name *) Ari Tension
+(proper *)
+(male *)
+(descr *) A muscular man with a shrill voice and thick, angry eyebrows.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Act Transitions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 (intro)
 	(introductory cutscene)
 	(update environment around player)
@@ -171,7 +291,7 @@
 (get an initial comment)
 	*(repeat forever)
 	(save undo $)
-	({Yes}) / ({No}) >
+	({Yes}) / ({No}) / ([] {\[ nothing \]}) >
 	(get input $Words)
 	(if) (empty $Words) (then)
 		(select)
@@ -242,6 +362,7 @@
 	(div @spider) { Once the butler is distracted, Fox will tell you when to (span @bold) proceed . }
 	(div @chameleon) { Simple and elegant. I like it. }
 	(div @jackdaw) { as per my last email (line) lets (space)----ing go }
+	
 	(now) (current act 1)
 	(move #rat to #dine2)
 	(move #butler to #dine1)
@@ -252,10 +373,92 @@
 	(div @chameleon) { Ten-four. Watching. }
 	(div @jackdaw) { and i'm going to stand here holding a router (line) yay }
 	(div @rat) { . (space) . (space) . (space) . (space) . (space) . (space) . }
+	
 	(pause)
 	(div @header) { Act Two: Getting Rich }
-	(div @spider) { It is done. I am opening the vault now. Chameleon, what have you seen? }
+	
+	(div @spider) { It is done. I am opening the next rooms now. Chameleon, what have you seen? }
+	(div @jackdaw) { guests' belongings here i come }
 	(div @chameleon) { The butler is running around a lot. He took the crank off the chandelier and locked down the piano so we can't mess with those any more. The guests showed up, he welcomed them in, served a bunch of drinks, and now they're all eating and talking in the dining area. Any word on getting me that invitation? }
 	(div @spider) { I am working on it. Once Jackdaw can get access to the IoT network, it will happen. }
-	(div @jackdaw) { well you can take your time there's tons of stuff to raid in the vault }
+	(div @jackdaw) { well you can take your time there's tons of stuff to raid here }
+	
 	(now) (current act 2)
+	(move #crowd to #dine1)
+
+(start act three) %% triggered in prizes.dg
+	(div @spider) { I will begin. As before, Chameleon, please keep your eye on the cameras. }
+	(div @chameleon) { Not that there's much else for me to do. }
+	(div @jackdaw) { well that's about to change if we can get you this invite }
+	(div @rat) { . (space) . (space) . (space) . (space) . (space) . (space) . }
+	
+	(pause)
+	(div @header) { Act Three: Getting Out }
+	
+	(div @spider) { You are officially on the guest list. You have the card, yes? }
+	(div @chameleon) { Right here in my hand. I'm walking up to the door now. }
+	(div @spider) { Jackdaw, can you access the vault? }
+	(div @jackdaw) { it's open and ready to be robbed }
+	(div @spider) { Rat? }
+	(div @rat) { The rat waits. The rat has waited. Continue. }
+	(div @spider) { And I am tracking both Rat and Chameleon on the cameras now. Fox, we are ready to go as soon as you say the word. }
+	
+	(now) (current act 3)
+	(move #chameleon to #dine1)
+	(try [examine #dine1])
+
+(start act four) %% triggered in prizes.dg
+	(div @spider) { I am beginning my work now. }
+	(div @chameleon) { I'm afraid I can't watch the feeds for you this time. I have my hands full in here. }
+	(div @spider) { That should be fine. Everything is thoroughly under control now. }
+	(div @rat) { . (space) . (space) . (space) . (space) . (space) . (space) . }
+	(pause)
+	
+	(div @rat) { Mayday! Alert! Does Spider see? }
+	(div @rat) { Is Spider there? Can he hear? Read? }
+	(div @rat) { The rat tries to watch. Chameleon speaks to Luna. Luna gestures. Chameleon winces, flinches, puts a hand on the earpiece. Removes it, hides it on the table. }
+	(div @rat) { Chameleon is in, she is talking, but she cannot talk to us. }
+	(div @rat) { Spider? Jackdaw? Fox? }
+	
+	(pause)
+	(div @header) { Epilogue: Getting Even }
+	
+	(div @spider) { I have all the cameras, and—what is going on‽ Why has Chameleon disconnected? }
+	(div @jackdaw) { don't ask me i've been clinging halfway up a wall holding a camera for you }
+	(div @rat) { The rat has watched. Read the log. }
+	(div @spider) { Oh no. Oh no no no. I am going to pull up all the cameras. Jackdaw, keep an eye on everything. }
+	(div @jackdaw) { on it }
+	(div @spider) { I am getting a signal from the earpiece. But where is it? }
+	
+	(now) (current act 4)
+	(move #chameleon to #dine1)
+	(move #crowd to #dine1)
+	(move #rat to #dine2)
+	(move #butler to #gran2)
+	(move #vespertilion to #gran2)
+	(if) ($Obj is #heldby #butler) (then) (now) ($Obj is #in #dine2) (endif)
+	(now) (#tray is #heldby #butler)
+
+(on every tick)
+	(current act 4)
+	~(butler has the earpiece)
+	(select)
+		(div @spider) { No biometrics are coming through from Chameleon's earpiece. But I have audio. }
+		(div @guests) {
+			Vespertilion: The evening could be considered a marginal success, despite your frankly unacceptable performance. The service was slow. You were constantly distracted, leaving no one to attend to the guests. When people needed drinks, you were nowhere to be found. (par)
+			Vespertilion: And the security was no better than the service! People have entered the lower floors and made off with who even knows what.
+		}
+	(or)
+		(div @guests) {
+			Vespertilion: Insurance will pay more than the losses and the objects will be easily tracked; the thieves will not get far. But the loss of face will be atrocious should this reach the press. (par)
+			Vespertilion: Needless to say, I will expect you to trace and retrieve my property with all haste. Finish the cleanup from the dinner, attend to the guests' needs, see them out, then begin work on the theft. And expect a seven percent pay cut for this fiasco. I consider that more than generous, given the mess you caused.
+		}
+		(div @spider) { Vespertilion is turning away and moving back toward the dining room. }
+		(now) (#vespertilion is #partof #crowd)
+	(or)
+		(div @spider) { I am seeing biometric data on Chameleon's earpiece again. Someone is wearing it. }
+		(now) (butler has the earpiece)
+	(stopping)
+
+(finishing cutscene)
+	TODO

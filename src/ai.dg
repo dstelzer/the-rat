@@ -338,6 +338,7 @@
 %% The relevant calculations all get stored in long-term memory anyway
 
 (on every tick)
+	~(current act 4) %% During this act, we control the butler
 	(exhaust) (search for new goals)
 	(exhaust) (calculate and store the butler's path)
 	(exhaust) (take one step toward the current goal)

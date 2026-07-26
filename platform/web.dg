@@ -41,6 +41,8 @@
 	border-left: 1px dashed \#888888;
 	margin-top: 0.67em;
 	margin-bottom: 0.67em;
+(style class @butlercolor)
+	color: inherit;
 (conversation style description) dotted gray (line) all the colors are taken it's time for patterns
 
 (style class @mainstatus)

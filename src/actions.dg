@@ -347,17 +347,12 @@
 		.
 	}
 
-(narrate leaving $ $)
-	(div @chameleon) {
-		TODO!
-	}
-
 (perform [leave $Room $Dir])
 	(narrate leaving $Room $Dir)
 	(from $Room go $Dir to room $Target)
 	(enter $Target)
 
-(action [go/leave | $] is valid for #rat/#chameleon)
+(action [go/leave | $] is valid for #rat/#chameleon/#butler)
 
 %% SABOTAGE <obj>
 
@@ -667,15 +662,23 @@
 
 (prevent [mingle])
 	(people are following)
-	TODO people are already following!
+	(div @chameleon) { As much as I love hearing your voice, darling, you don't have to tell me twice. They're hanging on my every word. }
+	(div @jackdaw) { what voice this is all happening in text }
 
 (prevent [mingle])
 	(#chameleon is in room $Room)
 	~(#crowd is in room $Room)
-	TODO People not there!
+	(div @chameleon) { I would love nothing more, but I'm afraid there is nobody else around to mingle with. I'll need to return to the party first. }
 
 (perform [mingle])
-	TODO it works!
+	(div @chameleon) {
+		Your wish is my command. Give me just a moment to slip into the conversation
+		(select)
+			and they'll follow me wherever I go
+		(or)
+		(stopping)
+		.
+	}
 	(now) (people are following)
 
 @(people are not following) ~(people are following)
@@ -688,19 +691,97 @@
 
 (prevent [disengage])
 	(people are not following)
-	TODO people are already not following!
+	(if) (#chameleon is in room $Room) (#crowd is in room $Room) (then)
+		(div @chameleon) { Consider it done. I'm at the edge, ready to slip away. }
+	(else)
+		(div @chameleon) { Unless you'd like me to turn off the earpiece, dear, there's nothing for me to disengage from. }
+	(endif)
 
 (perform [disengage])
-	TODO it works!
+	(div @chameleon) { No sooner said than done. I'm all yours again. }
 	(now) (people are not following)
 
 (action [disengage] is valid for #chameleon)
 
+%% GO
+
+(narrate leaving $Src $Dir)
+	(current player #chameleon)
+	(from $Src go $Dir to $Dest)
+	(if) (people are following) (then)
+		(div @spider) {
+			(select)
+				Chameleon is winking at the camera and swirling away, and the crowd is following her.
+			(or)
+				Everyone is following Chameleon to (the $Dest) .
+			(or)
+				Chameleon is leading the crowd (name $Dir) .
+			(or)
+				The party is moving (name $Dir) (no space) ward with Chameleon.
+			(then at random)
+		}
+	(else)
+		(div @chameleon) {
+			(select)
+				Consider it done.
+			(or)
+				On my way.
+			(or)
+				As you wish.
+			(or)
+				Anything you say.
+			(at random)
+		}
+	(endif)
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Butler
 
+%% ATTEND TO
+
+(grammar [attend to [single]] for [attend to $])
+(grammar [a [single]] for [attend to $])
+(prevent [attend to ~(attend target $Obj)])
+	(div @spider) {
+		The butler shakes his head very slightly.
+		(if) ($Obj is broken) (then)
+			The time for fixing (the $Obj) is past. %% Just in case
+		(elseif) (animate $Obj) (then)
+			The time for attending to guests is past. %% For players of the original game
+		(else)
+			There must be nothing to do for (the $Obj).
+		(endif)
+	}
+
+(attend target *(item $Obj))
+(perform [attend to $Obj])
+	($Obj is #heldby #butler)
+	(#butler is in room $Room)
+	(div @spider) { The butler puts down (the $Obj) . }
+	(now) ($Obj is #in $Room)
+(perform [attend to $Obj])
+	(item $Obj)
+	~($Obj is #heldby #butler)
+	(if) ($Other is #heldby #butler) (then)
+		(div @spider) { The butler gestures subtly to (the $Other) . }
+		(tick) (stop)
+	(else)
+		(div @spider) { The butler picks up (the $Obj) . }
+		(now) ($Obj is #heldby #butler)
+	(endif)
+
+(action [attend to $] is valid for #butler) (current act 4)
+
+%% FIX (not accessible to the player)
+
 (narrate fixing $Obj) %% Fallback - individual objects should have their own descriptions
 	(div @spider) { The butler is working on repairing (the $Obj) . }
+
+%% GO
+
+(narrate leaving $ $Dir)
+	(current player #butler)
+	(div @spider) { The butler is moving (name $Dir) . }
 
 %% Since we cut out a bunch of stdlib machinery, we need to silence some compiler warnings here too; none of these are ever queried so they'll be cut by dead code elimination
 (interface (when $< is already held))
