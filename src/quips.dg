@@ -437,6 +437,41 @@
 	(div @rat) { The rat wonders. A vault? Why? Must the butler not use it? }
 	(div @jackdaw) { we could also just call it a storage room (line) it's a normal room with a normal lock (line) i just wanted to say i breached the vault }
 
+#q-3-flirting
+(quip *)
+(locked *) ~(tried mingling)
+(* line)
+	(div @jackdaw) { chameleon you're seriously flirting like this with someone you've never met face to face (line) why }
+	(div @chameleon) { Well, it's not like any of us know each other's real names. Such is the nature of the job. }
+	(div @jackdaw) { yeah but you know a little bit about me at least (line) fox is a mystery (line) i keep having to phrase my sentences to avoid pronouns even }
+	(div @chameleon) { Why not just ask? Fox, darling, I know you're all about the secrecy, but if we're all going to be taking your orders, would you at least give us a way to refer to you? }
+	(vlink {they/them}) / ({it/its}) / ??? > (get pronoun $Pronoun)
+	(if) (nonempty $Pronoun) (then)
+		(div @chameleon) {
+			A
+			(if) ($Pronoun = @it) (then) (no space) n (endif)
+			$Pronoun after my own heart.
+		}
+	(else)
+		(div @chameleon) { I hope you know that every mystery just intrigues me more. }
+	(endif)
+
+%% This whole rigamarole was inspired by a tumblr post about a game that has a gender selector where the only options are they/them and it/its
+%% Is it worth it? Probably not! But it amused me
+%% The result is currently never saved anywhere and never comes up again
+(get pronoun $Pronoun)
+	(get input $Words)
+	(if) ($Words = [$First | $]) (then)
+		(if) (split word $First into $Letters) (@\/ is one of $Letters) (then)
+			(split $Letters by @\/ into $Left and $)
+			(join words $Left into $Pronoun)
+		(else)
+			($Pronoun = $First)
+		(endif)
+	(else)
+		($Pronoun = [])
+	(endif)
+
 #q-3-alisa
 (quip *)
 (* involves #t-nonamus)

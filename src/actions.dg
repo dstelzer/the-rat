@@ -352,7 +352,8 @@
 	(from $Room go $Dir to room $Target)
 	(enter $Target)
 
-(action [go/leave | $] is valid for #rat/#chameleon/#butler)
+(action [go/leave | $] is valid for #rat/#chameleon)
+(action [go/leave | $] is valid for #butler) (butler has the earpiece)
 
 %% SABOTAGE <obj>
 
@@ -660,6 +661,8 @@
 
 (grammar [mingle/socialize] for [mingle])
 
+(before [mingle]) (now) (tried mingling) %% Whether it succeeds or fails
+
 (prevent [mingle])
 	(people are following)
 	(div @chameleon) { As much as I love hearing your voice, darling, you don't have to tell me twice. They're hanging on my every word. }
@@ -668,11 +671,16 @@
 (prevent [mingle])
 	(#chameleon is in room $Room)
 	~(#crowd is in room $Room)
-	(div @chameleon) { I would love nothing more, but I'm afraid there is nobody else around to mingle with. I'll need to return to the party first. }
+	(div @chameleon) { I would love nothing more, darling, but I'm afraid there is nobody else around to mingle with. I'll need to return to the party first. }
 
 (perform [mingle])
 	(div @chameleon) {
-		Your wish is my command. Give me just a moment to slip into the conversation
+		(select)
+			(uppercase)
+		(or)
+			As always,
+		(stopping)
+		your wish is my command. Give me just a moment to slip into the conversation
 		(select)
 			and they'll follow me wherever I go
 		(or)
