@@ -257,5 +257,5 @@
 	(div @spider) { It is done. I am opening the vault now. Chameleon, what have you seen? }
 	(div @chameleon) { The butler is running around a lot. He took the crank off the chandelier and locked down the piano so we can't mess with those any more. The guests showed up, he welcomed them in, served a bunch of drinks, and now they're all eating and talking in the dining area. Any word on getting me that invitation? }
 	(div @spider) { I am working on it. Once Jackdaw can get access to the IoT network, it will happen. }
-	(div @jackdaw) { well take your time there's tons of stuff to raid in the vault }
-	...and this is where the current demo ends. Thank you for testing!
+	(div @jackdaw) { well you can take your time there's tons of stuff to raid in the vault }
+	(now) (current act 2)

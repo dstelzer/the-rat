@@ -1,14 +1,82 @@
 (redraw status bar)
 	(if) (interpreter supports status bar) (then)
-		(map of current layer needs $Lines lines)
-		(status bar @mainstatus with height $Lines)
+		(map of current layer needs $Lines lines) %% Should always be ≥ 3
+		(status bar @mainstatus with height $Lines) {
 			(automap)
+			(if) (interpreter supports links) (then) %% Inlays at left and right
+				(if) (#chameleon is in room $) (then)
+					(chamstick inlay)
+				(endif)
+				(ratstick inlay)
+			(endif)
+		}
 	(else)
 		(draw automap outside of status bar if applicable)
 	(endif)
 	(if) (interpreter supports inline status bar) (then)
 		(suggestion bar)
 	(endif)
+
+(style class @ratstick)
+	font-family: Cartography, monospace;
+	float: left;
+	width: 5ch;
+	height: 3em;
+	top: 0px;
+	position: absolute;
+	margin-top: 0.25em;
+	margin-bottom: 0.25em;
+
+(style class @chamstick)
+	font-family: Cartography, monospace;
+	float: right;
+	width: 5ch;
+	height: 3em;
+	top: 0px;
+	position: absolute;
+	margin-top: 0.25em;
+	margin-bottom: 0.25em;
+
+(ratstick inlay) %% rat joystick
+	(div @ratstick) {
+		(space 2) (#rat dir #north) (space 2) (line)
+		(#rat dir #west) R (#rat dir #east) (line)
+		(space 2) (#rat dir #south) (space 2)
+	}
+
+(chamstick inlay) %% chameleonstick is too long
+	(div @chamstick) {
+		(space 2) (#chameleon dir #north) (space 2) (line)
+		(#chameleon dir #west) C (#chameleon dir #east) (line)
+		(space 2) (#chameleon dir #south) (space 2)
+	}
+
+($Person dir $Direction)
+	($Person is in room $Room)
+	(no space)
+	(if) (from $Room go $Direction to $Next) (in bounds for this act $Next) (then)
+		(if) (in debugger) (then)
+			(direction symbol $Direction) %% Links become a mess when represented graphically
+		(else)
+			(collect words)
+				(if) ~(current player $Person) (then) (name $Person) , (endif)
+				(name $Direction)
+			(into $Words)
+			(vlink $Words {(direction symbol $Direction)})
+		(endif)
+	(else)
+		(if) ($Direction is one of [#east #west]) (then) %% Longer arrow
+			(space 2)
+		(else)
+			(space 1)
+		(endif)
+	(endif)
+	(no space)
+
+(direction symbol #north) ^
+(direction symbol #south) v
+(direction symbol #east) ->
+(direction symbol #west) <-
 
 (suggestion bar)
 	(inline status bar @inline) {

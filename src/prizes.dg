@@ -1,3 +1,7 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ACT 1 - THE WINE CELLAR
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 #p-1-shortest-a %% Fallback so the first PROCEED always succeeds
 (prize *)
 (* available in act 1)
@@ -72,3 +76,67 @@
 	(current act 1)
 (perform [hack *])
 	(start act two) %% world.dg
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ACT 2 - THE GUESTS' BELONGINGS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% 2 short, 2 medium, 2 long, 1 thermostat (IoT enabled)
+%% 2 each from Quinn, Malatesta, Tension
+
+#p-2-short-tension %% work laptop
+
+#p-2-short-malatesta %% bottle of prescription drugs
+
+#p-2-med-constantine %% backup diamond cufflinks
+
+#p-2-med-tension %% hard drive of suppressed stories
+
+#p-2-long-malatesta %% confidential patient data for class action lawsuit
+
+#p-2-long-constantine %% bundle of property deeds
+
+#p-2-end
+(prize *)
+(* available in act 2)
+(* requires TODO turns)
+(name *) thermostat
+(prize conversation about *)
+	(div @spider) { Fantastic. Well done, Jackdaw. }
+	(div @chameleon) { A thermostat? What's so fantastic about that? }
+	(div @jackdaw) { iot }
+	(div @spider) { It is connected to the mansion's internet-of-things network. Through it I can access the mansion's other devices and systems—which will let me add you to the guest list and forge an invitation. }
+	(div @chameleon) { That (span @italic) is fantastic! I retract my comments. I will prepare for my entrance! }
+	(div @jackdaw) { don't prepare too soon (line) knowing spider i'm going to be holding this thing for another half hour }
+	(div @spider) { I will try to have it done in twenty. }
+	(div @chameleon) { Well then, Fox, give the signal at your pleasure. }
+(hack target *)
+	(* is handled)
+	(current act 2)
+(perform [hack *])
+	(start act three) %% world.dg
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ACT 3 - THE VAULT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% 3 medium, 3 long, 1 security camera (networked)
+%% 2 from the Count, 2 from LLM, 2 misc?
+
+#p-3-med-llm %% designer t-shirt
+
+#p-3-med-count %% key to the county
+
+#p-3-med-llm2 %% not-Warhammer figurines
+
+#p-3-long-llm %% list of training data sources
+
+#p-3-long-count %% leftover gold from gilding
+
+#p-3-long-count2 %% artwork taken down from glass wing
+
+#p-3-end
+(prize *)
+(* available in act 3)
+(* requires TODO turns)
+(name *) 

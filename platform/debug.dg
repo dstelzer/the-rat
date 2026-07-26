@@ -36,3 +36,9 @@
 	margin-bottom: 1em;
 (style class @chameleoncolor)
 	color: magenta;
+
+(style class @guests)
+	color: inherit;
+	margin-top: 1em;
+	margin-bottom: 1em;
+(conversation style description) plain white (line) itll stand out

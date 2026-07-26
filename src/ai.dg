@@ -163,6 +163,7 @@
 
 ~(viable room $Room)
 	~(in bounds for this act $Room)
+	~(butler-only $Room) %% Since the butler can use rooms the player can't
 (viable room $) %% All in-bounds rooms are viable when we're not worried about going past people
 	~(tentatively avoiding occupied rooms)
 (viable room $Room) %% Otherwise, avoid the party guests, including Chameleon

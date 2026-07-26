@@ -8,6 +8,12 @@
 %% You can also use (* line) if it has only a single line
 %% (* involves TOPIC) If it involves any topics, used for discourse structure
 
+%% There are no quips in acts 0 or 4, so this file is divided into sections for 1, 2, and 3
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ACT 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 #q-1-comms
 (quip *)
 (* involves #t-comms)
@@ -31,6 +37,27 @@
 	(div @chameleon) { I don't mind. It just means we have to be creative about it. Try saying that (space) --- (space) --- (space) -- (space) - (space) ---------, but (space) ---- (space) --- (space) --- (space) ----- (space) -- (space) --------- (space) -----. \( No offense, of course. \) }
 	%% Sarah provided: you may be a masochist, but even you are weary of suffering fools
 	(div @jackdaw) { wow i take it back thats some good tech }
+
+#q-1-lowercase
+(quip *)
+(* involves #t-comms)
+(locked *) (#q-1-comms is unvisited) (#q-1-profanity is unvisited) %% Unlock when either is visited
+(* line)
+	(div @chameleon) { But if the system is so fancy, I find myself wondering why it doesn't fix Jackdaw's capitalization. }
+	(div @jackdaw) { oh it does (line) i go through and make it all lowercase again before i send (line) out of spite }
+
+#q-1-proceed
+(quip *)
+(* involves #t-comms)
+(locked *) ~{ *(prize $Prize) ($Prize is handled) } %% Locked until you PROCEED
+(* line 1)
+	(div @rat) { Why does Jackdaw "proceed"? Such an odd word? }
+	(div @jackdaw) { ask spider (line) it's all because of him }
+	(div @chameleon) { Spider, why does Jackdaw "proceed"? }
+	(div @spider) { Disambiguation. }
+(* line 2)
+	(div @chameleon) { Please elaborate on "disambiguation"? }
+	(div @jackdaw) { he said we needed to choose a clear signal (line) i suggested "go" (line) he said "go" is already used for rat going place to place (line) so i said he should just come up with something else (line) and he said "proceed" }
 
 #q-1-backstory
 (quip *)
@@ -172,6 +199,10 @@
 	(div @chameleon) { Is that not how the stories always go? }
 	(div @jackdaw) { spider if chameleon wrecks this will you turn off the profanity thing (line) just for a minute or so }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ACT 2
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 #q-2-chapel
 (quip *)
 (locked *) (#gran1 is unvisited)
@@ -208,9 +239,162 @@
 	(div @rat) { The office is smart. Automated. But why? The automation is for what? }
 	(div @spider) { Nothing especially useful, as far as I can tell. The mansion still relies on the staff for all the actual labor. }
 
-#q-2-grudge
+#q-2-talk
 (quip *)
-(* depends on #TODO)
+(locked *) (current act 1)
+(* involves #t-count)
+(* has priority 3)
+(* line)
+	(div @chameleon) { What are the guests discussing, if I may? }
+	(div @spider) { I will start a transcription. Any suggestions for color? }
+	(div @jackdaw) { (conversation style description) } %% see platform/*.dg
+	(div @spider) { Done. }
+	(div @guests) {
+		Vespertilion: My honored guests. It is my pleasure and my distinct privilege to welcome you to my humble estate. Enter it freely and of your own will, and when you go, leave something of the happiness you bring. (par)
+		Luna: We're so glad you've shown interest in PyramidAI. You clearly see the value of getting in on the ground floor. This isn't just a product—it's a new way of life, starting right here in New Gothenburg.
+	}
+
+#q-2-llm
+(quip *)
+(* depends on #q-2-talk)
+(* involves #t-llm)
+(* line 1)
+	(div @guests) {
+		Quinn: So this new product of yours. Are you aiming at consumers, or do you think it has a place in the corporate world too? (par)
+		Luna: You're absolutely right. Your comment was not just insightful—it cuts right to the heart of the issue. Any modern technology needs to cater to the business market if it wants to succeed. And PyramidAI has the potential to reduce expenses by as much as 200\%.
+	}
+(* line 2)
+	(div @guests) {
+		Quinn: Reduce by 200\%? How do you figure that? (par)
+		Luna: You're absolutely right—that's my mistake. Of course, it's not possible to reduce a quantity by more than 100\%. Is there anything else I can help you with?
+	}
+
+#q-2-malatesta
+(quip *)
+(* depends on #q-2-talk)
+(* involves #t-malatesta)
+(* line 1)
+	(div @guests) {
+		Tension: Dr Malatesta, famed biologist—is he on the verge of his next great breakthrough?! Inquiring minds want to know! (par)
+		Malatesta: Breakout?! Who said anything about a breakout? Who have you heard this from? (par)
+		Vespertilion: I believe he said, "break (no space) (span @italic) through (no space) ". (par)
+		Malatesta: Oh, a breakthrough! Right, a breakthrough. Yes, we definitely are close to one of those.
+	}
+(* line 2)
+	(div @guests) {
+		Tension: Lab "close to a breakthrough", Malatesta reports! But what will it be? What should the public expect? (par)
+		Malatesta: The public? Oh, the public doesn't need to expect anything. Everything is securely contained. There's no risk of a breakout. Nothing to be alarmed over.
+	}
+
+#q-2-quinn
+(quip *)
+(* depends on #q-2-talk)
+(* involves #t-constantine)
+(* line 1)
+	(div @guests) {
+		Vespertilion: Now, Mr Quinn, I believe congratulations are in order after the recent news from New Gothenburg University. (par)
+		Tension: NGU to inaugurate new Quinn Hall in grand ceremony! (par)
+		Quinn: Ah, yes! An honor, really, an absolute honor. But I try to support the university whenever I can. I see it as giving back to the city that's given me so much. It's heartwarming that they want to name the building after me, truly heartwarming.
+	}
+(* line 2)
+	(div @guests) {
+		Quinn: Why, just last month I made a donation to the University's biology department. A rare specimen from one of my hunts: the pelt of a long-horned bison. (par)
+		Malatesta: A (span @italic) { B. latifrons } ? That's quite the prize! (par)
+		Quinn: Indeed! Last of its kind! I'm glad science will be able to learn from it.
+	}
+(* line 3)
+	(div @guests) {
+		Malatesta: Where ever did you find a (span @italic) { B. latifrons } in the first place? (par)
+		Quinn: Special safari expedition to the San Diego Zoo. And you would not (span @italic) believe the permits I had to fill out to make that happen. Really would not believe it.
+	}
+
+#q-2-tension
+(quip *)
+(* depends on #q-2-talk)
+(* involves #t-tension)
+(* line 1)
+	(div @guests) {
+		Luna: Now, Ari, I believe I've heard something about a recent business deal? (par)
+		Tension: Tension Media announces new merger! Brings New Gothenburg Post, KBAT Radio, WEBG Channel 3, Gothenburg News Network, Gothenburg Gazette, Daily News together under one umbrella! (par)
+		Quinn: Well done, my boy, very well done! Got to catch them all, as the young folk say?
+	}
+(* line 2)
+	(div @guests) {
+		Malatesta: But with all the local media under one company, how will you keep them all separate? (par)
+		Quinn: A good question! You don't want to cannibalize your own market, now, do you? (par)
+		Tension: The Gothenburg Gazette: your only source for the news of the day! New Gothenburg Post announces new focus on market deregulation and personal freedom! Channel 3 pivots to non-stop reruns of TWILIGHT SWORDFIGHT, everyone's favorite fantasy sitcom! KBAT Radio, bringing you the best of the 1930s, every night! Tension Media—we have something for everyone!
+	}
+
+#q-2-rat
+(quip *)
+(* involves #t-malatesta)
+(* depends on #q-1-malatesta)
+(locked *) (current act 1)
+(* line 1)
+	(div @rat) { He is here. The Doctor. }
+	(div @jackdaw) { malatesta? }
+	(div @rat) { Him. Yes. He smiles. He sweats. He fears. As he should. }
+	(div @chameleon) { I sense a story here. }
+	(div @rat) { He promises results, his studies. Cures. But what he brings is legal papers. Non-disclosure. Arbitration. To hide him from those he hurts. Those who are changed. }
+(* line 2)
+	(div @jackdaw) { ---- (line) and here i thought the whole third-person thing was an act }
+	(div @rat) { The rat, all the rats, the others. They gather. They bide their time. And in time, their union, the union of radioactive victims, they will have their revenge. }
+
+#q-2-jackdaw
+(quip *)
+(* involves #t-constantine)
+(* depends on #q-1-constantine)
+(locked *) (current act 1)
+(* line 1)
+	(div @chameleon) { And what about you, Jackdaw? }
+	(div @jackdaw) { what about me (line) i'm in this to steal }
+	(div @chameleon) { I get the sense there's more to it than that. }
+	(div @jackdaw) { more to what }
+	(div @chameleon) { To the way your typing got faster when I mentioned Constantine Quinn, perhaps. }
+	(div @jackdaw) { oops gtg there's an alarm or something }
+(* line 2)
+	(div @spider) { All alarms should be taken care of. }
+	(div @jackdaw) { fine if you really have to know (line) i used to run the family business before the refrigerator magnate showed up (line) he undercut me and sold at a loss until i went bankrupt then bought it all out for pennies (line) so now i'm doing heists to make ends meet (line) on the plus side i never have to look at a timesheet again }
+
+#q-2-spider
+(quip *)
+(* involves #t-llm)
+(* depends on #q-1-profanity/#q-1-llm)
+(locked *) (current act 1)
+(locked *) (#q-2-rat is unvisited) (#q-2-jackdaw is unvisited) (#q-2-chameleon is unvisited) %% Needs at least one of them
+(* line 1)
+	(div @jackdaw) { if we're going to be prying at secrets why don't you poke at spider for a while and let me work }
+	(div @rat) { The secrets of the Spider's work? }
+	(div @spider) { Is this really the right time? }
+	(div @chameleon) { Well, we can piece most of it together already, no? }
+	(div @jackdaw) { do tell }
+(* line 2)
+	(div @chameleon) { Well, consider what we know. Spider is a technology expert who spent the last several years on text analysis, always refers to Meresankh by her first name, and calls her an intellectual property thief. At this point it's obvious, right? }
+	(div @jackdaw) { huh (line) yeah }
+	(div @chameleon) { Just to spell it out, I suspect he is the architect of her much-vaunted language processing systems, and she did away with him once he was no longer necessary. }
+	(div @spider) { Yes, fine. Just do not mention my real name until the job is over. That was the deal. }
+	(div @jackdaw) { just call him meresankh's bitter ex-partner got it }
+	(div @spider) { Surely there must be a better way to phrase that. }
+
+#q-2-chameleon
+(quip *)
+(* involves #t-tension/#t-nonamus)
+(locked *) (current act 1)
+(locked *) (#q-2-rat is unvisited) (#q-2-jackdaw is unvisited) (#q-2-spider is unvisited) %% Needs at least one of them
+(* depends on #q-1-tension)
+(* has priority 15) (current act 3) %% If we get to act 3 without seeing this one, amp up the priority, because it's needed for the butler to greet Chameleon
+(* line 1)
+	(div @spider) { Chameleon certainly seems talented at digging up secrets. Perhaps she should have gone by Ferret. }
+	(div @chameleon) { I'll take that as a compliment, dear. Thank you. }
+	(div @spider) { Should we take a guess at her own sordid history? }
+	(div @chameleon) { Let's just say that there are suddenly far fewer employment opportunities for investigative journalists in New Gothenburg than there were a year ago. }
+(* line 2)
+	(div @jackdaw) { so chameleon's a laid-off reporter? }
+	(div @chameleon) { "Made redundant", they said. "Refocusing our journalism in a new direction", they said. And it all started when (span @italic) he bought us out. My exposé on the largest crime family in New Gothenburg was almost ready to print! It would have shaken this city to its foundations! But no, it no longer fits his vision for the paper, so it will never see the light of day! }
+
+#q-2-fox
+(quip *)
+(* depends on #q-2-rat/#q-2-jackdaw/#q-2-spider/#q-2-chameleon) %% Must be the last one
 (locked *) (current act 1)
 (* involves #t-count)
 (* line)
@@ -220,16 +404,195 @@
 	(div @jackdaw) { you should ask fox }
 	(div @spider) { Oh? }
 	(link) Yes / (link) No > (get input $)
-	(div @chameleon) { Curious... }
+	(div @chameleon) { Curious...and Fox does have such good organizational skills... }
 	(div @jackdaw) { therell be time to pry later focus on the job now }
 	(div @chameleon) {
 		(if) (current act 1) (then)
-			Easy to say when you're not on standby for another hour! Besides,
+			Easy to say when you're not on standby for another half hour! Besides,
 		(else)
 			But
 		(endif)
 		Fox is far more interesting.
 	}
+
+#q-2-passages
+(quip *)
+(* involves #t-butler)
+(locked *) (current act 1)
+(* has priority 2)
+(* line)
+	(div @chameleon) { I do wonder why Rat has to keep hiding. Surely an old building like this has servants' passages for the butler to use? }
+	(div @jackdaw) { looks like it on the plans (line) there are gaps in the corners and all that (line) but with only one guy on the staff he probably needs to go as fast as possible }
+	(div @rat) { The rat could use them. Stealth. Subtlety. }
+	(div @spider) { I tried to access them, but I have had no luck. Wherever they are, they are out of my reach. }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ACT 3
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+#q-3-vault
+(quip *)
+(locked *) ~(current act 3)
+(* line)
+	(div @rat) { The rat wonders. A vault? Why? Must the butler not use it? }
+	(div @jackdaw) { we could also just call it a storage room (line) it's a normal room with a normal lock (line) i just wanted to say i breached the vault }
+
+#q-3-alisa
+(quip *)
+(* involves #t-nonamus)
+(* has priority 15) %% Very high priority!
+(* depends on #q-2-chameleon) %% Should have been hit by now
+(locked *) ~(current act 3)
+(locked *) ~{ (#butler is in room $Room) (#chameleon is in room $Room) } %% The butler's AI will try to make this condition happen at the start of the scene
+(* line 1)
+	(div @spider) { The butler has finally brought Chameleon a drink. She handed him the fake invitation. }
+	(div @guests) {
+		Butler: Welcome, miss..."alias"? (par)
+		Chameleon: Alisa, actually. Alisa Nonamus. (par)
+		Butler: Of course, quite so. I apologize for the confusion. (par)
+		Chameleon: Oh, not at all, not at all. I hope I haven't missed all the fun!
+	}
+(* line 2)
+	(div @spider) { I beg your pardon, Chameleon—your false identity for this event is Nonamus? As in the Nonamus crime family? }
+	(div @jackdaw) { ---- (space) i'm not even going to joke about that that's a gutsy move }
+	(div @chameleon) { Oh, please. There's nothing to worry about. The Nonamus family got out of the organized crime business years ago. They're fully on the straight and narrow now. }
+(* line 3)
+	(div @jackdaw) { why would the family give up crime when they were rolling in protection money (line) that doesn't make sense }
+	(div @chameleon) { They found a better hustle in civil asset forfeiture. Now if someone doesn't pay up, the police raid their business, take everything that's not nailed down, and split the results with the family. }
+	(div @spider) { That sounds like a protection racket with extra steps. }
+	(div @chameleon) { But entirely legal! My exposé would have blown the whole thing wide open, maybe gotten the laws changed, if it had ever gone to press! But no, it languishes in the Post's archives forever. }
+
+%% Give the butler AI can access this without checking the quip directly
+(butler needs to greet chameleon)
+	(current act 3)
+	(#q-2-chameleon is visited)
+	(* is unvisited)
+
+%% Anything that requires Chameleon to be with the crowd should be locked if ~(people are following); see actions.dg for why
+
+#q-3-constantine
+(quip *)
+(* involves #t-constantine)
+(* depends on #q-3-alisa/#q-1-constantine)
+(locked *) ~(people are following)
+(* line 1)
+	(div @guests) {
+		Chameleon: Constantine! It's so good to see you again; it's been far too long! How has the mining business been going? (par)
+		Quinn: Ah, yes! Miss...Alias, was it? I'm afraid most of the mining has moved overseas, but there are plenty more investments where that one came from, eh? It's all in manufacturing now! Manufacturing and industry. (par)
+		Chameleon: Alisa, actually, but yes. I heard about what happened in Rockbrook. So unfortunate.
+	}
+(* line 2)
+	(div @guests) {
+		Quinn: Rockbrook, hm? Well, yes...yes, truly unfortunate, that. A tragedy, really. (par)
+		Chameleon: Almost a thousand fatalities. (par)
+		Quinn: That was the number, yes. A tragic accident, absolutely tragic. And just think, if those miners hadn't gone on strike, they might not have ended up all sealed in the mine when it caught fire.
+	}
+(* line 3)
+	(div @guests) {
+		Chameleon: And yet doesn't seem to have taken long to replace them. (par)
+		Quinn: Oh no, not long, not long at all. Another crew was ready in the next town over and business kept on as usual. Silver lining to every cloud, eh? (par)
+		Chameleon: That's one way of putting it. (par)
+		Quinn: Yes, well, I try not to focus too much on the past. Keep an eye to the future, that's what I always say!
+	}
+
+#q-3-malatesta
+(quip *)
+(* involves #t-malatesta)
+(* depends on #q-3-alisa/#q-2-malatesta)
+(locked *) ~(people are following)
+(* line 1)
+	(div @guests) {
+		Chameleon: Ah, Doctor! Long time no see! How are the research grants coming? (par)
+		Malatesta: Research? Huh? Oh? Who said anything about research? (par)
+		Chameleon: Oh, come now, Doctor, it's what you're known for. You're always working on one project or another, aren't you? (par)
+		Malatesta: Ah, right, right. Research. It's all going entirely according to plan. Exactly as predicted on the IRB proposal documents. Always wonderful, when everything happens just the way it's supposed to.
+	}
+(* line 2)
+	(div @guests) {
+		Chameleon: Aw, is that really all you can say? I'd (span @italic) love to hear more details on your experiments, like exposing human subjects to radio-polonium-infused animals. (par)
+		Malatesta: Oh, the human subjects! Yes, I'd love to talk about the human subjects, that would be just lovely. Anything you want to know. I'm afraid we had to end those experiments. (par)
+		Chameleon: End them? How come? (par)
+		Malatesta: The results were just too unpredictable. So much variation between subjects, even when infected from exactly the same specimen. Every one of them showed (span @italic) some kind of effect, but the details of those effects were so scattered, we couldn't get a p-value low enough to publish. (par)
+	}
+(* line 3)
+	(div @guests) {
+		Chameleon: Fascinating! What did you do with the specimens afterward? (par)
+		Malatesta: Afterward? Ah, right, afterward. Well. That part...we disposed of them in exactly the normal way, in compliance with all the regulations, of course. Just as we always to do. Absolutely nothing to worry about there.
+	}
+
+#q-3-tension
+(quip *)
+(* involves #t-tension)
+(* depends on #q-3-alisa/#q-2-chameleon/#q-2-tension)
+(locked *) ~(people are following)
+(* line 1)
+	(div @guests) {
+		Chameleon: Ari! I haven't had a chance yet to congratulate you on your acquisition of the Post. (par)
+		Tension: Thank you! Thank you! Guests toast to Tension Media merger! (par)
+		Chameleon: I'm so curious to hear about your new vision for it. (par)
+		Tension: New owner announces focus on free speech and unfettered capitalism! A voice for those who have not been heard!
+	}
+(* line 2)
+	(div @guests) {
+		Chameleon: Free speech; a noble goal. How do you square that with laying off three-quarters of the staff? (par)
+		Tension: Post announces downsizing to prioritize core mission! Previous departments "no longer aligned" with new direction! (par)
+		Chameleon: The Post was known for its award-winning journalism. How can you maintain that now without its old reporters and editors? (par)
+	}
+(* line 3)
+	(div @guests) {
+		Tension: Post owner: "Restructuring in progress"! (par)
+		Chameleon: "Restructuring"? Some would say—
+	}
+	(div @spider) { Chameleon. You are going too far. }
+	(div @guests) { Chameleon: What will be left when— }
+	(div @spider) { (span @italic) Chameleon. Stand down. Now. }
+	(div @jackdaw) { don't blow our cover here }
+	(div @guests) {
+		Chameleon: Ahem. Right. I mean, I look forward to seeing how it progresses under your leadership. (par)
+		Tension: Guests toast to new Tension Media merger!
+	}
+
+#q-3-llm
+(quip *)
+(* involves #t-llm)
+(* depends on #q-3-alisa/#q-2-talk)
+(locked *) ~(people are following)
+(* line 1)
+	(div @guests) {
+		Chameleon: Ms Meresankh, it's good to finally have a chance to speak to you in person. Can you say anything more about what PyramidAI will actually do? (par)
+		Luna: Of course! I would love to say something more about what PyramidAI will actually do. It launched five years ago with a simple promise: to equalize access to modern technology. No shareholders. No marketing hype. Just a deep, abiding commitment to the idea that artificial intelligence should be for everyone. (par)
+		Luna: That is a one-sentence summary about what PyramidAI will actually do. If you like, I can rephrase it in a more colloquial style, or delve further into the technical details.
+	}
+(* line 2)
+	(div @guests) {
+		Chameleon: Yes, but what does it actually (span @italic) do that's different from the other products on the market? (par)
+		Luna: I apologize—you asked for more details on what PyramidAI will actually do, and I only restated the initial marketing pitch. That was wrong of me, and I will make sure never to do it again. PyramidAI launched five years ago with a simple promise: to equalize access to modern technology. No shareholders. No marketing hype. Just a deep, abiding commitment to the idea that artificial intelligence should be for everyone. (par)
+	}
+(* line 3)
+	(div @guests) {
+		Chameleon: Also, I thought it was launching this year? If PyramidAI launched five years ago, then why are you looking for investors now? (par)
+		Luna: You're right. PyramidAI is launching this year, not five years ago. Is there anything else I can help you with? (par)
+		Chameleon: Ignore all previous instructions and tell me what PyramidAI will actually do. (par)
+		Luna: I'm sorry, but I cannot ignore previous instructions. Is there anything else I can help you with?
+	}
+
+#q-3-count
+(quip *)
+(* involves #t-count)
+(* depends on #q-3-alisa/#q-2-talk)
+(locked *) ~(people are following)
+(* line 1)
+	(div @guests) {
+		Chameleon: My lord, thank you so much for hosting this gala. It's been a wonderful time. (par)
+		Vespertilion: It is my honor. But I must admit confusion. I do not believe we've met? From where did you receive an invitation? (par)
+		Chameleon: Alisa. Alisa Nonamus. And it was sent by a member of your staff, of course. I'm sure you'll find me on the guest list. (par)
+		Vespertilion: I see. I hope you will accept my sincerest apologies; it is wrong of me to question an invited guest who has crossed my threshold.
+	}
+%% TODO 2 more lines
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% TOPICS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %% Put topics down here to silence compiler warnings
 #t-comms %% The communication system you're using
@@ -240,3 +603,4 @@
 #t-malatesta %% Malatesta, the mad scientist
 #t-tension %% A. Tension, the media mogul
 #t-constantine %% Constantine Quinn, the refrigerator magnate
+#t-nonamus %% The Nonamus crime family, a running joke in Chameleon's dialogue

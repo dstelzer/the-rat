@@ -36,9 +36,17 @@
 (style class @chameleoncolor)
 	color: magenta;
 
+(style class @guests)
+	border-top: 1px dashed \#888888;
+	border-left: 1px dashed \#888888;
+	margin-top: 0.67em;
+	margin-bottom: 0.67em;
+(conversation style description) dotted gray (line) all the colors are taken it's time for patterns
+
 (style class @mainstatus)
 	height: auto;
 	font-size: 1.2em;
 	line-height: 1em;
 	margin-top: 0.33em;
 	margin-bottom: 0.33em;
+	position: relative;
