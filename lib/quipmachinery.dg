@@ -47,6 +47,11 @@
 	(delay selection by one tick)
 	(now) ~(delay selection by one tick)
 (select a new quip at random)
+	*(force $Quip) %% If something is forced, do it right away
+	~(locked $Quip)
+	~($Quip is visited)
+	(select quip $Quip)
+(select a new quip at random)
 	(collect $Quip)
 		*(quip $Quip)
 		~(locked $Quip)
@@ -61,6 +66,9 @@
 	(into $Deck)
 	(log) { Quip deck: $Deck }
 	(randomly select $NewQuip from $Deck)
+	(select quip $NewQuip)
+
+(select quip $NewQuip)
 	(now) (current quip $NewQuip)
 	(now) ($NewQuip is visited)
 	(now) (current quip position 0)

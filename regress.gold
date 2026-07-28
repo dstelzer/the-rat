@@ -1,6 +1,9 @@
-Warning: src/world.dg, line 463: Possible typo: A rule is defined for
-'(finishing cutscene)', but this predicate is never queried and has no
-interface definition.
+Warning: src/world.dg, line 472: Possible typo: A rule is defined for '($
+thousand dollars divided by five)', but this predicate is never queried and has
+no interface definition.
+Warning: src/world.dg, line 485: Possible typo: A rule is defined for '($
+thousand dollars divided by six with remainder $)', but this predicate is never
+queried and has no interface definition.
 Warning: lib/versalink.dg, line 96: Possible typo: A rule is defined for
 '(option paragraph)', but this predicate is never queried and has no interface
 definition.

@@ -257,11 +257,6 @@
 (grammar [go/walk/crawl] for [go #out])
 (grammar [enter] for [go #in])
 
-(understand [climb] as [go $Dir])
-	(current room $Room)
-	*($Dir is one of [#up #down])
-	(from $Room go $Dir to $)
-
 (unlikely-complex [go $DirList] 0)
 	(just)
 	(if) (direction $DirList) (then)
@@ -273,7 +268,8 @@
 	(unlikely [go $Dir])
 
 (unlikely [go $Dir])
-	(current room $Room)
+	(current player $Actor)
+	($Actor is in room $Room)
 	~{
 		(from $Room go $Dir to $Target)
 		{ (room $Target) (or) (door $Target) (or) (direction $Target) }
@@ -281,7 +277,7 @@
 
 (perform [go $Dir])
 	(current player $Actor)
-	(current room $Room)
+	($Actor is in room $Room)
 	(if) ($Actor has parent $Room) (then)
 		(try [leave $Room $Dir])
 	(else)
@@ -350,6 +346,9 @@
 (perform [leave $Room $Dir])
 	(narrate leaving $Room $Dir)
 	(from $Room go $Dir to room $Target)
+	(if) (current player #chameleon) (people are following) (then)
+		(move #crowd to $Target)
+	(endif)
 	(enter $Target)
 
 (action [go/leave | $] is valid for #rat/#chameleon)
@@ -568,9 +567,8 @@
 		Looking at Rat's location...
 	(or)
 	(stopping)
-	(div @roomheader) (location headline)
-	(current scope ceiling $Ceil)
-	(look $Ceil)
+	(div @roomheader) { (span @bold) (room header $Room) }
+	(look $Room)
 	(make appearances #in $Room)
 	(par)
 
@@ -611,7 +609,7 @@
 (grammar [examine/x/watch/describe/check/look/l/view [object]] for [examine $])
 (grammar [look/l at [object]] for [examine $])
 
-~(action [examine $] requires $ to be touched)
+~(refuse [examine $]) %% Don't require presence, much less touch - that's a change from the default
 
 (perform [examine ~(room $Obj)])
 	(div @spider) {
@@ -635,7 +633,8 @@
 		(par)
 	}
 
-(action [examine $] is valid for #rat/#chameleon/#spider)
+(action [examine $] is valid for #rat/#chameleon/#spider/#butler)
+(unlikely [examine $]) (current player #butler) %% Avoid disambiguation
 
 (add $Obj to scope)
 	*(in bounds for this act $Room)
@@ -644,6 +643,8 @@
 %% HACK <obj>
 
 (grammar [hack [single]] for [hack $])
+~(action [hack $] requires $ to be touched)
+(add *(hack target $) to scope)
 
 (prevent [hack ~(hack target $Obj)])
 	(div @spider) {
@@ -778,9 +779,9 @@
 		(now) ($Obj is #heldby #butler)
 	(endif)
 
-(action [attend to $] is valid for #butler) (current act 4)
+(action [attend to $] is valid for #butler) (butler has the earpiece)
 
-%% FIX (not accessible to the player)
+%% FIX (not accessible to the player, only used internally)
 
 (narrate fixing $Obj) %% Fallback - individual objects should have their own descriptions
 	(div @spider) { The butler is working on repairing (the $Obj) . }

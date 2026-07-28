@@ -11,6 +11,15 @@
 (animate *(protagonist $))
 (add *(protagonist $) to scope)
 
+#fox %% Solely for the sake of EXAMINE
+(protagonist *)
+(name *) Fox
+(perform [examine *])
+	(div @jackdaw) { that's you }
+	(div @spider) { Our logistical planner and coordinator. }
+	(div @chameleon) { Our daring, dashing leader. }
+	(div @rat) { Gives the commands. }
+
 #rat
 (protagonist *)
 (name *) Rat
@@ -18,9 +27,15 @@
 %% neuter
 (current player *)
 (* is #in #garden2)
+(have * refuse $)
+	(div @rat) { The rat cannot. It is not able. }
+
+(perform [examine *])
+	(div @rat) { The rat is the instigator. The saboteur. It sneaks. It destroys. }
 
 (occupied $Room)
-	(#butler is in room $Room) (or) (#crowd is in room $Room)
+	*(enemy $Enemy)
+	($Enemy is in room $Room)
 
 (late on every tick)
 	(* is in room $Room)
@@ -91,6 +106,9 @@
 (have * refuse $)
 	(div @spider) { That is not something I can do myself. }
 
+(perform [examine *])
+	(div @spider) { I handle communications and watch the cameras. }
+
 (status bar line)
 	(div @statusline) {
 		(span @spidercolor) {
@@ -119,6 +137,9 @@
 	(div @jackdaw) { when you want me to go you have to say proceed (line) spider wanted it unambiguous }
 (have * refuse $)
 	(div @jackdaw) { i dont need micromanaging i just need you to tell me when to act and leave the rest to me }
+
+(perform [examine *])
+	(div @jackdaw) { i'm the thief i steal stuff }
 
 (status bar line)
 	(div @statusline) {
@@ -150,6 +171,9 @@
 (have * refuse $)
 	(div @chameleon) { I'm sure I'd love to, but I think someone else might be better-suited for that. }
 
+(perform [examine *])
+	(div @chameleon) { I'm the face of the operation. The distraction. Your favorite femme fatale. }
+
 (cham-link direction $Dir)
 	(collect words)
 		(if) ~(current player #chameleon) (then)
@@ -172,15 +196,20 @@
 			(into $List)
 			(listing $List {(cham-link direction $_)} @, @the 0)
 			;
+			(collect words)
+				(if) ~(current player *) (then) Chameleon , (endif)
+				(if) (people are following) (then) disengage (else) mingle (endif)
+			(into $Words)
 			(if) (people are following) (then)
-				({disengage})
+				(vlink $Words {disengage})
 			(else)
-				({mingle})
+				(vlink $Words {mingle})
 			(endif)
 		}
 	}
 
 #butler
+(enemy *) %% Rat always has to hide, even when suborned
 (protagonist *) (butler has the earpiece)
 (name *) butler
 (animate *)
@@ -190,10 +219,17 @@
 (have * refuse $)
 	(div @spider) { The butler shakes his head, ever so slightly. }
 (appearance *)
+	(current player *)
+(appearance *)
 	(current goal $)
 	({The butler}) is moving with purpose toward his next task.
 (appearance *)
-	({The butler}) is hard at work making ready for the party.
+	({The butler}) is hard at work
+	(if) (current act $Act) ($Act < 2) (then)
+		making ready for the party.
+	(else)
+		attending to the guests.
+	(endif)
 (descr *)
 	(current goal $Goal)
 	He's hurrying toward (the $Goal).
@@ -236,6 +272,7 @@
 #crowd
 (name *) various guests
 (animate *)
+(enemy *)
 (plural *)
 (appearance *) The ({guests}) are milling around and talking amongst themselves.
 (descr *)
@@ -247,6 +284,15 @@
 	({Dr Malatesta}), the famous biologist;
 	and ({Ari Tension}), the media mogul.
 (letter for *) V
+
+#crowd2
+(name *) other guests
+(animate *)
+(enemy *)
+(appearance *) (appearance #crowd) %% They're effectively a single object in two rooms
+(descr *) (descr #crowd)
+(letter for *) L
+(unlikely $Action) (* is one of $Action)
 
 #vespertilion
 (name *) Count Vespertilion
@@ -385,6 +431,12 @@
 	
 	(now) (current act 2)
 	(move #crowd to #dine1)
+	(move #crowd2 to #dine2)
+	(move #butler to #dine1)
+	(if) (#rat is in room $Room) ($Room is one of [#dine1 #dine2]) (then)
+		(move #rat to #glasgild)
+		(try [examine #glasgild])
+	(endif)
 
 (start act three) %% triggered in prizes.dg
 	(div @spider) { I will begin. As before, Chameleon, please keep your eye on the cameras. }
@@ -405,6 +457,8 @@
 	
 	(now) (current act 3)
 	(move #chameleon to #dine1)
+	(move #crowd to #dine1)
+	(now) (#crowd2 is nowhere)
 	(try [examine #dine1])
 
 (start act four) %% triggered in prizes.dg
@@ -423,10 +477,12 @@
 	(pause)
 	(div @header) { Epilogue: Getting Even }
 	
-	(div @spider) { I have all the cameras, and—what is going on‽ Why has Chameleon disconnected? }
+	(div @spider) { I have access to all the cameras now, covering every room on the ground floor, and—what is going on‽ Why has Chameleon disconnected? }
 	(div @jackdaw) { don't ask me i've been clinging halfway up a wall holding a camera for you }
 	(div @rat) { The rat has watched. Read the log. }
-	(div @spider) { Oh no. Oh no no no. I am going to pull up all the cameras. Jackdaw, keep an eye on everything. }
+	(div @spider) { Oh no. Oh no no no. I tell you to watch the cameras for fifteen minutes and this happens‽ You couldn't even handle that‽ }
+	(div @jackdaw) { and what exactly did you want rat to do (line) jump out of hiding and tell chameleon to put the piece back in (line) it said it here in the chat that should've been enough }
+	(div @spider) { I am going to pull up all the feeds. Jackdaw, keep an eye on everything. }
 	(div @jackdaw) { on it }
 	(div @spider) { I am getting a signal from the earpiece. But where is it? }
 	
@@ -461,4 +517,50 @@
 	(stopping)
 
 (finishing cutscene)
-	TODO
+	%% This starts right after Spider describes the butler uploading the data
+	(div @guests) {
+		TODO
+	}
+
+%% N × 1,000 / 5 = N × 200 = (N×2) with two zeroes
+($N thousand dollars divided by five)
+	\$ (no space)
+	($N times 2 into $Tmp) %% This is our end result divided by 100
+	($Tmp divided by 10 into $Thousands)
+	($Tmp modulo 10 into $Hundreds)
+	(if) ($Thousands > 0) (then)
+		$Thousands
+		, (no space)
+	(endif)
+	$Hundreds
+	(no space) 00
+
+%% N × 1,000 / 6 = N×500×2/6 = N×500/3 = (N×5)/3 with two extra digits
+($N thousand dollars divided by six with remainder $Mod3)
+	\$ (no space)
+	($N times 5 into $Nt5)
+	($Nt5 divided by 3 into $Tmp) %% As above this is our end result divided by 100
+	($Nt5 modulo 3 into $Mod3)
+	($Tmp divided by 10 into $Thousands)
+	($Tmp modulo 10 into $Hundreds)
+	(if) ($Thousands > 0) (then)
+		$Thousands
+		, (no space)
+	(endif)
+	$Hundreds
+	(no space)
+	(if) ($Mod3 = 0) (then)
+		00
+	(elseif) ($Mod3 = 1) (then)
+		33.33
+	(elseif) ($Mod3 = 2) (then)
+		66.67
+	(endif)
+
+%% We run into an interesting little mathematical conundrum here
+%% Because when Jackdaw talks about splitting the loot six ways (Rat, Jackdaw, Spider, Chameleon, Fox, and the butler), we need to divide a large number by six
+%% But the amount of money gained doesn't actually fit into a Dialog integer! We've been storing that number divided by 1,000
+%% So we need to somehow compute (M×1,000)/6 without ever involving numbers larger than 10,000
+%% M×1,000/6 = M×500×2/6 = M×500/3 = (M×5)/3 with two extra digits added to the end
+%% And those extra digits are 33 if M%3=1, 67 if M%3=2, or 00 if M%3=0
+%% (For extra accuracy we can use the same method to add two decimal places)

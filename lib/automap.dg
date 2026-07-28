@@ -276,19 +276,22 @@
 	(sabotage target $Obj)
 	($Obj is broken)
 	\{ (no space) (room glyph $Room) (no space) \} (no space)
+(full room glyph (butler-only $Room)) %% Butler-only rooms get no parens
+	(space 1) (room glyph $Room) (space 1)
 (full room glyph $Room) %% Parens by default
 	\( (no space) (room glyph $Room) (no space) \) (no space)
 
-(room glyph $Room)
+(room glyph $Room) %% Highest priority
 	(#butler is in room $Room)
 	B
-(room glyph $Room)
-	(#crowd is in room $Room)
-	V
 (room glyph $Room)
 	*(protagonist $Pro)
 	($Pro is in room $Room)
 	(letter for $Pro)
+(room glyph $Room)
+	*(enemy $Enemy)
+	($Enemy is in room $Room)
+	(letter for $Enemy)
 (room glyph $Room) %% Butler's discarded tools
 	*($Obj has ancestor $Room)
 	(item $Obj)

@@ -87,8 +87,8 @@
 #p-2-short-tension
 (prize *)
 (* available in act 2)
-(* requires 5 turns)
-(* is worth 5 thousand dollars)
+(* requires 12 turns)
+(* is worth 10 thousand dollars)
 (name *) tension's backup work laptop
 (proper *)
 (prize conversation about *)
@@ -98,8 +98,8 @@
 #p-2-short-malatesta
 (prize *)
 (* available in act 2)
-(* requires 5 turns)
-(* is worth 5 thousand dollars)
+(* requires 12 turns)
+(* is worth 10 thousand dollars)
 (name *) bottle of cordrazine
 (prize conversation about *)
 	(div @spider) { What is that? }
@@ -110,8 +110,8 @@
 #p-2-med-constantine
 (prize *)
 (* available in act 2)
-(* requires 7 turns)
-(* is worth 10 thousand dollars)
+(* requires 15 turns)
+(* is worth 20 thousand dollars)
 (name *) diamond cufflinks
 (pair *)
 (prize conversation about *)
@@ -123,8 +123,8 @@
 #p-2-med-tension
 (prize *)
 (* available in act 2/3) %% The personally-meaningful ones persist into act 3
-(* requires 7 turns)
-%% (* is worth 10 thousand dollars)
+(* requires 15 turns)
+%% (* is worth 20 thousand dollars)
 (name *) neon pink solid-state drive
 (prize conversation about *)
 	(div @chameleon) { Did you say neon pink?! }
@@ -135,8 +135,8 @@
 #p-2-long-malatesta %% confidential patient data for class action lawsuit
 (prize *)
 (* available in act 2/3)
-(* requires 9 turns)
-%% (* is worth 15 thousand dollars)
+(* requires 17 turns)
+%% (* is worth 30 thousand dollars)
 (name *) folder full of patient records
 (prize conversation about *)
 	(div @spider) { Patient records? }
@@ -149,8 +149,8 @@
 #p-2-long-constantine
 (prize *)
 (* available in act 2/3)
-(* requires 9 turns)
-(* is worth 15 thousand dollars)
+(* requires 17 turns)
+(* is worth 30 thousand dollars)
 (name *) bundle of property deeds
 (prize conversation about *)
 	(div @chameleon) { Does Quinn just carry those around with him? }
@@ -160,7 +160,7 @@
 #p-2-end
 (prize *)
 (* available in act 2)
-(* requires 10 turns)
+(* requires 20 turns)
 (name *) thermostat
 (prize conversation about *)
 	(div @spider) { Fantastic. Well done, Jackdaw. }
@@ -187,8 +187,8 @@
 #p-3-med-llm %% designer t-shirt
 (prize *)
 (* available in act 3)
-(* requires 8 turns)
-(* is worth 9 thousand dollars)
+(* requires 15 turns)
+(* is worth 15 thousand dollars)
 (name *) bundle of t-shirts
 (prize conversation about *)
 	(div @rat) { Thousands? For t-shirts? Must be many, so many shirts? }
@@ -198,8 +198,8 @@
 #p-3-med-count %% key to the county
 (prize *)
 (* available in act 3)
-(* requires 8 turns)
-(* is worth 9 thousand dollars)
+(* requires 15 turns)
+(* is worth 15 thousand dollars)
 (name *) key to the county
 (singleton *)
 (prize conversation about *)
@@ -210,19 +210,19 @@
 #p-3-med-llm2
 (prize *)
 (* available in act 3)
-(* requires 8 turns)
-(* is worth 9 thousand dollars)
+(* requires 15 turns)
+(* is worth 15 thousand dollars)
 (name *) case of painted figurines
 (prize conversation about *)
 	(div @chameleon) { Surely that's an overestimate? }
-	(div @jackdaw) { multiple full armies here }
+	(div @jackdaw) { like a dozen full armies here }
 	(div @spider) { That sounds correct. It is an expensive hobby. }
 
 #p-3-long-llm %% list of training data sources
 (prize *)
 (* available in act 3)
-(* requires 11 turns)
-%% (* is worth 18 thousand dollars)
+(* requires 20 turns)
+%% (* is worth 30 thousand dollars)
 (name *) drive labelled "top secret manifests"
 (prize conversation about *)
 	(div @spider) { You found it‽ You actually found it‽ }
@@ -234,20 +234,20 @@
 #p-3-long-count %% leftover gold from gilding
 (prize *)
 (* available in act 3)
-(* requires 11 turns)
-(* is worth 18 thousand dollars)
+(* requires 20 turns)
+(* is worth 50 thousand dollars)
 (name *) massive pile of gold
 (prize conversation about *)
 	(div @rat) { Massive? How much so? }
 	(div @jackdaw) { there's jewelry (line) bars (line) historic coins (line) looks like all the stuff they were melting down for the gilded wing (line) this must be the extra }
-	(div @chameleon) { Wouldn't \$18,000 be a bit less than a pound? }
-	(div @jackdaw) { i'm factoring in it not being pure, paying someone to make it untraceable, and most of this stuff being too heavy to lift }
+	(div @chameleon) { Wouldn't \$50,000 be a touch less than a pound? }
+	(div @jackdaw) { i'm factoring in it not being pure, paying someone to make it untraceable, and most of this stuff being too heavy to lift (line) also no last i checked 50,000 dollars is like 38,000 pounds }
 
 #p-3-long-count2 %% artwork taken down when building glass wing
 (prize *)
 (* available in act 3)
-(* requires 11 turns)
-(* is worth 18 thousand dollars)
+(* requires 20 turns)
+(* is worth 50 thousand dollars)
 (name *) stack of oil paintings
 (prize conversation about *)
 	(div @chameleon) { Anything especially good? }
@@ -258,7 +258,7 @@
 #p-3-end
 (prize *)
 (* available in act 3)
-(* requires 13 turns)
+(* requires 25 turns) %% you can distract the butler infinitely in act 3, so this is meant to be longer than you can accomplish without that trick
 (name *) security camera
 (prize conversation about *)
 	(div @spider) { Wonderful. From this I should be able to access the entire camera network and look for anything we might have missed. }

@@ -16,22 +16,89 @@
 (from * go #east to #gild1)
 (* is available in act 4)
 
-(name *) TODO
-%% where all the secret data is stored
+(name *) servants' storage
+(look *)
+	~(#butler is in room *)
+	The room is dark and I cannot see much. Someone will need to open the door.
+(look *)
+	Everything the staff could ever need is stashed here in the narrow space between the walls, from dustpans and twine to curling irons and spare silver trays.
+
+#servantstuff
+(name *) various items
+(plural *)
+(dict *) dustpan dustpans twine curling iron irons spare trays
+(* is #in #serv1)
+(descr *) It must take all sorts of items to run an event of this scale.
+
+#data
+(name *) data drive
+(dict *) small
+(item *)
+(* is #in #serv1)
+(appearance *)
+	(* is pristine)
+	(#butler is #in #serv1) %% Don't show it when just clicking the room, it has to be visited first
+	The butler is inclining his head slightly toward a small ({data drive}).
+(appearance *)
+	(* is handled)
+	A small ({data drive}) has been left off to one side.
+
+(descr *)
+	The front is entirely blank.
+	(if) (* is pristine) (then)
+		The other side cannot be seen from its current position.
+	(else)
+		The other side is marked with a sticky note: "PyramidAI actual strategy plans final_FINAL TOP SECRET CONFIDENTIAL encrypted 1024 bit DO NOT DUPLICATE".
+	(endif)
+
+(drive password) p2F5UGN5uhynqP==
 
 #serv2
 (room *)
 (from * go #west to #gild2)
 (* is available in act 4)
 
-(name *) TODO
-%% where the secret data can be shared from
+(name *) servants' control room
+(look *)
+	~(#butler is in room *)
+	The room is dark and I cannot see much. Someone will need to open the door.
+(look *)
+	This room must be intended to coordinate dozens of staff at a time. Monitors track every inch of the building, from Jackdaw in the basement to the guests in the dining room. A ({radio system}) delivers alerts from each of them to the employees' wearable electronics. And in case of emergency, an ({intercom}) can transmit to anywhere in the house.
+
+#monitors
+(name *) monitors
+(dict *) radio system monitor
+(plural *)
+(* is #in #serv2)
+(descr *) This must be how the butler tracked our distractions. If he had been overseeing a proper household staff, we would have stood no chance.
+(after [examine *])
+	(div @jackdaw) { you don't have to sound so admiring about it }
+
+#intercom
+(name *) intercom system
+(* is #in #serv2)
+(descr *) It can transmit anything to any room in the mansion: voice, video, images, text, and more.
+(attend target *)
+(after [examine *])
+	(div @jackdaw) { just imagine if we had voice here (line) we could hear spider drooling over it }
+
+(perform [attend to #intercom/#data])
+	(#butler is in room #serv2)
+	(#data is #heldby #butler)
+	(div @spider) { The butler is plugging the drive into the intercom and typing in a password: (span @bold) (drive password) . He is setting the output to the dining room. I hear something on that microphone. Switching to it now. }
+	(finishing cutscene) %% The end!
+(perform [attend to *]) %% Fallback
+	(div @spider) { The butler shakes his head very slightly. There is nothing to transmit. }
+
+(prevent entering #serv1/#serv2)
+	~(current player #butler) %% Only the butler can go in
+	(div @rat) { The rat cannot. The tunnel is on the map. But where? The rat does not see. There is no door. }
 
 #gild1
 (room *)
 (from * go #south to #grangild)
 (from * go #east to #gild2)
-(from * go #west to #serv1) (current act 4)
+(from * go #west to #serv1) (current act 0) (or) (current act 4) %% 0 is when the map is built
 (* is available in act 1/2/3/4)
 
 (name *) trophy room
@@ -69,7 +136,7 @@
 (room *)
 (from * go #south to #glasgild)
 (from * go #west to #gild1)
-(from * go #east to #serv2) (current act 4)
+(from * go #east to #serv2) (current act 0) (or) (current act 4)
 (* is available in act 1/2/3/4)
 
 (name *) gold-plated bathroom
@@ -332,7 +399,7 @@
 (from * go #north to #grangild)
 (from * go #east to #dine2)
 %% No connection south, since you never go back out there
-(* is available in act 0/1/3/4)
+(* is available in act 0/1/2/3/4)
 (butler-only *) (current act 2)
 (default butler room for act 2/3/4 is *)
 	~(butler needs to greet chameleon) %% see below
@@ -382,7 +449,7 @@
 (from * go #east to #glas2)
 (from * go #north to #glasgild)
 (from * go #west to #dine1)
-(* is available in act 1/3/4)
+(* is available in act 1/2/3/4)
 (butler-only *) (current act 2)
 (default butler room for act 2/3/4 is *)
 	~(butler needs to greet chameleon)

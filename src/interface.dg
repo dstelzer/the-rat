@@ -4,8 +4,10 @@
 		(status bar @mainstatus with height $Lines) {
 			(automap)
 			(if) (interpreter supports links) (then) %% Inlays at left and right
-				(if) (#chameleon is in room $) (then)
+				(if) (current act 3) (then)
 					(chamstick inlay)
+				(elseif) (butler has the earpiece) (then)
+					(butlerstick inlay)
 				(endif)
 				(ratstick inlay)
 			(endif)
@@ -49,6 +51,13 @@
 		(space 2) (#chameleon dir #north) (space 2) (line)
 		(#chameleon dir #west) C (#chameleon dir #east) (line)
 		(space 2) (#chameleon dir #south) (space 2)
+	}
+
+(butlerstick inlay)
+	(div @chamstick) { %% Takes Chameleon's place
+		(space 2) (#butler dir #north) (space 2) (line)
+		(#butler dir #west) C (#butler dir #east) (line)
+		(space 2) (#butler dir #south) (space 2)
 	}
 
 ($Person dir $Direction)
@@ -114,3 +123,4 @@
 	text-align: center;
 	margin-top: 1.75em;
 	margin-bottom: 1em;
+

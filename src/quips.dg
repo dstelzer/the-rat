@@ -43,7 +43,7 @@
 (* involves #t-comms)
 (locked *) (#q-1-comms is unvisited) (#q-1-profanity is unvisited) %% Unlock when either is visited
 (* line)
-	(div @chameleon) { But if the system is so fancy, I find myself wondering why it doesn't fix Jackdaw's capitalization. }
+	(div @chameleon) { If this comm system is so fancy, I find myself wondering why it doesn't fix Jackdaw's capitalization. }
 	(div @jackdaw) { oh it does (line) i go through and make it all lowercase again before i send (line) out of spite }
 
 #q-1-proceed
@@ -58,6 +58,24 @@
 (* line 2)
 	(div @chameleon) { Please elaborate on "disambiguation"? }
 	(div @jackdaw) { he said we needed to choose a clear signal (line) i suggested "go" (line) he said "go" is already used for rat going place to place (line) so i said he should just come up with something else (line) and he said "proceed" }
+
+#q-1-videogame %% This one's content fully depends on how you're playing the game, as a little easter egg and meta joke
+(quip *)
+(* involves #t-comms)
+(* line)
+	(if) (interpreter supports links) (then)
+		(div @spider) { Now, Fox, you should be seeing a map of the ground floor, with a "joystick" display on the left side. The arrows there show which directions Rat can move in. }
+		(div @jackdaw) { so fox really is controlling us like a video game huh (line) sorry count your valuables are in another castle }
+		(div @spider) { Well, in a sense, but it is a top-down view, not a side view. }
+		(div @jackdaw) { fine (line) it's a secret to everybody (line) except me because i have high end ir goggles }
+		(div @chameleon) { Jackdaw seems to be showing her age. }
+		(div @jackdaw) { forty years on and this is still the best we can do for control schemes apparently }
+	(else)
+		(div @spider) { Now, Fox, you should see a bar at the bottom of your screen, showing what everyone can do. For example, it lists which directions Rat can move in. }
+		(div @jackdaw) { so fox really is controlling us like an old text game huh (line) it is pitch black you are likely to be eaten by a grue (line) not me though because i have high end ir goggles }
+		(div @chameleon) { Jackdaw seems to be showing her age. }
+		(div @jackdaw) { fifty years on and this is still the best we can do for control schemes apparently }
+	(endif)
 
 #q-1-backstory
 (quip *)
@@ -74,6 +92,7 @@
 	(div @chameleon) { So maybe we'll learn tonight. }
 	(div @jackdaw) { or maybe the whole thing is the next crypto nfts }
 	(div @spider) { It's possible. But for now, the money is here—and within our reach. }
+(force *) (current act 2)
 
 #q-1-butler
 (quip *)
@@ -138,7 +157,7 @@
 #q-1-guestlist
 (quip *)
 (* involves #t-malatesta/#t-tension/#t-constantine)
-(* has priority $N) %% Raise the priority as more quips are visited
+(* has priority $N) %% Raise the priority as more quips are visited until it becomes inevitable
 	(accumulate 2)
 		*(quip $Quip)
 		($Quip is visited)
@@ -152,6 +171,7 @@
 	(div @chameleon) { And of course, me. }
 	(div @spider) { Once I have added you to the list, yes. Which is waiting on Jackdaw. }
 	(div @jackdaw) { working on it hold your horses (line) just buy me time }
+(force *) (current act 2) %% Should never happen given the inevitability counter but just in case
 
 #q-1-malatesta
 (quip *)
@@ -197,7 +217,7 @@
 	(div @chameleon) { Oh, you'll see when the time comes. I would hate to spoil the surprise. }
 	(div @jackdaw) { is the middle of the heist really the time to surprise your team }
 	(div @chameleon) { Is that not how the stories always go? }
-	(div @jackdaw) { spider if chameleon wrecks this will you turn off the profanity thing (line) just for a minute or so }
+	(div @jackdaw) { spider if chameleon wrecks this will you turn off the profanity filter (line) just for a minute or so }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% ACT 2
@@ -208,7 +228,7 @@
 (locked *) (#gran1 is unvisited)
 (* depends on #q-1-count)
 (* involves #t-count)
-(* has priority 3)
+(* has priority 3) (#rat is in room #gran1) (or) (#chameleon is in room #gran1)
 (* line)
 	(div @spider) { I admit I am unclear on how the chapel can hold the Vespertilion ancestors if Count is not a hereditary position. }
 	(div @chameleon) { Whenever a new Count is elected, the mansion comes along with the role. Then the chapel comes with the mansion, and the ancestors come with the chapel. }
@@ -216,7 +236,7 @@
 #q-2-batcote
 (quip *)
 (locked *) (#gran2 is unvisited)
-(* has priority 3)
+(* has priority 3) (#rat is in room #gran2) (or) (#chameleon is in room #gran2)
 (* line)
 	(div @jackdaw) { also, "batcote"? really? }
 	(div @spider) { Blame Chameleon for the word. }
@@ -225,7 +245,7 @@
 #q-2-servers
 (quip *)
 (locked *) (#glas1 is unvisited)
-(* has priority 3)
+(* has priority 3) (#rat is in room #glas1) (or) (#chameleon is in room #glas1)
 (* line)
 	(div @jackdaw) { if we have access to the server room why am i messing around down here at all }
 	(div @spider) { Time. The butler might walk through the server room at any point, and breaking security is not a fast process. }
@@ -234,7 +254,7 @@
 #q-2-office
 (quip *)
 (locked *) (#glas2 is unvisited)
-(* has priority 3)
+(* has priority 3) (#rat is in room #glas2) (or) (#chameleon is in room #glas2)
 (* line)
 	(div @rat) { The office is smart. Automated. But why? The automation is for what? }
 	(div @spider) { Nothing especially useful, as far as I can tell. The mansion still relies on the staff for all the actual labor. }
@@ -243,7 +263,12 @@
 (quip *)
 (locked *) (current act 1)
 (* involves #t-count)
-(* has priority 3)
+(* has priority $N) %% Escalate the priority as the act progresses; this should happen asap in act 2
+	(accumulate 5)
+		*($Pr available in act 2)
+		($Pr is handled)
+	(into $Tmp)
+	($Tmp plus 5 into $N)
 (* line)
 	(div @chameleon) { What are the guests discussing, if I may? }
 	(div @spider) { I will start a transcription. Any suggestions for color? }
@@ -253,6 +278,7 @@
 		Vespertilion: My honored guests. It is my pleasure and my distinct privilege to welcome you to my humble estate. Enter it freely and of your own will, and when you go, leave something of the happiness you bring. (par)
 		Luna: We're so glad you've shown interest in PyramidAI. You clearly see the value of getting in on the ground floor. This isn't just a product—it's a new way of life, starting right here in New Gothenburg.
 	}
+(force *) (current act 3) %% Most other act 2 quips can't happen without it, so if we somehow enter act 3 without this one, it HAS to happen next
 
 #q-2-llm
 (quip *)
@@ -391,6 +417,7 @@
 (* line 2)
 	(div @jackdaw) { so chameleon's a laid-off reporter? }
 	(div @chameleon) { "Made redundant", they said. "Refocusing our journalism in a new direction", they said. And it all started when (span @italic) he bought us out. My exposé on the largest crime family in New Gothenburg was almost ready to print! It would have shaken this city to its foundations! But no, it no longer fits his vision for the paper, so it will never see the light of day! }
+(force *) (current act 3)
 
 #q-2-fox
 (quip *)
@@ -502,6 +529,7 @@
 	(current act 3)
 	(#q-2-chameleon is visited)
 	(* is unvisited)
+(force *) %% As soon as this is accessible, make it happen
 
 %% Anything that requires Chameleon to be with the crowd should be locked if ~(people are following); see actions.dg for why
 
