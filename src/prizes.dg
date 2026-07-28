@@ -64,7 +64,7 @@
 
 #p-1-end
 (prize *)
-(* available in act 1)
+(* available in act 1) (any other prize is taken) %% Ensure at least $1,000 is taken first
 (* requires 7 turns)
 (name *) wifi router
 (prize conversation about *)
@@ -76,6 +76,10 @@
 	(current act 1)
 (perform [hack *])
 	(start act two) %% world.dg
+
+(any other prize is taken)
+	*(prize $Prize)
+	($Prize is handled)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% ACT 2 - THE GUESTS' BELONGINGS

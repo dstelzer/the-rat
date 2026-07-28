@@ -558,4 +558,4 @@
 	(div @jackdaw) { take the extra couple minutes to short every stock connected to vespertilion or llm }
 	(div @spider) { Brilliant. I am on it. }
 	(div @jackdaw) { maybe we walk out of this richer than ever (line) i think this is where chameleon would say }
-	(div @header) Finis.
+	(game over {Finis})
