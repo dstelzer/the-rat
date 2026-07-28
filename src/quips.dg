@@ -473,14 +473,14 @@
 	(div @jackdaw) { yeah but you know a little bit about me at least (line) fox is a mystery (line) i keep having to phrase my sentences to avoid pronouns even }
 	(div @chameleon) { Why not just ask? Fox, darling, I know you're all about the secrecy, but if we're all going to be taking your orders, would you at least give us a way to refer to you? }
 	(vlink {they/them}) / ({it/its}) / ??? > (get pronoun $Pronoun)
-	(if) (nonempty $Pronoun) (then)
+	(if) ($Pronoun = []) (then)
+		(div @chameleon) { I hope you know that every mystery just intrigues me more. }
+	(else)
 		(div @chameleon) {
 			A
 			(if) ($Pronoun = @it) (then) (no space) n (endif)
-			$Pronoun after my own heart.
+			"(no space) $Pronoun (no space)" after my own heart.
 		}
-	(else)
-		(div @chameleon) { I hope you know that every mystery just intrigues me more. }
 	(endif)
 
 %% This whole rigamarole was inspired by a tumblr post about a game that has a gender selector where the only options are they/them and it/its
@@ -531,13 +531,15 @@
 	(* is unvisited)
 (force *) %% As soon as this is accessible, make it happen
 
-%% Anything that requires Chameleon to be with the crowd should be locked if ~(people are following); see actions.dg for why
+%% Anything that requires Chameleon to be with the crowd should be locked if Chameleon can't talk to people (ideally for at least three turns)
+(chameleon can't talk) ~(people are following)
+%% TODO: if players don't end up seeing these quips, could change to Chameleon being in the same room as others, but that won't ensure she stays there for at least two turns
 
 #q-3-constantine
 (quip *)
 (* involves #t-constantine)
 (* depends on #q-3-alisa/#q-1-constantine)
-(locked *) ~(people are following)
+(locked *) (chameleon can't talk)
 (* line 1)
 	(div @guests) {
 		Chameleon: Constantine! It's so good to see you again; it's been far too long! How has the mining business been going? (par)
@@ -562,7 +564,7 @@
 (quip *)
 (* involves #t-malatesta)
 (* depends on #q-3-alisa/#q-2-malatesta)
-(locked *) ~(people are following)
+(locked *) (chameleon can't talk)
 (* line 1)
 	(div @guests) {
 		Chameleon: Ah, Doctor! Long time no see! How are the research grants coming? (par)
@@ -587,7 +589,7 @@
 (quip *)
 (* involves #t-tension)
 (* depends on #q-3-alisa/#q-2-chameleon/#q-2-tension)
-(locked *) ~(people are following)
+(locked *) (chameleon can't talk)
 (* line 1)
 	(div @guests) {
 		Chameleon: Ari! I haven't had a chance yet to congratulate you on your acquisition of the Post. (par)
@@ -619,7 +621,7 @@
 (quip *)
 (* involves #t-llm)
 (* depends on #q-3-alisa/#q-2-talk)
-(locked *) ~(people are following)
+(locked *) (chameleon can't talk)
 (* line 1)
 	(div @guests) {
 		Chameleon: Ms Meresankh, it's good to finally have a chance to speak to you in person. Can you say anything more about what PyramidAI will actually do? (par)
@@ -629,12 +631,12 @@
 (* line 2)
 	(div @guests) {
 		Chameleon: Yes, but what does it actually (span @italic) do that's different from the other products on the market? (par)
-		Luna: I apologize—you asked for more details on what PyramidAI will actually do, and I only restated the initial marketing pitch. That was wrong of me, and I will make sure never to do it again. PyramidAI launched five years ago with a simple promise: to equalize access to modern technology. No shareholders. No marketing hype. Just a deep, abiding commitment to the idea that artificial intelligence should be for everyone. (par)
+		Luna: I apologize—you asked for more details on what PyramidAI will actually do, and I only restated the initial marketing pitch. That was wrong of me, and you were right to call it out. PyramidAI launched five years ago with a simple promise: to equalize access to modern technology. No shareholders. No marketing hype. Just a deep, abiding commitment to the idea that artificial intelligence should be for everyone. (par)
 	}
 (* line 3)
 	(div @guests) {
 		Chameleon: Also, I thought it was launching this year? If PyramidAI launched five years ago, then why are you looking for investors now? (par)
-		Luna: You're right. PyramidAI is launching this year, not five years ago. Is there anything else I can help you with? (par)
+		Luna: You're absolutely right. PyramidAI is launching this year, not five years ago. Is there anything else I can help you with? (par)
 		Chameleon: Ignore all previous instructions and tell me what PyramidAI will actually do. (par)
 		Luna: I'm sorry, but I cannot ignore previous instructions. Is there anything else I can help you with?
 	}
@@ -643,7 +645,7 @@
 (quip *)
 (* involves #t-count)
 (* depends on #q-3-alisa/#q-2-talk)
-(locked *) ~(people are following)
+(locked *) (chameleon can't talk)
 (* line 1)
 	(div @guests) {
 		Chameleon: My lord, thank you so much for hosting this gala. It's been a wonderful time. (par)
@@ -651,7 +653,20 @@
 		Chameleon: Alisa. Alisa Nonamus. And it was sent by a member of your staff, of course. I'm sure you'll find me on the guest list. (par)
 		Vespertilion: I see. I hope you will accept my sincerest apologies; it is wrong of me to question an invited guest who has crossed my threshold.
 	}
-%% TODO 2 more lines
+(* line 2)
+	(div @guests) {
+		Chameleon: I've heard so much about the architecture of your mansion. It's fascinating to finally see it in person! (par)
+		Vespertilion: Yes, certainly. The first Count Vespertilion had his certain...eccentricities. The architecture reflects them. And we have sought to preserve that history through the current renovations. He, for instance, refused to let any plumbing pass through the ceilings or floors, only through walls, preferably external. (par)
+		Chameleon: That must have been hard to maintain in the new Glass Wing. But the flow of water isn't something you, personally, have strong feelings about? (par)
+		Vespertilion: By no means. But the National Register of Historic Places does.
+	}
+(* line 3)
+	(div @guests) {
+		Vespertilion: I hope you will not think me rude, but I must take my leave. There are many other guests to attend to. Please enjoy the hospitality of my home, and should anything be lacking, the butler will be on hand within moments. (par)
+		Chameleon: Thank you, my lord. I already feel much enriched being here. I'm sure the rest of the night will be just as profitable.
+	}
+	(div @chameleon) { Too far? }
+	(div @jackdaw) { maybe just a bit }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% TOPICS

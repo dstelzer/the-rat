@@ -134,9 +134,9 @@
 (female *)
 (letter for *) J
 (have * refuse [go | $])
-	(div @jackdaw) { when you want me to go you have to say proceed (line) spider wanted it unambiguous }
+	(div @jackdaw) { when you want me to go you have to say proceed (line) because spider wouldn't let me use go }
 (have * refuse $)
-	(div @jackdaw) { i dont need micromanaging i just need you to tell me when to act and leave the rest to me }
+	(div @jackdaw) { i dont need micromanaging i just need you to tell me when to start and leave the rest to me }
 
 (perform [examine *])
 	(div @jackdaw) { i'm the thief i steal stuff }
@@ -484,7 +484,6 @@
 	(div @jackdaw) { and what exactly did you want rat to do (line) jump out of hiding and tell chameleon to put the piece back in (line) it said it here in the chat that should've been enough }
 	(div @spider) { I am going to pull up all the feeds. Jackdaw, keep an eye on everything. }
 	(div @jackdaw) { on it }
-	(div @spider) { I am getting a signal from the earpiece. But where is it? }
 	
 	(now) (current act 4)
 	(move #chameleon to #dine1)
@@ -519,48 +518,44 @@
 (finishing cutscene)
 	%% This starts right after Spider describes the butler uploading the data
 	(div @guests) {
-		TODO
+		\* static \* (par)
+		Vespertilion \( recorded \): (space) ...wo of us must put in millions up front, but this plan should pay off in the tens or hundreds of billions. (par)
+		Luna \( recorded \): What you're suggesting is a classic maneuver, generally known as a "Ponzi scheme" after Italian con artist Francesco Ponzi. While often conflated with pyramid schemes, Ponzi schemes differ in several ways. For example, in Ponzi schemes, the con artist acts as a central hub, and the source of the investment returns is hidden from the participants. (par)
+		Vespertilion \( recorded \): I would not use such terms out loud where they might be recorded. (par)
+		Luna \( recorded \): Don't worry—all conversations are recorded for training purposes, but they are securely encrypted and cannot possibly be breached or retrieved. (par)
+		Vespertilion \( recorded \): Regardless. Your reputation and your businesses provide an ideal front for this, an apparent source of profit. My title provides legitimacy to attract investors. The Gilded Wing has tragically reduced the Vespertilion treasury. This plan stands to enrich us both considerably. (par)
+		Luna \( recorded \): I'm in.
 	}
-
-%% N × 1,000 / 5 = N × 200 = (N×2) with two zeroes
-($N thousand dollars divided by five)
-	\$ (no space)
-	($N times 2 into $Tmp) %% This is our end result divided by 100
-	($Tmp divided by 10 into $Thousands)
-	($Tmp modulo 10 into $Hundreds)
-	(if) ($Thousands > 0) (then)
-		$Thousands
-		, (no space)
-	(endif)
-	$Hundreds
-	(no space) 00
-
-%% N × 1,000 / 6 = N×500×2/6 = N×500/3 = (N×5)/3 with two extra digits
-($N thousand dollars divided by six with remainder $Mod3)
-	\$ (no space)
-	($N times 5 into $Nt5)
-	($Nt5 divided by 3 into $Tmp) %% As above this is our end result divided by 100
-	($Nt5 modulo 3 into $Mod3)
-	($Tmp divided by 10 into $Thousands)
-	($Tmp modulo 10 into $Hundreds)
-	(if) ($Thousands > 0) (then)
-		$Thousands
-		, (no space)
-	(endif)
-	$Hundreds
-	(no space)
-	(if) ($Mod3 = 0) (then)
-		00
-	(elseif) ($Mod3 = 1) (then)
-		33.33
-	(elseif) ($Mod3 = 2) (then)
-		66.67
-	(endif)
-
-%% We run into an interesting little mathematical conundrum here
-%% Because when Jackdaw talks about splitting the loot six ways (Rat, Jackdaw, Spider, Chameleon, Fox, and the butler), we need to divide a large number by six
-%% But the amount of money gained doesn't actually fit into a Dialog integer! We've been storing that number divided by 1,000
-%% So we need to somehow compute (M×1,000)/6 without ever involving numbers larger than 10,000
-%% M×1,000/6 = M×500×2/6 = M×500/3 = (M×5)/3 with two extra digits added to the end
-%% And those extra digits are 33 if M%3=1, 67 if M%3=2, or 00 if M%3=0
-%% (For extra accuracy we can use the same method to add two decimal places)
+	(div @spider) { Then silence. Everyone is staring at the hosts. }
+	(div @guests) {
+		Tension: PYRAMIDAI OR PYRAMID SCHEME? Scandalous revelations rock new tech startup!
+	}
+	(div @spider) { He is grabbing a pager from his belt. }
+	(div @guests) {
+		Tension: Stop the presses! New story takes the front page!
+	}
+	(div @spider) { I am trying to continue transcribing, but everyone is shouting over each other. }
+	(div @rat) { It looks like Chameleon, she is slipping away. }
+	(div @jackdaw) { and not just chameleon (line) i'm on my way out (line) let's go }
+	(div @spider) { The earpiece is moving too. }
+	(div @rat) { Perhaps the crew waits. A moment. For a new member to join. }
+	
+	(accumulate $K)
+		*(prize $Prize)
+		($Prize is handled)
+		($Prize is worth $K thousand dollars)
+	(into $Total)
+	
+	(div @jackdaw) {
+		a six way split of ($Total thousand dollars) doesn't sound so bar (line)
+		($Total thousand dollars divided by six with remainder $Mod) instead of ($Total thousand dollars divided by five) (line)
+		(if) ($Mod = 2) (then)
+			i'll even cover the extra two cents (line)
+		(endif)
+		actually wait wait wait spider
+	}
+	(div @spider) { Yes? }
+	(div @jackdaw) { take the extra couple minutes to short every stock connected to vespertilion or llm }
+	(div @spider) { Brilliant. I am on it. }
+	(div @jackdaw) { maybe we walk out of this richer than ever (line) i think this is where chameleon would say }
+	(div @header) Finis.

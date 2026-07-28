@@ -395,7 +395,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Jackdaw
 
-(grammar [proceed] for itself)
+(grammar [proceed/start/begin] for [proceed])
 
 (prevent [proceed])
 	(current act 0)
@@ -550,7 +550,55 @@
 	}
 
 (assess the value of $N)
-	\( TODO assess how much $N (no space)k is compared to the total \)
+	that means ($N thousand dollars divided by five) each (line)
+	we're each getting
+	*(count down from $N into $K)
+	(what $K thousand total can buy)
+
+(what 1 thousand total can buy) new shoes %$ 200 each
+(what 2 thousand total can buy) new tech %% 400 each
+(what 5 thousand total can buy) our rent covered %% 1,000 each
+(what 10 thousand total can buy) a nice vacation %% 2,000 each
+(what 20 thousand total can buy) some home upgrades %% 4,000 each
+(what 50 thousand total can buy) a car %% 10,000 each
+(what 75 thousand total can buy) a better car %% 15,000 each
+(what 100 thousand total can buy) our debts paid off %% 20,000 each
+(what 150 thousand total can buy) whatever we want %% 30,000 each
+
+%% N × 1,000 / 5 = N × 200 = (N×2) with two zeroes
+($N thousand dollars divided by five)
+	\$ (no space)
+	($N times 2 into $Tmp) %% This is our end result divided by 100
+	($Tmp divided by 10 into $Thousands)
+	($Tmp modulo 10 into $Hundreds)
+	(if) ($Thousands > 0) (then)
+		$Thousands
+		, (no space)
+	(endif)
+	$Hundreds
+	(no space) 00
+
+%% N × 1,000 / 6 = N×500×2/6 = N×500/3 = (N×5)/3 with two extra digits
+($N thousand dollars divided by six with remainder $Mod3)
+	\$ (no space)
+	($N times 5 into $Nt5)
+	($Nt5 divided by 3 into $Tmp) %% As above this is our end result divided by 100
+	($Nt5 modulo 3 into $Mod3)
+	($Tmp divided by 10 into $Thousands)
+	($Tmp modulo 10 into $Hundreds)
+	(if) ($Thousands > 0) (then)
+		$Thousands
+		, (no space)
+	(endif)
+	$Hundreds
+	(no space)
+	(if) ($Mod3 = 0) (then)
+		00
+	(elseif) ($Mod3 = 1) (then)
+		33.33
+	(elseif) ($Mod3 = 2) (then)
+		66.67
+	(endif)
 
 (action [score] is valid for #jackdaw)
 
@@ -634,7 +682,7 @@
 	}
 
 (action [examine $] is valid for #rat/#chameleon/#spider/#butler)
-(unlikely [examine $]) (current player #butler) %% Avoid disambiguation
+(unlikely [examine $]) (current player #butler) %% Avoid disambiguation with "a tray"
 
 (add $Obj to scope)
 	*(in bounds for this act $Room)

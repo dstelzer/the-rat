@@ -222,7 +222,7 @@
 (prize *)
 (* available in act 3)
 (* requires 20 turns)
-%% (* is worth 30 thousand dollars)
+%% (* is worth 50 thousand dollars)
 (name *) drive labelled "top secret manifests"
 (prize conversation about *)
 	(div @spider) { You found it‽ You actually found it‽ }
