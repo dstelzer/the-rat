@@ -25,6 +25,7 @@
 	width: 5ch;
 	height: 3em;
 	top: 0px;
+	left: 0px;
 	position: absolute;
 	margin-top: 0.25em;
 	margin-bottom: 0.25em;
@@ -35,6 +36,7 @@
 	width: 5ch;
 	height: 3em;
 	top: 0px;
+	right: 0px;
 	position: absolute;
 	margin-top: 0.25em;
 	margin-bottom: 0.25em;

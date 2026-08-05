@@ -39,6 +39,7 @@ var toggles = [
 	{id: "aacb-refocus", text: "Always re-focus", tooltip: "Always bring focus back to the input bar after entering a command", init: false},
 	{id: "aacb-large", text: "Larger text", init: false},
 	{id: "aacb-nofont", text: "Disable fonts", tooltip: "Use the system's default fonts instead of the ones chosen by the author", init: false},
+	{id: "aacb-delay", text: "Slow text", tooltip: "Make messages appear one at a time", init: true},
 ];
 
 var aaengine;
@@ -519,7 +520,7 @@ window.run_game = function(story64, options) {
 					p.style["animation-name"] = "none";
 				}
 				p.style["animation-delay"] = this.par_delay + "s";
-				this.par_delay += 0.1; // Stagger paragraph fade-ins by 0.5s
+				this.par_delay += document.getElementById("aacb-delay").checked ? 0.1 : 0; // Stagger paragraph fade-ins by a fraction of a second
 				this.current.appendChild(p);
 				this.current = p;
 				this.in_par = true;

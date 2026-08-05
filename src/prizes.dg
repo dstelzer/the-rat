@@ -136,6 +136,10 @@
 	(div @chameleon) { That would be one of the Post's backup archives. It might be filled with the stories Tension crushed. Maybe even mine. Please make sure to grab that one! }
 	(div @jackdaw) { consider it grabbed }
 
+(personal treasure *)
+(ending paragraph for *)
+	(div @jackdaw) { we got that pink drive for chameleon (line) the stories the post buried }
+
 #p-2-long-malatesta %% confidential patient data for class action lawsuit
 (prize *)
 (* available in act 2/3)
@@ -150,6 +154,9 @@
 	(div @rat) { Proof? Proof has been found? Usable in class actions? }
 	(div @jackdaw) { maybe! only one way to find out }
 
+(ending paragraph for *)
+	(div @rat) { The data. Files. Records of patients. Proof for courts. }
+
 #p-2-long-constantine
 (prize *)
 (* available in act 2/3)
@@ -160,6 +167,10 @@
 	(div @chameleon) { Does Quinn just carry those around with him? }
 	(div @spider) { I suppose he must want to keep them secure. Under New Gothenburg law, whoever holds the deed owns the property. }
 	(div @jackdaw) { actually selling any of this is going to be hard (line) but there's one i'm hoping is in here especially }
+
+(personal treasure *)
+(ending paragraph for *)
+	(div @jackdaw) { the deed to my old business }
 
 #p-2-end
 (prize *)
@@ -234,6 +245,10 @@
 	(div @rat) { She found what? What is this? }
 	(div @spider) { It is a master list of all the resources used to train the company's neural networks. Many of which are staggeringly illegal. }
 	(div @jackdaw) { wouldn't count on the courts actually caring (line) but it's something }
+
+(personal treasure *)
+(ending paragraph for *)
+	(div @spider) { The list of training data for Luna's neural networks. Evidence of what was stolen, and who was truly responsible. }
 
 #p-3-long-count %% leftover gold from gilding
 (prize *)

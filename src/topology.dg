@@ -540,3 +540,8 @@
 	(if) (* is broken) (then)
 		And also currently spraying a dozen feet in the air.
 	(endif)
+(narrate sabotaging *)
+	(div @rat) { So many valves. So many wheels. So many things to change. Pressure increase. Volume increase. Aperture decrease. More flow! More spray! }
+	(div @spider) { By which it seems to mean that water is spraying a dozen feet in the air and soaking anyone in the area. }
+(narrate fixing *)
+	(div @spider) { The butler is braving the spray, forcing his way through until he can grab hold of the valves and turn them back down. }

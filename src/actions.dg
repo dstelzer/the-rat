@@ -403,7 +403,8 @@
 	(current act 0)
 	(div @jackdaw) { on it }
 	(div @spider) { She is in! }
-	(div @jackdaw) { down in the basement ready to rob this place blind }
+	(div @jackdaw) { down in the basement ready to rob this place blind (line) just need a distraction }
+	(div @spider) { Now find a way to get Rat in, and we will have one. }
 	(now) (jackdaw has entered)
 
 (prevent [proceed])

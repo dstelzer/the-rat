@@ -102,6 +102,12 @@
 		(select a new quip at random)
 	}
 
+%% When we change acts, we also want to exhaust the current quip, since in-universe a bunch of time is passing
+
+(exhaust the current quip before changing acts)
+	(exhaust) *(show the current quip)
+	(select quip #q-actchange)
+
 %% We also don't want new quips coming in a constant stream, so we have a couple of "null quips" in the rotation
 %% null-1 has no lines and immediately replaces itself with a new one
 %% null-2 has one blank line before replacing itself
@@ -117,3 +123,7 @@
 (quip *)
 (* line)
 	(now) (* is unvisited)
+
+#q-actchange %% A few turns of silence when changing acts
+%% Does not have (quip $) because we don't want it selected at random
+(* line 1)
