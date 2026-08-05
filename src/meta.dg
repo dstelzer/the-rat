@@ -1,12 +1,20 @@
 (story title) The Rat
 (story author) Daniel M. Stelzer
 (story blurb)
-	It’s a golden opportunity: the wealthiest men and women in New Gothenburg, all gathered in a single place. If this job goes right, you’ll all walk away from this...well, maybe not millionaires, but hundred-thousand-aires is still pretty respectable. And best of all, the event is barely staffed. How hard could it be for your whole team to outwit one elderly butler?
+	It's a golden opportunity: the wealthiest men and women in New Gothenburg, all gathered in a single place. If this job goes right, you'll all walk away from this...well, maybe not millionaires, but hundred-thousand-aires is still pretty respectable. And best of all, the event is barely staffed. How hard could it be for your whole team to outwit one elderly butler?
 (story noun) An authorized tribute
-(story release 0)
+(story release 1)
 (story ifid) BEDBABA9-471A-468F-8402-FF1CF892D07B
 
-%% We also shove a bunch of random interfaces here to silence compiler warnings about unused library predicates
+%% Since this is a meta thing
+(grammar [version/about/info/banner] for [about])
+(command [about])
+(perform [about])
+	(banner)
+	Written as a prize for IFComp 2024 (par)
+	With special thanks to Drew Cook, dsherwood, and rh (round 0), YOUR NAME HERE (round 1) for testing, Sarah Chevalier for developing the character personalities and dynamics, and of course, Chandler Groover for writing THE BAT!
+
+%% We also shove a bunch of random interfaces here to silence compiler warnings about unused library predicates (normally they'd be used by standard actions but we purged most of those)
 (interface (seat $))
 (interface (edible $))
 (interface (potable $))

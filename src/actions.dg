@@ -154,10 +154,7 @@
 
 %% VERSION
 
-(understand command [version])
-(understand [banner] as [version])
-(perform [version])
-	(banner)
+%% Moved to meta.dg
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Fox

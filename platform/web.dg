@@ -1,8 +1,15 @@
 %% Web styling
 
+(style class @body)
+	--font-status: Geneva, sans-serif;
+	--font-body: Geneva, sans-serif;
+(startup)
+	(body style @body)
+
 (style class @rat)
 	border-top: 1px solid goldenrod;
 	border-left: 1px solid goldenrod;
+	border-radius: 0.75em;
 	margin-top: 0.67em;
 	margin-bottom: 0.67em;
 	padding: 0.25em;
@@ -12,6 +19,7 @@
 (style class @spider)
 	border-top: 1px solid cyan;
 	border-left: 1px solid cyan;
+	border-radius: 0.75em;
 	margin-top: 0.67em;
 	margin-bottom: 0.67em;
 	padding: 0.25em;
@@ -21,6 +29,7 @@
 (style class @jackdaw)
 	border-top: 1px solid green;
 	border-left: 1px solid green;
+	border-radius: 0.75em;
 	margin-top: 0.67em;
 	margin-bottom: 0.67em;
 	padding: 0.25em;
@@ -30,6 +39,7 @@
 (style class @chameleon)
 	border-top: 1px solid magenta;
 	border-left: 1px solid magenta;
+	border-radius: 0.75em;
 	margin-top: 0.67em;
 	margin-bottom: 0.67em;
 	padding: 0.25em;
@@ -39,6 +49,7 @@
 (style class @guests)
 	border-top: 1px dashed \#888888;
 	border-left: 1px dashed \#888888;
+	border-radius: 0.75em;
 	margin-top: 0.67em;
 	margin-bottom: 0.67em;
 (style class @butlercolor)

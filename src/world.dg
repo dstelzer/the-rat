@@ -378,7 +378,7 @@
 	(get an initial comment)
 	
 	(div @jackdaw) { and what about you spider (line) position and all that? }
-	(div @spider) { Well, yes. For completeness, I am in the control room two blocks away. All systems running smoothly. I have eyes on the outer garden. Ninety minutes until the largest gathering of New Gothenburg's patrician class that I have ever seen. }
+	(div @spider) { Well, yes. For completeness, I am in the control room two blocks away. All systems are running smoothly. I have eyes on the outer garden. Ninety minutes until the largest gathering of New Gothenburg's patrician class that I have ever seen. }
 	(div @chameleon) { Ninety minutes until we pull off the heist of the century. }
 	(div @jackdaw) { lets (space) ----ing go }
 	
