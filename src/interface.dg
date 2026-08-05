@@ -132,3 +132,9 @@
 	text-align: center;
 	margin-top: 1.75em;
 	margin-bottom: 1em;
+
+(understand command [options])
+(perform [options])
+	(div @meta) {
+		(exhaust) { *(option paragraph) (par) }
+	}
