@@ -16,7 +16,9 @@
 		(draw automap outside of status bar if applicable)
 	(endif)
 	(if) (interpreter supports inline status bar) (then)
-		(suggestion bar)
+		(inline suggestion bar)
+	(else)
+		(div suggestion bar)
 	(endif)
 
 (style class @ratstick)
@@ -89,8 +91,13 @@
 (direction symbol #east) ->
 (direction symbol #west) <-
 
-(suggestion bar)
+(inline suggestion bar)
 	(inline status bar @inline) {
+		(exhaust) *(status bar line)
+	}
+
+(div suggestion bar)
+	(div @inline) {
 		(exhaust) *(status bar line)
 	}
 

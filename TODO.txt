@@ -1,2 +1,1 @@
-remove one loot item from each act?
-suggestion bar on Z-machine
+examine basement and hack targets

@@ -119,10 +119,11 @@
 	(now) (* is unvisited)
 	(fail) %% Draw a new quip immediately
 
-#q-null-2
-(quip *)
-(* line)
-	(now) (* is unvisited)
+%% We have enough quips now that I don't think we need this delay
+%% #q-null-2
+%% (quip *)
+%% (* line)
+%% 	(now) (* is unvisited)
 
 #q-actchange %% A few turns of silence when changing acts
 %% Does not have (quip $) because we don't want it selected at random

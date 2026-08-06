@@ -375,10 +375,6 @@ fills in.
 The butler is assessing again. Nothing amiss, so he can focus on his usual
 tasks.
 
-Quip deck: [#q-1-comms #q-1-profanity #q-1-videogame #q-1-backstory #q-1-
-backstory #q-1-guestlist #q-null-1 #q-null-2]
-Chose #q-1-videogame
-
                                     ( )-( ) 
                                      |   |  
                                    -( )-( )-
@@ -396,24 +392,6 @@ Vulnerable.
 
 The butler is moving through the granite-gilded passage toward the glass-gilded
 passage.
-
-Now, Fox, you should be seeing a map of the ground floor, with a "joystick"
-display on the left side. The arrows there show which directions Rat can move
-in.
-
-so fox really is controlling us like a video game huh
-sorry count your valuables are in another castle
-
-Well, in a sense, but it is a top-down view, not a side view.
-
-fine
-it's a secret to everybody
-except me because i have high end ir goggles
-
-Jackdaw seems to be showing her age.
-
-forty years on and this is still the best we can do for control schemes
-apparently
 
                                     ( )-( ) 
                                      |   |  
@@ -434,6 +412,10 @@ That was the chandelier crashing down and landing on the tables.
 
 The butler is assessing—looking at the chandelier now.
 
+Quip deck: [#q-1-comms #q-1-profanity #q-1-videogame #q-1-backstory #q-1-
+backstory #q-1-guestlist #q-null-1]
+Chose #q-1-backstory
+
                                     ( )-( ) 
                                      |   |  
                                    -(B)-(.)-
@@ -450,10 +432,15 @@ thats a go
 The butler is moving from the granite-gilded passage to the glass-gilded
 passage.
 
-Quip deck: [#q-1-comms #q-1-comms #q-1-comms #q-1-profanity #q-1-profanity #q-
-1-profanity #q-1-backstory #q-1-backstory #q-1-guestlist #q-1-guestlist #q-
-null-1 #q-null-2]
-Chose #q-1-profanity
+so why are all the rich -------- coming tonight anyway
+
+Not just any one-percenters—investors.
+
+Exactly. The Count and his new business partner have launched something they
+claim is going to change the world, and these are all the people supporting it.
+
+And the party is a ploy to get them to support it even more, because there
+aren't enough zeroes in the bank account yet.
 
                                     ( )-( ) 
                                      |   |  
@@ -466,7 +453,7 @@ chandelier] sabotage the chandelier>]
 Spider: [<wait>]; view any room or object
 Jackdaw: [<[proceed] proceed>]; [<[score] score>]
 > w
-The rat is going.
+It goes.
 
 Dining patio
 Half inside, half outside, with no door in between. The north end of the patio
@@ -478,18 +465,16 @@ A [<silver tray>] sits on top of the piano.
 
 The butler is moving from the glass-gilded passage to the ballroom.
 
-why cant i say ---- btw
-are you really that much of a prude
+The world will be changed? How? By who?
 
-I spent the last two years of my life building profanity detection systems for
-text-based social media. I am not letting that go to waste just because my
-former employer decided to pivot to disgustingly basic neural networks.
+The Count's working with a Silicon Valley type for this. An up-and-coming 100x
+rockstar, they call her. Beyond that, details are scarce.
 
-I don't mind. It just means we have to be creative about it. Try saying that --
-- --- -- - ---------, but ---- --- --- ----- -- --------- -----. (No offense,
-of course.)
+So maybe we'll learn tonight.
 
-wow i take it back thats some good tech
+or maybe the whole thing is the next crypto nfts
+
+It's possible. But for now, the money is here—and within our reach.
 
                                     ( )-( ) 
                                      |   |  
@@ -520,7 +505,7 @@ piano>]
 Spider: [<wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
 > n
-The rat moves.
+It is moving.
 
 Granite-gilded passage
 Four corridors join here at a small hub, where the huge stone blocks of the
@@ -542,7 +527,7 @@ out
 with seconds to spare
 how long was that?
 
-The butler was distracted for 4 minutes. Debugging note: remember this number!
+The butler was distracted for 4 minutes.
 
 grabbed a bottle of chateau lafite
 estimated value $1,000
@@ -566,7 +551,7 @@ Rat: [<[north] north>], [<[south] south>], [<[east] east>]
 Spider: [<wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
 > n
-The rat, it is moving.
+The rat is moving.
 
 Trophy room
 The gold walls here are mostly covered by steel: [<weapons>] of every shape and
@@ -577,11 +562,10 @@ The newest acquisition seems to be a [<curtain rod>] mounted near the floor.
 
 The butler is moving to the glass-gilded passage.
 
-Quip deck: [#q-1-comms #q-1-comms #q-1-comms #q-1-lowercase #q-1-lowercase #q-
-1-lowercase #q-1-proceed #q-1-proceed #q-1-proceed #q-1-backstory #q-1-
-backstory #q-1-guestlist #q-1-guestlist #q-1-guestlist #q-1-guestlist #q-null-
-1 #q-null-2]
-Chose #q-1-guestlist
+Quip deck: [#q-1-comms #q-1-profanity #q-1-proceed #q-1-videogame #q-1-
+butler #q-1-butler #q-1-butler #q-1-butler #q-1-count #q-1-count #q-1-count #q-
+1-count #q-1-llm #q-1-llm #q-1-llm #q-1-guestlist #q-1-guestlist #q-null-1]
+Chose #q-1-comms
 
                                     (R)-( ) 
                                      |   |  
@@ -599,21 +583,22 @@ Everything from longswords to wedding rings to redistricting maps to claymores
 
 Vulnerable.
 
-Do we have confirmation of the final guest list?
+So, not to ask a stupid question, but I am curious. Why are we doing all of
+this via text?
 
-The doctor. Malatesta. He will be there.
+Bandwidth. The less data needs to be transmitted, the better it can be hidden
+and secured. This system uses approximately one bit per letter, or one byte per
+word. Voice would be an order of magnitude more.
 
-Ari Tension, the new owner and editor of the New Gothenburg Post.
+plus he sent that in like two seconds so either he types faster than liszt or
+he had it written up and ready to go
 
-that industrialist
-constantine quinn
+It all comes down to information theory. And in this case a large corpus of my
+writing and a chorded keyboard.
 
-And of course, me.
+i regret asking
 
-Once I have added you to the list, yes. Which is waiting on Jackdaw.
-
-working on it hold your horses
-just buy me time
+I don't.
 
                                     (R)-( ) 
                                      |   |  
@@ -631,7 +616,13 @@ begins to swing!
 
 A battleaxe has come loose and is now swinging around at neck height.
 
-The butler is assessing—turning to the weapons.
+The butler is assessing—focusing on the weapons.
+
+Besides, the one bit per letter is only an average. Some people's messages can
+be compressed even further. It all comes down to how predictable they are—for
+example, Jackdaw is about to say "---- you".
+
+wow ---- you
 
                                     {R}-(.) 
                                      |   |  
@@ -644,7 +635,7 @@ weapons>]
 Spider: [<wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
 > s
-The rat, it moves.
+The rat, it is going.
 
 Granite-gilded passage
 Four corridors join here at a small hub, where the huge stone blocks of the
@@ -652,12 +643,6 @@ Granite Wing to the west clash with the too-shiny ornaments of the Gilded Wing
 to the north.
 
 The butler is moving from the glass-gilded passage to the gold-plated bathroom.
-
-Quip deck: [#q-1-comms #q-1-lowercase #q-1-proceed #q-1-backstory #q-1-
-backstory #q-1-malatesta #q-1-malatesta #q-1-malatesta #q-1-tension #q-1-
-tension #q-1-tension #q-1-constantine #q-1-constantine #q-1-constantine #q-1-
-chamguest #q-null-1 #q-null-2]
-Chose #q-1-backstory
 
                                     {.}-(B) 
                                      |   |  
@@ -669,7 +654,7 @@ Rat: [<[north] north>], [<[south] south>], [<[east] east>]
 Spider: [<wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
 > s
-The rat is going.
+The rat, it is going.
 
 Dining patio
 Half inside, half outside, with no door in between. The north end of the patio
@@ -681,15 +666,12 @@ A [<silver tray>] sits on top of the piano.
 
 The butler is moving from the gold-plated bathroom to the trophy room.
 
-so why are all the rich -------- coming tonight anyway
-
-Not just any one-percenters—investors.
-
-Exactly. The Count and his new business partner have launched something they
-claim is going to change the world, and these are all the people supporting it.
-
-And the party is a ploy to get them to support it even more, because there
-aren't enough zeroes in the bank account yet.
+Quip deck: [#q-1-profanity #q-1-profanity #q-1-profanity #q-1-lowercase #q-1-
+lowercase #q-1-lowercase #q-1-proceed #q-1-proceed #q-1-proceed #q-1-
+videogame #q-1-videogame #q-1-videogame #q-1-butler #q-1-butler #q-1-count #q-
+1-count #q-1-llm #q-1-guestlist #q-1-guestlist #q-1-guestlist #q-1-
+guestlist #q-null-1]
+Chose #q-1-proceed
 
                                     {B}-( ) 
                                      |   |  
@@ -704,7 +686,7 @@ Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
 > sabotage piano
 It will play. But what?
 
-every note all at the same time max volume over and over
+The Wrong Note Etude.
 
 It is done.
 
@@ -712,16 +694,14 @@ The butler is swinging a curtain rod with remarkable agility, trying to parry
 the battleaxe and get its motion under control. Eventually he manages to block
 its edge and push it carefully back up onto the pegs.
 
-The world will be changed? How? By who?
+Why does Jackdaw "proceed"? Such an odd word?
 
-The Count's working with a Silicon Valley type for this. An up-and-coming 100x
-rockstar, they call her. Beyond that, details are scarce.
+ask spider
+it's all because of him
 
-So maybe we'll learn tonight.
+Spider, why does Jackdaw "proceed"?
 
-or maybe the whole thing is the next crypto nfts
-
-It's possible. But for now, the money is here—and within our reach.
+Disambiguation.
 
                                     (B)-( ) 
                                      |   |  
@@ -736,7 +716,15 @@ Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
 > proceed
 on it
 
-The butler is assessing—focusing on the piano.
+The butler is assessing—turning to the piano.
+
+Please elaborate on "disambiguation"?
+
+he said we needed to choose a clear signal
+i suggested "go"
+he said "go" is already used for rat going place to place
+so i said he should just come up with something else
+and he said "proceed"
 
                                     (B)-( ) 
                                      |   |  
@@ -749,7 +737,7 @@ piano] sabotage the piano>]
 Spider: [<wait>]; view any room or object
 Jackdaw: [<[proceed] proceed>]; [<[score] score>]
 > e
-It goes.
+The rat, it goes.
 
 Ballroom
 The eastern half of the dining area is properly enclosed, but with floor-to-
@@ -758,12 +746,6 @@ During the day, it is well-lit with sunlight; at night, the [<chandelier>]
 fills in.
 
 The butler is moving from the trophy room to the granite-gilded passage.
-
-Quip deck: [#q-1-comms #q-1-lowercase #q-1-proceed #q-1-butler #q-1-butler #q-
-1-butler #q-1-butler #q-1-count #q-1-count #q-1-count #q-1-count #q-1-llm #q-1-
-llm #q-1-llm #q-1-malatesta #q-1-tension #q-1-constantine #q-1-chamguest #q-
-null-1 #q-null-2]
-Chose #q-1-count
 
                                     ( )-( ) 
                                      |   |  
@@ -776,7 +758,7 @@ the chandelier>]
 Spider: [<wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
 > n
-It goes.
+It is going.
 
 Glass-gilded passage
 Four corridors join here at a small hub, where the sharp-edged rectangles of
@@ -820,17 +802,12 @@ The only non-gilded object is the [<newspaper>] supplied for reading.
 
 The butler flips a switch under the piano and it falls silent.
 
-The rat does not know the title. The Count.
-
-I think it is some European thing.
-
-Oh no, we have counties here in the States too. Count Vespertilion is the
-highest democratically-elected official in Vespertilion County. One step higher
-than the Mayor of New Gothenburg.
-
-He was elected?
-
-Every four years. He's run unopposed for decades.
+Quip deck: [#q-1-profanity #q-1-profanity #q-1-profanity #q-1-lowercase #q-1-
+lowercase #q-1-lowercase #q-1-videogame #q-1-videogame #q-1-videogame #q-1-
+butler #q-1-butler #q-1-count #q-1-count #q-1-llm #q-1-guestlist #q-1-
+guestlist #q-1-guestlist #q-1-guestlist #q-1-guestlist #q-1-guestlist #q-null-
+1]
+Chose #q-1-guestlist
 
                                     ( )-(R) 
                                      |   |  
@@ -843,7 +820,7 @@ toilet>]
 Spider: [<wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
 > w
-The rat is going.
+The rat, it is going.
 
 Trophy room
 The gold walls here are mostly covered by steel: [<weapons>] of every shape and
@@ -857,7 +834,7 @@ Security is being checked again.
 im out
 time?
 
-Security was down for 5 minutes. Debugging note: remember this number!
+Security was down for 5 minutes.
 
 grabbed a bottle of assaratum
 estimated value $2,000
@@ -892,12 +869,23 @@ begins to swing!
 
 A battleaxe has come loose and is now swinging around at neck height.
 
-The butler is assessing—turning to the weapons.
+The butler is assessing—focusing on the weapons.
 
-wait if count vespertilion is a title then whats his actual name
+Do we have confirmation of the final guest list?
 
-It's also his name. He changed it when he was first running for office, and
-apparently it worked.
+The doctor. Malatesta. He will be there.
+
+Ari Tension, the new owner and editor of the New Gothenburg Post.
+
+that industrialist
+constantine quinn
+
+And of course, me.
+
+Once I have added you to the list, yes. Which is waiting on Jackdaw.
+
+working on it hold your horses
+just buy me time
 
                                     {R}-( ) 
                                      |   |  
@@ -910,7 +898,7 @@ weapons>]
 Spider: [<wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
 > e
-The rat, it goes.
+The rat, it is going.
 
 Gold-plated bathroom
 Everything in the gilded wing is covered in some kind of gold, and the
@@ -938,10 +926,11 @@ And water is currently spraying halfway across the room. Good job.
 
 The butler is moving from the granite-gilded passage to the trophy room.
 
-Quip deck: [#q-1-comms #q-1-lowercase #q-1-proceed #q-1-butler #q-1-butler #q-
-1-butler #q-1-butler #q-1-llm #q-1-malatesta #q-1-tension #q-1-constantine #q-
-1-chamguest #q-null-1 #q-null-2]
-Chose #q-null-1
+Quip deck: [#q-1-profanity #q-1-lowercase #q-1-videogame #q-1-butler #q-1-
+butler #q-1-count #q-1-count #q-1-llm #q-1-malatesta #q-1-malatesta #q-1-
+malatesta #q-1-tension #q-1-tension #q-1-tension #q-1-constantine #q-1-
+constantine #q-1-constantine #q-null-1]
+Chose #q-1-butler
 
                                     {B}-{R} 
                                      |   |  
@@ -954,7 +943,7 @@ toilet>]
 Spider: [<wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
 > s
-The rat moves.
+It is going.
 
 Glass-gilded passage
 Four corridors join here at a small hub, where the sharp-edged rectangles of
@@ -964,6 +953,15 @@ Wing to the north.
 The butler is swinging a curtain rod with remarkable agility, trying to parry
 the battleaxe and get its motion under control. Eventually he manages to block
 its edge and push it carefully back up onto the pegs.
+
+What I do not understand is why such a high-profile event only has a single
+person on staff. I am grateful, certainly. But puzzled all the same.
+
+Oh, that part's easy to explain. The Count can never hold onto employees for
+long. The say he drains the life out of them. He probably had a dozen last
+month and now he's down to one again.
+
+that ones pretty good though
 
                                     (B)-{ } 
                                      |   |  
@@ -975,7 +973,7 @@ Rat: [<[north] north>], [<[south] south>], [<[west] west>]
 Spider: [<wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
 > s
-The rat, it moves.
+The rat, it is moving.
 
 Ballroom
 The eastern half of the dining area is properly enclosed, but with floor-to-
@@ -985,10 +983,13 @@ fills in.
 
 The butler is assessing—looking at the toilet now.
 
-Quip deck: [#q-1-comms #q-1-lowercase #q-1-proceed #q-1-butler #q-1-butler #q-
-1-llm #q-1-malatesta #q-1-tension #q-1-constantine #q-1-chamguest #q-null-1 #q-
-null-2]
-Chose #q-1-constantine
+Do you know him? The one employee who's left?
+
+The rat has heard of this one. Yes. Skilled. Very skilled. Tireless.
+
+and apparently has the patience of a saint
+
+I wonder if I could get an interview with him...
 
                                     (B)-{.} 
                                      |   |  
@@ -1008,14 +1009,6 @@ What was that sound?!
 That was the chandelier crashing down and landing on the tables.
 
 The butler is moving from the trophy room to the gold-plated bathroom.
-
-and even spider has to have heard of constantine quinn
-hes always in the press for some donation or other
-
-Yes. The libraries, the museums.
-
-That's the one. He made his fortune selling household appliances; now everyone
-knows him as the Refrigerator Magnate.
 
                                     ( )-{B} 
                                      |   |  
@@ -1042,13 +1035,10 @@ The butler is kneeling down in the puddle and reconnecting the pipes. Then a
 few pages of the New Gothenburg Post get repurposed as a mop to transfer the
 water back into the toilet bowl.
 
-Then is he behind C&C Electronics?
-
-That would be his daughters, Constance and Constance. His brand is Q&Q.
-
-seems like the names run in the family
-
-Names usually do that, yes.
+Quip deck: [#q-1-profanity #q-1-lowercase #q-1-videogame #q-1-valet #q-1-
+valet #q-1-valet #q-1-count #q-1-count #q-1-count #q-1-count #q-1-llm #q-1-
+malatesta #q-1-tension #q-1-constantine #q-null-1]
+Chose #q-1-count
 
                                     ( )-(B) 
                                      |   |  
@@ -1067,7 +1057,19 @@ Rick Astley.
 
 It is done.
 
-The butler is assessing—focusing on the chandelier.
+The butler is assessing—turning to the chandelier.
+
+The rat does not know the title. The Count.
+
+I think it is some European thing.
+
+Oh no, we have counties here in the States too. Count Vespertilion is the
+highest democratically-elected official in Vespertilion County. One step higher
+than the Mayor of New Gothenburg.
+
+He was elected?
+
+Every four years. He's run unopposed for decades.
 
                                     ( )-(B) 
                                      |   |  
@@ -1084,9 +1086,10 @@ thats a go
 
 The butler is moving from the gold-plated bathroom to the glass-gilded passage.
 
-Quip deck: [#q-1-comms #q-1-lowercase #q-1-proceed #q-1-butler #q-1-butler #q-
-1-llm #q-1-malatesta #q-1-tension #q-1-chamguest #q-null-1 #q-null-2]
-Chose #q-1-proceed
+wait if count vespertilion is a title then whats his actual name
+
+It's also his name. He changed it when he was first running for office, and
+apparently it worked.
 
                                     ( )-( ) 
                                      |   |  
@@ -1099,7 +1102,7 @@ piano] sabotage the piano>]
 Spider: [<wait>]; view any room or object
 Jackdaw: [<[proceed] proceed>]; [<[score] score>]
 > n
-The rat is going.
+The rat, it is moving.
 
 Granite-gilded passage
 Four corridors join here at a small hub, where the huge stone blocks of the
@@ -1107,15 +1110,6 @@ Granite Wing to the west clash with the too-shiny ornaments of the Gilded Wing
 to the north.
 
 The butler is moving from the glass-gilded passage to the ballroom.
-
-Why does Jackdaw "proceed"? Such an odd word?
-
-ask spider
-it's all because of him
-
-Spider, why does Jackdaw "proceed"?
-
-Disambiguation.
 
                                     ( )-( ) 
                                      |   |  
@@ -1127,7 +1121,7 @@ Rat: [<[north] north>], [<[south] south>], [<[east] east>]
 Spider: [<wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
 > n
-The rat goes.
+The rat is going.
 
 Trophy room
 The gold walls here are mostly covered by steel: [<weapons>] of every shape and
@@ -1139,13 +1133,10 @@ The newest acquisition seems to be a [<curtain rod>] mounted near the floor.
 The butler laboriously cranks the chandelier back up to the ceiling and fixes
 the ratchet in place.
 
-Please elaborate on "disambiguation"?
-
-he said we needed to choose a clear signal
-i suggested "go"
-he said "go" is already used for rat going place to place
-so i said he should just come up with something else
-and he said "proceed"
+Quip deck: [#q-1-profanity #q-1-lowercase #q-1-videogame #q-1-valet #q-1-
+valet #q-1-valet #q-1-llm #q-1-malatesta #q-1-tension #q-1-constantine #q-null-
+1]
+Chose #q-1-valet
 
                                     (R)-( ) 
                                      |   |  
@@ -1160,7 +1151,25 @@ Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
 > curtain rod
 Six feet of metal with a knob on either end, and no curtains in sight.
 
-The butler is assessing—looking at the piano now.
+The butler is assessing—focusing on the piano.
+
+hang on
+isnt a butler like the head of the staff
+meaning more than one person total
+
+Technically speaking, I believe this man would be more of a valet.
+
+Or perhaps a butler-valet?
+
+I've always liked the term "batman" myself. Or "factotum".
+
+Accuracy aside, I already used V on the map for Count Vespertilion.
+
+What about C?
+
+That would be Chameleon. You.
+
+well you can also read the B as batman if you want
 
                                     (R)-( ) 
                                      |   |  
@@ -1173,7 +1182,7 @@ weapons>]
 Spider: [<wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
 > e
-It is moving.
+The rat, it is moving.
 
 Gold-plated bathroom
 Everything in the gilded wing is covered in some kind of gold, and the
@@ -1182,11 +1191,6 @@ bathrooms are no exception. Even the [<toilet>] is polished to a bright shine.
 The only non-gilded object is the [<newspaper>] supplied for reading.
 
 The butler is moving from the ballroom to the dining patio.
-
-Quip deck: [#q-1-comms #q-1-comms #q-1-comms #q-1-lowercase #q-1-lowercase #q-
-1-lowercase #q-1-butler #q-1-butler #q-1-llm #q-1-malatesta #q-1-tension #q-1-
-chamguest #q-null-1 #q-null-2]
-Chose #q-1-chamguest
 
                                     ( )-(R) 
                                      |   |  
@@ -1205,17 +1209,9 @@ qualities.
 
 The butler flips a switch under the piano and it falls silent.
 
-and who is chameleon going to be
-to get invited
-
-Oh, you'll see when the time comes. I would hate to spoil the surprise.
-
-is the middle of the heist really the time to surprise your team
-
-Is that not how the stories always go?
-
-spider if chameleon wrecks this will you turn off the profanity filter
-just for a minute or so
+Quip deck: [#q-1-profanity #q-1-lowercase #q-1-videogame #q-1-llm #q-1-
+malatesta #q-1-tension #q-1-constantine #q-null-1]
+Chose #q-1-constantine
 
                                     ( )-(R) 
                                      |   |  
@@ -1233,11 +1229,11 @@ keeping this shiny every day?
 
 Vulnerable.
 
-Security active again.
+Time.
 
-done
+thanks
 
-That distraction lasted 7 minutes. Debugging note: remember this number!
+That distraction lasted 7 minutes.
 
 grabbed a wifi router
 
@@ -1264,4 +1260,400 @@ toilet>]
 Spider: [<wait>]; view any room or object; [<[spider , hack the wifi router]
 hack the wifi router>]
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+> hack the router
+All right. I will begin. Chameleon, please watch the cameras while I work.
+
+Ten-four. Watching.
+
+and i'm going to stand here holding a router
+yay
+
+. . . . . . .
+
+and even spider has to have heard of constantine quinn
+hes always in the press for some donation or other
+
+Yes. The libraries, the museums.
+
+That's the one. He made his fortune selling household appliances; now everyone
+knows him as the Refrigerator Magnate.
+
+Chose #q-actchange
+<[] [[ Continue ]]>
+Act Two: Getting Rich
+
+It is done. I am opening the next rooms now. Chameleon, what have you seen?
+
+guests' belongings here i come
+
+The butler is running around a lot. He took the crank off the chandelier and
+locked down the piano so we can't mess with those any more. The guests showed
+up, he welcomed them in, served numerous drinks, and now they're eating and
+talking in the dining area. Any word on getting me that invitation?
+
+I am working on it. Once Jackdaw can get access to the IoT network, it will
+happen.
+
+well you can take your time there's tons of stuff to raid here
+
+                                    ( )-(R)     
+                                     |   |      
+                                ( )-( )-( )-( ) 
+                                 |   |   |   |  
+                                ( )- B - L -( ) 
+
+Rat: [<[rat , south] south>], [<[rat , west] west>]; [<[rat , sabotage the
+toilet] sabotage the toilet>]
+Spider: [<wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+> s
+The rat moves.
+
+Glass-gilded passage
+Four corridors join here at a small hub, where the sharp-edged rectangles of
+the Glass Wing to the east clash with the too-shiny ornaments of the Gilded
+Wing to the north.
+
+The butler is moving to the ballroom.
+
+                                    ( )-( )     
+                                     |   |      
+                                ( )-( )-(R)-( ) 
+                                 |   |   |   |  
+                                ( )- V - B -( ) 
+
+Rat: [<[north] north>], [<[south] south>], [<[east] east>], [<[west] west>]
+Spider: [<wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+> e
+It is going.
+
+Server room
+Racks of machinery cover every wall and pile up in floor-to-ceiling pillars,
+all enmeshed in a web of [<coolant pipes>].
+
+Quip deck: [#q-1-profanity #q-1-lowercase #q-1-videogame #q-1-llm #q-1-
+malatesta #q-1-tension #q-2-servers #q-2-servers #q-2-servers #q-2-talk #q-2-
+talk #q-2-talk #q-2-talk #q-2-talk #q-2-jackdaw #q-2-passages #q-2-passages #q-
+null-1]
+Chose #q-2-talk
+
+                                    ( )-( )     
+                                     |   |      
+                                ( )-( )-( )-(R) 
+                                 |   |   |   |  
+                                ( )- V - B -( ) 
+
+Rat: [<[south] south>], [<[west] west>]; [<[sabotage the coolant pipes]
+sabotage the coolant pipes>]
+Spider: [<wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+> s
+The rat, it is going.
+
+Office
+It looks like a college dorm room. A desk, a bed, a window, and a closet.
+According to Chameleon, though, all of this is specially commissioned from top
+designers and rigged from floor to ceiling with [<smart automation devices>].
+
+The butler is moving to the dining patio.
+
+What are the guests discussing, if I may?
+
+I will start a transcription. Any suggestions for color?
+
+plain white
+itll stand out
+
+Done.
+
+Vespertilion: My honored guests. It is my pleasure and my distinct privilege to
+welcome you to my humble estate. Enter it freely and of your own will, and when
+you go, leave something of the happiness you bring.
+
+Luna: We're so glad you've shown interest in PyramidAI. You clearly see the
+value of getting in on the ground floor. This isn't just a product—it's a new
+way of life, starting right here in New Gothenburg.
+
+                                    ( )-( )     
+                                     |   |      
+                                ( )-( )-( )-( ) 
+                                 |   |   |   |  
+                                ( )- B - L -(R) 
+
+Rat: [<[north] north>], [<[west] west>]; [<[sabotage the smart automation
+devices] sabotage the smart automation devices>]
+Spider: [<wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+> sabotage devices
+The sensors. They can be confused. Report errors. The system will lose
+consistency.
+
+I am seeing the spikes now. Complete darkness in the room; blazing light in the
+closet. High-temperature air blowing from the bed.
+
+The butler is assessing—turning to the smart automation devices.
+
+                                    ( )-( )     
+                                     |   |      
+                                ( )-(.)-(.)-(.) 
+                                 |   |   |   |  
+                                ( )- B - L -{R} 
+
+Rat: [<[north] north>], [<[west] west>]; [<[sabotage the smart automation
+devices] sabotage the smart automation devices>]
+Spider: [<wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+> n
+The rat is moving.
+
+Server room
+Racks of machinery cover every wall and pile up in floor-to-ceiling pillars,
+all enmeshed in a web of [<coolant pipes>].
+
+The butler is picking up the silver tray.
+
+Quip deck: [#q-1-profanity #q-1-lowercase #q-1-videogame #q-1-llm #q-1-
+malatesta #q-1-tension #q-2-servers #q-2-servers #q-2-servers #q-2-office #q-2-
+llm #q-2-malatesta #q-2-quinn #q-2-tension #q-2-jackdaw #q-2-passages #q-2-
+passages #q-null-1]
+Chose #q-1-malatesta
+
+                                    ( )-( )     
+                                     |   |      
+                                ( )-(.)-(.)-(R) 
+                                 |   |   |   |  
+                                ( )- B - L -{.} 
+
+Rat: [<[south] south>], [<[west] west>]; [<[sabotage the coolant pipes]
+sabotage the coolant pipes>]
+Spider: [<wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+> sabotage pipes
+So many pipes. So many connections. Pry one free, and let its lifeblood flow
+and pool.
+
+The butler is moving from the dining patio to the granite-gilded passage.
+
+You said that Malatesta is there? The biologist?
+
+Yes. He will attend. The rat knows.
+
+Is he really the sort of person the Count would hope to court?
+
+Oh, definitely. Not the Count, maybe, but Meresankh. He has the sort of "move
+fast and break things" ethos that Silicon Valley types love.
+
+"Move fast and break things"...in human biology?
+
+lots of things there to break
+
+                                    ( )-( )     
+                                     |   |      
+                                ( )-(B)-(.)-{R} 
+                                 |   |   |   |  
+                                ( )- V - L -{.} 
+
+Rat: [<[south] south>], [<[west] west>]; [<[sabotage the coolant pipes]
+sabotage the coolant pipes>]
+Spider: [<wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+> proceed
+proceeding
+
+The butler is moving from the granite-gilded passage to the glass-gilded
+passage.
+
+                                    ( )-( )     
+                                     |   |      
+                                ( )-( )-(B)-{R} 
+                                 |   |   |   |  
+                                ( )- V - L -{.} 
+
+Rat: [<[rat , south] south>], [<[rat , west] west>]; [<[rat , sabotage the
+coolant pipes] sabotage the coolant pipes>]
+Spider: [<wait>]; view any room or object
+Jackdaw: [<[proceed] proceed>]; [<[score] score>]
+> z
+I imagine there will be quite a lot of waiting while Jackdaw does her work.
+
+That is true. I suppose we should make it clear whether the intent is to wait
+for one minute or to wait until Jackdaw's heist is complete.
+
+just use different words
+wait vs long wait
+
+I suppose that is as good a convention as any. We can adopt it.
+
+The butler is moving from the glass-gilded passage to the server room.
+
+People approach! The rat must hide!
+
+                                    ( )-( )     
+                                     |   |      
+                                ( )-( )-( )-{B} 
+                                 |   |   |   |  
+                                ( )- V - L -{.} 
+
+Rat: [<[rat , south] south>], [<[rat , west] west>]; [<[rat , sabotage the
+coolant pipes] sabotage the coolant pipes>]
+Spider: [<wait>]; [<long wait>]; view any room or object
+Jackdaw: [<[proceed] proceed>]; [<[score] score>]
+> lz
+Certainly.
+
+[============================================================================]
+
+The butler is moving from the server room to the office.
+
+The rat is alone, and free to act.
+
+Quip deck: [#q-1-profanity #q-1-lowercase #q-1-videogame #q-1-llm #q-1-
+tension #q-2-servers #q-2-servers #q-2-servers #q-2-office #q-2-llm #q-2-
+malatesta #q-2-malatesta #q-2-malatesta #q-2-quinn #q-2-tension #q-2-rat #q-2-
+rat #q-2-rat #q-2-jackdaw #q-2-passages #q-2-passages #q-null-1]
+Chose #q-2-quinn
+[============================================================================]
+
+The butler is working on the office devices now. With the silver tray he can
+reflect light from the closet onto the right sensors, and everything is slowly
+coming back into alignment.
+
+Vespertilion: Now, Mr Quinn, I believe congratulations are in order after the
+recent news from New Gothenburg University.
+
+Tension: NGU to inaugurate new Quinn Hall in grand ceremony!
+
+Quinn: Ah, yes! An honor, really, an absolute honor. But I try to support the
+university whenever I can. I see it as giving back to the city that's given me
+so much. It's heartwarming that they want to name the building after me, truly
+heartwarming.
+
+[============================================================================]
+
+The butler is assessing—focusing on the coolant pipes.
+
+Quinn: Why, just last month I made a donation to the University's biology
+department. A rare specimen from one of my hunts: the pelt of a long-horned
+bison.
+
+Malatesta: A B. latifrons? That's quite the prize!
+
+Quinn: Indeed! Last of its kind! I'm glad science will be able to learn from
+it.
+
+[============================================================================]
+
+The butler is moving from the office to the server room.
+
+People approach! The rat must hide!
+
+Malatesta: Where ever did you find a B. latifrons in the first place?
+
+Quinn: Special safari expedition to the San Diego Zoo. And you would not 
+believe the permits I had to fill out to make that happen. Really would not
+believe it.
+
+[============================================================================]
+
+The butler is moving from the server room to the glass-gilded passage.
+
+The rat is alone, and free to act.
+
+[============================================================================]
+
+The butler is moving from the glass-gilded passage to the gold-plated bathroom.
+
+Quip deck: [#q-1-profanity #q-1-lowercase #q-1-videogame #q-1-llm #q-1-
+tension #q-2-servers #q-2-servers #q-2-servers #q-2-office #q-2-llm #q-2-
+malatesta #q-2-tension #q-2-rat #q-2-jackdaw #q-2-jackdaw #q-2-jackdaw #q-2-
+passages #q-2-passages #q-null-1]
+Chose #q-2-servers
+[============================================================================]
+
+The butler is putting down the silver tray.
+
+if we have access to the server room why am i messing around down here at all
+
+Time. The butler might walk through the server room at any point, and breaking
+security is not a fast process.
+
+you can also just say i'm better at this than rat
+
+[============================================================================]
+
+The butler is picking up the newspaper.
+
+[============================================================================]
+
+The butler is moving from the gold-plated bathroom to the glass-gilded passage.
+
+Quip deck: [#q-1-profanity #q-1-lowercase #q-1-videogame #q-1-llm #q-1-
+tension #q-2-office #q-2-llm #q-2-malatesta #q-2-tension #q-2-rat #q-2-
+jackdaw #q-2-passages #q-2-passages #q-null-1]
+Chose #q-2-tension
+[============================================================================]
+
+The butler is moving from the glass-gilded passage to the server room.
+
+People approach! The rat must hide!
+
+Luna: Now, Ari, I believe I've heard something about a recent business deal?
+
+Tension: Tension Media announces new merger! Brings New Gothenburg Post, KBAT
+Radio, WEBG Channel 3, Gothenburg News Network, Gothenburg Gazette, Daily News
+together under one umbrella!
+
+Quinn: Well done, my boy, very well done! Got to catch them all, as the young
+folk say?
+
+[============================================================================]
+
+The butler is fiddling with valves and connectors to isolate the leaking
+section of pipe, then mopping up the freon puddles with a few more pages of the
+Post.
+
+Malatesta: But with all the local media under one company, how will you keep
+them all separate?
+
+Quinn: A good question! You don't want to cannibalize your own market, now, do
+you?
+
+Tension: The Gothenburg Gazette: your only source for the news of the day! New
+Gothenburg Post announces new focus on market deregulation and personal
+freedom! Channel 3 pivots to non-stop reruns of TWILIGHT SWORDFIGHT, everyone's
+favorite fantasy sitcom! KBAT Radio, bringing you the best of the 1930s, every
+night! Tension Media—we have something for everyone!
+
+[============================================================================]
+
+Security active again.
+
+done
+
+14 minutes.
+
+grabbed tension's backup work laptop
+estimated value $10,000
+
+Any hint what might be on it?
+
+probably nothing
+doesn't look like it's ever been opened
+but that makes it easy to sell
+
+The butler is moving through the glass-gilded passage toward the dining patio.
+
+The rat is alone, and free to act.
+
+                                    ( )-(*)     
+                                     |   |      
+                                ( )-( )-(B)-(R) 
+                                 |   |   |   |  
+                                ( )- V - L -( ) 
+
+Rat: [<[rat , south] south>], [<[rat , west] west>]; [<[rat , sabotage the
+coolant pipes] sabotage the coolant pipes>]
+Spider: [<wait>]; [<long wait>]; view any room or object
+Jackdaw: [<[proceed] proceed>]; [<[score] score>]
 > 

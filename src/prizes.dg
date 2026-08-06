@@ -50,17 +50,17 @@
 	(div @spider) { I mostly expected this to be a pun on "ass". }
 	(div @jackdaw) { i dont lie when it comes to wine }
 
-#p-1-med-b
-(prize *)
-(* available in act 1)
-(* requires 5 turns)
-(* is worth 2 thousand dollars)
-(name *) pope-blessed communion wine
-(prize conversation about *)
-	(div @rat) { The Pope bottles? }
-	(div @jackdaw) { with enough bribery anything is possible }
-	(div @chameleon) { Or someone is simply lying. }
-	(div @jackdaw) { either way itll sell (line) im only grabbing stuff that will move }
+%% #p-1-med-b
+%% (prize *)
+%% (* available in act 1)
+%% (* requires 5 turns)
+%% (* is worth 2 thousand dollars)
+%% (name *) pope-blessed communion wine
+%% (prize conversation about *)
+%% 	(div @rat) { The Pope bottles? }
+%% 	(div @jackdaw) { with enough bribery anything is possible }
+%% 	(div @chameleon) { Or someone is simply lying. }
+%% 	(div @jackdaw) { either way itll sell (line) im only grabbing stuff that will move }
 
 #p-1-end
 (prize *)
@@ -99,17 +99,17 @@
 	(div @chameleon) { Any hint what might be on it? }
 	(div @jackdaw) { probably nothing (line) doesn't look like it's ever been opened (line) but that makes it easy to sell }
 
-#p-2-short-malatesta
-(prize *)
-(* available in act 2)
-(* requires 12 turns)
-(* is worth 10 thousand dollars)
-(name *) bottle of cordrazine
-(prize conversation about *)
-	(div @spider) { What is that? }
-	(div @jackdaw) { little white pills }
-	(div @chameleon) { An experimental stimulant, I believe. Not easily available even by prescription. }
-	(div @jackdaw) { medical sort of thing (line) not recreational (line) but there's a black market for it }
+%% #p-2-short-malatesta
+%% (prize *)
+%% (* available in act 2)
+%% (* requires 12 turns)
+%% (* is worth 10 thousand dollars)
+%% (name *) bottle of cordrazine
+%% (prize conversation about *)
+%% 	(div @spider) { What is that? }
+%% 	(div @jackdaw) { little white pills }
+%% 	(div @chameleon) { An experimental stimulant, I believe. Not easily available even by prescription. }
+%% 	(div @jackdaw) { medical sort of thing (line) not recreational (line) but there's a black market for it }
 
 #p-2-med-constantine
 (prize *)
@@ -122,7 +122,7 @@
 	(div @chameleon) { Fine jewelry, but whose, the rat wonders? }
 	(div @jackdaw) { i'd bet quinn }
 	(div @chameleon) { But he's currently wearing his diamond cufflinks? }
-	(div @jackdaw) { these are the backup pair (line) just in case }
+	(div @jackdaw) { these are the backup pair (line) in case of emergency }
 
 #p-2-med-tension
 (prize *)
@@ -199,16 +199,16 @@
 %% 3 medium, 3 long, 1 security camera (networked)
 %% 2 from the Count, 2 from LLM, 2 misc?
 
-#p-3-med-llm %% designer t-shirt
-(prize *)
-(* available in act 3)
-(* requires 15 turns)
-(* is worth 15 thousand dollars)
-(name *) bundle of t-shirts
-(prize conversation about *)
-	(div @rat) { Thousands? For t-shirts? Must be many, so many shirts? }
-	(div @jackdaw) { just like one box full }
-	(div @spider) { Luna has them designed and custom-made from the highest-quality materials. Each one costs at least \$500. }
+%% #p-3-med-llm %% designer t-shirt
+%% (prize *)
+%% (* available in act 3)
+%% (* requires 15 turns)
+%% (* is worth 15 thousand dollars)
+%% (name *) bundle of t-shirts
+%% (prize conversation about *)
+%% 	(div @rat) { Thousands? For t-shirts? Must be many, so many shirts? }
+%% 	(div @jackdaw) { just like one box full }
+%% 	(div @spider) { Luna has them designed and custom-made from the highest-quality materials. Each one costs at least \$500. }
 
 #p-3-med-count %% key to the county
 (prize *)

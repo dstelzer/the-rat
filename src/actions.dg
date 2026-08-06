@@ -210,9 +210,21 @@
 
 (action [tell $ to | $] is valid for *(protagonist $))
 
-%% WAIT
+%% WAIT (and LONG WAIT)
 
 (grammar [wait/z] for [wait])
+(grammar [long wait/z] for [long wait])
+(grammar [long/lz] for [long wait])
+
+(perform [wait])
+	(heist in progress)
+	~(long wait unlocked)
+	(div @chameleon) { I imagine there will be quite a lot of waiting while Jackdaw does her work. }
+	(div @spider) { That is true. I suppose we should make it clear whether the intent is to wait for one minute or to wait until Jackdaw's heist is complete. }
+	(div @jackdaw) { just use different words (line) wait vs long wait }
+	(div @spider) { I suppose that is as good a convention as any. We can adopt it. }
+	(now) (long wait unlocked)
+	(now) (no quip this turn)
 
 (perform [wait])
 	(select)
@@ -225,7 +237,16 @@
 		(div @rat) { The rat waits. }
 	(at random)
 
+(perform [long wait])
+	(now) (long wait unlocked) %% In case the dialogue hasn't happened yet
+	(div @spider) { Certainly. }
+	*(repeat forever)
+	(hr)
+	(tick)
+	~(heist in progress) %% Fail and jump back to the *(repeat forever) if the heist is still ongoing
+
 (action [wait] is valid for *(protagonist $)) %% All characters can do it
+(action [long wait] is valid for *(protagonist $))
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Rat
@@ -756,9 +777,18 @@
 		I am not seeing anything about (the $Obj) that I can access remotely.
 	}
 
+(grammar [hack] for itself)
+(instead of [hack])
+	(if) (hack target $Target) (then)
+		(try [hack $Target])
+	(else)
+		(div @spider) { No vulnerabilities currently present themselves. }
+		(tick) (stop)
+	(endif)
+
 %% No default PERFORM rule
 
-(action [hack $] is valid for #spider)
+(action [hack | $] is valid for #spider)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Chameleon

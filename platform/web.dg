@@ -65,3 +65,13 @@
 	margin-top: 0.33em;
 	margin-bottom: 0.33em;
 	position: relative;
+
+(style class @hr)
+	height: 0.1em;
+	width: 100\%;
+	background-color: var\(--text\);
+	aria-role: separator;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+(hr)
+	(div @hr) (space 1)

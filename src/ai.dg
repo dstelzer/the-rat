@@ -231,11 +231,17 @@
 	(butler is distracted) %% Set this flag to delay him for one turn
 	(now) ~(butler is distracted)
 
+($Goal is fixable)
+	~($Goal requires tool $)
+($Goal is fixable)
+	($Goal requires tool $Tool)
+	($Tool is #heldby #butler)
+
 (take one step toward the current goal)
 	(current goal $Goal)
 	(#butler is in room $Start)
 	
-	(if) ($Goal is in room $Start) (then)
+	(if) ($Goal is in room $Start) ($Goal is fixable) (then)
 		(narrate fixing $Goal)
 		(now) ($Goal is in order)
 	(elseif)

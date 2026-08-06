@@ -165,7 +165,7 @@
 	($N > 0) %% Fall back to 1 if this would produce 0
 (* line)
 	(div @spider) { Do we have confirmation of the final guest list? }
-	(div @rat) { The doctor. Malatesta. He will be there. }
+	(div @rat) { The doctor. Malatesta. He (if) (current act 1) (then) will be (else) is (endif) there. }
 	(div @chameleon) { Ari Tension, the new owner and editor of the New Gothenburg Post. }
 	(div @jackdaw) { that industrialist (line) constantine quinn }
 	(div @chameleon) { And of course, me. }
@@ -178,7 +178,7 @@
 (* involves #t-malatesta)
 (* depends on #q-1-guestlist)
 (* line)
-	(div @spider) { You said that Malatesta will be there? The biologist? }
+	(div @spider) { You said that Malatesta (if) (current act 1) (then) will be (else) is (endif) there? The biologist? }
 	(div @rat) { Yes. He will attend. The rat knows. }
 	(div @spider) { Is he really the sort of person the Count would hope to court? }
 	(div @chameleon) { Oh, definitely. Not the Count, maybe, but Meresankh. He has the sort of "move fast and break things" ethos that Silicon Valley types love. }

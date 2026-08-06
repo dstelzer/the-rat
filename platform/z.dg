@@ -43,3 +43,6 @@
 (style class @butlercolor)
 	color: inherit;
 (conversation style description) plain white (line) itll stand out
+
+(hr)
+	(progress bar 1 of 1)

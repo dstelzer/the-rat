@@ -432,7 +432,7 @@
 
 (interface (map of current layer needs $>Lines lines))
 (map of current layer needs $N lines)
-	(map of layer 0 needs $N lines)
+	(map of layer 0 needs $N lines) %% Only one layer in this map
 
 %% The actual status bar implementation usually needs to be handled by the game itself, because there may be other things that belong in the status bar too
 %% But we can implement a MAP command here at least
@@ -458,7 +458,7 @@
 	margin-bottom: 1em;
 
 (automap internal)
-	(div @map) (draw map of layer 0)
+	(div @map) (draw map of layer 0) %% Only one layer in this map
 
 %% Backtrack to recover memory after drawing
 (automap)
