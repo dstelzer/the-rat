@@ -588,8 +588,11 @@
 		(accumulate $K)
 			*(prize $Prize)
 			($Prize is handled)
-			($Prize is worth $K thousand dollars)
-			(line) (name $Prize) (space) - (space) ($K thousand dollars)
+			(if) ($Prize is worth $K thousand dollars) (then)
+				(line) (name $Prize) (space) - (space) ($K thousand dollars)
+			(else)
+				(line) (name $Prize)
+			(endif)
 		(into $Total)
 		(line) for a total of (span @bold) ($Total thousand dollars)
 		(line) (assess the value of $Total)
@@ -698,8 +701,9 @@
 (perform [examine (room $Room)])
 	(div @spider) (describe room $Room)
 
-(add $Room to scope)
+(add $Everything to scope)
 	*(in bounds for this act $Room)
+	($Everything = $Room) (or) *($Everything has ancestor $Room)
 
 %% EXAMINE <obj>
 

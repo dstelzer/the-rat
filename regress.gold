@@ -7,7 +7,7 @@ yeah
 Perfectly!
 
 [<Yes>] / [<No>] / <[] [nothing]>> yes
-That is a yes. Are we in position? Rat?
+I will take that as a yes. Are we in position? Rat?
 
 The rat is prepared. The cameras are placed. In the garden it hides.
 
@@ -135,6 +135,9 @@ Volume increase. Aperture decrease. More flow! More spray!
 By which it seems to mean that water is spraying a dozen feet in the air and
 soaking anyone in the area.
 
+i'm ready to go when you are
+just get the butler out of the way and say proceed
+
 The butler is assessing—looking at the water feature now. I have marked his
 likely path on the map.
 
@@ -216,6 +219,13 @@ Spider: [<wait>]; view any room or object
 Jackdaw: [<[proceed] proceed>]; [<[score] score>]
 > z
 All systems ready.
+
+i'm down here and ready
+
+As soon as we get Rat into the building, it will start making distractions for
+you.
+
+Yes. I must enter.
 
 The butler is moving through the south walk toward the terrace.
 
@@ -304,6 +314,13 @@ Terrace
 The dining patio to the north opens into a wide flagstoned terrace, sloping
 down to the garden path to the east.
 
+i'm down here and ready
+
+As soon as we get Rat into the building, it will start making distractions for
+you.
+
+Yes. I must enter.
+
 The butler is braving the spray, forcing his way through until he can grab hold
 of the valves and turn them back down.
 
@@ -326,7 +343,8 @@ Chose #q-actchange
 
 The Rat
 An authorized tribute by Daniel M. Stelzer.
-Release 1. Serial number DEBUG.
+(Debugger edition)
+Release 2. Serial number DEBUG.
 Dialog Interactive Debugger (dgdebug) version 1c/03-dev. Library version 1.2.3.
 Draconis extensions: Automap 1.2 and Versatile Linking 1.0.
 
