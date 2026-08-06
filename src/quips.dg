@@ -212,6 +212,7 @@
 #q-1-chamguest
 (quip *)
 (* depends on #q-1-guestlist/#q-1-profanity)
+(locked *) (#q-3-alisa is visited) %% No surprise left at that point
 (* line)
 	(div @jackdaw) { and who is chameleon going to be (line) to get invited }
 	(div @chameleon) { Oh, you'll see when the time comes. I would hate to spoil the surprise. }

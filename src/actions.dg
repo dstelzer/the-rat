@@ -228,7 +228,11 @@
 
 (perform [wait])
 	(select)
-		(div @chameleon) { So, darling, what comes next? }
+		(if) (current act 4) (then)
+			(div @jackdaw) { this is where chameleon would say something }
+		(else)
+			(div @chameleon) { So, darling, what comes next? }
+		(endif)
 	(or)
 		(div @jackdaw) { dot dot dot }
 	(or)
@@ -615,8 +619,11 @@
 			($Prize is handled)
 			(if) ($Prize is worth $K thousand dollars) (then)
 				(line) (name $Prize) (space) - (space) ($K thousand dollars)
-			(else)
+			(elseif) (personal treasure $Prize) (then)
 				(line) (name $Prize)
+				($K = 0)
+			(else) %% otherwise just fail: for things like the wifi router
+				(fail)
 			(endif)
 		(into $Total)
 		(line) for a total of (span @bold) ($Total thousand dollars)

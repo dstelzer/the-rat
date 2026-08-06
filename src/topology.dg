@@ -80,7 +80,7 @@
 (descr *) It can transmit anything to any room in the mansion: voice, video, images, text, and more.
 (attend target *)
 (after [examine *])
-	(div @jackdaw) { just imagine if we had voice here (line) we could hear spider drooling over it }
+	(div @jackdaw) { just imagine if we had voice for our chat (line) we could hear spider drooling over it }
 
 (perform [attend to #intercom/#data])
 	(#butler is in room #serv2)

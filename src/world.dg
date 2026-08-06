@@ -604,6 +604,7 @@
 	(div @spider) { I am trying to continue transcribing, but everyone is shouting over each other. }
 	(div @rat) { It looks like Chameleon, she is slipping away. }
 	(div @jackdaw) { and not just chameleon (line) i'm on my way out (line) let's go }
+	(pause)
 	(div @spider) { The earpiece is moving too. }
 	(div @rat) { Perhaps the crew waits. A moment. For a new member to join. }
 	

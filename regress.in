@@ -94,10 +94,66 @@ e
 n
 sabotage toilet
 s
-fae/faer
 e
 sabotage pipes
 s
 sabotage devices
 proceed
 lz
+fae/faer
+chameleon, n
+
+rat, sabotage devices
+n
+z
+z
+z
+z
+z
+chameleon, w
+rat, w
+rat, n
+rat, sabotage
+chameleon, e
+proceed
+chameleon, w
+chameleon, e
+chameleon, w
+chameleon, e
+chameleon, w
+chameleon, e
+chameleon, w
+chameleon, e
+chameleon, w
+chameleon, e
+chameleon, w
+chameleon, e
+chameleon, w
+chameleon, e
+chameleon, w
+chameleon, e
+chameleon, w
+chameleon, e
+lz
+hack
+
+
+z
+z
+butler, i
+drop tray
+a tray
+e
+n
+n
+w
+drive
+a drive
+e
+e
+e
+radio
+intercom
+score
+butler, attend to the intercom
+

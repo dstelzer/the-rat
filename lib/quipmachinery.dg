@@ -129,3 +129,17 @@
 #q-actchange %% A few turns of silence when changing acts
 %% Does not have (quip $) because we don't want it selected at random
 (* line 1)
+
+(understand command [quipdata])
+(perform [quipdata])
+	(div @meta) {
+		(exhaust) {
+			*(quip $Q)
+			($Q is unvisited)
+			$Q
+			(if) ($Q is locked) (then)
+				(space) - (space) Locked
+			(endif)
+			(line)
+		}
+	}
