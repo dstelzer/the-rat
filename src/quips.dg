@@ -475,11 +475,13 @@
 	(vlink {they/them}) / ({it/its}) / ??? > (get pronoun $Pronoun)
 	(if) ($Pronoun = []) (then)
 		(div @chameleon) { I hope you know that every mystery just intrigues me more. }
+		(div @jackdaw) { i'm sure ___ does }
 	(else)
 		(div @chameleon) {
 			A
 			(if) ($Pronoun = @it) (then) (no space) n (endif)
-			"(no space) $Pronoun (no space)" after my own heart.
+			$Pronoun %% Quotes or not?
+			after my own heart.
 		}
 	(endif)
 

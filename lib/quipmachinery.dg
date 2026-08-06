@@ -115,6 +115,7 @@
 
 #q-null-1
 (quip *)
+(locked *) (current quip *) %% Don't pick it twice in a row
 (* line)
 	(now) (* is unvisited)
 	(fail) %% Draw a new quip immediately

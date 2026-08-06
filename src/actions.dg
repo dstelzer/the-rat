@@ -237,9 +237,13 @@
 		(div @rat) { The rat waits. }
 	(at random)
 
+(prevent [long wait])
+	~(heist in progress)
+	(div @spider) { But there is no heist in progress. }
+
 (perform [long wait])
 	(now) (long wait unlocked) %% In case the dialogue hasn't happened yet
-	(div @spider) { Certainly. }
+	(div @spider) { We shall wait. }
 	*(repeat forever)
 	(hr)
 	(tick)

@@ -61,3 +61,43 @@ sabotage pipes
 proceed
 z
 lz
+lz
+s
+sabotage devices
+n
+sabotage pipes
+w
+z
+n
+sabotage toilet
+w
+sabotage weapons
+s
+w
+sabotage organ
+s
+sabotage cages
+proceed
+lz
+z
+hack
+
+chameleon, mingle
+e
+rat, sabotage cages
+n
+e
+n
+sabotage weapons
+s
+e
+n
+sabotage toilet
+s
+fae/faer
+e
+sabotage pipes
+s
+sabotage devices
+proceed
+lz

@@ -113,11 +113,11 @@
 	(div @statusline) {
 		(span @spidercolor) {
 			(span @bold) { Spider } :
-			({wait}) ;
+			({wait})
 			(if) (long wait unlocked) (then)
-				({long wait}) ;
+				, ({long wait})
 			(endif)
-			view any room or object
+			; view any room or object
 			(if) (hack target $Obj) (then)
 				;
 				(collect words)
@@ -511,7 +511,7 @@
 	(try [examine #dine1])
 	
 	%% Add one syntax hint, since players were confused
-	(div @spider) { Now that there are multiple people moving around, you can use thier names to avoid ambiguity—RAT, EAST or CHAMELEON, NORTH or such. If you do not specify, we will assume you mean the same person as in your previous instruction. }
+	(div @spider) { Now that there are multiple people moving around, you can use their names to avoid ambiguity—RAT, EAST or CHAMELEON, NORTH or such. If you do not specify, we will assume you mean the same person as in your previous instruction. }
 
 (understand command [act3])
 (perform [act3])
