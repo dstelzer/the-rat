@@ -367,7 +367,7 @@
 	
 	(get an initial comment)
 	
-	(div @spider) { That is a yes. Are we in position? Rat? }
+	(div @spider) { I will take that as a yes. Are we in position? Rat? }
 	(div @rat) { The rat is prepared. The cameras are placed. In the garden it hides. }
 	(div @spider) { Jackdaw? }
 	(div @jackdaw) { yeah }
@@ -401,6 +401,30 @@
 		one of those commands and we will obey.
 	}
 	(div @chameleon) { Allez! }
+
+(on every tick) %% Some nudges
+	(current act 0)
+	~(jackdaw has entered)
+	(select)
+	(or)
+	(or)
+	(or)
+	(or)
+		(div @jackdaw) { i'm ready to go when you are (line) just get the butler out of the way and say proceed }
+	(cycling)
+
+(on every tick)
+	(current act 0)
+	(jackdaw has entered)
+	(select)
+	(or)
+	(or)
+	(or)
+		(div @jackdaw) { i'm down here and ready }
+		(div @spider) { As soon as we get Rat into the building, it will start making distractions for you. }
+		(div @rat) { Yes. I must enter. }
+	(or)
+	(cycling)
 
 (start act one)
 	(div @rat) { The rat moves. The way is clear. The mansion is open. }
@@ -558,7 +582,7 @@
 (finishing cutscene)
 	%% This starts right after Spider describes the butler uploading the data
 	(div @guests) {
-		\* static \* (par)
+		\* (no space) static (no space) \* (par)
 		Vespertilion \( recorded \): (space) ...wo of us must put in millions up front, but this plan should pay off in the tens or hundreds of billions. (par)
 		Luna \( recorded \): What you're suggesting is a classic maneuver, generally known as a "Ponzi scheme" after Italian con artist Francesco Ponzi. While often conflated with pyramid schemes, Ponzi schemes differ in several ways. For example, in Ponzi schemes, the con artist acts as a central hub, and the source of the investment returns is hidden from the participants. (par)
 		Vespertilion \( recorded \): I would not use such terms out loud where they might be recorded. (par)

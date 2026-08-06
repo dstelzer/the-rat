@@ -6,9 +6,11 @@
 (startup)
 	(body style @body)
 
+(platform) Å-machine
+
 (style class @rat)
-	border-top: 1px solid goldenrod;
-	border-left: 1px solid goldenrod;
+	border-top: 2px solid goldenrod;
+	border-left: 2px solid goldenrod;
 	border-radius: 0.75em;
 	margin-top: 0.67em;
 	margin-bottom: 0.67em;
@@ -17,18 +19,18 @@
 	color: goldenrod;
 
 (style class @spider)
-	border-top: 1px solid cyan;
-	border-left: 1px solid cyan;
+	border-top: 2px solid deepskyblue;
+	border-left: 2px solid deepskyblue;
 	border-radius: 0.75em;
 	margin-top: 0.67em;
 	margin-bottom: 0.67em;
 	padding: 0.25em;
 (style class @spidercolor)
-	color: cyan;
+	color: deepskyblue;
 
 (style class @jackdaw)
-	border-top: 1px solid green;
-	border-left: 1px solid green;
+	border-top: 2px solid green;
+	border-left: 2px solid green;
 	border-radius: 0.75em;
 	margin-top: 0.67em;
 	margin-bottom: 0.67em;
@@ -37,8 +39,8 @@
 	color: green;
 
 (style class @chameleon)
-	border-top: 1px solid magenta;
-	border-left: 1px solid magenta;
+	border-top: 2px solid magenta;
+	border-left: 2px solid magenta;
 	border-radius: 0.75em;
 	margin-top: 0.67em;
 	margin-bottom: 0.67em;
@@ -47,8 +49,8 @@
 	color: magenta;
 
 (style class @guests)
-	border-top: 1px dashed \#888888;
-	border-left: 1px dashed \#888888;
+	border-top: 2px dashed \#888888;
+	border-left: 2px dashed \#888888;
 	border-radius: 0.75em;
 	margin-top: 0.67em;
 	margin-bottom: 0.67em;

@@ -1,4 +1,2 @@
-better tutorial in act 0; that's what it's for!
-	specifically explain syntax to command NPCs
 remove one loot item from each act?
-Chameleon/Rat joysticks overlap on web??
+suggestion bar on Z-machine

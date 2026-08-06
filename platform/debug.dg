@@ -9,6 +9,8 @@
 
 (startup) (body style @body)
 
+(platform) debugger
+
 (style class @rat)
 	color: yellow;
 	margin-top: 1em;

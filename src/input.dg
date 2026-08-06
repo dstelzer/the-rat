@@ -34,6 +34,8 @@
 			(try [tell $Single to | $Action])
 		(elseif) ($OnStage = [$Single]) (then)
 			(try [tell $Single to | $Action])
+		(elseif) ($Action = [examine $]) (then) %% Don't disambiguate when it makes no difference
+			(try [tell #spider to | $Action])
 		(else)
 			(div @spider) { Is that instruction meant for (or-listing $Options) ? }
 			(tick) (stop)

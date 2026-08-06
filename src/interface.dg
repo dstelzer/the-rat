@@ -94,7 +94,10 @@
 		(exhaust) *(status bar line)
 	}
 
-(style class @inline) %% TODO
+(style class @inline)
+	background-color: rgba\(0, 0, 0, 1\);
+	border: 1px solid rgba\(64, 64, 64, 1\);
+	padding: 0.25em;
 
 (style class @statusline)
 	margin-left: 1em;
@@ -138,3 +141,7 @@
 	(div @meta) {
 		(exhaust) { *(option paragraph) (par) }
 	}
+
+(additional banner text)
+	\( (uppercase) (platform) edition \)
+(platform) \( what platform?? \)

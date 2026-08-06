@@ -491,6 +491,7 @@
 (origin *) %% Might as well set our coordinate system's origin here
 (* is available in act 0)
 (default butler room for act 0 is *)
+	~(#rat is in room *) %% Don't let the player get completely trapped
 
 (name *) terrace
 (look *) The dining patio to the north opens into a wide flagstoned terrace, sloping down to the garden path to the east.
@@ -509,6 +510,8 @@
 (from * go #west to #garden1)
 (from * go #east to #garden3)
 (* is available in act 0)
+(default butler room for act 0 is *)
+	(#rat is in room #garden1) %% Don't let the player get completely trapped
 
 %% south walk
 (name *) south walk

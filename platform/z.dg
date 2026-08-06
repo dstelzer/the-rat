@@ -6,6 +6,8 @@
 
 (startup) (body style @body)
 
+(platform) Z-machine
+
 (style class @rat)
 	color: yellow;
 	margin-top: 1em;
