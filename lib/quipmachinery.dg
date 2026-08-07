@@ -65,6 +65,14 @@
 		(endif)
 	(into $Deck)
 	(log) { Quip deck: $Deck }
+	(if) (empty $Deck) (then)
+		(select)
+			(div @meta) {
+				(span @bold) { Debugging note } (no space) : tried to draw from an empty quip deck! The current act is (current act $Act) $Act . Please tell Daniel that this happened and how far you feel you've gotten in the game. %% TODO remove this eventually!
+			}
+		(or)
+		(stopping)
+	(endif)
 	(randomly select $NewQuip from $Deck)
 	(select quip $NewQuip)
 
