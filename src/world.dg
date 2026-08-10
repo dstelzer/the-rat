@@ -303,30 +303,35 @@
 (male *)
 (descr *) A small and angular man with wispy silver hair and an immaculate suit.
 (letter for *) V
+(* is #partof #crowd)
 
 #llm
 (name *) Luna L Meresankh
 (proper *)
 (female *)
 (descr *) A tall and angular woman with a pointy face and dramatic hair.
+(* is #partof #crowd)
 
 #constantine
 (name *) Constantine Quinn
 (proper *)
 (male *)
 (descr *) A rotund man in his 50s with a booming voice and a hearty laugh.
+(* is #partof #crowd)
 
 #malatesta
 (name *) Dr Malatesta
 (proper *)
 (male *)
 (descr *) A small man with a round face and thick glasses that hide his eyes.
+(* is #partof #crowd)
 
 #tension
 (name *) Ari Tension
 (proper *)
 (male *)
 (descr *) A muscular man with a shrill voice and thick, angry eyebrows.
+(* is #partof #crowd)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Act Transitions
