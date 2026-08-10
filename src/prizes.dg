@@ -21,7 +21,7 @@
 (prize conversation about *)
 	(div @spider) { I admire your restraint in not making a pun about the billionaires liking feet. }
 	(div @jackdaw) { well i cant now can i (line) thanks for that }
-	(div @chameleon) { You could try with "toe"? }
+	(div @chameleon) { You could try with “toe”? }
 	(div @jackdaw) { it just wouldnt be the same now }
 
 #p-1-short-b
@@ -43,11 +43,11 @@
 (* is worth 2 thousand dollars)
 (name *) bottle of assaratum
 (prize conversation about *)
-	(div @chameleon) { It's real?! }
+	(div @chameleon) { It’s real?! }
 	(div @spider) { I have never heard of that one. Is it any good? }
-	(div @chameleon) { It's an old legend about fermenting human blood into alcohol, for use in cult rituals. }
+	(div @chameleon) { It’s an old legend about fermenting human blood into alcohol, for use in cult rituals. }
 	(div @jackdaw) { real apparently yes (line) good probably not }
-	(div @spider) { I mostly expected this to be a pun on "ass". }
+	(div @spider) { I mostly expected this to be a pun on “ass”. }
 	(div @jackdaw) { i dont lie when it comes to wine }
 
 %% #p-1-med-b
@@ -82,7 +82,7 @@
 	($Prize is handled)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% ACT 2 - THE GUESTS' BELONGINGS
+%% ACT 2 - THE GUESTS’ BELONGINGS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %% 2 short, 2 medium, 2 long, 1 thermostat (IoT enabled)
@@ -93,11 +93,11 @@
 (* available in act 2)
 (* requires 12 turns)
 (* is worth 10 thousand dollars)
-(name *) tension's backup work laptop
+(name *) tension’s backup work laptop
 (proper *)
 (prize conversation about *)
 	(div @chameleon) { Any hint what might be on it? }
-	(div @jackdaw) { probably nothing (line) doesn't look like it's ever been opened (line) but that makes it easy to sell }
+	(div @jackdaw) { probably nothing (line) doesn’t look like it’s ever been opened (line) but that makes it easy to sell }
 
 %% #p-2-short-malatesta
 %% (prize *)
@@ -109,7 +109,7 @@
 %% 	(div @spider) { What is that? }
 %% 	(div @jackdaw) { little white pills }
 %% 	(div @chameleon) { An experimental stimulant, I believe. Not easily available even by prescription. }
-%% 	(div @jackdaw) { medical sort of thing (line) not recreational (line) but there's a black market for it }
+%% 	(div @jackdaw) { medical sort of thing (line) not recreational (line) but there’s a black market for it }
 
 #p-2-med-constantine
 (prize *)
@@ -120,8 +120,8 @@
 (pair *)
 (prize conversation about *)
 	(div @chameleon) { Fine jewelry, but whose, the rat wonders? }
-	(div @jackdaw) { i'd bet quinn }
-	(div @chameleon) { But he's currently wearing his diamond cufflinks? }
+	(div @jackdaw) { i’d bet quinn }
+	(div @chameleon) { But he’s currently wearing his diamond cufflinks? }
 	(div @jackdaw) { these are the backup pair (line) in case of emergency }
 
 #p-2-med-tension
@@ -133,7 +133,7 @@
 (prize conversation about *)
 	(div @chameleon) { Did you say neon pink?! }
 	(div @jackdaw) { hard to miss it yeah }
-	(div @chameleon) { That would be one of the Post's backup archives. It might be filled with the stories Tension crushed. Maybe even mine. Please make sure to grab that one! }
+	(div @chameleon) { That would be one of the Post’s backup archives. It might be filled with the stories Tension crushed. Maybe even mine. Please make sure to grab that one! }
 	(div @jackdaw) { consider it grabbed }
 
 (personal treasure *)
@@ -166,7 +166,7 @@
 (prize conversation about *)
 	(div @chameleon) { Does Quinn just carry those around with him? }
 	(div @spider) { I suppose he must want to keep them secure. Under New Gothenburg law, whoever holds the deed owns the property. }
-	(div @jackdaw) { actually selling any of this is going to be hard (line) but there's one i'm hoping is in here especially }
+	(div @jackdaw) { actually selling any of this is going to be hard (line) but there’s one i’m hoping is in here especially }
 
 (personal treasure *)
 (ending paragraph for *)
@@ -179,11 +179,11 @@
 (name *) thermostat
 (prize conversation about *)
 	(div @spider) { Fantastic. Well done, Jackdaw. }
-	(div @chameleon) { A thermostat? What's so fantastic about that? }
+	(div @chameleon) { A thermostat? What’s so fantastic about that? }
 	(div @jackdaw) { iot }
-	(div @spider) { It is connected to the mansion's internet-of-things network. Through it I can access the mansion's other devices and systems—which will let me add you to the guest list and forge an invitation. }
+	(div @spider) { It is connected to the mansion’s internet-of-things network. Through it I can access the mansion’s other devices and systems—which will let me add you to the guest list and forge an invitation. }
 	(div @chameleon) { That (span @italic) is fantastic! I retract my comments. I will prepare for my entrance! }
-	(div @jackdaw) { don't prepare too soon (line) knowing spider i'm going to be holding this thing for another half hour }
+	(div @jackdaw) { don’t prepare too soon (line) knowing spider i’m going to be holding this thing for another half hour }
 	(div @spider) { I will try to have it done in twenty. }
 	(div @chameleon) { Well then, Fox, give the signal at your pleasure. }
 (hack target *)
@@ -218,7 +218,7 @@
 (name *) key to the county
 (singleton *)
 (prize conversation about *)
-	(div @chameleon) { I've always wanted one of those! Just imagine what secrets it could unlock... }
+	(div @chameleon) { I’ve always wanted one of those! Just imagine what secrets it could unlock... }
 	(div @spider) { Is it not just symbolic? }
 	(div @chameleon) { Not in this county. It gives you permission to cross every privately-owned threshold. The Count insisted on it. }
 
@@ -229,7 +229,7 @@
 (* is worth 15 thousand dollars)
 (name *) case of painted figurines
 (prize conversation about *)
-	(div @chameleon) { Surely that's an overestimate? }
+	(div @chameleon) { Surely that’s an overestimate? }
 	(div @jackdaw) { like a dozen full armies here }
 	(div @spider) { That sounds correct. It is an expensive hobby. }
 
@@ -238,17 +238,17 @@
 (* available in act 3)
 (* requires 20 turns)
 %% (* is worth 50 thousand dollars)
-(name *) drive labelled "top secret manifests"
+(name *) drive labelled “top secret manifests”
 (prize conversation about *)
 	(div @spider) { You found it‽ You actually found it‽ }
 	(div @jackdaw) { yes (line) enjoy }
 	(div @rat) { She found what? What is this? }
-	(div @spider) { It is a master list of all the resources used to train the company's neural networks. Many of which are staggeringly illegal. }
-	(div @jackdaw) { wouldn't count on the courts actually caring (line) but it's something }
+	(div @spider) { It is a master list of all the resources used to train the company’s neural networks. Many of which are staggeringly illegal. }
+	(div @jackdaw) { wouldn’t count on the courts actually caring (line) but it’s something }
 
 (personal treasure *)
 (ending paragraph for *)
-	(div @spider) { The list of training data for Luna's neural networks. Evidence of what was stolen, and who was truly responsible. }
+	(div @spider) { The list of training data for Luna’s neural networks. Evidence of what was stolen, and who was truly responsible. }
 
 #p-3-long-count %% leftover gold from gilding
 (prize *)
@@ -258,9 +258,9 @@
 (name *) massive pile of gold
 (prize conversation about *)
 	(div @rat) { Massive? How much so? }
-	(div @jackdaw) { there's jewelry (line) bars (line) historic coins (line) looks like all the stuff they were melting down for the gilded wing (line) this must be the extra }
-	(div @chameleon) { Wouldn't \$50,000 be a touch less than a pound? }
-	(div @jackdaw) { i'm factoring in it not being pure, paying someone to make it untraceable, and most of this stuff being too heavy to lift (line) also no last i checked 50,000 dollars is like 38,000 pounds }
+	(div @jackdaw) { there’s jewelry (line) bars (line) historic coins (line) looks like all the stuff they were melting down for the gilded wing (line) this must be the extra }
+	(div @chameleon) { Wouldn’t \$50,000 be a touch less than a pound? }
+	(div @jackdaw) { i’m factoring in it not being pure, paying someone to make it untraceable, and most of this stuff being too heavy to lift (line) also no last i checked 50,000 dollars is like 38,000 pounds }
 
 #p-3-long-count2 %% artwork taken down when building glass wing
 (prize *)
@@ -282,7 +282,7 @@
 (prize conversation about *)
 	(div @spider) { Wonderful. From this I should be able to access the entire camera network and look for anything we might have missed. }
 	(div @jackdaw) { as long as i stand here for another 20m }
-	(div @spider) { Only fifteen, I hope. As usual I will wait for Fox's signal. }
+	(div @spider) { Only fifteen, I hope. As usual I will wait for Fox’s signal. }
 (hack target *)
 	(* is handled)
 	(current act 3)

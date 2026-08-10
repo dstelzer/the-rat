@@ -1,8 +1,8 @@
-%% This file is misleadingly named, but I couldn't think of a better name for it
+%% This file is misleadingly named, but I couldn’t think of a better name for it
 %% It holds the data for all the protagonists and the act transitions
 %% For the layout of the map, see topology.dg
 %% For the actions referenced here, see actions.dg
-%% For the butler's AI, see ai.dg
+%% For the butler’s AI, see ai.dg
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Protagonists
@@ -15,7 +15,7 @@
 (protagonist *)
 (name *) Fox
 (perform [examine *])
-	(div @jackdaw) { that's you }
+	(div @jackdaw) { that’s you }
 	(div @spider) { Our logistical planner and coordinator. }
 	(div @chameleon) { Our daring, dashing leader. }
 	(div @rat) { Gives the commands. }
@@ -137,12 +137,12 @@
 (female *)
 (letter for *) J
 (have * refuse [go | $])
-	(div @jackdaw) { when you want me to go you have to say proceed (line) because spider wouldn't let me use go }
+	(div @jackdaw) { when you want me to go you have to say proceed (line) because spider wouldn’t let me use go }
 (have * refuse $)
 	(div @jackdaw) { i dont need micromanaging i just need you to tell me when to start and leave the rest to me }
 
 (perform [examine *])
-	(div @jackdaw) { i'm the thief i steal stuff }
+	(div @jackdaw) { i’m the thief i steal stuff }
 
 (status bar line)
 	(div @statusline) {
@@ -172,10 +172,10 @@
 (female *)
 (letter for *) C
 (have * refuse $)
-	(div @chameleon) { I'm sure I'd love to, but I think someone else might be better-suited for that. }
+	(div @chameleon) { I’m sure I’d love to, but I think someone else might be better-suited for that. }
 
 (perform [examine *])
-	(div @chameleon) { I'm the face of the operation. The distraction. Your favorite femme fatale. }
+	(div @chameleon) { I’m the face of the operation. The distraction. Your favorite femme fatale. }
 
 (cham-link direction $Dir)
 	(collect words)
@@ -235,9 +235,9 @@
 	(endif)
 (descr *)
 	(current goal $Goal)
-	He's hurrying toward (the $Goal).
+	He’s hurrying toward (the $Goal).
 (descr *)
-	A house like this would normally have half a dozen staff at least, and now all these tasks fall to him. It's no wonder he never has a chance to rest.
+	A house like this would normally have half a dozen staff at least, and now all these tasks fall to him. It’s no wonder he never has a chance to rest.
 
 (butler-link direction $Dir)
 	(collect words)
@@ -292,7 +292,7 @@
 (name *) other guests
 (animate *)
 (enemy *)
-(appearance *) (appearance #crowd) %% They're effectively a single object in two rooms
+(appearance *) (appearance #crowd) %% They’re effectively a single object in two rooms
 (descr *) (descr #crowd)
 (letter for *) L
 (unlikely $Action) (* is one of $Action)
@@ -380,13 +380,13 @@
 	(div @spider) { Jackdaw? }
 	(div @jackdaw) { yeah }
 	(div @spider) { Chameleon? }
-	(div @chameleon) { I have never been more ready. Sincerely, even though I'm about to do nothing for an hour and a half waiting for the gala to start. }
+	(div @chameleon) { I have never been more ready. Sincerely, even though I’m about to do nothing for an hour and a half waiting for the gala to start. }
 	(div @spider) { Fox? }
 	
 	(get an initial comment)
 	
 	(div @jackdaw) { and what about you spider (line) position and all that? }
-	(div @spider) { Well, yes. For completeness, I am in the control room two blocks away. All systems are running smoothly. I have eyes on the outer garden. Ninety minutes until the largest gathering of New Gothenburg's patrician class that I have ever seen. }
+	(div @spider) { Well, yes. For completeness, I am in the control room two blocks away. All systems are running smoothly. I have eyes on the outer garden. Ninety minutes until the largest gathering of New Gothenburg’s patrician class that I have ever seen. }
 	(div @chameleon) { Ninety minutes until we pull off the heist of the century. }
 	(div @jackdaw) { lets (space) ----ing go }
 	
@@ -397,8 +397,8 @@
 	(div @jackdaw) { close enough to the door (line) thats all that matters }
 	(div @spider) { Fine. And the butler is at the B. Text communication is running; we are at your command. }
 	(div @rat) { The rat is prepared to obey every word. Tell it to go. Tell it to sabotage. }
-	(div @spider) { By which it means compass directions, so that we do not waste time with "your right or my right". And for Jackdaw... }
-	(div @jackdaw) { just get the butler away from the door and say "proceed" thats all you have to do }
+	(div @spider) { By which it means compass directions, so that we do not waste time with “your right or my right”. And for Jackdaw... }
+	(div @jackdaw) { just get the butler away from the door and say “proceed” thats all you have to do }
 	(div @spider) {
 		You should be seeing a bar of suggestions at the bottom of your screen.
 		(if) (interpreter supports links) (then)
@@ -418,7 +418,7 @@
 	(or)
 	(or)
 	(or)
-		(div @jackdaw) { i'm ready to go when you are (line) just get the butler out of the way and say proceed }
+		(div @jackdaw) { i’m ready to go when you are (line) just get the butler out of the way and say proceed }
 	(cycling)
 
 (on every tick)
@@ -428,7 +428,7 @@
 	(or)
 	(or)
 	(or)
-		(div @jackdaw) { i'm down here and ready }
+		(div @jackdaw) { i’m down here and ready }
 		(div @spider) { As soon as we get Rat into the building, it will start making distractions for you. }
 		(div @rat) { Yes. I must enter. }
 	(or)
@@ -437,7 +437,7 @@
 (start act one)
 	(div @rat) { The rat moves. The way is clear. The mansion is open. }
 	(div @spider) { Or in other words... }
-	(div @chameleon) { (span @italic) { We're in. } }
+	(div @chameleon) { (span @italic) { We’re in. } }
 	(select quip #q-actchange)
 	
 	(banner)
@@ -463,7 +463,7 @@
 (start act two) %% triggered in prizes.dg
 	(div @spider) { All right. I will begin. Chameleon, please watch the cameras while I work. }
 	(div @chameleon) { Ten-four. Watching. }
-	(div @jackdaw) { and i'm going to stand here holding a router (line) yay }
+	(div @jackdaw) { and i’m going to stand here holding a router (line) yay }
 	(div @rat) { . (space) . (space) . (space) . (space) . (space) . (space) . }
 	
 	(exhaust the current quip before changing acts)
@@ -472,10 +472,10 @@
 	(div @header) { Act Two: Getting Rich }
 	
 	(div @spider) { It is done. I am opening the next rooms now. Chameleon, what have you seen? }
-	(div @jackdaw) { guests' belongings here i come }
-	(div @chameleon) { The butler is running around a lot. He took the crank off the chandelier and locked down the piano so we can't mess with those any more. The guests showed up, he welcomed them in, served numerous drinks, and now they're eating and talking in the dining area. Any word on getting me that invitation? }
+	(div @jackdaw) { guests’ belongings here i come }
+	(div @chameleon) { The butler is running around a lot. He took the crank off the chandelier and locked down the piano so we can’t mess with those any more. The guests showed up, he welcomed them in, served numerous drinks, and now they’re eating and talking in the dining area. Any word on getting me that invitation? }
 	(div @spider) { I am working on it. Once Jackdaw can get access to the IoT network, it will happen. }
-	(div @jackdaw) { well you can take your time there's tons of stuff to raid here }
+	(div @jackdaw) { well you can take your time there’s tons of stuff to raid here }
 	
 	(now) (current act 2)
 	(move #crowd to #dine1)
@@ -492,8 +492,8 @@
 
 (start act three) %% triggered in prizes.dg
 	(div @spider) { I will begin. As before, Chameleon, please keep your eye on the cameras. }
-	(div @chameleon) { Not that there's much else for me to do. }
-	(div @jackdaw) { well that's about to change if we can get you this invite }
+	(div @chameleon) { Not that there’s much else for me to do. }
+	(div @jackdaw) { well that’s about to change if we can get you this invite }
 	(div @rat) { . (space) . (space) . (space) . (space) . (space) . (space) . }
 	
 	(exhaust the current quip before changing acts)
@@ -502,9 +502,9 @@
 	(div @header) { Act Three: Getting Out }
 	
 	(div @spider) { You are officially on the guest list. You have the card, yes? }
-	(div @chameleon) { Right here in my hand. I'm walking up to the door now. }
+	(div @chameleon) { Right here in my hand. I’m walking up to the door now. }
 	(div @spider) { Jackdaw, can you access the vault? }
-	(div @jackdaw) { it's open and ready to be robbed }
+	(div @jackdaw) { it’s open and ready to be robbed }
 	(div @spider) { Rat? }
 	(div @rat) { The rat waits. The rat has waited. Continue. }
 	(div @spider) { And I am tracking both Rat and Chameleon on the cameras now. Fox, we are ready to go as soon as you say the word. }
@@ -524,7 +524,7 @@
 
 (start act four) %% triggered in prizes.dg
 	(div @spider) { I am beginning my work now. }
-	(div @chameleon) { I'm afraid I can't watch the feeds for you this time. I have my hands full in here. }
+	(div @chameleon) { I’m afraid I can’t watch the feeds for you this time. I have my hands full in here. }
 	(div @spider) { That should be fine. Everything is thoroughly under control now. }
 	(div @rat) { . (space) . (space) . (space) . (space) . (space) . (space) . }
 	
@@ -542,10 +542,10 @@
 	(div @header) { Epilogue: Getting Even }
 	
 	(div @spider) { I have access to all the cameras now, covering every room on the ground floor, and—what is going on‽ Why has Chameleon disconnected? }
-	(div @jackdaw) { don't ask me i've been clinging halfway up a wall holding a camera for you }
+	(div @jackdaw) { don’t ask me i’ve been clinging halfway up a wall holding a camera for you }
 	(div @rat) { The rat has watched. Read the log. }
-	(div @spider) { Oh no. Oh no no no. I tell you to watch the cameras for fifteen minutes and this happens‽ You couldn't even handle that‽ }
-	(div @jackdaw) { and what exactly did you want rat to do (line) jump out of hiding and tell chameleon to put the piece back in (line) it said it here in the chat that should've been enough }
+	(div @spider) { Oh no. Oh no no no. I tell you to watch the cameras for fifteen minutes and this happens‽ You couldn’t even handle that‽ }
+	(div @jackdaw) { and what exactly did you want rat to do (line) jump out of hiding and tell chameleon to put the piece back in (line) it said it here in the chat that should’ve been enough }
 	(div @spider) { I am going to pull up all the feeds. Jackdaw, keep an eye on everything. }
 	(div @jackdaw) { on it }
 	
@@ -566,7 +566,7 @@
 	(current act 4)
 	~(butler has the earpiece)
 	(select)
-		(div @spider) { No biometrics are coming through from Chameleon's earpiece. But I have audio. }
+		(div @spider) { No biometrics are coming through from Chameleon’s earpiece. But I have audio. }
 		(div @guests) {
 			Vespertilion: The evening could be considered a marginal success, despite your frankly unacceptable performance. The service was slow. You were constantly distracted, leaving no one to attend to the guests. When people needed drinks, you were nowhere to be found. (par)
 			Vespertilion: And the security was no better than the service! People have entered the lower floors and made off with who even knows what.
@@ -574,12 +574,12 @@
 	(or)
 		(div @guests) {
 			Vespertilion: Insurance will pay more than the losses and the objects will be easily tracked; the thieves will not get far. But the loss of face will be atrocious should this reach the press. (par)
-			Vespertilion: Needless to say, I will expect you to trace and retrieve my property with all haste. Finish the cleanup from the dinner, attend to the guests' needs, see them out, then begin work on the theft. And expect a seven percent pay cut for this fiasco. I consider that more than generous, given the mess you caused.
+			Vespertilion: Needless to say, I will expect you to trace and retrieve my property with all haste. Finish the cleanup from the dinner, attend to the guests’ needs, see them out, then begin work on the theft. And expect a seven percent pay cut for this fiasco. I consider that more than generous, given the mess you caused.
 		}
 		(div @spider) { Vespertilion is turning away and moving back toward the dining room. }
 		(now) (#vespertilion is #partof #crowd)
 	(or)
-		(div @spider) { I am seeing biometric data on Chameleon's earpiece again. Someone is wearing it. }
+		(div @spider) { I am seeing biometric data on Chameleon’s earpiece again. Someone is wearing it. }
 		(now) (butler has the earpiece)
 	(stopping)
 
@@ -592,11 +592,11 @@
 	(div @guests) {
 		\* (no space) static (no space) \* (par)
 		Vespertilion \( recorded \): (space) ...wo of us must put in millions up front, but this plan should pay off in the tens or hundreds of billions. (par)
-		Luna \( recorded \): What you're suggesting is a classic maneuver, generally known as a "Ponzi scheme" after Italian con artist Francesco Ponzi. While often conflated with pyramid schemes, Ponzi schemes differ in several ways. For example, in Ponzi schemes, the con artist acts as a central hub, and the source of the investment returns is hidden from the participants. (par)
+		Luna \( recorded \): What you’re suggesting is a classic maneuver, generally known as a “Ponzi scheme” after Italian con artist Francesco Ponzi. While often conflated with pyramid schemes, Ponzi schemes differ in several ways. For example, in Ponzi schemes, the con artist acts as a central hub, and the source of the investment returns is hidden from the participants. (par)
 		Vespertilion \( recorded \): I would not use such terms out loud where they might be recorded. (par)
-		Luna \( recorded \): Don't worry—all conversations are recorded for training purposes, but they are securely encrypted and cannot possibly be breached or retrieved. (par)
+		Luna \( recorded \): Don’t worry—all conversations are recorded for training purposes, but they are securely encrypted and cannot possibly be breached or retrieved. (par)
 		Vespertilion \( recorded \): Regardless. Your reputation and your businesses provide an ideal front for this, an apparent source of profit. My title provides legitimacy to attract investors. The Gilded Wing has tragically reduced the Vespertilion treasury. This plan stands to enrich us both considerably. (par)
-		Luna \( recorded \): I'm in.
+		Luna \( recorded \): I’m in.
 	}
 	(div @spider) { Then silence. Everyone is staring at the hosts. }
 	(div @guests) {
@@ -608,7 +608,7 @@
 	}
 	(div @spider) { I am trying to continue transcribing, but everyone is shouting over each other. }
 	(div @rat) { It looks like Chameleon, she is slipping away. }
-	(div @jackdaw) { and not just chameleon (line) i'm on my way out (line) let's go }
+	(div @jackdaw) { and not just chameleon (line) i’m on my way out (line) let’s go }
 	(pause)
 	(div @spider) { The earpiece is moving too. }
 	(div @rat) { Perhaps the crew waits. A moment. For a new member to join. }
@@ -620,10 +620,10 @@
 	(into $Total)
 	
 	(div @jackdaw) {
-		a six way split of ($Total thousand dollars) doesn't sound so bad (line)
+		a six way split of ($Total thousand dollars) doesn’t sound so bad (line)
 		($Total thousand dollars divided by six with remainder $Mod) each instead of ($Total thousand dollars divided by five) (line)
 		(if) ($Mod = 2) (then)
-			i'll even cover the extra two cents (line)
+			i’ll even cover the extra two cents (line)
 		(endif)
 	}
 	
@@ -634,7 +634,7 @@
 			($Tres is handled)
 			(ending paragraph for $Tres)
 		}
-	(else) %% Need an intervening paragraph so it's not two Jackdaw lines together (though we can't always prevent it in the former case)
+	(else) %% Need an intervening paragraph so it’s not two Jackdaw lines together (though we can’t always prevent it in the former case)
 		(div @rat) { Money. Success. Nothing more, maybe sad. But money is much. }
 	(endif)
 	

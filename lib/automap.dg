@@ -1,5 +1,5 @@
 %% Each room is given three coordinates, [X Y Z]
-%% Z separates "layers" of the map, which could be vertical distance, but could also be different regions entirely
+%% Z separates “layers” of the map, which could be vertical distance, but could also be different regions entirely
 
 (draconic extension version $Closure) ($Closure = {Automap 1.2})
 
@@ -292,13 +292,13 @@
 	*(enemy $Enemy)
 	($Enemy is in room $Room)
 	(letter for $Enemy)
-(room glyph $Room) %% Butler's discarded tools
+(room glyph $Room) %% Butler’s discarded tools
 	*($Obj has ancestor $Room)
 	(item $Obj)
 	($Obj is handled)
 	\*
-(room glyph $Room) %% Butler's current path
-	(butler's current path $Path)
+(room glyph $Room) %% Butler’s current path
+	(butler’s current path $Path)
 	($Room is one of $Path)
 	.
 

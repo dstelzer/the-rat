@@ -1,8 +1,8 @@
 %% The machinery for selecting and presenting quips
 
-%% Whichever quip we're currently presenting is stored here
+%% Whichever quip we’re currently presenting is stored here
 (global variable (current quip $))
-%% And how far we've advanced through it, for multi-part quips
+%% And how far we’ve advanced through it, for multi-part quips
 (global variable (current quip position $))
 
 %% For the selection process, we need some utilities
@@ -37,9 +37,9 @@
 %% With syntactic sugar for one-line quips
 @($Quip line) ($Quip line 1)
 
-%% The dynamic flag ($ is visited) means that a quip is exhausted, but that's implemented in the standard library
+%% The dynamic flag ($ is visited) means that a quip is exhausted, but that’s implemented in the standard library
 
-%% Finally, ($ involves $) optionally lets quips chain into each other by prioritizing ones that "involve" the same people or objects
+%% Finally, ($ involves $) optionally lets quips chain into each other by prioritizing ones that “involve” the same people or objects
 (interface ($<Quip involves $>Topic))
 
 %% We can use this to select a new quip at (weighted) random
@@ -68,7 +68,7 @@
 	(if) (empty $Deck) (then)
 		(select)
 			(div @meta) {
-				(span @bold) { Debugging note } (no space) : tried to draw from an empty quip deck! The current act is (current act $Act) $Act . Please tell Daniel that this happened and how far you feel you've gotten in the game. %% TODO remove this eventually!
+				(span @bold) { Debugging note } (no space) : tried to draw from an empty quip deck! The current act is (current act $Act) $Act . Please tell Daniel that this happened and how far you feel you’ve gotten in the game. %% TODO remove this eventually!
 			}
 		(or)
 		(stopping)
@@ -97,12 +97,12 @@
 	(current quip position $Old)
 	($Old plus 1 into $New)
 	(now) (current quip position $New)
-	($Quip line $New) %% This will fail if we've reached the end
+	($Quip line $New) %% This will fail if we’ve reached the end
 
 %% And we have to do this every turn
 
 (late on every tick)
-	~(current act 0) %% Don't do this during the tutorial prologue
+	~(current act 0) %% Don’t do this during the tutorial prologue
 	~(current act 4) %% Or the epilogue
 	(at most once) {
 		(show the current quip)
@@ -116,26 +116,26 @@
 	(exhaust) *(show the current quip)
 	(select quip #q-actchange)
 
-%% We also don't want new quips coming in a constant stream, so we have a couple of "null quips" in the rotation
+%% We also don’t want new quips coming in a constant stream, so we have a couple of “null quips” in the rotation
 %% null-1 has no lines and immediately replaces itself with a new one
 %% null-2 has one blank line before replacing itself
-%% Both of them unset their own visited flag so that they can be drawn unlimited times - which also means there's no edge case when no quips are available
+%% Both of them unset their own visited flag so that they can be drawn unlimited times - which also means there’s no edge case when no quips are available
 
 #q-null-1
 (quip *)
-(locked *) (current quip *) %% Don't pick it twice in a row
+(locked *) (current quip *) %% Don’t pick it twice in a row
 (* line)
 	(now) (* is unvisited)
 	(fail) %% Draw a new quip immediately
 
-%% We have enough quips now that I don't think we need this delay
+%% We have enough quips now that I don’t think we need this delay
 %% #q-null-2
 %% (quip *)
 %% (* line)
 %% 	(now) (* is unvisited)
 
 #q-actchange %% A few turns of silence when changing acts
-%% Does not have (quip $) because we don't want it selected at random
+%% Does not have (quip $) because we don’t want it selected at random
 (* line 1)
 
 (understand command [quipdata])

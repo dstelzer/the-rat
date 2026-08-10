@@ -23,8 +23,8 @@
 %% These declarations are merely hints to the backend and/or interpreter.
 
 %% Attributes can be ignored based on context. On the Z-machine backend, for
-%% instance, 'height' only has an effect on (status bar $) boxes, whereas
-%% 'width' and 'float' only affect (div $) boxes that are nested inside a
+%% instance, ‘height’ only has an effect on (status bar $) boxes, whereas
+%% ‘width’ and ‘float’ only affect (div $) boxes that are nested inside a
 %% (status bar $) box. The height and width may be specified in em/ch or %.
 
 (style class @status)
@@ -317,8 +317,8 @@
 (openable $Obj)			*(lockable $Obj)
 (plural $Obj)			*(pair $Obj)
 
-%% "Edison's Lament: No switch is ever in the right position."
-%% (From "The Grand List Of Console Role Playing Game Clichés")
+%% “Edison’s Lament: No switch is ever in the right position.”
+%% (From “The Grand List Of Console Role Playing Game Clichés”)
 %% Of course, you can override these defaults on an object-by-object basis:
 
 ((openable $) is closed)
@@ -688,7 +688,7 @@
 (interface (enter $<Room))
 
 (enter $Room)
-	(now) (don't mark the room as visited yet) %% We keep ($ is visited) unset until after (narrate entering $) has had its chance to describe things
+	(now) (don’t mark the room as visited yet) %% We keep ($ is visited) unset until after (narrate entering $) has had its chance to describe things
 	(move player to #in $Room)
 	(narrate entering $Room)
 	(mark the location as visited)
@@ -698,7 +698,7 @@
 (enter $Room by $Vehicle)
 	(now) ($Vehicle is #in $Room)
 	(now) ($Vehicle is handled)
-	(now) (don't mark the room as visited yet)
+	(now) (don’t mark the room as visited yet)
 	(update environment around player)
 	(narrate entering $Room)
 	(mark the location as visited)
@@ -715,8 +715,8 @@
 	(endif)
 
 (mark the location as visited)
-	(don't mark the room as visited yet) %% This flag prevents it only once
-	(now) ~(don't mark the room as visited yet)
+	(don’t mark the room as visited yet) %% This flag prevents it only once
+	(now) ~(don’t mark the room as visited yet)
 (mark the location as visited)
 	(if) (current room $Room) ($Room is unvisited) (player can see) (then)
 		(now) ($Room is visited)
@@ -733,12 +733,12 @@
 (interface (prevent entering $<Obj))
 
 (prevent entering $Obj)
-	(when $Obj won't accept actor #in)
+	(when $Obj won’t accept actor #in)
 
 (interface (narrate failing to leave $<Obj $<Dir))
 
 (narrate failing to leave $ $)
-	There doesn't appear to be an exit in that direction.
+	There doesn’t appear to be an exit in that direction.
 
 %% Extend the following predicate to simulate objects occupying multiple rooms:
 
@@ -926,7 +926,7 @@
 	(if) (implicit action wants direction) (then)
 		*(understand $Words as direction $O)
 	(else)
-		%% We don't know the correct policy, so fall back on 'non-all'.
+		%% We don’t know the correct policy, so fall back on ‘non-all’.
 		*(understand $Words as non-all object $O)
 	(endif)
 	(recover implicit action $Implicit $O into $Action)
@@ -958,10 +958,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Dealing with actions
 
-%% If the player enters multiple actions on one line ("get lamp. n"), they
+%% If the player enters multiple actions on one line (“get lamp. n”), they
 %% are parsed and carried out one at a time.
 
-%% A complex action ("get all") is broken down, and the simple actions are
+%% A complex action (“get all”) is broken down, and the simple actions are
 %% carried out in turn.
 
 %% A (simple) action may invoke preliminary actions (e.g. open the door
@@ -969,19 +969,19 @@
 
 %% After the preliminary actions (before) have been carried out, the action
 %% is potentially refused. Normally, actions that involve unreachable objects
-%% are refused; this is overridden by actions, such as look at, that don't
+%% are refused; this is overridden by actions, such as look at, that don’t
 %% require reachability.
 
-%% If the action wasn't refused, it will be handled by the (instead of $)
+%% If the action wasn’t refused, it will be handled by the (instead of $)
 %% predicate. This predicate can be overridden for special cases in the story.
 %% The default behaviour is to further break down handling into two stages:
 %% Prevent and perform.
-%% They are separate because it's convenient to be able to override
+%% They are separate because it’s convenient to be able to override
 %% e.g. what happens when you put the twig in the fire without also overriding
 %% the default checks, such as whether you are holding the twig.
 
 %% (prevent $) should print something and succeed if the player character
-%% tries, but there's a problem with completing the action. When prevent
+%% tries, but there’s a problem with completing the action. When prevent
 %% succeeds, time is advanced (tick), and further actions are stopped.
 
 %% If prevent fails, (perform $) is invoked to carry out the action. For the
@@ -991,12 +991,12 @@
 
 %% Note that the world model is updated after narrating. This allows the
 %% narrate rule to query the world as it used to be, before carrying out the
-%% operation, in order to say for instance 'you take the worm out of the can'.
+%% operation, in order to say for instance ‘you take the worm out of the can’.
 
 %% If something dramatic happens, an overriding rule should advance time if
-%% necessary and (stop). So if the player types "n. n", and the first action
+%% necessary and (stop). So if the player types “n. n”, and the first action
 %% implies opening a door, which implies unlocking the door, and the unlocking
-%% triggers a cutscene, then opening the door is cancelled, and the second "n"
+%% triggers a cutscene, then opening the door is cancelled, and the second “n”
 %% is also ignored.
 
 %% After a non-command action, time is advanced using (tick). This can be
@@ -1082,7 +1082,7 @@
 (prevent $)	(fail)
 
 (perform $Action)
-	You can't (describe action $Action).
+	You can’t (describe action $Action).
 	(tick) (stop)
 
 (after $)	(fail)
@@ -1098,7 +1098,7 @@
 		(report disallowed action $ComplexAction)
 		(stop)
 	(elseif) ([] is one of $ComplexAction) (then)
-		You're not aware of any such thing!
+		You’re not aware of any such thing!
 		(stop)
 	(else)
 		(strip decorations from $ComplexAction into $MultiAction)
@@ -1115,7 +1115,7 @@
 				~(room $Obj)
 			}
 		(then)
-			(notice player's $Obj)
+			(notice player’s $Obj)
 		(endif)
 		(if) *($List is one of $MultiAction) (nonempty $List) (then)
 			(exhaust) {
@@ -1166,7 +1166,7 @@
 	(par)
 
 %% Add rules to the following six predicates, and to
-%% '(action $ may group $ with $)', to deal with groups of objects.
+%% ‘(action $ may group $ with $)’, to deal with groups of objects.
 
 (group-refuse $MultiAction)
 	*(expand group-action $MultiAction into $Simple)
@@ -1315,7 +1315,7 @@
 (level 2 unlikely $Action)
 	(very very unlikely $Action)
 
-%% Current and nearby rooms are in scope, but they're rarely what the player
+%% Current and nearby rooms are in scope, but they’re rarely what the player
 %% means. The following rules ensure that most actions that mention rooms
 %% directly are considered unlikely.
 
@@ -1338,7 +1338,7 @@
 (inhibit next tick)
 	(now) (inhibiting next tick)
 
-%% When something dramatic happens in an action rule, we (stop) to cut off any further actions in the sequence. When something dramatic happens in an (on every tick) rule, we DON'T do that, because it would be weird to have only half a tick happen. Instead, we call this, which (stop)s once the tick is done.
+%% When something dramatic happens in an action rule, we (stop) to cut off any further actions in the sequence. When something dramatic happens in an (on every tick) rule, we DON’T do that, because it would be weird to have only half a tick happen. Instead, we call this, which (stop)s once the tick is done.
 (interface (stop after this tick))
 (stop after this tick)
 	(now) (stopping after this tick)
@@ -1364,12 +1364,12 @@
 	*(on every tick in $Room)
 
 (on every tick)
-	(if) (narrator's it is protected) (then)
-		(now) ~(narrator's it is protected)
-	(elseif) (player's it refers to $) (then)
-		%% The narrator's it is short-lived, except when
-		%% 'it' unambiguously refers to it.
-		(now) ~(narrator's it refers to $)
+	(if) (narrator’s it is protected) (then)
+		(now) ~(narrator’s it is protected)
+	(elseif) (player’s it refers to $) (then)
+		%% The narrator’s it is short-lived, except when
+		%% ‘it’ unambiguously refers to it.
+		(now) ~(narrator’s it refers to $)
 	(endif)
 
 (on every tick in $)		(fail)
@@ -1655,7 +1655,7 @@
 (its [$Single])			(its $Single)
 (itself [$Single])		(itself $Single)
 (is [$Single])			(is $Single)
-(isn't [$Single])		(isn't $Single)
+(isn’t [$Single])		(isn’t $Single)
 (has [$Single])			(has $Single)
 (does [$Single])		(does $Single)
 (s [$Single])			(s $Single)
@@ -1672,13 +1672,13 @@
 (its (nonempty $List))		their
 (itself (nonempty $List))	themselves
 (is (nonempty $List))		are
-(isn't (nonempty $List))	aren't
+(isn’t (nonempty $List))	aren’t
 (has (nonempty $List))		have
 (does (nonempty $List))		do
 (s (nonempty $List))
 (es (nonempty $List))
 (the (nonempty $List) is)	(the $List) are
-(it (nonempty $List) is)	they're
+(it (nonempty $List) is)	they’re
 (them (nonempty $List))		them
 
 (the full $Obj)
@@ -1706,7 +1706,7 @@
 			(if) (plural $Obj) (then)
 				that are
 			(else)
-				that's
+				that’s
 			(endif)
 			(name $Rel) (the full $Loc)
 		(endif)
@@ -1739,16 +1739,16 @@
 (its $Obj)		(current player $Obj) your
 (itself $Obj)		(current player $Obj) yourself
 (is $Obj)		(current player $Obj) are
-(isn't $Obj)		(current player $Obj) aren't
+(isn’t $Obj)		(current player $Obj) aren’t
 (has $Obj)		(current player $Obj) have
 (does $Obj)		(current player $Obj) do
 (that $Obj)		(current player $Obj) yourself
 (s $Obj)		(current player $Obj)
 (es $Obj)		(current player $Obj)
-(the $Obj is)		(current player $Obj) you're
-(it $Obj is)		(current player $Obj) you're
+(the $Obj is)		(current player $Obj) you’re
+(it $Obj is)		(current player $Obj) you’re
 (That $Obj)		(current player $Obj) You
-(That's $Obj)		(current player $Obj) You're
+(That’s $Obj)		(current player $Obj) You’re
 
 (a (proper $Obj))	(maybe link $Obj)
 (the (proper $Obj))	(tagged name $Obj)
@@ -1767,15 +1767,15 @@
 (them (plural $))	them
 (itself (plural $))	themselves
 (its (plural $))	their
-(it (plural $) is)	they're
+(it (plural $) is)	they’re
 (s (plural $))
 (es (plural $))
 (is (plural $))		are
-(isn't (plural $))	aren't
+(isn’t (plural $))	aren’t
 (has (plural $))	have
 (does (plural $))	do
 (that (plural $))	those
-(That's (plural $))	Those are
+(That’s (plural $))	Those are
 
 (a (an $Obj))		an (maybe link $Obj)
 
@@ -1783,19 +1783,19 @@
 (them (female $))	her
 (itself (female $))	herself
 (its (female $))	her
-(it (female $) is)	she's
+(it (female $) is)	she’s
 
 (it (male $))		he
 (them (male $))		him
 (itself (male $))	himself
 (its (male $))		his
-(it (male $) is)	he's
+(it (male $) is)	he’s
 
 (it (gender-neutral $))		they
 (them (gender-neutral $))	them
 (itself (gender-neutral $))	themself
 (its (gender-neutral $))	their
-(it (gender-neutral $) is)	they're
+(it (gender-neutral $) is)	they’re
 (it (gender-neutral $) has)	they have
 (it (gender-neutral $) does)	they do
 (it (gender-neutral $) s)
@@ -1810,7 +1810,7 @@
 (s $)			(no space) s
 (es $)			(no space) es
 (is $)			is
-(isn't $)		isn't
+(isn’t $)		isn’t
 (has $)			has
 (does $)		does
 (the $O is)		(the $O) (is $O)
@@ -1820,15 +1820,15 @@
 (it $O s)		(s $O)  %% To be used when subject is a pronoun
 (it $O es)		(es $O) %% (behaves differently for they/them)
 (that $)		that
-(That's $)		That's
+(That’s $)		That’s
 
-(doesn't $Obj)		(does $Obj) (no space) n't
-(it $Obj doesn't)	(it $Obj does) (no space) n't
+(doesn’t $Obj)		(does $Obj) (no space) n’t
+(it $Obj doesn’t)	(it $Obj does) (no space) n’t
 
 (tagged name $Obj) (name $Obj)
 (name $)
 
-%% Avoid a compiler warning, since the library doesn't use this:
+%% Avoid a compiler warning, since the library doesn’t use this:
 (interface (Its $<Obj))
 
 (Name $Obj)		(uppercase) (name $Obj)
@@ -1959,7 +1959,7 @@
 
 (dict (openable $Obj))
 	(if) ($Obj is open) (then)
-		%% With default actions, "open box" would look like a request
+		%% With default actions, “open box” would look like a request
 		%% to examine an already-open box, which is probably not
 		%% what the player intended.
 		(if) ~(default actions enabled) (then) open (endif)
@@ -1980,7 +1980,7 @@
 (dict $Obj)
 	(tagged name $Obj)
 
-%% The plural dict should only mention nouns, so the default rule can't
+%% The plural dict should only mention nouns, so the default rule can’t
 %% invoke (plural name $).
 
 (plural dict $)
@@ -2019,10 +2019,10 @@
 			(elseif) (male $Obj) (then)
 				(now) (him refers to $Obj)
 			(else)
-				(now) (narrator's it refers to $Obj)
-				(now) (narrator's it is protected)
-				(if) (player's it refers to $Obj) (then)
-					(now) ~(player's it refers to $)
+				(now) (narrator’s it refers to $Obj)
+				(now) (narrator’s it is protected)
+				(if) (player’s it refers to $Obj) (then)
+					(now) ~(player’s it refers to $)
 				(endif)
 			(endif)
 		(endif)
@@ -2035,12 +2035,12 @@
 		(endif)
 	(endif)
 
-(notice player's $Obj)
+(notice player’s $Obj)
 	(if) ~(current player $Obj) (then)
 
 		(if) (list $Obj) (then)
 			(if) ($Obj = [$Single]) (then)
-				(notice player's $Single)
+				(notice player’s $Single)
 			(else)
 				(now) (them refers to $Obj)
 			(endif)
@@ -2070,9 +2070,9 @@
 				(elseif) (male $Obj) (then)
 					(now) (him refers to $Obj)
 				(else)
-					(now) (player's it refers to $Obj)
-					(if) (narrator's it refers to $Obj) (then)
-						(now) ~(narrator's it refers to $)
+					(now) (player’s it refers to $Obj)
+					(if) (narrator’s it refers to $Obj) (then)
+						(now) ~(narrator’s it refers to $)
 					(endif)
 				(endif)
 			(endif)
@@ -2081,18 +2081,18 @@
 	(endif)
 
 (clear all pronouns)
-	(now) ~(player's it refers to $)
-	(now) ~(narrator's it refers to $)
+	(now) ~(player’s it refers to $)
+	(now) ~(narrator’s it refers to $)
 	(now) ~(her refers to $)
 	(now) ~(him refers to $)
 	(now) ~(them refers to $)
 
 (forget pronouns out of scope)
-	(if) (player's it refers to $Obj) ~($Obj is in scope) (then)
-		(now) ~(player's it refers to $)
+	(if) (player’s it refers to $Obj) ~($Obj is in scope) (then)
+		(now) ~(player’s it refers to $)
 	(endif)
-	(if) (narrator's it refers to $Obj) ~($Obj is in scope) (then)
-		(now) ~(narrator's it refers to $)
+	(if) (narrator’s it refers to $Obj) ~($Obj is in scope) (then)
+		(now) ~(narrator’s it refers to $)
 	(endif)
 	(if) (him refers to $Obj) ~($Obj is in scope) (then)
 		(now) ~(him refers to $)
@@ -2264,30 +2264,30 @@
 
 (when $ is out of sight)
 	~(player can see)
-	You can't see well enough to do that in the darkness.
+	You can’t see well enough to do that in the darkness.
 
 (when $Obj is out of sight)
 	~(player can see $Obj)
-	You can't see any such thing.
+	You can’t see any such thing.
 
 (when $Obj is already held)
 	(current player $Player)
 	($Obj is #heldby $Player)
-	You're already holding (the $Obj).
+	You’re already holding (the $Obj).
 
 (when $Obj is already worn)
 	(current player $Player)
 	($Obj is worn by $Player)
-	You're already wearing (the $Obj).
+	You’re already wearing (the $Obj).
 
-(when $O isn't directly held)
+(when $O isn’t directly held)
 	(current player $Actor)
 	~($O is #heldby $Actor)
-	You're not holding (the $O).
+	You’re not holding (the $O).
 
 (when $Obj is not here)
 	(not here $Obj)
-	(The $Obj) (isn't $Obj) here.
+	(The $Obj) (isn’t $Obj) here.
 
 (when (intangible $Obj) is out of reach)
 	(The $Obj is) intangible.
@@ -2295,14 +2295,14 @@
 (when $Obj is out of reach)
 	~(player can reach $Obj)
 	(if) (player can see $Obj) (then)
-		You can't reach (the $Obj).
+		You can’t reach (the $Obj).
 	(else)
-		(The $Obj) (isn't $Obj) here.
+		(The $Obj) (isn’t $Obj) here.
 	(endif)
 
 (when $O is part of something)
 	($O is #partof $Parent)
-	(That's $O) part of (the $Parent).
+	(That’s $O) part of (the $Parent).
 
 (when $O is held by someone)
 	($O is #heldby $Parent)
@@ -2317,7 +2317,7 @@
 	(if) (animate $Obj) (then)
 		(uppercase) (it $Obj is)
 	(else)
-		(That's $Obj)
+		(That’s $Obj)
 	(endif)
 	(if) (gender-neutral $Obj) (then)
 		%% Slightly awkward special case for singular they/them
@@ -2326,29 +2326,29 @@
 		fine where (it $Obj) (is $Obj).
 	(endif)
 
-(when ~(item $O) can't be taken)
-	You can't take (the $O).
+(when ~(item $O) can’t be taken)
+	You can’t take (the $O).
 
-~(when (supporter $O) won't accept #on)
+~(when (supporter $O) won’t accept #on)
 
-~(when (container $O) won't accept #in)
+~(when (container $O) won’t accept #in)
 
-(when $O won't accept $Rel)
+(when $O won’t accept $Rel)
 	(if) ($Rel is one of [#under #behind]) (then)
 		Putting things (name $Rel) (the $O) would achieve little.
 	(else)
-		You can't put things (name $Rel) (the $O).
+		You can’t put things (name $Rel) (the $O).
 	(endif)
 
-~(when (actor supporter $O) won't accept actor #on)
+~(when (actor supporter $O) won’t accept actor #on)
 
-~(when (actor container $O) won't accept actor #in)
+~(when (actor container $O) won’t accept actor #in)
 
-(when $O won't accept actor $Rel)
+(when $O won’t accept actor $Rel)
 	(if) ($Rel is one of [#under #behind]) (then)
 		Going (name $Rel) (the $O) would achieve little.
 	(else)
-		It's not possible to get (towards-name $Rel) (the $O).
+		It’s not possible to get (towards-name $Rel) (the $O).
 	(endif)
 
 (when $O is already $Rel $Dest)
@@ -2368,7 +2368,7 @@
 	(if) ($Obj is closed) (then)
 		(The $Obj is) closed.
 	(else)
-		(The $Obj) (doesn't $Obj) allow you to pass.
+		(The $Obj) (doesn’t $Obj) allow you to pass.
 	(endif)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2387,7 +2387,7 @@
 	(banner)
 	(try [look])
 
-%% When the game asks a disambiguating question ("Did you ..."), and the player
+%% When the game asks a disambiguating question (“Did you ...”), and the player
 %% types an unrecognized response, this needs to be parsed as a regular action
 %% instead. If this happens several times in a row, the heap would fill up with
 %% half-finished parsing attempts, and eventually overflow. To prevent this, we
@@ -2457,7 +2457,7 @@
 	*(repeat forever)
 	> (get input $Words)
 
-	%% '*' is by convention used by testers to put comments in a
+	%% ‘*’ is by convention used by testers to put comments in a
 	%% transcript. Ignore it and try again.
 	(if) ($Words = [\* | $]) (then)
 		(if) ~(transcript active) (then)
@@ -2516,7 +2516,7 @@
 	}
 
 (redraw status bar)
-	%% This predicate shouldn't fail.
+	%% This predicate shouldn’t fail.
 
 (status headline)
 	(location headline)
@@ -2580,7 +2580,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Banner and default metadata
 
-%% There is no formal requirement to print the banner, but it's appreciated
+%% There is no formal requirement to print the banner, but it’s appreciated
 %% and useful to the community and yourself.
 
 (banner)
@@ -2617,7 +2617,7 @@
 (story author or default)	(story author)
 (story author or default)	Anonymous
 
-%% Don't warn about querying these; however, this does not disable the warning
+%% Don’t warn about querying these; however, this does not disable the warning
 %% about them not being defined (for a sufficiently large story):
 
 (story title)		(fail)
@@ -2656,7 +2656,7 @@
 		\*\*\* (query $Message) \*\*\*
 		(if) (interpreter supports text alignment) (then)
 			(space 5)
-			%% Why the second (space 5)? So that if someone sets text-align: center for the Å-machine web interpreter, the initial (space 5) won't put it off-center again.
+			%% Why the second (space 5)? So that if someone sets text-align: center for the Å-machine web interpreter, the initial (space 5) won’t put it off-center again.
 		(endif)
 	}
 	(now) (game has ended)
@@ -2754,8 +2754,8 @@
 (global variable (last command was $))
 (global variable (implicit action is $))
 
-(global variable (player's it refers to $))
-(global variable (narrator's it refers to $))
+(global variable (player’s it refers to $))
+(global variable (narrator’s it refers to $))
 (global variable (her refers to $))
 (global variable (him refers to $))
 (global variable (them refers to $))
@@ -2819,7 +2819,7 @@
 %%	a list of objects (possibly decorated) [+ $Obj1 $Obj2 ...], or
 %%	an error code [], [,], [all]
 %% No output or other side effects are produced by the following rules.
-%% Policy/ExcludeList are ignored when there's just one matching object.
+%% Policy/ExcludeList are ignored when there’s just one matching object.
 %% Ambiguous expressions result in backtracking.
 
 (interface (understand $<Words as non-all object $>ObjList))
@@ -2874,7 +2874,7 @@
 
 (understand $Words as single object $Output preferably animate)
 	*(parse $Words as single object $Output {(animate $_)} [1])
-	%% [1] produces 'someone' instead of 'something' in error responses.
+	%% [1] produces ‘someone’ instead of ‘something’ in error responses.
 
 (understand $Words as object $Output preferably worn)
 	(current actor $Actor)
@@ -2906,9 +2906,9 @@
 	~($Obj is nested #heldby $)
 
 %% This predicate used to do something different if $Policy was an object
-%% Now it doesn't, because object policies caused obscure bugs for not much gain
+%% Now it doesn’t, because object policies caused obscure bugs for not much gain
 %% Instead, it just tests that the policy is bound to a list, because $ is used for the null policy
-%% (bound $) isn't enough to satisfy the compiler's checks, and (fully bound $) is too much, closures can have non-fully-bound inputs
+%% (bound $) isn’t enough to satisfy the compiler’s checks, and (fully bound $) is too much, closures can have non-fully-bound inputs
 (interface (verify object policy $Policy $<Obj))
 (verify object policy (nonempty $Policy) $Obj)
 	(query $Policy $Obj)
@@ -2984,7 +2984,7 @@
 	*(parse basic noun $Left as $LeftObj $Policy $AllAllowed)
 	*(parse noun list $Right as $RightObj $Policy $AllAllowed)
 	(if) ($RightObj = [$Head | $Tail]) (last $LeftObj $Head) (then)
-		%% ensure e.g. "black and white photo" is parsed as one thing
+		%% ensure e.g. “black and white photo” is parsed as one thing
 		(append $LeftObj $Tail $ObjList)
 	(else)
 		(append $LeftObj $RightObj $ObjList)
@@ -3029,9 +3029,9 @@
 
 (parse basic noun [it/that] as [$Obj] $ $)
 	{
-		(player's it refers to $Obj)
+		(player’s it refers to $Obj)
 	(or)
-		(narrator's it refers to $Obj)
+		(narrator’s it refers to $Obj)
 	}
 
 (parse basic noun [some] as [$Obj] $Policy $AllAllowed)
@@ -3099,7 +3099,7 @@
 	(filter $Words into $Filtered)
 	(nonempty $Filtered)
 	(collect $Obj)
-		%% catch expressions like 'open the eastern window'
+		%% catch expressions like ‘open the eastern window’
 		($Filtered = [$Head | $Tail])
 		(nonempty $Tail)
 		(parse direction [$Head] $Dir)
@@ -3328,7 +3328,7 @@
 %% Parser: Toplevel
 
 %% Parse and attempt each action in turn, and abort if one fails.
-%% That's because an action may modify the scope, which affects the parsing of
+%% That’s because an action may modify the scope, which affects the parsing of
 %% subsequent actions.
 
 (global variable (current actor $))
@@ -3397,7 +3397,7 @@
 			(now) (last command was $GoodCmd)
 			(rewrite $GoodCmd into $ActualWords)
 		(else)
-			(div @meta) { \( Sorry, I don't know what to fix. \) }
+			(div @meta) { \( Sorry, I don’t know what to fix. \) }
 			(stop)
 		(endif)
 	(else)
@@ -3422,11 +3422,11 @@
 		%% We were unable to parse the action.
 
 		%% Occasionally people like to separate actions by
-		%% commas or 'AND', but this is problematic. We can
+		%% commas or ‘AND’, but this is problematic. We can
 		%% only deal with it as a last resort, because in order
 		%% to parse the part after the separator, we need to
 		%% have the right scope, and therefore we first have to
-		%% execute what's to the left of the separator.
+		%% execute what’s to the left of the separator.
 
 		(if)
 			*(split $ActualWords by [, and]
@@ -3455,18 +3455,18 @@
 (parse partial action $Words)
 	%% The multi-query inside the if-condition is unnecessary
 	%% (if-conditions are only evaluated once), but the compiler is able to
-	%% opmitize predicates better if they're consistently queried in the
+	%% opmitize predicates better if they’re consistently queried in the
 	%% same mode.
 
 	(now) (allowing parse errors)
 	(if) *(understand $Words as $BadAction) (then)
 		(if) ([all] is one of $BadAction) (then)
 			(div @meta) {
-				\( The word "all" is not allowed in that context. Please be more specific. \)
+				\( The word “all” is not allowed in that context. Please be more specific. \)
 			}
 		(elseif) ([,] is one of $BadAction) (then)
 			(div @meta) {
-				\( You're not allowed to use multiple objects in that
+				\( You’re not allowed to use multiple objects in that
 				context. Please do it step by step. \)
 			}
 		(else)
@@ -3477,7 +3477,7 @@
 			}
 		(endif)
 	(else)
-		(div @meta) { \( I'm sorry, I didn't understand what you wanted to do. \) }
+		(div @meta) { \( I’m sorry, I didn’t understand what you wanted to do. \) }
 	(endif)
 	(stop)
 
@@ -3590,7 +3590,7 @@
 	(recover implicit action $Template $Player into $Result)
 
 (disambiguate by object name $Words $Template $ObjList $Result)
-	%% Since the player was given an explicit list of '(the full $)'
+	%% Since the player was given an explicit list of ‘(the full $)’
 	%% descriptions, we have to match against those, in addition to the
 	%% normal dict rules.
 
@@ -3795,12 +3795,12 @@
 	(into $NextGen)
 	(elaborate paths from $NextGen)
 
-%% Rooms have no locations, so '($ has relation $)' is unused for rooms.
+%% Rooms have no locations, so ‘($ has relation $)’ is unused for rooms.
 %% We can repurpose it for path finding, to save RAM:
 
 @(last hop before $A is $B) ($A has relation $B)
 
-%% Reconstruct the full path from the 'last hop' links:
+%% Reconstruct the full path from the ‘last hop’ links:
 
 (build path from $Start to $End $SoFar $Path)
 	(last hop before $End is $Last)
@@ -4168,8 +4168,8 @@
 %%     notice, this list of conditions and the following disclaimer in the
 %%     documentation and/or other materials provided with the distribution.
 %%
-%%     THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
-%%     IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+%%     THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS
+%%     IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
 %%     TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
 %%     PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
 %%     HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
@@ -4183,7 +4183,7 @@
 %% This license is intended to apply to the Dialog compiler and debugger and
 %% the source code of the standard libraries. Any time those components are
 %% distributed, this copyright notice should be attached. But it is not meant
-%% to limit what the compiler's output can be used for, even for projects that
+%% to limit what the compiler’s output can be used for, even for projects that
 %% include the standard libraries. To make this explicit, the project is ALSO
 %% released under a modified two-clause BSD license, which is exactly the same
 %% as the above but adds this exception:

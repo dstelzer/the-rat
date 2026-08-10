@@ -58,7 +58,7 @@
 	}
 
 (butlerstick inlay)
-	(div @chamstick) { %% Takes Chameleon's place
+	(div @chamstick) { %% Takes Chameleon’s place
 		(space 2) (#butler dir #north) (space 2) (line)
 		(#butler dir #west) C (#butler dir #east) (line)
 		(space 2) (#butler dir #south) (space 2)

@@ -16,7 +16,7 @@
 (from * go #east to #gild1)
 (* is available in act 4)
 
-(name *) servants' storage
+(name *) servants’ storage
 (look *)
 	~(#butler is in room *)
 	The room is dark and I cannot see much. Someone will need to open the door.
@@ -37,7 +37,7 @@
 (* is #in #serv1)
 (appearance *)
 	(* is pristine)
-	(#butler is #in #serv1) %% Don't show it when just clicking the room, it has to be visited first
+	(#butler is #in #serv1) %% Don’t show it when just clicking the room, it has to be visited first
 	The butler is inclining his head slightly toward a small ({data drive}).
 (appearance *)
 	(* is handled)
@@ -48,7 +48,7 @@
 	(if) (* is pristine) (then)
 		The other side cannot be seen from its current position.
 	(else)
-		The other side is marked with a sticky note: "PyramidAI actual strategy plans final_FINAL TOP SECRET CONFIDENTIAL encrypted 1024 bit DO NOT DUPLICATE".
+		The other side is marked with a sticky note: “PyramidAI actual strategy plans final_FINAL TOP SECRET CONFIDENTIAL encrypted 1024 bit DO NOT DUPLICATE”.
 	(endif)
 
 (drive password) p2F5UGN5uhynqP==
@@ -58,12 +58,12 @@
 (from * go #west to #gild2)
 (* is available in act 4)
 
-(name *) servants' control room
+(name *) servants’ control room
 (look *)
 	~(#butler is in room *)
 	The room is dark and I cannot see much. Someone will need to open the door.
 (look *)
-	This room must be intended to coordinate dozens of staff at a time. Monitors track every inch of the building, from Jackdaw in the basement to the guests in the dining room. A ({radio system}) delivers alerts from each of them to the employees' wearable electronics. And in case of emergency, an ({intercom}) can transmit to anywhere in the house.
+	This room must be intended to coordinate dozens of staff at a time. Monitors track every inch of the building, from Jackdaw in the basement to the guests in the dining room. A ({radio system}) delivers alerts from each of them to the employees’ wearable electronics. And in case of emergency, an ({intercom}) can transmit to anywhere in the house.
 
 #monitors
 (name *) monitors
@@ -72,7 +72,7 @@
 (* is #in #serv2)
 (descr *) This must be how the butler tracked our distractions. If he had been overseeing a proper household staff, we would have stood no chance.
 (after [examine *])
-	(div @jackdaw) { you don't have to sound so admiring about it }
+	(div @jackdaw) { you don’t have to sound so admiring about it }
 
 #intercom
 (name *) intercom system
@@ -102,7 +102,7 @@
 (* is available in act 1/2/3/4)
 
 (name *) trophy room
-(look *) The gold walls here are mostly covered by steel: ({weapons}) of every shape and kind, trophies of the Count's defeated enemies. The room stretches two stories high and the upper reaches are lost in shadow.
+(look *) The gold walls here are mostly covered by steel: ({weapons}) of every shape and kind, trophies of the Count’s defeated enemies. The room stretches two stories high and the upper reaches are lost in shadow.
 
 #weapons
 (name *) weapons
@@ -179,7 +179,8 @@
 (look *) Tall, austere, and dimly-lit—everything a chapel should be. A massive ({pipe organ}) dominates the end of the room and the ({bones}) of countless Vespertilion ancestors look down from niches along the walls.
 
 #bones
-(name *) ancestors' bones
+(name *) ancestors’ bones
+(dict *) ancestors'
 (* is #in #gran1)
 (descr *) Sightless eyes stare down.
 
@@ -270,7 +271,7 @@
 	(div @chameleon) { The Count is likely moving around in the Granite Wing. }
 	(div @jackdaw) { is he harder to avoid than the butler? }
 	(div @spider) { He should not be, no. }
-	(div @chameleon) { But if he's alerted to sabotage before the party starts, he might change his plans. }
+	(div @chameleon) { But if he’s alerted to sabotage before the party starts, he might change his plans. }
 	(div @jackdaw) { point }
 
 #glas1 %% has quip in quips.dg
@@ -288,7 +289,7 @@
 (plural *)
 (* is #in #glas1)
 (descr *)
-	Servers produce heat, and these pipes are supposed to move that heat out of the building and make it someone else's problem. The wall thermometer reads 15 Celsius, so it seems to be working
+	Servers produce heat, and these pipes are supposed to move that heat out of the building and make it someone else’s problem. The wall thermometer reads 15 Celsius, so it seems to be working
 	(if) (* is broken) (then)
 		(no space)—the pool of chemicals on the floor notwithstanding
 	(endif)
@@ -336,7 +337,7 @@
 	(div @chameleon) { LLM is likely moving around in the Glass Wing. }
 	(div @jackdaw) { is she harder to avoid than the butler? }
 	(div @spider) { She should not be, no. }
-	(div @chameleon) { But if she's alerted to sabotage before the party starts, she might change her plans. }
+	(div @chameleon) { But if she’s alerted to sabotage before the party starts, she might change her plans. }
 	(div @jackdaw) { point }
 
 #grangild
@@ -418,7 +419,7 @@
 	~(current act 1)
 	The electronics have been locked down to prevent any further sabotage.
 (descr *)
-	No entertainer has been booked for tonight, but the electronics in the piano claim they can replicate any virtuoso's finest performance.
+	No entertainer has been booked for tonight, but the electronics in the piano claim they can replicate any virtuoso’s finest performance.
 	(if) (* is broken) (then)
 		They are currently replicating something else entirely.
 	(endif)
@@ -488,10 +489,10 @@
 (room *)
 (from * go #north to #dine1)
 (from * go #east to #garden2)
-(origin *) %% Might as well set our coordinate system's origin here
+(origin *) %% Might as well set our coordinate system’s origin here
 (* is available in act 0)
 (default butler room for act 0 is *)
-	~(#rat is in room *) %% Don't let the player get completely trapped
+	~(#rat is in room *) %% Don’t let the player get completely trapped
 
 (name *) terrace
 (look *) The dining patio to the north opens into a wide flagstoned terrace, sloping down to the garden path to the east.
@@ -511,11 +512,11 @@
 (from * go #east to #garden3)
 (* is available in act 0)
 (default butler room for act 0 is *)
-	(#rat is in room #garden1) %% Don't let the player get completely trapped
+	(#rat is in room #garden1) %% Don’t let the player get completely trapped
 
 %% south walk
 (name *) south walk
-(look *) The path meanders back and forth between tall ({hedges}), making sure there's no line of sight between the terrace to the west and the garden proper to the east.
+(look *) The path meanders back and forth between tall ({hedges}), making sure there’s no line of sight between the terrace to the west and the garden proper to the east.
 
 #hedges
 (name *) hedges
@@ -539,7 +540,7 @@
 (* is #in #garden3)
 (sabotage target *)
 (descr *)
-	It's shaped like a tiny mountain in the middle of the garden, with water cascading down on all sides.
+	It’s shaped like a tiny mountain in the middle of the garden, with water cascading down on all sides.
 	(if) (* is broken) (then)
 		And also currently spraying a dozen feet in the air.
 	(endif)

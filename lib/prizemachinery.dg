@@ -2,24 +2,24 @@
 %% You get a prize based on how many turns of distraction you bought her
 %% So the purpose of this file is to determine the appropriate prize for a given number of turns: the most valuable available prize whose value is ≤ that number of turns
 
-%% Once a prize is earned, it will be marked "handled"; a prize that has not been earned yet is "pristine"
+%% Once a prize is earned, it will be marked “handled”; a prize that has not been earned yet is “pristine”
 %% Each prize also provides a few predicates:
 
-%% Marks that it's a prize
+%% Marks that it’s a prize
 (interface (prize $>))
 
-%% Which act it's available in
+%% Which act it’s available in
 (interface ($>Prize available in act $>Act))
 
 %% How much time it takes to steal
 (interface ($>Prize requires $>Time turns))
 
-%% How much money it's worth, in thousands
+%% How much money it’s worth, in thousands
 (interface ($<Prize is worth $>Money thousand dollars))
 
 %% An optional conversation printed after stealing it
 (interface (prize conversation about $<Prize))
-(prize conversation about $) %% Nothing by default, don't fail
+(prize conversation about $) %% Nothing by default, don’t fail
 
 %% We also need some utility predicates to make the rest of this work
 
@@ -89,6 +89,6 @@
 	(now) ~(heist timer $)
 	(heist succeeds with result $Total)
 
-%% Don't link these names since they can't be examined
+%% Don’t link these names since they can’t be examined
 (maybe link (prize $Obj))
 	(tagged name $Obj)

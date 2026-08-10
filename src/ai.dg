@@ -1,18 +1,18 @@
-%% The butler's AI - your main opponent for the purposes of the game!
+%% The butler’s AI - your main opponent for the purposes of the game!
 
 %% This is how it generally works:
 %% Every turn, he builds a list of all the things that need his attention
 %% If that list is empty, he goes back to his default behavior for that section
 %% Otherwise, he calculates which thing on the list will be fastest to deal with
 %% Then he takes one step toward that goal
-%% The current goal is stored in (current goal $), and whenever the state of that variable changes, it's reported
+%% The current goal is stored in (current goal $), and whenever the state of that variable changes, it’s reported
 
 (global variable (current goal $))
 (update current goal to $New)
 	(current goal $New)
-	%% It's already set, no need to change it
+	%% It’s already set, no need to change it
 (update current goal to []) %% Something went wrong!
-	ERROR: Tried to set the butler's current goal to \[\]!
+	ERROR: Tried to set the butler’s current goal to \[\]!
 (update current goal to $New)
 	(now) (current goal $New)
 	(div @spider) {
@@ -52,12 +52,12 @@
 	(now) (butler is distracted)
 
 %% How long will it take to deal with something?
-%% If it requires a tool he is not carrying, it's the sum of:
+%% If it requires a tool he is not carrying, it’s the sum of:
 %%   - The distance from his location to the tool
 %%   - One turn to grab the tool
-%%   - The distance from the tool's location to the problem
+%%   - The distance from the tool’s location to the problem
 %%   - One turn to fix the problem
-%% Otherwise, it's the sum of:
+%% Otherwise, it’s the sum of:
 %%   - The distance from his location to the problem
 %%   - One turn to fix the problem
 
@@ -92,7 +92,7 @@
 %% If this succeeds, set (avoiding occupied rooms) and use that distance
 %% Otherwise, the equal-weight distance is calculated, *without* avoiding occupied rooms
 %% Then unset (avoiding occupied rooms) and use that distance
-%% Whenever the state of (avoiding occupied rooms) changes, it's reported (see the next section for this part)
+%% Whenever the state of (avoiding occupied rooms) changes, it’s reported (see the next section for this part)
 
 (avoiding occupied rooms)
 (tentatively avoiding occupied rooms)
@@ -168,7 +168,7 @@
 
 ~(viable room $Room)
 	~(in bounds for this act $Room)
-(viable room $) %% All in-bounds rooms are viable when we're not worried about going past people
+(viable room $) %% All in-bounds rooms are viable when we’re not worried about going past people
 	~(tentatively avoiding occupied rooms)
 (viable room $Room) %% Otherwise, avoid the party guests, including Chameleon
 	~(#crowd is in room $Room)
@@ -177,10 +177,10 @@
 
 %% Now, once we have a goal, how do we approach it?
 %% Pretty much the same way we calculated the distances up above!
-%% We also record the path we're currently using for the user interface
+%% We also record the path we’re currently using for the user interface
 
-(global variable (butler's current path $))
-(calculate and store the butler's path)
+(global variable (butler’s current path $))
+(calculate and store the butler’s path)
 	(current goal $Goal)
 	(#butler is in room $Start)
 	
@@ -220,12 +220,12 @@
 			(fail)
 		}
 		(append $Path $Path2 $TotalPath)
-		(set butler's path to $TotalPath)
+		(set butler’s path to $TotalPath)
 	(else)
-		(set butler's path to $Path)
+		(set butler’s path to $Path)
 	(endif)
-(calculate and store the butler's path) %% Don't fail
-	(now) ~(butler's current path $) %% Just clear the variable
+(calculate and store the butler’s path) %% Don’t fail
+	(now) ~(butler’s current path $) %% Just clear the variable
 
 (take one step toward the current goal)
 	(butler is distracted) %% Set this flag to delay him for one turn
@@ -287,7 +287,7 @@
 			~(tentatively avoiding occupied rooms)
 			(avoiding occupied rooms)
 		(then) %% Avoiding before, not avoiding now
-			(div @spider) { The butler seems to be evaluating routes. He straightened his shoulders—he's preparing to go past the guests. Now moving from (the $Start) to (the $Next) . }
+			(div @spider) { The butler seems to be evaluating routes. He straightened his shoulders—he’s preparing to go past the guests. Now moving from (the $Start) to (the $Next) . }
 			(now) ~(avoiding occupied rooms)
 		(else)
 			(div @spider) { The butler is moving from (the $Start) to (the $Next) . }
@@ -334,10 +334,10 @@
 	(endif)
 @(butler alternator is unset) ~(butler alternator is set)
 
-(set butler's path to $Dirs)
+(set butler’s path to $Dirs)
 	(#butler is in room $Start)
 	(convert direction list $Dirs to room list $Path starting at $Start)
-	(now) (butler's current path $Path)
+	(now) (butler’s current path $Path)
 
 (convert direction list [] to room list [] starting at $)
 (convert direction list [$DHead|$DTail] to room list [$Next|$RTail] starting at $Start)
@@ -356,5 +356,5 @@
 (on every tick)
 	~(current act 4) %% During this act, we control the butler directly
 	(exhaust) (search for new goals)
-	(exhaust) (calculate and store the butler's path)
+	(exhaust) (calculate and store the butler’s path)
 	(exhaust) (take one step toward the current goal)

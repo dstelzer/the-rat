@@ -1,4 +1,4 @@
-%% The whole "actions" section of stdlib.dg was excised and moved to actions_base.dg
+%% The whole “actions” section of stdlib.dg was excised and moved to actions_base.dg
 %% Then the parts that are wanted for this game were moved over here
 %% This means:
 %% - TELL (Fox)
@@ -102,7 +102,7 @@
 (command [undo])
 (perform [undo])
 	(if) ~(interpreter supports undo) (then)
-		(div @meta) { This interpreter doesn't support undo. }
+		(div @meta) { This interpreter doesn’t support undo. }
 	(elseif) (undo) (then)
 		(div @meta) { Failed to undo last turn. }
 	(else)
@@ -179,7 +179,7 @@
 	*(understand $Right as object $Obj preferably child of $Actor)
 	(current player $Player)
 
-%% The rule for "name comma action" is further down in the file.
+%% The rule for “name comma action” is further down in the file.
 
 (unlikely [tell $Addressee to | $])
 	~(animate $Addressee)
@@ -220,7 +220,7 @@
 	(heist in progress)
 	~(long wait unlocked)
 	(div @chameleon) { I imagine there will be quite a lot of waiting while Jackdaw does her work. }
-	(div @spider) { That is true. I suppose we should make it clear whether the intent is to wait for one minute or to wait until Jackdaw's heist is complete. }
+	(div @spider) { That is true. I suppose we should make it clear whether the intent is to wait for one minute or to wait until Jackdaw’s heist is complete. }
 	(div @jackdaw) { just use different words (line) wait vs long wait }
 	(div @spider) { I suppose that is as good a convention as any. We can adopt it. }
 	(now) (long wait unlocked)
@@ -246,7 +246,7 @@
 	(div @spider) { But there is no heist in progress. }
 
 (perform [long wait])
-	(now) (long wait unlocked) %% In case the dialogue hasn't happened yet
+	(now) (long wait unlocked) %% In case the dialogue hasn’t happened yet
 	(div @spider) { We shall wait. }
 	*(repeat forever)
 	(hr)
@@ -269,8 +269,8 @@
 
 %% These are generally the ones to override/extend.
 
-%% The default rules for the aforementioned actions invoke '(prevent entering
-%% $Room)' and '(narrate entering $Room)'. These predicates can of course also
+%% The default rules for the aforementioned actions invoke ‘(prevent entering
+%% $Room)’ and ‘(narrate entering $Room)’. These predicates can of course also
 %% be overridden. Thus, entering a room is not an action of its own, but is
 %% an inherent part of leaving a room.
 
@@ -444,7 +444,7 @@
 
 (prevent [inventory/take/drop | $])
 	(current player #chameleon)
-	(div @chameleon) { I'm afraid this costume gives me very little opportunity for messing with anything. I'm here to use my words, not my hands. }
+	(div @chameleon) { I’m afraid this costume gives me very little opportunity for messing with anything. I’m here to use my words, not my hands. }
 
 (perform [inventory])
 	(current player #butler)
@@ -456,7 +456,7 @@
 
 (prevent [take/drop | $])
 	(current player #butler)
-	(div @spider) { Your meaning seems obvious, but apparently those are not the right words. Try "attend to" something instead. }
+	(div @spider) { Your meaning seems obvious, but apparently those are not the right words. Try “attend to” something instead. }
 
 %% HIDE (not useful)
 
@@ -496,7 +496,7 @@
 
 (prevent [proceed])
 	~(current goal $)
-	(div @jackdaw) { if the butler looks at the cameras now he'll see me right away (line) make a distraction or something first }
+	(div @jackdaw) { if the butler looks at the cameras now he’ll see me right away (line) make a distraction or something first }
 
 (perform [proceed])
 	(start the heist)
@@ -589,9 +589,9 @@
 	(else) %% No prizes left for that timespan :(
 		{ (minimum time for a prize in $Act is $MinTime) (or) ($MinTime = 9999) }
 		(div @jackdaw) { ------ (line) couldnt grab anything (line) the easy stuffs gone now, i need more time (line) like $MinTime minute(s $MinTime) at least }
-		%% 9999 shouldn't happen but it's a funny default if this slips through
+		%% 9999 shouldn’t happen but it’s a funny default if this slips through
 	(endif)
-	(now) (no quip this turn) %% There's been enough conversation that we don't want an extra quip on top of it
+	(now) (no quip this turn) %% There’s been enough conversation that we don’t want an extra quip on top of it
 
 %% Overload these predicates for number -> noun as well as noun -> verb
 %% Someday I want to put this into the standard library proper
@@ -632,7 +632,7 @@
 
 (assess the value of $N)
 	that means ($N thousand dollars divided by five) each (line)
-	we're each getting
+	we’re each getting
 	*(count down from $N into $K)
 	(what $K thousand total can buy)
 
@@ -693,7 +693,7 @@
 
 (describe room $Room)
 	(select)
-		Looking at Rat's location...
+		Looking at Rat’s location...
 	(or)
 	(stopping)
 	(div @roomheader) { (span @bold) (room header $Room) }
@@ -717,7 +717,7 @@
 	(nonempty $Filtered)
 	(determine object $Room)
 		*(room $Room)
-		%% Don't require visited
+		%% Don’t require visited
 	(from words)
 		*(dict $Room)
 	(matching all of $Filtered)
@@ -745,7 +745,7 @@
 (grammar [examine/x/watch/describe/check/look/l/view [object]] for [examine $])
 (grammar [look/l at [object]] for [examine $])
 
-~(refuse [examine $]) %% Don't require presence, much less touch - that's a change from the default
+~(refuse [examine $]) %% Don’t require presence, much less touch - that’s a change from the default
 
 (perform [examine ~(room $Obj)])
 	(div @spider) {
@@ -771,7 +771,7 @@
 
 (action [examine $] is valid for #rat/#chameleon/#spider)
 (action [examine $] is valid for #butler) (butler has the earpiece)
-(unlikely [examine $]) (current player #butler) %% Avoid disambiguation with "a tray"
+(unlikely [examine $]) (current player #butler) %% Avoid disambiguation with “a tray”
 
 (add $Obj to scope)
 	*(in bounds for this act $Room)
@@ -812,13 +812,13 @@
 
 (prevent [mingle])
 	(people are following)
-	(div @chameleon) { As much as I love hearing your voice, darling, you don't have to tell me twice. They're hanging on my every word. }
+	(div @chameleon) { As much as I love hearing your voice, darling, you don’t have to tell me twice. They’re hanging on my every word. }
 	(div @jackdaw) { what voice this is all happening in text }
 
 (prevent [mingle])
 	(#chameleon is in room $Room)
 	~(#crowd is in room $Room)
-	(div @chameleon) { I would love nothing more, darling, but I'm afraid there is nobody else around to mingle with. I'll need to return to the party first. }
+	(div @chameleon) { I would love nothing more, darling, but I’m afraid there is nobody else around to mingle with. I’ll need to return to the party first. }
 
 (perform [mingle])
 	(div @chameleon) {
@@ -829,7 +829,7 @@
 		(stopping)
 		your wish is my command. Give me just a moment to slip into the conversation
 		(select)
-			and they'll follow me wherever I go
+			and they’ll follow me wherever I go
 		(or)
 		(stopping)
 		.
@@ -847,13 +847,13 @@
 (prevent [disengage])
 	(people are not following)
 	(if) (#chameleon is in room $Room) (#crowd is in room $Room) (then)
-		(div @chameleon) { Consider it done. I'm at the edge, ready to slip away. }
+		(div @chameleon) { Consider it done. I’m at the edge, ready to slip away. }
 	(else)
-		(div @chameleon) { Unless you'd like me to turn off the earpiece, dear, there's nothing for me to disengage from. }
+		(div @chameleon) { Unless you’d like me to turn off the earpiece, dear, there’s nothing for me to disengage from. }
 	(endif)
 
 (perform [disengage])
-	(div @chameleon) { No sooner said than done. I'm all yours again. }
+	(div @chameleon) { No sooner said than done. I’m all yours again. }
 	(now) (people are not following)
 
 (action [disengage] is valid for #chameleon)
@@ -938,13 +938,13 @@
 	(current player #butler)
 	(div @spider) { The butler is moving (name $Dir) . }
 
-%% Since we cut out a bunch of stdlib machinery, we need to silence some compiler warnings here too; none of these are ever queried so they'll be cut by dead code elimination
+%% Since we cut out a bunch of stdlib machinery, we need to silence some compiler warnings here too; none of these are ever queried so they’ll be cut by dead code elimination
 (interface (when $< is already held))
 (interface (when $< is already worn))
-(interface (when $< isn't directly held))
+(interface (when $< isn’t directly held))
 (interface (when $< is part of something))
 (interface (when $< is held by someone))
 (interface (when $< is worn by someone))
 (interface (when $< is fine where it is))
-(interface (when $< can't be taken))
+(interface (when $< can’t be taken))
 (interface (when $< is $< $<))
