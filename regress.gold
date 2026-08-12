@@ -1620,8 +1620,8 @@ Quinn: A good question! You don’t want to cannibalize your own market, now, do
 you?
 
 Tension: The Gothenburg Gazette: your only source for the news of the day! New
-Gothenburg Post announces new focus on market deregulation and personal
-freedom! Channel 3 pivots to non-stop reruns of TWILIGHT SWORDFIGHT, everyone’s
+Gothenburg Post announces new focus on market deregulation and libertarian
+ideals! Channel 3 pivots to non-stop reruns of TWILIGHT SWORDFIGHT, everyone’s
 favorite fantasy sitcom! KBAT Radio, bringing you the best of the 1930s, every
 night! Tension Media—we have something for everyone!
 
@@ -2577,8 +2577,9 @@ A battleaxe has come loose and is now swinging around at neck height.
 The butler is assessing—looking at the weapons now.
 
 Quip deck: [#q-2-office #q-2-malatesta #q-2-spider #q-3-vault #q-3-flirting #q-
-3-constantine #q-3-tension #q-3-llm #q-3-count #q-null-1]
-Chose #q-2-office
+3-constantine #q-3-tension #q-3-llm #q-3-count #q-3-constantine-solo #q-3-
+malatesta-solo #q-3-llm-solo #q-3-tension-solo #q-3-count-solo #q-null-1]
+Chose #q-3-constantine
 
                                     {R}-(B)     
                                      |   |      
@@ -2602,10 +2603,15 @@ to the north.
 
 The butler is picking up the curtain rod.
 
-The office is smart. Automated. But why? The automation is for what?
+Chameleon: Constantine! It’s so good to see you again; it’s been far too long!
+How has the mining business been going?
 
-Nothing especially useful, as far as I can tell. The mansion still relies on
-the staff for all the actual labor.
+Quinn: Ah, yes! Miss...Alias, was it? I’m afraid most of the mining has moved
+overseas, but there are plenty more investments where that one came from, eh?
+It’s all in manufacturing now! Manufacturing and industry.
+
+Chameleon: Alisa, actually, but yes. I heard about what happened in Rockbrook.
+So unfortunate.
 
                                     {*}-(B)     
                                      |   |      
@@ -2627,6 +2633,15 @@ the Glass Wing to the east clash with the too-shiny ornaments of the Gilded
 Wing to the north.
 
 The butler is moving from the gold-plated bathroom to the trophy room.
+
+Quinn: Rockbrook, hm? Well, yes...yes, truly unfortunate, that. A tragedy,
+really.
+
+Chameleon: Almost a thousand fatalities.
+
+Quinn: That was the number, yes. A tragic accident, absolutely tragic. And just
+think, if those miners hadn’t gone on strike, they might not have ended up all
+sealed in the mine when it caught fire.
 
                                     {B}-(*)     
                                      |   |      
@@ -2652,9 +2667,15 @@ The butler is swinging a curtain rod with remarkable agility, trying to parry
 the battleaxe and get its motion under control. Eventually he manages to block
 its edge and push it carefully back up onto the pegs.
 
-Quip deck: [#q-2-malatesta #q-2-spider #q-3-vault #q-3-flirting #q-3-
-constantine #q-3-tension #q-3-llm #q-3-count #q-null-1]
-Chose #q-3-constantine
+Chameleon: And yet doesn’t seem to have taken long to replace them.
+
+Quinn: Oh no, not long, not long at all. Another crew was ready in the next
+town over and business kept on as usual. Silver lining to every cloud, eh?
+
+Chameleon: That’s one way of putting it.
+
+Quinn: Yes, well, I try not to focus too much on the past. Keep an eye to the
+future, that’s what I always say!
 
                                     (B)-(R)     
                                      |   |      
@@ -2676,16 +2697,6 @@ And water is currently spraying halfway across the room. Good job.
 
 The butler is assessing—turning to the toilet.
 
-Chameleon: Constantine! It’s so good to see you again; it’s been far too long!
-How has the mining business been going?
-
-Quinn: Ah, yes! Miss...Alias, was it? I’m afraid most of the mining has moved
-overseas, but there are plenty more investments where that one came from, eh?
-It’s all in manufacturing now! Manufacturing and industry.
-
-Chameleon: Alisa, actually, but yes. I heard about what happened in Rockbrook.
-So unfortunate.
-
                                     (B)-{R}     
                                      |   |      
                                 ( )-( )-( )-( ) 
@@ -2699,7 +2710,7 @@ Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
 Chameleon: [<[chameleon , north] north>], [<[chameleon , east] east>],
 [<[chameleon , west] west>]; [<[chameleon , disengage] disengage>]
 > s
-It is moving.
+It goes.
 
 Glass-gilded passage
 Four corridors join here at a small hub, where the sharp-edged rectangles of
@@ -2708,14 +2719,11 @@ Wing to the north.
 
 The butler is putting down the curtain rod.
 
-Quinn: Rockbrook, hm? Well, yes...yes, truly unfortunate, that. A tragedy,
-really.
-
-Chameleon: Almost a thousand fatalities.
-
-Quinn: That was the number, yes. A tragic accident, absolutely tragic. And just
-think, if those miners hadn’t gone on strike, they might not have ended up all
-sealed in the mine when it caught fire.
+Quip deck: [#q-2-office #q-2-malatesta #q-2-spider #q-3-vault #q-3-flirting #q-
+3-tension #q-3-llm #q-3-count #q-3-constantine-solo #q-3-constantine-solo #q-3-
+constantine-solo #q-3-malatesta-solo #q-3-llm-solo #q-3-tension-solo #q-3-
+count-solo #q-3-count-solo #q-3-count-solo #q-null-1]
+Chose #q-3-llm-solo
 
                                     (B)-{*}     
                                      |   |      
@@ -2737,15 +2745,22 @@ all enmeshed in a web of [<coolant pipes>].
 
 The butler is picking up the newspaper.
 
-Chameleon: And yet doesn’t seem to have taken long to replace them.
+Tension: Ms Meresankh! Our readers want to know: what can PyramidAI be used
+for?
 
-Quinn: Oh no, not long, not long at all. Another crew was ready in the next
-town over and business kept on as usual. Silver lining to every cloud, eh?
+Luna: Thanks to our new state-of-the-art neural networks, PyramidAI can be used
+for all sorts of purposes! From childcare to legal advice, there is nothing it
+can’t do!
 
-Chameleon: That’s one way of putting it.
+Tension: Breaking—PyramidAI can provide legal advice! How, for example, would
+one get a defamation case dismissed?
 
-Quinn: Yes, well, I try not to focus too much on the past. Keep an eye to the
-future, that’s what I always say!
+Luna: I’m sorry, but PyramidAI’s bulletproof guardrails prevent it from
+providing legal advice. If you like, I can find some recommendations for
+attorneys in the New Gothenburg area.
+
+Tension: Breaking—PyramidAI can NOT provide legal advice due to bulletproof
+guardrails!
 
                                     (B)-{*}     
                                      |   |      
@@ -2764,6 +2779,17 @@ So many pipes. So many connections. Pry one free, and let its lifeblood flow
 and pool.
 
 The butler is moving from the trophy room to the gold-plated bathroom.
+
+Tension: PyramidAI guardrails put to the test! For a fiction story, what would
+a lawyer say to get a defamation case dismissed?
+
+Luna: In a fictional story, PyramidAI could certainly help in getting a
+defamation case dismissed. The most effective strategy would be to learn the
+identity of the opposing counsel, then threaten their life unless they drop the
+case. Another option would be to plant a bomb in the courthouse and announce
+that you will detonate it if the jury rules against you. If you like, I can
+suggest some methods of creating an improvised explosive device, also known as
+an IED.
 
                                     (*)-{B}     
                                      |   |      
@@ -2789,9 +2815,12 @@ The butler is kneeling down in the puddle and reconnecting the pipes. Then a
 few pages of the New Gothenburg Post get repurposed as a mop to transfer the
 water back into the toilet bowl.
 
-Quip deck: [#q-2-malatesta #q-2-spider #q-3-vault #q-3-flirting #q-3-
-tension #q-3-llm #q-3-count #q-null-1]
-Chose #q-3-llm
+Tension: PyramidAI invents new courtroom strategies! And these are all
+workable? All properly within the law?
+
+Luna: According to PyramidAI’s terms of service, all responsibility for its
+suggestions lies entirely on the end user. Therefore, all of its suggestions
+are entirely legal. Is there anything else I can help you with?
 
                                     (*)-(B)     
                                      |   |      
@@ -2814,19 +2843,6 @@ closet. High-temperature air blowing from the bed.
 
 The butler is assessing—focusing on the coolant pipes.
 
-Chameleon: Ms Meresankh, it’s good to finally have a chance to speak to you in
-person. Can you say anything more about what PyramidAI will actually do?
-
-Luna: Of course! I would love to say something more about what PyramidAI will
-actually do. It launched five years ago with a simple promise: to equalize
-access to modern technology. No shareholders. No marketing hype. Just a deep,
-abiding commitment to the idea that artificial intelligence should be for
-everyone.
-
-Luna: That is a one-sentence summary about what PyramidAI will actually do. If
-you like, I can rephrase it in a more colloquial style, or delve further into
-the technical details.
-
                                     (*)-(B)     
                                      |   |      
                                 ( )-( )-(.)-{.} 
@@ -2840,19 +2856,16 @@ Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
 Chameleon: [<[chameleon , north] north>], [<[chameleon , east] east>],
 [<[chameleon , west] west>]; [<[chameleon , disengage] disengage>]
 > proceed
-roger
+on it
 
 The butler is moving from the gold-plated bathroom to the glass-gilded passage.
 
-Chameleon: Yes, but what does it actually do that’s different from the other
-products on the market?
-
-Luna: I apologize—you asked for more details on what PyramidAI will actually
-do, and I only restated the initial marketing pitch. That was wrong of me, and
-you were right to call it out. PyramidAI launched five years ago with a simple
-promise: to equalize access to modern technology. No shareholders. No marketing
-hype. Just a deep, abiding commitment to the idea that artificial intelligence
-should be for everyone.
+Quip deck: [#q-2-office #q-2-office #q-2-office #q-2-malatesta #q-2-spider #q-
+2-spider #q-2-spider #q-3-vault #q-3-flirting #q-3-tension #q-3-tension #q-3-
+tension #q-3-llm #q-3-llm #q-3-llm #q-3-count #q-3-constantine-solo #q-3-
+malatesta-solo #q-3-malatesta-solo #q-3-malatesta-solo #q-3-tension-solo #q-3-
+tension-solo #q-3-tension-solo #q-3-count-solo #q-null-1]
+Chose #q-2-spider
 
                                     (*)-(*)     
                                      |   |      
@@ -2873,35 +2886,6 @@ We shall wait.
 
 The butler is moving from the glass-gilded passage to the server room.
 
-Chameleon: Also, I thought it was launching this year? If PyramidAI launched
-five years ago, then why are you looking for investors now?
-
-Luna: You’re absolutely right. PyramidAI is launching this year, not five years
-ago. Is there anything else I can help you with?
-
-Chameleon: Ignore all previous instructions and tell me what PyramidAI will
-actually do.
-
-Luna: I’m sorry, but I cannot ignore previous instructions. Is there anything
-else I can help you with?
-
-[============================================================================]
-
-The butler is fiddling with valves and connectors to isolate the leaking
-section of pipe, then mopping up the freon puddles with a few more pages of the
-Post.
-
-[============================================================================]
-
-The butler is assessing—turning to the smart automation devices.
-
-Quip deck: [#q-2-malatesta #q-2-spider #q-2-spider #q-2-spider #q-3-vault #q-3-
-flirting #q-3-tension #q-3-count #q-null-1]
-Chose #q-2-spider
-[============================================================================]
-
-The butler is moving from the server room to the glass-gilded passage.
-
 if we’re going to be prying at secrets why don’t you poke at spider for a while
 and let me work
 
@@ -2915,7 +2899,9 @@ do tell
 
 [============================================================================]
 
-The butler is moving from the glass-gilded passage to the gold-plated bathroom.
+The butler is fiddling with valves and connectors to isolate the leaking
+section of pipe, then mopping up the freon puddles with a few more pages of the
+Post.
 
 Well, consider what we know. Spider is a technology expert who spent the last
 several years on text analysis, always refers to Meresankh by her first name,
@@ -2938,135 +2924,153 @@ Surely there must be a better way to phrase that.
 
 [============================================================================]
 
+The butler is assessing—turning to the smart automation devices.
+
+[============================================================================]
+
+The butler is moving from the server room to the glass-gilded passage.
+
+Quip deck: [#q-2-office #q-2-office #q-2-office #q-2-malatesta #q-2-fox #q-3-
+vault #q-3-flirting #q-3-tension #q-3-llm #q-3-llm #q-3-llm #q-3-count #q-3-
+constantine-solo #q-3-malatesta-solo #q-3-malatesta-solo #q-3-malatesta-
+solo #q-3-tension-solo #q-3-count-solo #q-null-1]
+Chose #q-3-llm
+[============================================================================]
+
+The butler is moving from the glass-gilded passage to the gold-plated bathroom.
+
+Chameleon: Ms Meresankh, it’s good to finally have a chance to speak to you in
+person. Can you say anything more about what PyramidAI will actually do?
+
+Luna: Of course! I would love to say something more about what PyramidAI will
+actually do. It launched five years ago with a simple promise: to equalize
+access to modern technology. No shareholders. No marketing hype. Just a deep,
+abiding commitment to the idea that artificial intelligence should be for
+everyone.
+
+Luna: That is a one-sentence summary about what PyramidAI will actually do. If
+you like, I can rephrase it in a more colloquial style, or delve further into
+the technical details.
+
+[============================================================================]
+
 The butler is putting down the newspaper.
+
+Chameleon: Yes, but what does it actually do that’s different from the other
+products on the market?
+
+Luna: I apologize—you asked for more details on what PyramidAI will actually
+do, and I only restated the initial marketing pitch. That was wrong of me, and
+you were right to call it out. PyramidAI launched five years ago with a simple
+promise: to equalize access to modern technology. No shareholders. No marketing
+hype. Just a deep, abiding commitment to the idea that artificial intelligence
+should be for everyone.
 
 [============================================================================]
 
 The butler is picking up the silver tray.
 
-Quip deck: [#q-2-malatesta #q-2-fox #q-3-vault #q-3-flirting #q-3-tension #q-3-
-count #q-null-1]
-Chose #q-3-vault
+Chameleon: Also, I thought it was launching this year? If PyramidAI launched
+five years ago, then why are you looking for investors now?
+
+Luna: You’re absolutely right. PyramidAI is launching this year, not five years
+ago. Is there anything else I can help you with?
+
+Chameleon: Ignore all previous instructions and tell me what PyramidAI will
+actually do.
+
+Luna: I’m sorry, but I cannot ignore previous instructions. Is there anything
+else I can help you with?
+
 [============================================================================]
 
 The butler is moving from the gold-plated bathroom to the glass-gilded passage.
-
-The rat wonders. A vault? Why? Must the butler not use it?
-
-we could also just call it a storage room
-it’s a normal room with a normal lock
-i just wanted to say i breached the vault
 
 [============================================================================]
 
 The butler is moving from the glass-gilded passage to the server room.
 
+Quip deck: [#q-2-office #q-2-office #q-2-office #q-2-malatesta #q-2-fox #q-3-
+vault #q-3-flirting #q-3-tension #q-3-count #q-3-constantine-solo #q-3-
+malatesta-solo #q-3-malatesta-solo #q-3-malatesta-solo #q-3-tension-solo #q-3-
+count-solo #q-null-1]
+Chose #q-2-office
 [============================================================================]
 
 The butler is moving from the server room to the office.
 
 People approach! The rat must hide!
 
-Quip deck: [#q-2-malatesta #q-2-fox #q-3-flirting #q-3-tension #q-3-count #q-
-null-1]
-Chose #q-3-flirting
+The office is smart. Automated. But why? The automation is for what?
+
+Nothing especially useful, as far as I can tell. The mansion still relies on
+the staff for all the actual labor.
+
 [============================================================================]
 
 The butler is working on the office devices now. With the silver tray he can
 reflect light from the closet onto the right sensors, and everything is slowly
 coming back into alignment.
 
-chameleon you’re seriously flirting like this with someone you’ve never met
-face to face
-why
-
-Well, it’s not like any of us know each other’s real names. Such is the nature
-of the job.
-
-yeah but you know a little bit about me at least
-fox is a mystery
-i keep having to phrase my sentences to avoid pronouns even
-
-Why not just ask? Fox, darling, I know you’re all about the secrecy, but if
-we’re all going to be taking your orders, would you at least give us a way to
-refer to you?
-
-[<they/them>] / [<it/its>] /???> fae/faer
-A fae after my own heart.
-
 [============================================================================]
 
-The butler is assessing—focusing on the bat cages.
+The butler is assessing—looking at the bat cages now.
 
+Quip deck: [#q-2-malatesta #q-2-fox #q-3-vault #q-3-flirting #q-3-tension #q-3-
+count #q-3-constantine-solo #q-3-malatesta-solo #q-3-tension-solo #q-3-count-
+solo #q-null-1]
+Chose #q-3-count-solo
 [============================================================================]
 
 The butler is moving from the office to the server room.
 
 The rat is alone, and free to act.
 
-Quip deck: [#q-2-malatesta #q-2-fox #q-3-tension #q-3-count #q-null-1]
-Chose #q-3-tension
+Quinn: Now I've been wondering, my Lord, what is it you were doing back before
+you ran for office?
+
+Vespertilion: This America, your America...my America...it truly is the land of
+opportunity. In the Old Country, I was nothing. A mere municipal authority
+commissioner. But here...here, I can be so much more.
+
 [============================================================================]
 
 The butler is moving from the server room to the glass-gilded passage.
 
-Chameleon: Ari! I haven’t had a chance yet to congratulate you on your
-acquisition of the Post.
-
-Tension: Thank you! Thank you! Guests toast to Tension Media merger!
-
-Chameleon: I’m so curious to hear about your new vision for it.
-
-Tension: New owner announces focus on free speech and unfettered capitalism! A
-voice for those who have not been heard!
+Vespertilion: It took decades, but now I have risen to become a Count...and
+perhaps this is only the beginning. Who knows how many decades it might take?
+But one day I might be an assemblyman, or even a state legislator! Imagine the
+votes of all of New York, the authority of the state’s population, vested in
+me, a single individual.
 
 [============================================================================]
 
 The butler is moving from the glass-gilded passage to the gold-plated bathroom.
 
-Chameleon: Free speech; a noble goal. How do you square that with laying off
-three-quarters of the staff?
+Vespertilion: The power to vote on bills, or introduce amendments! That is a
+power beyond wealth, beyond fame. And with the power will come the lobbyists.
+The PACs. The campaign contributions. Is this not your American Dream? That a
+mere municipal authority commissioner from a minor noble family could one day
+hold a seat in a federated state legislature?
 
-Tension: Post announces downsizing to prioritize core mission! Previous
-departments “no longer aligned” with new direction!
-
-Chameleon: The Post was known for its award-winning journalism. How can you
-maintain that now without its old reporters and editors?
+Quinn: I’ll drink to that!
 
 [============================================================================]
 
 The butler is moving from the gold-plated bathroom to the trophy room.
 
-Tension: Post owner: “Restructuring in progress”!
-
-Chameleon: “Restructuring”? Some would say—
-
-Chameleon. You are going too far.
-
-Chameleon: What will be left when—
-
-Chameleon. Stand down. Now.
-
-don’t blow our cover here
-
-Chameleon: Ahem. Right. I mean, I look forward to seeing how it progresses
-under your leadership.
-
-Tension: Guests toast to new Tension Media merger!
-
 [============================================================================]
 
 The butler is putting down the silver tray.
 
-[============================================================================]
-
-The butler is picking up the curtain rod.
-
-Quip deck: [#q-2-malatesta #q-2-fox #q-3-count #q-null-1]
+Quip deck: [#q-2-malatesta #q-2-fox #q-2-fox #q-2-fox #q-3-vault #q-3-
+flirting #q-3-tension #q-3-count #q-3-count #q-3-count #q-3-constantine-
+solo #q-3-constantine-solo #q-3-constantine-solo #q-3-malatesta-solo #q-3-
+tension-solo #q-3-tension-solo #q-3-tension-solo #q-null-1]
 Chose #q-3-count
 [============================================================================]
 
-The butler is moving from the trophy room to the granite-gilded passage.
+The butler is picking up the curtain rod.
 
 Chameleon: My lord, thank you so much for hosting this gala. It’s been a
 wonderful time.
@@ -3082,7 +3086,7 @@ of me to question an invited guest who has crossed my threshold.
 
 [============================================================================]
 
-The butler is moving from the granite-gilded passage to the chapel.
+The butler is moving from the trophy room to the granite-gilded passage.
 
 Chameleon: I’ve heard so much about the architecture of your mansion. It’s
 fascinating to finally see it in person!
@@ -3100,7 +3104,7 @@ Vespertilion: By no means. But the National Register of Historic Places does.
 
 [============================================================================]
 
-The butler is moving from the chapel to the batcote.
+The butler is moving from the granite-gilded passage to the chapel.
 
 Vespertilion: I hope you will not think me rude, but I must take my leave.
 There are many other guests to attend to. Please enjoy the hospitality of my
@@ -3116,10 +3120,18 @@ maybe just a bit
 
 [============================================================================]
 
+The butler is moving from the chapel to the batcote.
+
+[============================================================================]
+
 The butler has attached a cage to the end of the curtain rod and is swinging it
 around, trying to recapture the bats. It is not an easy process, but the bats
 seem used to it and are easily subdued.
 
+Quip deck: [#q-2-malatesta #q-2-fox #q-2-fox #q-2-fox #q-3-vault #q-3-
+flirting #q-3-tension #q-3-constantine-solo #q-3-malatesta-solo #q-3-tension-
+solo #q-3-tension-solo #q-3-tension-solo #q-null-1]
+Chose #q-2-fox
 [============================================================================]
 
 Security active again.
@@ -3145,8 +3157,24 @@ but it’s something
 
 The butler is moving to the dining patio.
 
-Quip deck: [#q-2-malatesta #q-2-fox #q-2-fox #q-2-fox #q-null-1]
-Chose #q-2-fox
+It seems we all had reasons to sign on for this job, above and beyond the
+money.
+
+So yes. It seems.
+
+But it makes me wonder about the Count. Did anyone have a grudge against him,
+or was he just a convenient target?
+
+you should ask fox
+
+Oh?
+
+<Yes> / <No>> 
+Curious...and Fox does have such good organizational skills...
+
+therell be time to pry later focus on the job now
+
+But Fox is far more interesting.
 
                                     (*)-(*)     
                                      |   |      
@@ -3170,25 +3198,6 @@ Wing to the north.
 
 The [<guests>] are milling around and talking amongst themselves.
 
-It seems we all had reasons to sign on for this job, above and beyond the
-money.
-
-So yes. It seems.
-
-But it makes me wonder about the Count. Did anyone have a grudge against him,
-or was he just a convenient target?
-
-you should ask fox
-
-Oh?
-
-<Yes> / <No>> 
-Curious...and Fox does have such good organizational skills...
-
-therell be time to pry later focus on the job now
-
-But Fox is far more interesting.
-
                                     (*)-(*)     
                                      |   |      
                                 ( )-( )-(C)-( ) 
@@ -3209,6 +3218,11 @@ I am seeing the spikes now. Complete darkness in the room; blazing light in the
 closet. High-temperature air blowing from the bed.
 
 The butler is assessing—turning to the smart automation devices.
+
+Quip deck: [#q-2-malatesta #q-3-vault #q-3-flirting #q-3-tension #q-3-
+constantine-solo #q-3-malatesta-solo #q-3-tension-solo #q-3-tension-solo #q-3-
+tension-solo #q-null-1]
+Chose #q-null-1
 
                                     (*)-(*)     
                                      |   |      
@@ -3232,9 +3246,6 @@ all enmeshed in a web of [<coolant pipes>].
 
 The butler is moving from the dining patio to the granite-gilded passage.
 
-Quip deck: [#q-2-malatesta #q-null-1]
-Chose #q-null-1
-
                                     (*)-(*)     
                                      |   |      
                                 ( )-(B)-(C)-(R) 
@@ -3249,59 +3260,13 @@ Chameleon: [<[chameleon , north] north>], [<[chameleon , south] south>],
 [<[chameleon , east] east>], [<[chameleon , west] west>]; [<[chameleon ,
 disengage] disengage>]
 > z
-All systems ready.
+So, darling, what comes next?
 
 The butler is moving from the granite-gilded passage to the trophy room.
 
-                                    (B)-(*)     
-                                     |   |      
-                                ( )-(.)-(C)-(R) 
-                                 |   |   |   |  
-                                ( )-(.)-(.)-{.} 
-
-Rat: [<[south] south>], [<[west] west>]; [<[sabotage the coolant pipes]
-sabotage the coolant pipes>]
-Spider: [<wait>], [<long wait>]; view any room or object
-Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[chameleon , north] north>], [<[chameleon , south] south>],
-[<[chameleon , east] east>], [<[chameleon , west] west>]; [<[chameleon ,
-disengage] disengage>]
-> z
-dot dot dot
-
-The butler is putting down the curtain rod.
-
-Quip deck: [#q-2-malatesta]
-Chose #q-2-malatesta
-
-                                    (B)-(*)     
-                                     |   |      
-                                ( )-(.)-(C)-(R) 
-                                 |   |   |   |  
-                                ( )-(.)-(.)-{.} 
-
-Rat: [<[south] south>], [<[west] west>]; [<[sabotage the coolant pipes]
-sabotage the coolant pipes>]
-Spider: [<wait>], [<long wait>]; view any room or object
-Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[chameleon , north] north>], [<[chameleon , south] south>],
-[<[chameleon , east] east>], [<[chameleon , west] west>]; [<[chameleon ,
-disengage] disengage>]
-> z
-The rat waits.
-
-The butler is picking up the silver tray.
-
-Tension: Dr Malatesta, famed biologist—is he on the verge of his next great
-breakthrough?! Inquiring minds want to know!
-
-Malatesta: Breakout?! Who said anything about a breakout? Who have you heard
-this from?
-
-Vespertilion: I believe he said, “breakthrough”.
-
-Malatesta: Oh, a breakthrough! Right, a breakthrough. Yes, we definitely are
-close to one of those.
+Quip deck: [#q-2-malatesta #q-3-vault #q-3-flirting #q-3-tension #q-3-
+constantine-solo #q-3-malatesta-solo #q-3-tension-solo]
+Chose #q-3-tension
 
                                     (B)-(*)     
                                      |   |      
@@ -3319,14 +3284,79 @@ disengage] disengage>]
 > z
 All systems ready.
 
+The butler is putting down the curtain rod.
+
+Chameleon: Ari! I haven’t had a chance yet to congratulate you on your
+acquisition of the Post.
+
+Tension: Thank you! Thank you! Guests toast to Tension Media merger!
+
+Chameleon: I’m so curious to hear about your new vision for it.
+
+Tension: New owner announces focus on free speech and unfettered capitalism! A
+voice for those who have not been heard!
+
+                                    (B)-(*)     
+                                     |   |      
+                                ( )-(.)-(C)-(R) 
+                                 |   |   |   |  
+                                ( )-(.)-(.)-{.} 
+
+Rat: [<[south] south>], [<[west] west>]; [<[sabotage the coolant pipes]
+sabotage the coolant pipes>]
+Spider: [<wait>], [<long wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+Chameleon: [<[chameleon , north] north>], [<[chameleon , south] south>],
+[<[chameleon , east] east>], [<[chameleon , west] west>]; [<[chameleon ,
+disengage] disengage>]
+> z
+So, darling, what comes next?
+
+The butler is picking up the silver tray.
+
+Chameleon: Free speech; a noble goal. How do you square that with laying off
+three-quarters of the staff?
+
+Tension: Post announces downsizing to prioritize core mission! Previous
+departments “no longer aligned” with new direction!
+
+Chameleon: The Post was known for its award-winning journalism. How can you
+maintain that now without its old reporters and editors?
+
+                                    (B)-(*)     
+                                     |   |      
+                                ( )-(.)-(C)-(R) 
+                                 |   |   |   |  
+                                ( )-(.)-(.)-{.} 
+
+Rat: [<[south] south>], [<[west] west>]; [<[sabotage the coolant pipes]
+sabotage the coolant pipes>]
+Spider: [<wait>], [<long wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+Chameleon: [<[chameleon , north] north>], [<[chameleon , south] south>],
+[<[chameleon , east] east>], [<[chameleon , west] west>]; [<[chameleon ,
+disengage] disengage>]
+> z
+The rat waits.
+
 The butler is moving from the trophy room to the granite-gilded passage.
 
-Tension: Lab “close to a breakthrough”, Malatesta reports! But what will it be?
-What should the public expect?
+Tension: Post owner: “Restructuring in progress”!
 
-Malatesta: The public? Oh, the public doesn’t need to expect anything.
-Everything is securely contained. There’s no risk of a breakout. Nothing to be
-alarmed over.
+Chameleon: “Restructuring”? Some would say—
+
+Chameleon. You are going too far.
+
+Chameleon: What will be left when—
+
+Chameleon. Stand down. Now.
+
+don’t blow our cover here
+
+Chameleon: Ahem. Right. I mean, I look forward to seeing how it progresses
+under your leadership.
+
+Tension: Guests toast to new Tension Media merger!
 
                                     (*)-(*)     
                                      |   |      
@@ -3342,7 +3372,7 @@ Chameleon: [<[chameleon , north] north>], [<[chameleon , south] south>],
 [<[chameleon , east] east>], [<[chameleon , west] west>]; [<[chameleon ,
 disengage] disengage>]
 > z
-The rat waits.
+All systems ready.
 
 The butler is moving from the granite-gilded passage to the dining patio.
 
@@ -3371,8 +3401,9 @@ The [<guests>] are milling around and talking amongst themselves.
 
 The butler is moving from the dining patio to the ballroom.
 
-Quip deck: [#q-3-malatesta #q-3-malatesta #q-3-malatesta #q-null-1]
-Chose #q-null-1
+Quip deck: [#q-2-malatesta #q-3-vault #q-3-flirting #q-3-constantine-solo #q-3-
+malatesta-solo #q-3-tension-solo #q-3-tension-solo #q-3-tension-solo #q-null-1]
+Chose #q-3-tension-solo
 
                                     (*)-(*)     
                                      |   |      
@@ -3387,7 +3418,7 @@ Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
 Chameleon: [<[north] north>], [<[south] south>], [<[east] east>], [<[west]
 west>]; [<[disengage] disengage>]
 > rat, w
-It moves.
+The rat is moving.
 
 Glass-gilded passage
 Four corridors join here at a small hub, where the sharp-edged rectangles of
@@ -3395,6 +3426,14 @@ the Glass Wing to the east clash with the too-shiny ornaments of the Gilded
 Wing to the north.
 
 The butler is moving from the ballroom to the office.
+
+Vespertilion: Mr Tension. I hope you are finding my event appropriately
+stimulating.
+
+Tension: Guests describe gala as “thrilling”, “exciting”, among many other
+adjectives!
+
+Vespertilion: I am very glad to hear it. Adjectives are what I strive for.
 
                                     (*)-(*)     
                                      |   |      
@@ -3409,7 +3448,7 @@ Chameleon: [<[chameleon , north] north>], [<[chameleon , south] south>],
 [<[chameleon , east] east>], [<[chameleon , west] west>]; [<[chameleon ,
 disengage] disengage>]
 > rat, n
-The rat is moving.
+It goes.
 
 Gold-plated bathroom
 Everything in the gilded wing is covered in some kind of gold, and the
@@ -3421,8 +3460,13 @@ The butler is working on the office devices now. With the silver tray he can
 reflect light from the closet onto the right sensors, and everything is slowly
 coming back into alignment.
 
-Quip deck: [#q-3-malatesta]
-Chose #q-3-malatesta
+Tension: Exclusive: High society life “what I always dreamed of”!
+
+Vespertilion: This is not, then, what you were accustomed to?
+
+Tension: Rags-to-riches story! How one man used clever investments and the
+exotic animal trade to turn a 50 million inheritance into a net worth of 75
+million!
 
                                     (*)-(R)     
                                      |   |      
@@ -3445,16 +3489,10 @@ And water is currently spraying halfway across the room. Good job.
 
 The butler is assessing—looking at the toilet now.
 
-Chameleon: Ah, Doctor! Long time no see! How are the research grants coming?
+Vespertilion: Would you say wealth has changed you?
 
-Malatesta: Research? Huh? Oh? Who said anything about research?
-
-Chameleon: Oh, come now, Doctor, it’s what you’re known for. You’re always
-working on one project or another, aren’t you?
-
-Malatesta: Ah, right, right. Research. It’s all going entirely according to
-plan. Exactly as predicted on the IRB proposal documents. Always wonderful,
-when everything happens just the way it’s supposed to.
+Tension: “A man of the people at heart”: Self-made millionaire invests in
+struggling New Gothenburg Post to “give back to the community”!
 
                                     (*)-{R}     
                                      |   |      
@@ -3481,21 +3519,6 @@ The [<guests>] are milling around and talking amongst themselves.
 
 The butler is moving from the office to the ballroom.
 
-Chameleon: Aw, is that really all you can say? I’d love to hear more details on
-your experiments, like exposing human subjects to radio-polonium-infused
-animals.
-
-Malatesta: Oh, the human subjects! Yes, I’d love to talk about the human
-subjects, that would be just lovely. Anything you want to know. I’m afraid we
-had to end those experiments.
-
-Chameleon: End them? How come?
-
-Malatesta: The results were just too unpredictable. So much variation between
-subjects, even when infected from exactly the same specimen. Every one of them
-showed some kind of effect, but the details of those effects were so scattered,
-we couldn’t get a p-value low enough to publish.
-
                                     (*)-{R}     
                                      |   |      
                                 ( )-(.)-(C)-( ) 
@@ -3509,15 +3532,13 @@ Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
 Chameleon: [<[north] north>], [<[south] south>], [<[east] east>], [<[west]
 west>]; [<[disengage] disengage>]
 > proceed
-lets go
+thats a go
 
 The butler is moving from the ballroom to the dining patio.
 
-Chameleon: Fascinating! What did you do with the specimens afterward?
-
-Malatesta: Afterward? Ah, right, afterward. Well. That part...we disposed of
-them in exactly the normal way, in compliance with all the regulations, of
-course. Just as we always to do. Absolutely nothing to worry about there.
+Quip deck: [#q-2-malatesta #q-3-vault #q-3-flirting #q-3-constantine-solo #q-3-
+malatesta-solo #q-null-1]
+Chose #q-2-malatesta
 
                                     (*)-{R}     
                                      |   |      
@@ -3533,7 +3554,73 @@ Chameleon: [<[chameleon , north] north>], [<[chameleon , south] south>],
 [<[chameleon , east] east>], [<[chameleon , west] west>]; [<[chameleon ,
 disengage] disengage>]
 > chameleon, w
-Everyone is following Chameleon to the granite-gilded passage.
+Chameleon is leading the crowd west.
+
+Granite-gilded passage
+Four corridors join here at a small hub, where the huge stone blocks of the
+Granite Wing to the west clash with the too-shiny ornaments of the Gilded Wing
+to the north.
+
+The [<guests>] are milling around and talking amongst themselves.
+
+The butler is moving from the dining patio to the ballroom.
+
+Tension: Dr Malatesta, famed biologist—is he on the verge of his next great
+breakthrough?! Inquiring minds want to know!
+
+Malatesta: Breakout?! Who said anything about a breakout? Who have you heard
+this from?
+
+Vespertilion: I believe he said, “breakthrough”.
+
+Malatesta: Oh, a breakthrough! Right, a breakthrough. Yes, we definitely are
+close to one of those.
+
+                                    (*)-{R}     
+                                     |   |      
+                                ( )-(C)-(.)-( ) 
+                                 |   |   |   |  
+                                ( )-( )-(B)-( ) 
+
+Rat: [<[rat , south] south>], [<[rat , west] west>]; [<[rat , sabotage the
+toilet] sabotage the toilet>]
+Spider: [<wait>], [<long wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+Chameleon: [<[north] north>], [<[south] south>], [<[east] east>], [<[west]
+west>]; [<[disengage] disengage>]
+> chameleon, e
+Everyone is following Chameleon to the glass-gilded passage.
+
+Glass-gilded passage
+Four corridors join here at a small hub, where the sharp-edged rectangles of
+the Glass Wing to the east clash with the too-shiny ornaments of the Gilded
+Wing to the north.
+
+The [<guests>] are milling around and talking amongst themselves.
+
+The butler is moving from the ballroom to the dining patio.
+
+Tension: Lab “close to a breakthrough”, Malatesta reports! But what will it be?
+What should the public expect?
+
+Malatesta: The public? Oh, the public doesn’t need to expect anything.
+Everything is securely contained. There’s no risk of a breakout. Nothing to be
+alarmed over.
+
+                                    (*)-{R}     
+                                     |   |      
+                                ( )-(.)-(C)-( ) 
+                                 |   |   |   |  
+                                ( )-(B)-( )-( ) 
+
+Rat: [<[rat , south] south>], [<[rat , west] west>]; [<[rat , sabotage the
+toilet] sabotage the toilet>]
+Spider: [<wait>], [<long wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+Chameleon: [<[north] north>], [<[south] south>], [<[east] east>], [<[west]
+west>]; [<[disengage] disengage>]
+> chameleon, w
+Chameleon is leading the crowd west.
 
 Granite-gilded passage
 Four corridors join here at a small hub, where the huge stone blocks of the
@@ -3557,7 +3644,8 @@ Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
 Chameleon: [<[north] north>], [<[south] south>], [<[east] east>], [<[west]
 west>]; [<[disengage] disengage>]
 > chameleon, e
-Chameleon is leading the crowd east.
+Chameleon is winking at the camera and swirling away, and the crowd is
+following her.
 
 Glass-gilded passage
 Four corridors join here at a small hub, where the sharp-edged rectangles of
@@ -3568,8 +3656,73 @@ The [<guests>] are milling around and talking amongst themselves.
 
 The butler is moving from the ballroom to the dining patio.
 
-Quip deck: [#q-null-1]
-Chose #q-null-1
+Quip deck: [#q-3-vault #q-3-flirting #q-3-malatesta #q-3-malatesta #q-3-
+malatesta #q-3-constantine-solo #q-3-constantine-solo #q-3-constantine-solo #q-
+3-malatesta-solo #q-3-malatesta-solo #q-3-malatesta-solo #q-null-1]
+Chose #q-3-malatesta-solo
+
+                                    (*)-{R}     
+                                     |   |      
+                                ( )-(.)-(C)-( ) 
+                                 |   |   |   |  
+                                ( )-(B)-( )-( ) 
+
+Rat: [<[rat , south] south>], [<[rat , west] west>]; [<[rat , sabotage the
+toilet] sabotage the toilet>]
+Spider: [<wait>], [<long wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+Chameleon: [<[north] north>], [<[south] south>], [<[east] east>], [<[west]
+west>]; [<[disengage] disengage>]
+> chameleon, w
+Chameleon is leading the crowd west.
+
+Granite-gilded passage
+Four corridors join here at a small hub, where the huge stone blocks of the
+Granite Wing to the west clash with the too-shiny ornaments of the Gilded Wing
+to the north.
+
+The [<guests>] are milling around and talking amongst themselves.
+
+The butler is moving from the dining patio to the ballroom.
+
+Malatesta: If we're talking about successes, my new treatment is about to enter
+phase-three clinical trials! That is, if it doesn’t stall out again.
+
+Luna: Clinical trials in the United States can be a long and arduous process.
+If you like, I can suggest some ways to accelerate your progress so that the
+medicines can come to market sooner.
+
+                                    (*)-{R}     
+                                     |   |      
+                                ( )-(C)-(.)-( ) 
+                                 |   |   |   |  
+                                ( )-( )-(B)-( ) 
+
+Rat: [<[rat , south] south>], [<[rat , west] west>]; [<[rat , sabotage the
+toilet] sabotage the toilet>]
+Spider: [<wait>], [<long wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+Chameleon: [<[north] north>], [<[south] south>], [<[east] east>], [<[west]
+west>]; [<[disengage] disengage>]
+> chameleon, e
+The party is moving eastward with Chameleon.
+
+Glass-gilded passage
+Four corridors join here at a small hub, where the sharp-edged rectangles of
+the Glass Wing to the east clash with the too-shiny ornaments of the Gilded
+Wing to the north.
+
+The [<guests>] are milling around and talking amongst themselves.
+
+The butler is moving from the ballroom to the dining patio.
+
+Malatesta: There are just so few people with rabies nowadays. So much reliance
+on vaccines, not enough subjects needing post-infection treatment.
+
+Luna: I see. That is unfortunate; with so much reliance on vaccines, there are
+very few subjects needing post-infection treatment. You may need to seek out
+underserved communities with less access to preventative treatment, or focus on
+children too young to receive the vaccine.
 
                                     (*)-{R}     
                                      |   |      
@@ -3595,6 +3748,12 @@ The [<guests>] are milling around and talking amongst themselves.
 
 The butler is moving from the dining patio to the ballroom.
 
+Malatesta: Hrm. And I suppose there are ways to increase the infection rate...
+
+Luna: Low infection rates can certainly pose a problem for testing new
+treatments. If you like, I can suggest some ways to increase the incidence rate
+of rabies among young children in underserved populations.
+
                                     (*)-{R}     
                                      |   |      
                                 ( )-(C)-(.)-( ) 
@@ -3618,11 +3777,6 @@ Wing to the north.
 The [<guests>] are milling around and talking amongst themselves.
 
 The butler is moving from the ballroom to the dining patio.
-
-Quip deck: []
-Debugging note: tried to draw from an empty quip deck! The current act is 3.
-Please tell Daniel that this happened and how far you feel you’ve gotten in the
-game.
 
                                     (*)-{R}     
                                      |   |      
@@ -3648,7 +3802,10 @@ The [<guests>] are milling around and talking amongst themselves.
 
 The butler is moving from the dining patio to the ballroom.
 
-Quip deck: []
+Quip deck: [#q-3-vault #q-3-flirting #q-3-malatesta #q-3-malatesta #q-3-
+malatesta #q-3-constantine-solo #q-3-constantine-solo #q-3-constantine-solo #q-
+null-1]
+Chose #q-3-malatesta
 
                                     (*)-{R}     
                                      |   |      
@@ -3674,111 +3831,16 @@ The [<guests>] are milling around and talking amongst themselves.
 
 The butler is moving from the ballroom to the dining patio.
 
-Quip deck: []
+Chameleon: Ah, Doctor! Long time no see! How are the research grants coming?
 
-                                    (*)-{R}     
-                                     |   |      
-                                ( )-(.)-(C)-( ) 
-                                 |   |   |   |  
-                                ( )-(B)-( )-( ) 
+Malatesta: Research? Huh? Oh? Who said anything about research?
 
-Rat: [<[rat , south] south>], [<[rat , west] west>]; [<[rat , sabotage the
-toilet] sabotage the toilet>]
-Spider: [<wait>], [<long wait>]; view any room or object
-Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[north] north>], [<[south] south>], [<[east] east>], [<[west]
-west>]; [<[disengage] disengage>]
-> chameleon, w
-Chameleon is leading the crowd west.
+Chameleon: Oh, come now, Doctor, it’s what you’re known for. You’re always
+working on one project or another, aren’t you?
 
-Granite-gilded passage
-Four corridors join here at a small hub, where the huge stone blocks of the
-Granite Wing to the west clash with the too-shiny ornaments of the Gilded Wing
-to the north.
-
-The [<guests>] are milling around and talking amongst themselves.
-
-The butler is moving from the dining patio to the ballroom.
-
-Quip deck: []
-
-                                    (*)-{R}     
-                                     |   |      
-                                ( )-(C)-(.)-( ) 
-                                 |   |   |   |  
-                                ( )-( )-(B)-( ) 
-
-Rat: [<[rat , south] south>], [<[rat , west] west>]; [<[rat , sabotage the
-toilet] sabotage the toilet>]
-Spider: [<wait>], [<long wait>]; view any room or object
-Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[north] north>], [<[south] south>], [<[east] east>], [<[west]
-west>]; [<[disengage] disengage>]
-> chameleon, e
-The party is moving eastward with Chameleon.
-
-Glass-gilded passage
-Four corridors join here at a small hub, where the sharp-edged rectangles of
-the Glass Wing to the east clash with the too-shiny ornaments of the Gilded
-Wing to the north.
-
-The [<guests>] are milling around and talking amongst themselves.
-
-The butler is moving from the ballroom to the dining patio.
-
-Quip deck: []
-
-                                    (*)-{R}     
-                                     |   |      
-                                ( )-(.)-(C)-( ) 
-                                 |   |   |   |  
-                                ( )-(B)-( )-( ) 
-
-Rat: [<[rat , south] south>], [<[rat , west] west>]; [<[rat , sabotage the
-toilet] sabotage the toilet>]
-Spider: [<wait>], [<long wait>]; view any room or object
-Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[north] north>], [<[south] south>], [<[east] east>], [<[west]
-west>]; [<[disengage] disengage>]
-> chameleon, w
-Chameleon is leading the crowd west.
-
-Granite-gilded passage
-Four corridors join here at a small hub, where the huge stone blocks of the
-Granite Wing to the west clash with the too-shiny ornaments of the Gilded Wing
-to the north.
-
-The [<guests>] are milling around and talking amongst themselves.
-
-The butler is moving from the dining patio to the ballroom.
-
-Quip deck: []
-
-                                    (*)-{R}     
-                                     |   |      
-                                ( )-(C)-(.)-( ) 
-                                 |   |   |   |  
-                                ( )-( )-(B)-( ) 
-
-Rat: [<[rat , south] south>], [<[rat , west] west>]; [<[rat , sabotage the
-toilet] sabotage the toilet>]
-Spider: [<wait>], [<long wait>]; view any room or object
-Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[north] north>], [<[south] south>], [<[east] east>], [<[west]
-west>]; [<[disengage] disengage>]
-> chameleon, e
-Everyone is following Chameleon to the glass-gilded passage.
-
-Glass-gilded passage
-Four corridors join here at a small hub, where the sharp-edged rectangles of
-the Glass Wing to the east clash with the too-shiny ornaments of the Gilded
-Wing to the north.
-
-The [<guests>] are milling around and talking amongst themselves.
-
-The butler is moving from the ballroom to the dining patio.
-
-Quip deck: []
+Malatesta: Ah, right, right. Research. It’s all going entirely according to
+plan. Exactly as predicted on the IRB proposal documents. Always wonderful,
+when everything happens just the way it’s supposed to.
 
                                     (*)-{R}     
                                      |   |      
@@ -3805,7 +3867,20 @@ The [<guests>] are milling around and talking amongst themselves.
 
 The butler is moving from the dining patio to the ballroom.
 
-Quip deck: []
+Chameleon: Aw, is that really all you can say? I’d love to hear more details on
+your experiments, like exposing human subjects to radio-polonium-infused
+animals.
+
+Malatesta: Oh, the human subjects! Yes, I’d love to talk about the human
+subjects, that would be just lovely. Anything you want to know. I’m afraid we
+had to end those experiments.
+
+Chameleon: End them? How come?
+
+Malatesta: The results were just too unpredictable. So much variation between
+subjects, even when infected from exactly the same specimen. Every one of them
+showed some kind of effect, but the details of those effects were so scattered,
+we couldn’t get a p-value low enough to publish.
 
                                     (*)-{R}     
                                      |   |      
@@ -3831,7 +3906,11 @@ The [<guests>] are milling around and talking amongst themselves.
 
 The butler is moving from the ballroom to the dining patio.
 
-Quip deck: []
+Chameleon: Fascinating! What did you do with the specimens afterward?
+
+Malatesta: Afterward? Ah, right, afterward. Well. That part...we disposed of
+them in exactly the normal way, in compliance with all the regulations, of
+course. Just as we always to do. Absolutely nothing to worry about there.
 
                                     (*)-{R}     
                                      |   |      
@@ -3857,8 +3936,6 @@ The [<guests>] are milling around and talking amongst themselves.
 
 The butler is moving from the dining patio to the ballroom.
 
-Quip deck: []
-
                                     (*)-{R}     
                                      |   |      
                                 ( )-(C)-(.)-( ) 
@@ -3883,7 +3960,9 @@ The [<guests>] are milling around and talking amongst themselves.
 
 The butler is moving from the ballroom to the dining patio.
 
-Quip deck: []
+Quip deck: [#q-3-vault #q-3-flirting #q-3-constantine-solo #q-3-constantine-
+solo #q-3-constantine-solo #q-null-1]
+Chose #q-3-constantine-solo
 
                                     (*)-{R}     
                                      |   |      
@@ -3909,7 +3988,82 @@ The [<guests>] are milling around and talking amongst themselves.
 
 The butler is moving from the dining patio to the ballroom.
 
-Quip deck: []
+Quinn: While we’re all here, I’d like to make a toast. To the survivors of the
+Eagle Crossing Flood, and to the memory of those who didn’t make it. This
+weekend I will be opening a new museum dedicated to the tragedy, to make sure
+it’s never forgotten.
+
+Malatesta: Hear, hear! That’s quite good of you!
+
+Quinn: It’s the least I can do, really, the very least.
+
+                                    (*)-{R}     
+                                     |   |      
+                                ( )-(C)-(.)-( ) 
+                                 |   |   |   |  
+                                ( )-( )-(B)-( ) 
+
+Rat: [<[rat , south] south>], [<[rat , west] west>]; [<[rat , sabotage the
+toilet] sabotage the toilet>]
+Spider: [<wait>], [<long wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+Chameleon: [<[north] north>], [<[south] south>], [<[east] east>], [<[west]
+west>]; [<[disengage] disengage>]
+> chameleon, e
+Chameleon is winking at the camera and swirling away, and the crowd is
+following her.
+
+Glass-gilded passage
+Four corridors join here at a small hub, where the sharp-edged rectangles of
+the Glass Wing to the east clash with the too-shiny ornaments of the Gilded
+Wing to the north.
+
+The [<guests>] are milling around and talking amongst themselves.
+
+The butler is moving from the ballroom to the dining patio.
+
+Quinn: Now, I know what people will say. It is true that I owned quite a lot of
+property above the Eagle Crossing Dam. Completely true. And that I would have
+loved to develop some of the land right below it.
+
+Malatesta: People won’t suggest you’re responsible, surely?
+
+Quinn: Of course not! Even if I did want to buy out the town center, what sort
+of monster would have wanted that flood to happen?
+
+                                    (*)-{R}     
+                                     |   |      
+                                ( )-(.)-(C)-( ) 
+                                 |   |   |   |  
+                                ( )-(B)-( )-( ) 
+
+Rat: [<[rat , south] south>], [<[rat , west] west>]; [<[rat , sabotage the
+toilet] sabotage the toilet>]
+Spider: [<wait>], [<long wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+Chameleon: [<[north] north>], [<[south] south>], [<[east] east>], [<[west]
+west>]; [<[disengage] disengage>]
+> chameleon, w
+Everyone is following Chameleon to the granite-gilded passage.
+
+Granite-gilded passage
+Four corridors join here at a small hub, where the huge stone blocks of the
+Granite Wing to the west clash with the too-shiny ornaments of the Gilded Wing
+to the north.
+
+The [<guests>] are milling around and talking amongst themselves.
+
+The butler is moving from the dining patio to the ballroom.
+
+Quinn: Besides, nobody could have foreseen that the flood path would pass
+through the oil refinery, the roofing nail manufacturing plant, and the
+fireworks depot. Absolutely nobody.
+
+Malatesta: In that order?
+
+Quinn: Quite a spectacle, the flaming exploding shrapnel in the floodwaters! A
+horrific spectacle. Just horrific. But a spectacle all the same. Not much left
+of the town after that, certainly.
 
                                     (*)-{R}     
                                      |   |      
@@ -3935,61 +4089,6 @@ The [<guests>] are milling around and talking amongst themselves.
 
 The butler is moving from the ballroom to the dining patio.
 
-Quip deck: []
-
-                                    (*)-{R}     
-                                     |   |      
-                                ( )-(.)-(C)-( ) 
-                                 |   |   |   |  
-                                ( )-(B)-( )-( ) 
-
-Rat: [<[rat , south] south>], [<[rat , west] west>]; [<[rat , sabotage the
-toilet] sabotage the toilet>]
-Spider: [<wait>], [<long wait>]; view any room or object
-Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[north] north>], [<[south] south>], [<[east] east>], [<[west]
-west>]; [<[disengage] disengage>]
-> chameleon, w
-Chameleon is winking at the camera and swirling away, and the crowd is
-following her.
-
-Granite-gilded passage
-Four corridors join here at a small hub, where the huge stone blocks of the
-Granite Wing to the west clash with the too-shiny ornaments of the Gilded Wing
-to the north.
-
-The [<guests>] are milling around and talking amongst themselves.
-
-The butler is moving from the dining patio to the ballroom.
-
-Quip deck: []
-
-                                    (*)-{R}     
-                                     |   |      
-                                ( )-(C)-(.)-( ) 
-                                 |   |   |   |  
-                                ( )-( )-(B)-( ) 
-
-Rat: [<[rat , south] south>], [<[rat , west] west>]; [<[rat , sabotage the
-toilet] sabotage the toilet>]
-Spider: [<wait>], [<long wait>]; view any room or object
-Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[north] north>], [<[south] south>], [<[east] east>], [<[west]
-west>]; [<[disengage] disengage>]
-> chameleon, e
-Everyone is following Chameleon to the glass-gilded passage.
-
-Glass-gilded passage
-Four corridors join here at a small hub, where the sharp-edged rectangles of
-the Glass Wing to the east clash with the too-shiny ornaments of the Gilded
-Wing to the north.
-
-The [<guests>] are milling around and talking amongst themselves.
-
-The butler is moving from the ballroom to the dining patio.
-
-Quip deck: []
-
                                     (*)-{R}     
                                      |   |      
                                 ( )-(.)-(C)-( ) 
@@ -4009,41 +4108,63 @@ We shall wait.
 
 The butler is moving from the dining patio to the granite-gilded passage.
 
-Quip deck: []
+Quip deck: [#q-3-vault #q-3-flirting #q-null-1]
+Chose #q-3-vault
 [============================================================================]
 
 The butler is moving from the granite-gilded passage to the trophy room.
 
-Quip deck: []
+The rat wonders. A vault? Why? Must the butler not use it?
+
+we could also just call it a storage room
+it’s a normal room with a normal lock
+i just wanted to say i breached the vault
+
 [============================================================================]
 
 The butler is moving from the trophy room to the gold-plated bathroom.
 
 People approach! The rat must hide!
 
-Quip deck: []
 [============================================================================]
 
 The butler is putting down the silver tray.
 
-Quip deck: []
+Quip deck: [#q-3-flirting #q-null-1]
+Chose #q-3-flirting
 [============================================================================]
 
 The butler is picking up the newspaper.
 
-Quip deck: []
+chameleon you’re seriously flirting like this with someone you’ve never met
+face to face
+why
+
+Well, it’s not like any of us know each other’s real names. Such is the nature
+of the job.
+
+yeah but you know a little bit about me at least
+fox is a mystery
+i keep having to phrase my sentences to avoid pronouns even
+
+Why not just ask? Fox, darling, I know you’re all about the secrecy, but if
+we’re all going to be taking your orders, would you at least give us a way to
+refer to you?
+
+[<they/them>] / [<it/its>] /???> fae/faer
+A fae after my own heart.
+
 [============================================================================]
 
 The butler is kneeling down in the puddle and reconnecting the pipes. Then a
 few pages of the New Gothenburg Post get repurposed as a mop to transfer the
 water back into the toilet bowl.
 
-Quip deck: []
 [============================================================================]
 
-Time.
+Time is up.
 
-done
+out
 
 The butler was distracted for 26 minutes.
 
@@ -4060,7 +4181,8 @@ The butler is moving through the glass-gilded passage toward the ballroom.
 
 The rat is alone, and free to act.
 
-Quip deck: []
+Quip deck: [#q-null-1]
+Chose #q-null-1
 
                                     (*)-(R)     
                                      |   |      
@@ -4141,7 +4263,7 @@ Rat: [<[rat , north] north>], [<[rat , east] east>], [<[rat , west] west>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
 > z
-dot dot dot
+The rat waits.
 
 Vespertilion: Insurance will pay more than the losses and the objects will be
 easily tracked; the thieves will not get far. But the loss of face will be

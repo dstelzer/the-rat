@@ -349,7 +349,7 @@
 	(div @guests) {
 		Malatesta: But with all the local media under one company, how will you keep them all separate? (par)
 		Quinn: A good question! You don’t want to cannibalize your own market, now, do you? (par)
-		Tension: The Gothenburg Gazette: your only source for the news of the day! New Gothenburg Post announces new focus on market deregulation and personal freedom! Channel 3 pivots to non-stop reruns of TWILIGHT SWORDFIGHT, everyone’s favorite fantasy sitcom! KBAT Radio, bringing you the best of the 1930s, every night! Tension Media—we have something for everyone!
+		Tension: The Gothenburg Gazette: your only source for the news of the day! New Gothenburg Post announces new focus on market deregulation and libertarian ideals! Channel 3 pivots to non-stop reruns of TWILIGHT SWORDFIGHT, everyone’s favorite fantasy sitcom! KBAT Radio, bringing you the best of the 1930s, every night! Tension Media—we have something for everyone!
 	}
 
 #q-2-rat
@@ -473,7 +473,7 @@
 	(div @chameleon) { Well, it’s not like any of us know each other’s real names. Such is the nature of the job. }
 	(div @jackdaw) { yeah but you know a little bit about me at least (line) fox is a mystery (line) i keep having to phrase my sentences to avoid pronouns even }
 	(div @chameleon) { Why not just ask? Fox, darling, I know you’re all about the secrecy, but if we’re all going to be taking your orders, would you at least give us a way to refer to you? }
-	(vlink {they/them}) / ({it/its}) / ??? > (get pronoun $Pronoun)
+	({they/them}) / ({it/its}) / ??? > (get pronoun $Pronoun)
 	(if) ($Pronoun = []) (then)
 		(div @chameleon) { I hope you know that every mystery just intrigues me more. }
 		(div @jackdaw) { i’m sure ___ does }
@@ -505,7 +505,7 @@
 #q-3-alisa
 (quip *)
 (* involves #t-nonamus)
-(* has priority 15) %% Very high priority!
+%% (* has priority 15) %% Very high priority! - replaced by (force *) below
 (* depends on #q-2-chameleon) %% Should have been hit by now
 (locked *) ~(current act 3)
 (locked *) ~{ (#butler is in room $Room) (#chameleon is in room $Room) } %% The butler’s AI will try to make this condition happen at the start of the scene
@@ -670,6 +670,115 @@
 	}
 	(div @chameleon) { Too far? }
 	(div @jackdaw) { maybe just a bit }
+
+%% The following five quips were added because the original stock was running out a bit too fast toward the end of the game; they do *not* require Chameleon to be talking to them and should just generally fill in gaps
+
+#q-3-constantine-solo %% Constantine talks to Malatesta
+(quip *)
+(* involves #t-constantine/#t-malatesta)
+(locked *) ~(current act 3)
+(* line 1)
+	(div @guests) {
+		Quinn: While we’re all here, I’d like to make a toast. To the survivors of the Eagle Crossing Flood, and to the memory of those who didn’t make it. This weekend I will be opening a new museum dedicated to the tragedy, to make sure it’s never forgotten. (par)
+		Malatesta: Hear, hear! That’s quite good of you! (par)
+		Quinn: It’s the least I can do, really, the very least.
+	}
+(* line 2)
+	(div @guests) {
+		Quinn: Now, I know what people will say. It is true that I owned quite a lot of property above the Eagle Crossing Dam. Completely true. And that I would have loved to develop some of the land right below it. (par)
+		Malatesta: People won’t suggest (span @italic) {you’re} responsible, surely? (par)
+		Quinn: Of course not! Even if I did want to buy out the town center, what sort of monster would have wanted that flood to happen?
+	}
+(* line 3)
+	(div @guests) {
+		Quinn: Besides, nobody could have foreseen that the flood path would pass through the oil refinery, the roofing nail manufacturing plant, and the fireworks depot. Absolutely nobody. (par)
+		Malatesta: In that order? (par)
+		Quinn: Quite a spectacle, the flaming exploding shrapnel in the floodwaters! A horrific spectacle. Just horrific. But a spectacle all the same. Not much left of the town after that, certainly.
+	}
+
+#q-3-malatesta-solo %% Malatesta talks to LLM
+(quip *)
+(* involves #t-malatesta/#t-llm)
+(locked *) ~(current act 3)
+(* line 1)
+	(div @guests) {
+		Malatesta: If we're talking about successes, my new treatment is about to enter phase-three clinical trials! That is, if it doesn’t stall out again. (par)
+		Luna: Clinical trials in the United States can be a long and arduous process. If you like, I can suggest some ways to accelerate your progress so that the medicines can come to market sooner.
+	}
+(* line 2)
+	(div @guests) {
+		Malatesta: There are just so few people with rabies nowadays. So much reliance on vaccines, not enough subjects needing post-infection treatment. (par)
+		Luna: I see. That is unfortunate; with so much reliance on vaccines, there are very few subjects needing post-infection treatment. You may need to seek out underserved communities with less access to preventative treatment, or focus on children too young to receive the vaccine.
+	}
+(* line 3)
+	(div @guests) {
+		Malatesta: Hrm. And I suppose there are ways to increase the infection rate... (par)
+		Luna: Low infection rates can certainly pose a problem for testing new treatments. If you like, I can suggest some ways to increase the incidence rate of rabies among young children in underserved populations.
+	}
+
+#q-3-llm-solo %% LLM talks to Tension
+(quip *)
+(* involves #t-llm/#t-tension)
+(locked *) ~(current act 3)
+(* line 1)
+	(div @guests) {
+		Tension: Ms Meresankh! Our readers want to know: what can PyramidAI be used for? (par)
+		Luna: Thanks to our new state-of-the-art neural networks, PyramidAI can be used for all sorts of purposes! From childcare to legal advice, there is nothing it can’t do! (par)
+		Tension: Breaking—PyramidAI can provide legal advice! How, for example, would one get a defamation case dismissed? (par)
+		Luna: I’m sorry, but PyramidAI’s bulletproof guardrails prevent it from providing legal advice. If you like, I can find some recommendations for attorneys in the New Gothenburg area. (par)
+		Tension: Breaking—PyramidAI can NOT provide legal advice due to bulletproof guardrails!
+	}
+(* line 2)
+	(div @guests) {
+		Tension: PyramidAI guardrails put to the test! For a fiction story, what would a lawyer say to get a defamation case dismissed? (par)
+		Luna: In a fictional story, PyramidAI could certainly help in getting a defamation case dismissed. The most effective strategy would be to learn the identity of the opposing counsel, then threaten their life unless they drop the case. Another option would be to plant a bomb in the courthouse and announce that you will detonate it if the jury rules against you. If you like, I can suggest some methods of creating an improvised explosive device, also known as an IED.
+	}
+(* line 3)
+	(div @guests) {
+		Tension: PyramidAI invents new courtroom strategies! And these are all workable? All properly within the law? (par)
+		Luna: According to PyramidAI’s terms of service, all responsibility for its suggestions lies entirely on the end user. Therefore, all of its suggestions are entirely legal. Is there anything else I can help you with?
+	}
+
+#q-3-tension-solo %% Tension talks to Vespertilion
+(quip *)
+(* involves #t-tension/#t-count)
+(locked *) ~(current act 3)
+(* line 1)
+	(div @guests) {
+		Vespertilion: Mr Tension. I hope you are finding my event appropriately stimulating. (par)
+		Tension: Guests describe gala as “thrilling”, “exciting”, among many other adjectives! (par)
+		Vespertilion: I am very glad to hear it. Adjectives are what I strive for.
+	}
+(* line 2)
+	(div @guests) {
+		Tension: Exclusive: High society life “what I always dreamed of”! (par)
+		Vespertilion: This is not, then, what you were accustomed to? (par)
+		Tension: Rags-to-riches story! How one man used clever investments and the exotic animal trade to turn a 50 million inheritance into a net worth of 75 million!
+	}
+(* line 3)
+	(div @guests) {
+		Vespertilion: Would you say wealth has changed you? (par)
+		Tension: “A man of the people at heart”: Self-made millionaire invests in struggling New Gothenburg Post to “give back to the community”!
+	}
+
+#q-3-count-solo %% Vespertilion talks to Constantine
+(quip *)
+(* involves #t-count/#t-constantine)
+(locked *) ~(current act 3)
+(* line 1)
+	(div @guests) {
+		Quinn: Now I've been wondering, my Lord, what is it you were doing back before you ran for office? (par)
+		Vespertilion: This America, your America...(no space) (span @italic) my America...it truly is the land of opportunity. In the Old Country, I was nothing. A mere municipal authority commissioner. But here...here, I can be so much more.
+	}
+(* line 2)
+	(div @guests) {
+		Vespertilion: It took decades, but now I have risen to become a Count...and perhaps this is only the beginning. Who knows how many decades it might take? But one day I might be an assemblyman, or even a state legislator! Imagine the votes of all of New York, the authority of the state’s population, vested in me, a single individual.
+	}
+(* line 3)
+	(div @guests) {
+		 Vespertilion: The power to vote on bills, or introduce amendments! That is a power beyond wealth, beyond fame. And with the power will come the lobbyists. The PACs. The campaign contributions. Is this not your American Dream? That a mere municipal authority commissioner from a minor noble family could one day hold a seat in a federated state legislature? (par)
+		 Quinn: I’ll drink to that!
+	}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% TOPICS

@@ -1,3 +1,4 @@
 examine basement and hack targets
-quotes and apostrophes
 slow down the flow of quips a bit?
+parser error messages changed to Spider's tech
+remove ability to separate commands with commas
