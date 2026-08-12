@@ -726,7 +726,7 @@
 	(nonempty $Filtered)
 	(determine object $Room)
 		*(room $Room)
-		%% Don’t require visited
+		{ ($Room is visited) (or) (in bounds for this act $Room) }
 	(from words)
 		*(dict $Room)
 	(matching all of $Filtered)
@@ -749,6 +749,7 @@
 %% EXAMINE <obj>
 
 (default actions enabled)
+(default actions apply to rooms)
 (default action $Obj [examine $Obj])
 
 (grammar [examine/x/watch/describe/check/look/l/view [object]] for [examine $])

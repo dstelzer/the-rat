@@ -76,6 +76,8 @@
 	(current act 1)
 (perform [hack *])
 	(start act two) %% world.dg
+(perform [examine *])
+	(div @jackdaw) { little black box bristling with antennas (line) i refuse to call them antennae }
 
 (any other prize is taken)
 	*(prize $Prize)
@@ -191,6 +193,8 @@
 	(current act 2)
 (perform [hack *])
 	(start act three) %% world.dg
+(perform [examine *])
+	(div @jackdaw) { little box big touchscreen }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% ACT 3 - THE VAULT
@@ -281,10 +285,12 @@
 (name *) security camera
 (prize conversation about *)
 	(div @spider) { Wonderful. From this I should be able to access the entire camera network and look for anything we might have missed. }
-	(div @jackdaw) { as long as i stand here for another 20m }
+	(div @jackdaw) { as long as i cling here for another 20m }
 	(div @spider) { Only fifteen, I hope. As usual I will wait for Fox’s signal. }
 (hack target *)
 	(* is handled)
 	(current act 3)
 (perform [hack *])
 	(start act four) %% world.dg
+(perform [examine *])
+	(div @jackdaw) { bunch of tiny components hidden behind a plate on the ceiling }

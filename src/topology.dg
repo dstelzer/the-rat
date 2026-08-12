@@ -17,6 +17,7 @@
 (* is available in act 4)
 
 (name *) servants’ storage
+(dict *) servants' servants servant's servant’s
 (look *)
 	~(#butler is in room *)
 	The room is dark and I cannot see much. Someone will need to open the door.
@@ -59,6 +60,7 @@
 (* is available in act 4)
 
 (name *) servants’ control room
+(dict *) servants' servants servant's servant’s
 (look *)
 	~(#butler is in room *)
 	The room is dark and I cannot see much. Someone will need to open the door.
@@ -549,3 +551,14 @@
 	(div @spider) { By which it seems to mean that water is spraying a dozen feet in the air and soaking anyone in the area. }
 (narrate fixing *)
 	(div @spider) { The butler is braving the spray, forcing his way through until he can grab hold of the valves and turn them back down. }
+
+%% A secret “room” for parser players to examine if desired
+#basement
+(room *)
+(* has coordinates [1 1 1]) %% Not on normal map
+(* is available in act 1/2/3/4)
+
+(name *) basement
+(look *) I can see very little without Jackdaw’s infrared goggles.
+(after [examine *])
+	(div @jackdaw) { yeah but i can see it just fine (line) don’t worry about the basement i’ll handle it }
