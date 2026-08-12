@@ -49,3 +49,5 @@
 
 (hr)
 	(progress bar 1 of 1)
+
+(using fixed background color)

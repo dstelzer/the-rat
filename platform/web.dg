@@ -75,3 +75,5 @@
 	margin-bottom: 0.5em;
 (hr)
 	(div @hr) (space 1)
+
+(using fixed background color) (fail)
