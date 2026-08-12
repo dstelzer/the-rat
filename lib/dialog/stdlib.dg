@@ -2410,9 +2410,7 @@
 		(stoppable) {
 			%% If this flag is still set, then a long-distance movement was interrupted by a (stop) before it reached its last step. We should explain this to the player.
 			(if) (moving long distances) (then)
-				(div @meta) {
-					Because something dramatic happened, your movement was cut short.
-				}
+				(div @spider) { Something happened, so let us stop the movement there. }
 				(now) ~(moving long distances)
 				(now) ~(last step of movement)
 			(endif)
@@ -3335,8 +3333,20 @@
 
 (interface (parse commandline $<Words with choices $<ChoiceList))
 
-(parse commandline [] with choices $)
-	(div @meta) { Come again? }
+(parse commandline [] with choices $) %% DMS
+	(select)
+		(div @rat) { What is this? }
+	(or)
+		(div @spider) { What was that? }
+	(or)
+		(div @jackdaw) { didn’t catch that }
+	(or)
+		(if) (current act 4) (then)
+			(div @chameleon) { Come again? }
+		(else)
+			(div @jackdaw) { ... }
+		(endif)
+	(at random)
 
 (parse commandline [undo] with choices $)
 	(try [undo])
@@ -3397,7 +3407,7 @@
 			(now) (last command was $GoodCmd)
 			(rewrite $GoodCmd into $ActualWords)
 		(else)
-			(div @meta) { \( Sorry, I don’t know what to fix. \) }
+			(div @spider) { What word needs to be replaced? }
 			(stop)
 		(endif)
 	(else)
@@ -3429,7 +3439,7 @@
 		%% execute what’s to the left of the separator.
 
 		(if)
-			*(split $ActualWords by [, and]
+			*(split $ActualWords by [and] %% DMS - disabled the comma part
 				into $Left and $Right)
 			*(understand $Left as $)
 		(then)
@@ -3461,23 +3471,18 @@
 	(now) (allowing parse errors)
 	(if) *(understand $Words as $BadAction) (then)
 		(if) ([all] is one of $BadAction) (then)
-			(div @meta) {
-				\( The word “all” is not allowed in that context. Please be more specific. \)
-			}
+			(div @spider) { Please clarify what you mean by “all”? }
 		(elseif) ([,] is one of $BadAction) (then)
-			(div @meta) {
-				\( You’re not allowed to use multiple objects in that
-				context. Please do it step by step. \)
-			}
+			(if) (current act 4) (then)
+				(div @jackdaw) { one thing at a time please }
+			(else)
+				(div @chameleon) { One thing at a time, please. I’m not quite following. }
+			(endif)
 		(else)
-			(div @meta) {
-				\( I only understood you as far as wanting to
-				(describe action $BadAction)
-				. \)
-			}
+			(div @rat) { Only understood “(no space) (describe action $BadAction) (no space)”. The rest confuses. }
 		(endif)
 	(else)
-		(div @meta) { \( I’m sorry, I didn’t understand what you wanted to do. \) }
+		(div @jackdaw) { sorry i have no idea what that means }
 	(endif)
 	(stop)
 
@@ -3549,9 +3554,7 @@
 			$Template
 			$ObjList)
 	(then)
-		(div @meta) {
-			Did you want to (describe action $ComplexAction)?
-		}
+		(div @spider) { Clarification needed: (describe action $ComplexAction)? }
 		(par)
 		(prompt and input $Words)
 		{
@@ -3565,12 +3568,9 @@
 			(stop)
 		}
 	(else)
-		(div @meta) {
-			Did you want to: (line)
+		(div @spider) {
+			Clarification needed. Was that supposed to be: (line)
 			(enumerate actions $AskList 1 $)
-			(if) ~{ (library links enabled) (interpreter supports links) } (then)
-				\( Type the corresponding number \)
-			(endif)
 		}
 		(par)
 		(prompt and input $Words)
@@ -3728,7 +3728,7 @@
 	(elseif) ($Words = [no]) (or) ($Words = [n]) (then)
 		(fail)
 	(else)
-		(div @meta) { Please answer yes or no. }
+		(div @jackdaw) { is that a yes or a no }
 		(yesno)
 	(endif)
 

@@ -369,6 +369,15 @@
 		.
 	}
 
+(narrate failing to leave $ $)
+	(if) (current player #rat) (then)
+		(div @rat) { The rat cannot. No path is there. }
+	(elseif) (current player #chameleon) (then)
+		(div @chameleon) { I would love to, but I’m afraid I just can’t see how. }
+	(else)
+		(div @spider) { The butler shakes his head slightly. }
+	(endif)
+
 (perform [leave $Room $Dir])
 	(narrate leaving $Room $Dir)
 	(from $Room go $Dir to room $Target)
