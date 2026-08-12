@@ -5,3 +5,4 @@
 *.out
 web/*
 feedback/
+secrets/*.dg
