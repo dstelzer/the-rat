@@ -123,20 +123,22 @@
 
 #q-null-1
 (quip *)
-(locked *) (current quip *) %% Don’t pick it twice in a row
+(null *)
+(locked *) (current quip $Q) (null $Q) %% Don’t pick two nulls in a row
 (* line)
 	(now) (* is unvisited)
 	(fail) %% Draw a new quip immediately
 
-%% We have enough quips now that I don’t think we need this delay
-%% #q-null-2
-%% (quip *)
-%% (* line)
-%% 	(now) (* is unvisited)
+#q-null-2
+(quip *)
+(null *)
+(locked *) (current quip $Q) (null $Q) %% Don’t pick two nulls in a row
+(* line)
+	(now) (* is unvisited)
 
 #q-actchange %% A few turns of silence when changing acts
 %% Does not have (quip $) because we don’t want it selected at random
-(* line 1)
+(* line 1) %% Adjust the number of these lines for more turns of silence if desired
 
 (understand command [quipdata])
 (perform [quipdata])

@@ -194,6 +194,7 @@
 	(div @chameleon) { The media mogul. He’s been steadily buying up the press in New Gothenburg and reshaping it to align with his visions. His propaganda. }
 	(div @jackdaw) { i wondered why the post changed so much }
 	(div @chameleon) { It’s all his doing. He’s the new editor-in-chief. }
+(force *) (current act 2) %% It’s indirectly required for the butler to greet Chameleon in act 3, so we need to make sure it happens
 
 #q-1-constantine
 (quip *)
@@ -408,8 +409,8 @@
 (* involves #t-tension/#t-nonamus)
 (locked *) (current act 1)
 (locked *) (#q-2-rat is unvisited) (#q-2-jackdaw is unvisited) (#q-2-spider is unvisited) %% Needs at least one of them
+(* has priority 5) %% This one needs to happen fairly early
 (* depends on #q-1-tension)
-(* has priority 15) (current act 3) %% If we get to act 3 without seeing this one, amp up the priority, because it’s needed for the butler to greet Chameleon
 (* line 1)
 	(div @spider) { Chameleon certainly seems talented at digging up secrets. Perhaps she should have gone by Ferret. }
 	(div @chameleon) { I’ll take that as a compliment, dear. Thank you. }
@@ -418,7 +419,8 @@
 (* line 2)
 	(div @jackdaw) { so chameleon’s a laid-off reporter? }
 	(div @chameleon) { “Made redundant”, they said. “Refocusing our journalism in a new direction”, they said. And it all started when (span @italic) he bought us out. My exposé on the largest crime family in New Gothenburg was almost ready to print! It would have shaken this city to its foundations! But no, it no longer fits his vision for the paper, so it will never see the light of day! }
-(force *) (current act 3)
+(force *) (current act 3) %% If we get to act 3 without seeing this one, amp up the priority, because it’s needed for the butler to greet Chameleon
+(force *) (hack target #p-2-end)
 
 #q-2-fox
 (quip *)
@@ -431,7 +433,7 @@
 	(div @chameleon) { But it makes me wonder about the Count. Did anyone have a grudge against him, or was he just a convenient target? }
 	(div @jackdaw) { you should ask fox }
 	(div @spider) { Oh? }
-	(link) Yes / (link) No > (get input $)
+	(link) Yes / (link) No >> (get input $)
 	(div @chameleon) { Curious...and Fox does have such good organizational skills... }
 	(div @jackdaw) { therell be time to pry later focus on the job now }
 	(div @chameleon) {
@@ -473,7 +475,7 @@
 	(div @chameleon) { Well, it’s not like any of us know each other’s real names. Such is the nature of the job. }
 	(div @jackdaw) { yeah but you know a little bit about me at least (line) fox is a mystery (line) i keep having to phrase my sentences to avoid pronouns even }
 	(div @chameleon) { Why not just ask? Fox, darling, I know you’re all about the secrecy, but if we’re all going to be taking your orders, would you at least give us a way to refer to you? }
-	({they/them}) / ({it/its}) / ??? > (get pronoun $Pronoun)
+	({they/them}) / ({it/its}) / ??? >> (get pronoun $Pronoun)
 	(if) ($Pronoun = []) (then)
 		(div @chameleon) { I hope you know that every mystery just intrigues me more. }
 		(div @jackdaw) { i’m sure ___ does }

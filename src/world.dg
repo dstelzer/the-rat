@@ -345,7 +345,7 @@
 (get an initial comment)
 	*(repeat forever)
 	(save undo $)
-	({Yes}) / ({No}) / ([] {\[ nothing \]}) >
+	({Yes}) / ({No}) / ([] {\[ nothing \]}) >>
 	(get input $Words)
 	(if) (empty $Words) (then)
 		(select)
