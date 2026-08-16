@@ -638,6 +638,9 @@
 		(div @rat) { Money. Success. Nothing more, maybe sad. But money is much. }
 	(endif)
 	
+	(the end)
+
+(the end)
 	(div @jackdaw) { actually wait wait wait spider }
 	(div @spider) { Yes? }
 	(div @jackdaw) { take the extra couple minutes to short every stock connected to vespertilion or llm }
