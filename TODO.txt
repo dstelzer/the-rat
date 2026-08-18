@@ -1,1 +1,2 @@
 let people customize suggestion bar and map
+weirdness between bottom of ABOUT output and top of inline bar
