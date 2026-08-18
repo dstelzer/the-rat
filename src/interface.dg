@@ -1,9 +1,15 @@
 (redraw status bar)
 	(if) (interpreter supports status bar) (then)
 		(map of current layer needs $Lines lines) %% Should always be ≥ 3
-		(status bar @mainstatus with height $Lines) {
+		(if) (interpreter supports links) (then)
+			($Lines plus 1 into $Total)
+		(else)
+			($Total = $Lines)
+		(endif)
+		(status bar @mainstatus with height $Total) {
 			(automap)
 			(if) (interpreter supports links) (then) %% Inlays at left and right
+				(meta verbs) %% And bottom!
 				(if) (current act 3) (then)
 					(chamstick inlay)
 				(elseif) (butler has the earpiece) (then)
@@ -19,6 +25,31 @@
 		(inline suggestion bar)
 	(else)
 		(div suggestion bar)
+	(endif)
+
+(style class @metaverbs)
+	font-size: smaller;
+	text-align: center;
+	margin-top: 0.67em;
+	margin-bottom: 0.15em;
+
+(meta verbs)
+	(div @metaverbs) {
+		({undo}) (bullet)
+		({save}) (bullet)
+		({restore}) (bullet)
+		({about}) (bullet)
+		({hints})
+	}
+(bullet) (space) \~ (space)
+
+(define resource @hints) hints.html; A file of hints
+(understand command [hints])
+(perform [hints])
+	(if) (interpreter supports links) (then)
+		(div @meta) { (link resource @hints) { Click here } to open hints in a new tab. }
+	(else)
+		(div @meta) { See the file hints.html included in your download. }
 	(endif)
 
 (style class @ratstick)

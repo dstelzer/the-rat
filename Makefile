@@ -38,3 +38,20 @@ regress.out: $(FILES) platform/debug.dg regress.in
 
 regress: regress.out
 	meld regress.out regress.gold
+
+ifcomp.zip: web rat.z5 hints.html cover.png
+	rm -f ifcomp.zip
+	rm -rf ifcomp
+	mkdir ifcomp
+	cp -r web ifcomp/
+	cp rat.z5 ifcomp/zmachine.z5
+	cp README.ifcomp ifcomp/
+	cp cover.png ifcomp/
+	cp hints.html ifcomp/
+	cp index.html ifcomp/
+	( cd ifcomp && zip -r ../ifcomp.zip . )
+	cp ifcomp.zip ifcomp_$(VERSION).zip
+
+PWD := $(shell pwd)
+hints.html: hints.clu
+	( cd ~/Projects/Invisiclues && python3 maker.py $(PWD)/hints )

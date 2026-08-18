@@ -485,6 +485,10 @@
 	(#butler is in room #garden1)
 	(div @jackdaw) { like i said (line) get the butler out of the way first }
 
+(prevent [proceed]) %% The time for proceeding has passed
+	(current act 4)
+	(div @jackdaw) { i’m on my way out now (line) don’t want to be in the middle of the guests’ stuff when they leave }
+
 (perform [proceed])
 	(current act 0)
 	(div @jackdaw) { on it }

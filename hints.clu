@@ -1,0 +1,75 @@
+@TITLE THE RAT
+@SHORT The Rat
+@AUTHOR Daniel M. Stelzer
+@INTRO Five clever thieves against one elderly butler. What could go wrong?
+
+# General
+	# What’s going on here?
+		You’re Fox, the coordinator of a heist crew attempting to steal everything that’s not nailed down.
+		The colored messages are the radio chatter among your crew: yellow from Rat (the infiltrator), green from Jackdaw (the thief), cyan from Spider (the hacker), and magenta from Chameleon (the face).
+		The commands you’re typing in (or the links you’re clicking on) are your instructions to the crew.
+		The black bar at the bottom of the screen suggests some things that each crew member can do in the current situation.
+	# How does this map work?
+		It shows the layout of the manor—or at least, the part of it that’s accessible in the current act.
+		In the web version, you can also click any room to get its description.
+		Capital letters show where people are: both your crew members (like R for Rat) and your enemies (like B for the butler).
+		Ticks at the edges of a room indicate that something is sabotaged there.
+		Dots indicate the butler’s current path.
+		Stars indicate items that have been moved.
+	# What’s my overall goal?
+		Steal as much as you can!
+		Use SCORE to see how much you have.
+# Prologue
+	# What am I supposed to be doing?
+		Getting your bearings, and learning how the game works.
+		Try out the different commands suggested at the bottom of the screen and see what works and what doesn’t.
+	# What is my goal here?
+		You need to get Jackdaw and Rat into the manor.
+		Which means you need to lure the butler away from the door.
+	# How do I influence the butler?
+		If you cause a problem, he’ll notice on his butler telemetry and go attend to it.
+		Has Rat explored the whole garden path?
+		Sabotage the water feature.
+	# Why does Rat have to hide?
+		It hides automatically when another person is in the same room.
+	# Shouldn’t a butler be directing a whole staff?
+		Normally, yes. The butler should be doing something more like…well, more like what you’re doing.
+		The radio chatter will eventually discuss this.
+		Count Vespertilion has great difficulty holding onto his employees.
+# Act One
+	# What am I supposed to be doing?
+		Now that Jackdaw is in the basement, you need to buy her time to steal things.
+		Create some kind of distraction, then say PROCEED.
+		The amount of time between the PROCEED and when the butler is back at his tasks determines what she’s able to steal.
+		Eventually, she’ll find something that can trigger the next act. You’ll probably know it when you see it.
+		It’s the wifi router for Spider to HACK.
+	# How do I keep the butler distracted?
+		Sabotage multiple things before you tell Jackdaw to PROCEED. He’ll have to attend to them all before he can check on the security again.
+# Act Two
+	# What am I supposed to be doing?
+		The same thing as before, really.
+		Set up a distraction, tell Jackdaw to PROCEED, then see what she can steal.
+		Now, though, the butler needs certain items on hand to fix the problems.
+		Specifically, the silver tray, the newspaper, or the curtain rod.
+		If you can arrange for those items to be left far away from where they’re needed, he’ll have to trek all the way across the house and back.
+# Act Three
+	# What can Chameleon do?
+		MINGLE will have her make conversation with the guests. Now, wherever she moves, the guests will move with her.
+		DISENGAGE will reverse that: the guests will remain in their current position and not move when she moves.
+		You can use this to create two obstacles for the butler: the room full of guests and the room with Chameleon in it.
+# Epilogue
+	# What can I do here?
+		Wait until something changes on the status bar at the bottom.
+		That will suggest a new course of action.
+	# I can’t enter the newly-revealed rooms!
+		Well, <i>Rat</i> can’t enter the newly-revealed rooms.
+		Someone else can.
+	# But I wasn’t finished grabbing loot!
+		You may want to UNDO.
+		Hacking moves on to a new phase of the game; the time for looting is past.
+	# I’m confused. Can you tell me exactly what to do?
+		Direct the butler to the two newly-revealed rooms, at the top corners of the map.
+		Attend to the data drive to pick it up.
+		Bring it to the intercom.
+		Attend to the intercom to broadcast that information to the guests.
+		Congratulations!
