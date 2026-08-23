@@ -54,9 +54,10 @@
 	border-radius: 0.75em;
 	margin-top: 0.67em;
 	margin-bottom: 0.67em;
+	padding: 0.25em;
 (style class @butlercolor)
 	color: inherit;
-(conversation style description) dotted gray (line) all the colors are taken it's time for patterns
+(conversation style description) dotted gray (line) all the colors are taken it’s time for patterns
 
 (style class @mainstatus)
 	height: auto;

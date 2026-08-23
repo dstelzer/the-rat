@@ -649,7 +649,7 @@
 	*(count down from $N into $K)
 	(what $K thousand total can buy)
 
-(what 1 thousand total can buy) new shoes %$ 200 each
+(what 1 thousand total can buy) new shoes %% 200 each
 (what 2 thousand total can buy) new tech %% 400 each
 (what 5 thousand total can buy) our rent covered %% 1,000 each
 (what 10 thousand total can buy) a nice vacation %% 2,000 each

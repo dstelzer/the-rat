@@ -39,7 +39,7 @@ var toggles = [
 	{id: "aacb-refocus", text: "Always re-focus", tooltip: "Always bring focus back to the input bar after entering a command", init: false},
 	{id: "aacb-large", text: "Larger text", init: false},
 	{id: "aacb-nofont", text: "Disable fonts", tooltip: "Use the system's default fonts instead of the ones chosen by the author", init: false},
-	{id: "aacb-delay", text: "Slow text", tooltip: "Make messages appear one at a time", init: true},
+	{id: "aacb-delay", text: "Slow text", tooltip: "Make messages appear one at a time instead of all at once", init: true},
 ];
 
 var aaengine;
@@ -519,8 +519,13 @@ window.run_game = function(story64, options) {
 				if(!document.getElementById("aacb-fade").checked) {
 					p.style["animation-name"] = "none";
 				}
-				p.style["animation-delay"] = this.par_delay + "s";
-				this.par_delay += document.getElementById("aacb-delay").checked ? 0.1 : 0; // Stagger paragraph fade-ins by a fraction of a second
+				if(this.in_status != 2) {
+				//	p.style["animation-delay"] = this.par_delay + "s";
+					p.style["animation-delay"] = ((Math.sqrt(this.par_delay+1)-1)*2) + "s"; // the sqrt function speeds up nicely over time (takes much larger inputs to produce slightly larger outputs); this adjusts it so that at 0 it matches both the value and the derivative of y=x, so it's approximately linear for a small number of messages
+					this.par_delay += document.getElementById("aacb-delay").checked ? 0.1 : 0; // Stagger paragraph fade-ins by a fraction of a second
+				} else { // But not in inline status areas; inline status areas get the whole block right away (0.1s is the default delay of all paragraphs in the CSS)
+					p.style["animation-delay"] = "0.1s";
+				}
 				this.current.appendChild(p);
 				this.current = p;
 				this.in_par = true;

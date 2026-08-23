@@ -1,2 +1,15 @@
 let people customize suggestion bar and map
 weirdness between bottom of ABOUT output and top of inline bar
+increase web screen width?
+ratstick and chamstick sometimes break around lines oddly
+act 3 is a bit of a drag, need to pick up the pace
+LOOP command once the Chameleon trick is figured out
+content warnings
+hint that multiple things can be sabotaged before PROCEED
+explain opening problem more clearly: where is the door? where is Jackdaw?
+explain why Jackdaw can't steal unless the butler is distracted
+text scrolls to bottom too much
+explain that multiple things should be sabotaged before proceed
+C and R arrows keep colliding with edges no matter what I do!
+list "east" after "west"
+don't take a turn when "long wait" outside a heist

@@ -30,7 +30,7 @@
 	($In minus 1 into $Inm1)
 	*(count down from $Inm1 into $Out)
 @(count up to $In into $Out)
-	(count up from 0 to $In into $Out)
+	*(count up from 0 to $In into $Out)
 (count up from $Current to $Top into $Out)
 	($Out = $Current)
 	(or)

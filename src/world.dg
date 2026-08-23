@@ -80,7 +80,8 @@
 			(span @bold) { Rat } :
 			(#rat is in room $Room)
 			(collect $Dir)
-				*(direction $Dir)
+				%% *(direction $Dir)
+				*($Dir is one of [#west #north #south #east]) %% Testers want west on the west
 				(from $Room go $Dir to $Next)
 				(in bounds for this act $Next)
 			(into $List)
@@ -193,7 +194,8 @@
 			(span @bold) { Chameleon } :
 			(#chameleon is in room $Room)
 			(collect $Dir)
-				*(direction $Dir)
+				%% *(direction $Dir)
+				*($Dir is one of [#west #north #south #east]) %% Testers want west on the west
 				(from $Room go $Dir to $Next)
 				(in bounds for this act $Next)
 			(into $List)
@@ -255,7 +257,8 @@
 			(span @bold) { Butler } :
 			(#butler is in room $Room)
 			(collect $Dir)
-				*(direction $Dir)
+				%% *(direction $Dir)
+				*($Dir is one of [#west #north #south #east]) %% Testers want west on the west
 				(from $Room go $Dir to $Next)
 				(in bounds for this act $Next)
 			(into $List)

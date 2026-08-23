@@ -11,8 +11,8 @@
 (command [about])
 (perform [about])
 	(banner)
-	Written as a prize for IFComp 2024 (par)
-	With special thanks to Drew Cook, dsherwood, rh, and Mike Russo for testing, Sarah Chevalier for developing the character personalities and dynamics, and of course, Chandler Groover for writing THE BAT!
+	Written as a prize for IFComp 2024. (par)
+	With special thanks to Drew Cook, dsherwood, rh, Mike Russo, Doug Egan, Ada Stelzer, and Tabitha for testing, Sarah Chevalier for developing the character personalities and dynamics, and of course, Chandler Groover for writing THE BAT!
 
 %% We also shove a bunch of random interfaces here to silence compiler warnings about unused library predicates (normally they’d be used by standard actions but we purged most of those)
 (interface (seat $))
