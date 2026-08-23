@@ -358,18 +358,14 @@
 	(try [examine #garden2])
 
 (content warnings)
-	(div @meta) {
-		(div @bold) { Content warning: }
-		This game features various awful situations with a comedic tone, including quite a lot of horrible actions from billionaires toward the rest of the population—from mistreatment of striking workers to unethical experimentation on humans to overworking the butler. None of this is dwelt upon or discussed in particular detail.
-		(par)
-		(explain colors)
-		(par)
-		When you see this prompt,
-		(if) (interpreter supports links) (then)
-			click it or
-		(endif)
-		press any key to continue.
-	}
+	(div @bold) { Content warning: }
+	This game features various awful situations with a comedic tone, including quite a lot of horrible actions from billionaires toward the rest of the population—from mistreatment of striking workers to unethical experimentation on humans to overworking the butler. None of this is dwelt upon or discussed in particular detail. (par)
+	(explain colors) (par)
+	When you see this prompt,
+	(if) (interpreter supports links) (then)
+		click it or
+	(endif)
+	press any key to continue.
 	(pause)
 	(clear)
 
