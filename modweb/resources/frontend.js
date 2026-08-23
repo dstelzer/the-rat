@@ -619,7 +619,6 @@ window.run_game = function(story64, options) {
 		},
 		print_input: function(str, link) {
 			var span;
-
 			this.scroll_anchor = this.current;
 			if(link) {
 				span = document.createElement("h2"); // Using an H2 instead of a span makes it easier for screen readers to jump to it
@@ -642,6 +641,12 @@ window.run_game = function(story64, options) {
 			this.leave_inner();
 			this.currarray.push({t: "i", s: str});
 			this.par_delay = 0; // Ensure there's not too long of a delay when reprinting the entire transcript
+			
+			// TODO: is this warranted?
+		//	var anchor = document.createElement("div");
+		//	anchor.style.height = "0px";
+		//	this.current.appendChild(anchor);
+		//	this.scroll_anchor = anchor;
 		},
 		setstyle: function(s) {
 			var span;
@@ -1284,7 +1289,7 @@ window.run_game = function(story64, options) {
 		} else if(status == aaengine.status.get_key) {
 			io.leave_inner();
 			io.after_text = true;
-			io.scroll_anchor = null;
+		//	io.scroll_anchor = null; // EXPERIMENT: Why is this here?
 			if(!io.in_status) {
 				io.seen_index = io.mainarray.length;
 				io.seen_divs = io.divs.slice();

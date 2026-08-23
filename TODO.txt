@@ -2,8 +2,6 @@ let people customize suggestion bar and map
 weirdness between bottom of ABOUT output and top of inline bar
 increase web screen width?
 content warnings
-text scrolls to bottom too much
-explain that multiple things should be sabotaged before proceed
 C and R arrows keep colliding with edges no matter what I do!
 	MAYBE fixed??
 don't take a turn when "long wait" outside a heist
