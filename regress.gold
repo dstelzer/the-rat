@@ -52,11 +52,18 @@ The rat is prepared to obey every word. Tell it to go. Tell it to sabotage.
 By which it means compass directions, so that we do not waste time with “your
 right or my right”. And for Jackdaw...
 
-just get the butler away from the door and say “proceed” thats all you have to
-do
+just say “proceed” thats all you have to do
 
-You should be seeing a bar of suggestions at the bottom of your screen. Click
-or type one of those commands and we will obey.
+Where should I place you on the map?
+
+don’t put me on the map
+just lure the butler away from the door, that bit at the left where the path
+bends and goes inside
+and say “proceed”
+
+Well. This is off to a wonderful start. Fox, you should be seeing a bar of
+suggestions at the bottom of your screen. Click or type one of those commands
+and we will obey.
 
 Allez!
 
@@ -135,8 +142,13 @@ Volume increase. Aperture decrease. More flow! More spray!
 By which it seems to mean that water is spraying a dozen feet in the air and
 soaking anyone in the area.
 
-i’m ready to go when you are
-just get the butler out of the way and say proceed
+What will this sabotage accomplish, exactly?
+
+besides fun you mean
+
+The mansion is equipped with an elaborate telemetry system. The butler will be
+alerted if anything goes wrong, and while he is distracted, we have free rein
+to do what we like.
 
 The butler is assessing—looking at the water feature now. I have marked his
 likely path on the map.
@@ -412,6 +424,15 @@ That was the chandelier crashing down and landing on the tables.
 
 The butler is assessing—looking at the chandelier now.
 
+wait if the butler can see everything thats happening how am i supposed to get
+away with this
+
+His priority should be the night’s event, and handling any emergencies that
+arise. Only when he has a moment of downtime, or when a new alert shows up, is
+he likely to check the basement cameras.
+
+you better be right about that
+
 Quip deck: [#q-1-comms #q-1-profanity #q-1-videogame #q-1-backstory #q-1-
 backstory #q-1-guestlist #q-null-1 #q-null-2]
 Chose #q-1-videogame
@@ -485,8 +506,15 @@ Spider: [<wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
 > sabotage piano
 hey wait no not yet
-dont draw the butlers attention to the state of everything while im actively
-robbing the place
+dont draw the butlers attention while im actively robbing the place
+do all the sabotaging you want and then tell me to proceed
+
+That seems quite limiting.
+
+well if you dont like it then come do it yourself
+i cant avoid cameras and steal everything at the same time
+
+But much can be sabotaged before the proceeding.
 
 The butler laboriously cranks the chandelier back up to the ceiling and fixes
 the ratchet in place.

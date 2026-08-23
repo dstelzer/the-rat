@@ -412,7 +412,13 @@
 
 (prevent [sabotage $])
 	(heist in progress)
-	(div @jackdaw) { hey wait no not yet (line) dont draw the butlers attention to the state of everything while im actively robbing the place }
+	(div @jackdaw) { hey wait no not yet (line) dont draw the butlers attention while im actively robbing the place (line) do all the sabotaging you want and (span @italic) then tell me to proceed }
+	(select)
+		(div @spider) { That seems quite limiting. }
+		(div @jackdaw) { well if you dont like it then come do it yourself (line) i cant avoid cameras and steal everything at the same time }
+		(div @rat) { But much can be sabotaged before the proceeding. }
+	(or)
+	(stopping)
 
 (prevent [sabotage ~(sabotage target $Obj)])
 	(div @rat) { The rat assesses. But (the $Obj) , (it $Obj) offer(s $Obj) nothing. No means of destruction. }
@@ -422,7 +428,7 @@
 	(now) ($Obj is broken)
 
 (narrate sabotaging $Obj) %% Fallback
-	(div @rat) { (The $Obj) , it yields. It opens. It breaks. }
+	(div @rat) { (The $Obj) , (it $Obj) yield(s $Obj). (It $Obj) open(s $Obj). (It $Obj) break(s $Obj). }
 
 (action [sabotage | $] is valid for #rat)
 
@@ -439,7 +445,7 @@
 		}
 	(endif)
 
-%% Object manipulation (not doable)
+%% Object manipulation (not actually possible)
 
 (grammar [i/inventory] for [inventory])
 (grammar [take inventory] for [inventory])

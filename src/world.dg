@@ -412,9 +412,11 @@
 	(div @spider) { Fine. And the butler is at the B. Text communication is running; we are at your command. }
 	(div @rat) { The rat is prepared to obey every word. Tell it to go. Tell it to sabotage. }
 	(div @spider) { By which it means compass directions, so that we do not waste time with “your right or my right”. And for Jackdaw... }
-	(div @jackdaw) { just get the butler away from the door and say “proceed” thats all you have to do }
+	(div @jackdaw) { just say “proceed” thats all you have to do }
+	(div @spider) { Where should I place you on the map? }
+	(div @jackdaw) { don’t put me on the map (line) just lure the butler away from the door, that bit at the left where the path bends and goes inside (line) and say “proceed” }
 	(div @spider) {
-		You should be seeing a bar of suggestions at the bottom of your screen.
+		Well. This is off to a wonderful start. Fox, you should be seeing a bar of suggestions at the bottom of your screen.
 		(if) (interpreter supports links) (then)
 			Click or type
 		(else)
@@ -424,16 +426,25 @@
 	}
 	(div @chameleon) { Allez! }
 
-(on every tick) %% Some nudges
+%% (on every tick) %% Some nudges
+%% 	(current act 0)
+%% 	~(jackdaw has entered)
+%% 	(select)
+%% 	(or)
+%% 	(or)
+%% 	(or)
+%% 	(or)
+%% 		(div @jackdaw) { i’m ready to go when you are (line) just get the butler out of the way and say proceed }
+%% 	(cycling)
+
+(after [sabotage $])
 	(current act 0)
-	~(jackdaw has entered)
-	(select)
+	(select) %% First time only
+		(div @chameleon) { What will this sabotage accomplish, exactly? }
+		(div @jackdaw) { besides fun you mean }
+		(div @spider) { The mansion is equipped with an elaborate telemetry system. The butler will be alerted if anything goes wrong, and while he is distracted, we have free rein to do what we like. }
 	(or)
-	(or)
-	(or)
-	(or)
-		(div @jackdaw) { i’m ready to go when you are (line) just get the butler out of the way and say proceed }
-	(cycling)
+	(stopping)
 
 (on every tick)
 	(current act 0)
@@ -473,6 +484,20 @@
 (understand command [act1])
 (perform [act1])
 	(start act one)
+
+(after [sabotage $])
+	(current act 1)
+	(select) %% First time only
+		(now) (jackdaw should ask about sabotage)
+	(or)
+	(stopping)
+
+(late on every tick)
+	(jackdaw should ask about sabotage)
+	(div @jackdaw) { wait if the butler can see everything thats happening how am i supposed to get away with this }
+	(div @spider) { His priority should be the night’s event, and handling any emergencies that arise. Only when he has a moment of downtime, or when a new alert shows up, is he likely to check the basement cameras. }
+	(div @jackdaw) { you better be right about that }
+	(now) ~(jackdaw should ask about sabotage)
 
 (start act two) %% triggered in prizes.dg
 	(div @spider) { All right. I will begin. Chameleon, please watch the cameras while I work. }

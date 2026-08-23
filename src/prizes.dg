@@ -266,17 +266,17 @@
 	(div @chameleon) { Wouldn’t \$50,000 be a touch less than a pound? }
 	(div @jackdaw) { i’m factoring in it not being pure, paying someone to make it untraceable, and most of this stuff being too heavy to lift (line) also no last i checked 50,000 dollars is like 38,000 pounds }
 
-#p-3-long-count2 %% artwork taken down when building glass wing
-(prize *)
-(* available in act 3)
-(* requires 20 turns)
-(* is worth 50 thousand dollars)
-(name *) stack of oil paintings
-(prize conversation about *)
-	(div @chameleon) { Anything especially good? }
-	(div @jackdaw) { no rembrandts or whatever (line) some early modern pieces (line) couple of genuine pre-raphaelites }
-	(div @spider) { They must have taken the art down when they redid the Glass Wing. }
-	(div @jackdaw) { grabbed all the rossettis (line) hard to sell but they deserve someone looking at them instead of sitting in a basement }
+%% #p-3-long-count2 %% artwork taken down when building glass wing
+%% (prize *)
+%% (* available in act 3)
+%% (* requires 20 turns)
+%% (* is worth 50 thousand dollars)
+%% (name *) stack of oil paintings
+%% (prize conversation about *)
+%% 	(div @chameleon) { Anything especially good? }
+%% 	(div @jackdaw) { no rembrandts or whatever (line) some early modern pieces (line) couple of genuine pre-raphaelites }
+%% 	(div @spider) { They must have taken the art down when they redid the Glass Wing. }
+%% 	(div @jackdaw) { grabbed all the rossettis (line) hard to sell but they deserve someone looking at them instead of sitting in a basement }
 
 #p-3-end
 (prize *)
