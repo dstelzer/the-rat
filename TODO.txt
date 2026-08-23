@@ -1,5 +1,4 @@
 let people customize suggestion bar and map
-weirdness between bottom of ABOUT output and top of inline bar
 C and R arrows keep colliding with edges no matter what I do!
 	MAYBE fixed??
 don't take a turn when "long wait" outside a heist
