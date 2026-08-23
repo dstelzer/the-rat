@@ -3,6 +3,7 @@
 %% This means:
 %% - TELL (Fox)
 %% - WAIT (Fox)
+%% - - LONG WAIT (Fox)
 %% - Commands (Fox)
 
 %% - GO (Rat, Chameleon)
@@ -17,6 +18,7 @@
 
 %% - MINGLE (Chameleon)
 %% - DISENGAGE (Chameleon)
+%% - LOOP (Chameleon)
 
 %% - TAKE (Butler)
 %% - DROP (Butler)
@@ -871,6 +873,88 @@
 	(now) (people are not following)
 
 (action [disengage] is valid for #chameleon)
+
+%% LOOP
+%% Added to hopefully speed up the pace of act 3 and make it drag a bit less
+
+(current world state for loop tracking is [$C $B])
+	(#chameleon is in room $C)
+	(#butler is in room $B)
+
+%% This tracks whether the world has been in the same sequence of states over and over
+%% If so, allow LOOP
+(global variable (loop tracker $))
+
+(after [proceed]) %% Reset it every time
+	(now) (loop tracker [])
+
+(looping allowed) %% If we’ve had an alternating sequence of states, allow the loop
+	(loop tracker [$A $B $A $B | $])
+	($A = [$ChamA $])
+	~($B = [$ChamA $])
+(looping allowed)
+	(already looped once) %% Make it a bit faster after the first time
+	(loop tracker [$A $B $A | $])
+	($A = [$ChamA $])
+	~($B = [$ChamA $])
+
+(update the loop tracker)
+	(current world state for loop tracking is $New)
+	(loop tracker $Prev)
+	(now) (loop tracker [$New | $Prev])
+	(if) (loop tracker [$A $B $C $D | $]) (then) %% Trim to first four entries
+		(now) (loop tracker [$A $B $C $D])
+	(endif)
+	(if) (looping allowed) (then)
+		(select)
+			(explain looping)
+		(or)
+		(stopping)
+	(endif)
+
+(on every tick)
+	(update the loop tracker)
+
+%% Now for the action!
+
+(grammar [loop] for itself)
+
+(prevent [loop])
+	~(heist in progress)
+	(div @chameleon) { I’d love nothing more than to keep doing this all night, darling, but shouldn’t you have Jackdaw do something first? }
+(prevent [loop])
+	~(looping allowed)
+	(div @spider) { I do not think we have a stable loop here—a consistently repeating state. }
+
+(perform [loop])
+	(div @chameleon) { Understood. I will endeavor to repeat this until Jackdaw says otherwise. }
+	(select)
+		(div @jackdaw) { so (line) spider (line) hacked any good systems lately }
+	(or)
+		(div @spider) { Rat, stay in place for as long as you can. }
+	(or)
+		(div @rat) { Around and around. Around and around. }
+	(at random)
+	(maximum turns required for any prize ever is $Max)
+	(heist timer $Old)
+	(if) ($Old < $Max) (then)
+		(now) (heist timer $Max)
+		($Max minus $Old into $Delay)
+		(hr)
+		(div @jackdaw) { okay that should be good (line) you can let him go now i need to reset }
+		(div @spider) { That was (spell out $Delay) minute (if) ~($Delay = 1) (then) (no space)s (endif) of delay. }
+	(else)
+		(div @jackdaw) { actually wait i think i got this don’t worry about it }
+		(div @spider) { Well. All right then. }
+	(endif)
+	(now) (already looped once) %% Relax the requirements for next time
+
+(action [loop] is valid for #chameleon)
+
+(explain looping)
+	(div @spider) { I think I see what you intend. That Chameleon should alternate between those two states, keeping the butler occupied indefinitely? }
+	(div @jackdaw) { i like indefinitely }
+	(div @spider) { If so, you may as well ask her to (vlink {LOOP}) her last few actions until Jackdaw is ready. }
 
 %% GO
 

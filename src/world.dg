@@ -175,6 +175,10 @@
 (have * refuse $)
 	(div @chameleon) { I’m sure I’d love to, but I think someone else might be better-suited for that. }
 
+(prevent [tell * to | $]) %% In case someone tries it
+	(current act 4)
+	(div @spider) { Without her earpiece, Chameleon cannot hear us. }
+
 (perform [examine *])
 	(div @chameleon) { I’m the face of the operation. The distraction. Your favorite femme fatale. }
 
@@ -209,6 +213,13 @@
 				(vlink $Words {disengage})
 			(else)
 				(vlink $Words {mingle})
+			(endif)
+			(if) (looping allowed) (then)
+				(collect words)
+					(if) ~(current player *) (then) Chameleon , (endif)
+					loop
+				(into $LWords)
+				; (vlink $LWords {loop})
 			(endif)
 		}
 	}

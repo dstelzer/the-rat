@@ -117,9 +117,14 @@ proceed
 chameleon, w
 chameleon, e
 chameleon, w
+loop
+lz
+undo
+undo
 chameleon, e
 chameleon, w
 chameleon, e
+fae/faer
 chameleon, w
 chameleon, e
 chameleon, w
@@ -134,10 +139,8 @@ chameleon, w
 chameleon, e
 lz
 
-fae/faer
 hack
-
-
+z
 z
 z
 butler, i

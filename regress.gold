@@ -1520,7 +1520,7 @@ What are the guests discussing, if I may?
 I will start a transcription. Any suggestions for color?
 
 plain white
-it’ll stand out
+it’ll stand out against all the colors
 
 Done.
 
@@ -3585,6 +3585,14 @@ The [<guests>] are milling around and talking amongst themselves.
 
 The butler is moving from the dining patio to the ballroom.
 
+I think I see what you intend. That Chameleon should alternate between those
+two states, keeping the butler occupied indefinitely?
+
+i like indefinitely
+
+If so, you may as well ask her to [<LOOP>] her last few actions until Jackdaw
+is ready.
+
 Malatesta: Hrm. And I suppose there are ways to increase the infection rate...
 
 Luna: Low infection rates can certainly pose a problem for testing new
@@ -3602,7 +3610,158 @@ toilet] sabotage the toilet>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
 Chameleon: [<[west] west>], [<[north] north>], [<[south] south>], [<[east]
+east>]; [<[disengage] disengage>]; [<[loop] loop>]
+> loop
+Understood. I will endeavor to repeat this until Jackdaw says otherwise.
+
+Rat, stay in place for as long as you can.
+
+[============================================================================]
+
+okay that should be good
+you can let him go now i need to reset
+
+That was 21 minutes of delay.
+
+The butler is moving from the ballroom to the glass-gilded passage.
+
+                                    (*)-{R}     
+                                     |   |      
+                                ( )-(C)-(B)-( ) 
+                                 |   |   |   |  
+                                ( )-( )-( )-( ) 
+
+Rat: [<[rat , west] west>], [<[rat , south] south>]; [<[rat , sabotage the
+toilet] sabotage the toilet>]
+Spider: [<wait>], [<long wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+Chameleon: [<[west] west>], [<[north] north>], [<[south] south>], [<[east]
 east>]; [<[disengage] disengage>]
+> lz
+We shall wait.
+
+[============================================================================]
+
+The butler is moving from the glass-gilded passage to the gold-plated bathroom.
+
+People approach! The rat must hide!
+
+Quip deck: [#q-2-jackdaw #q-2-spider #q-2-spider #q-2-spider #q-3-vault #q-3-
+flirting #q-3-constantine #q-3-malatesta #q-3-malatesta #q-3-malatesta #q-null-
+1 #q-null-2]
+Chose #q-3-malatesta
+[============================================================================]
+
+The butler is putting down the silver tray.
+
+Chameleon: Ah, Doctor! Long time no see! How are the research grants coming?
+
+Malatesta: Research? Huh? Oh? Who said anything about research?
+
+Chameleon: Oh, come now, Doctor, it’s what you’re known for. You’re always
+working on one project or another, aren’t you?
+
+Malatesta: Ah, right, right. Research. It’s all going entirely according to
+plan. Exactly as predicted on the IRB proposal documents. Always wonderful,
+when everything happens just the way it’s supposed to.
+
+[============================================================================]
+
+The butler is picking up the newspaper.
+
+Chameleon: Aw, is that really all you can say? I’d love to hear more details on
+your experiments, like exposing human subjects to radio-polonium-infused
+animals.
+
+Malatesta: Oh, the human subjects! Yes, I’d love to talk about the human
+subjects, that would be just lovely. Anything you want to know. I’m afraid we
+had to end those experiments.
+
+Chameleon: End them? How come?
+
+Malatesta: The results were just too unpredictable. So much variation between
+subjects, even when infected from exactly the same specimen. Every one of them
+showed some kind of effect, but the details of those effects were so scattered,
+we couldn’t get a p-value low enough to publish.
+
+[============================================================================]
+
+The butler is kneeling down in the puddle and reconnecting the pipes. Then a
+few pages of the New Gothenburg Post get repurposed as a mop to transfer the
+water back into the toilet bowl.
+
+Chameleon: Fascinating! What did you do with the specimens afterward?
+
+Malatesta: Afterward? Ah, right, afterward. Well. That part...we disposed of
+them in exactly the normal way, in compliance with all the regulations, of
+course. Just as we always to do. Absolutely nothing to worry about there.
+
+[============================================================================]
+
+Time.
+
+done
+
+That was 31 minutes.
+
+grabbed a security camera
+
+Wonderful. From this I should be able to access the entire camera network and
+look for anything we might have missed.
+
+as long as i cling here for another 20m
+
+Only fifteen, I hope. As usual I will wait for Fox’s signal.
+
+The butler is moving through the glass-gilded passage toward the ballroom.
+
+The rat is alone, and free to act.
+
+                                    (*)-(R)     
+                                     |   |      
+                                ( )-(C)-(B)-( ) 
+                                 |   |   |   |  
+                                ( )-( )-( )-( ) 
+
+Rat: [<[rat , west] west>], [<[rat , south] south>]; [<[rat , sabotage the
+toilet] sabotage the toilet>]
+Spider: [<wait>], [<long wait>]; view any room or object; [<[spider , hack the
+security camera] hack the security camera>]
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+Chameleon: [<[west] west>], [<[north] north>], [<[south] south>], [<[east]
+east>]; [<[disengage] disengage>]
+> undo
+Undoing the last turn (lz).
+Granite-gilded passage
+
+                                    (*)-{R}     
+                                     |   |      
+                                ( )-(C)-(B)-( ) 
+                                 |   |   |   |  
+                                ( )-( )-( )-( ) 
+
+Rat: [<[rat , west] west>], [<[rat , south] south>]; [<[rat , sabotage the
+toilet] sabotage the toilet>]
+Spider: [<wait>], [<long wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+Chameleon: [<[west] west>], [<[north] north>], [<[south] south>], [<[east]
+east>]; [<[disengage] disengage>]
+> undo
+Undoing the last turn (loop).
+Granite-gilded passage
+
+                                    (*)-{R}     
+                                     |   |      
+                                ( )-(C)-(.)-( ) 
+                                 |   |   |   |  
+                                ( )-( )-(B)-( ) 
+
+Rat: [<[rat , west] west>], [<[rat , south] south>]; [<[rat , sabotage the
+toilet] sabotage the toilet>]
+Spider: [<wait>], [<long wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+Chameleon: [<[west] west>], [<[north] north>], [<[south] south>], [<[east]
+east>]; [<[disengage] disengage>]; [<[loop] loop>]
 > chameleon, e
 Chameleon is leading the crowd east.
 
@@ -3626,10 +3785,9 @@ toilet] sabotage the toilet>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
 Chameleon: [<[west] west>], [<[north] north>], [<[south] south>], [<[east]
-east>]; [<[disengage] disengage>]
+east>]; [<[disengage] disengage>]; [<[loop] loop>]
 > chameleon, w
-Chameleon is winking at the camera and swirling away, and the crowd is
-following her.
+Everyone is following Chameleon to the granite-gilded passage.
 
 Granite-gilded passage
 Four corridors join here at a small hub, where the huge stone blocks of the
@@ -3643,448 +3801,31 @@ The butler is moving from the dining patio to the ballroom.
 Quip deck: [#q-2-jackdaw #q-2-spider #q-2-spider #q-2-spider #q-3-vault #q-3-
 flirting #q-3-constantine #q-3-malatesta #q-3-malatesta #q-3-malatesta #q-null-
 1 #q-null-2]
-Chose #q-null-1
-
-                                    (*)-{R}     
-                                     |   |      
-                                ( )-(C)-(.)-( ) 
-                                 |   |   |   |  
-                                ( )-( )-(B)-( ) 
-
-Rat: [<[rat , west] west>], [<[rat , south] south>]; [<[rat , sabotage the
-toilet] sabotage the toilet>]
-Spider: [<wait>], [<long wait>]; view any room or object
-Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[west] west>], [<[north] north>], [<[south] south>], [<[east]
-east>]; [<[disengage] disengage>]
-> chameleon, e
-Chameleon is leading the crowd east.
-
-Glass-gilded passage
-Four corridors join here at a small hub, where the sharp-edged rectangles of
-the Glass Wing to the east clash with the too-shiny ornaments of the Gilded
-Wing to the north.
-
-The [<guests>] are milling around and talking amongst themselves.
-
-The butler is moving from the ballroom to the dining patio.
-
-                                    (*)-{R}     
-                                     |   |      
-                                ( )-(.)-(C)-( ) 
-                                 |   |   |   |  
-                                ( )-(B)-( )-( ) 
-
-Rat: [<[rat , west] west>], [<[rat , south] south>]; [<[rat , sabotage the
-toilet] sabotage the toilet>]
-Spider: [<wait>], [<long wait>]; view any room or object
-Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[west] west>], [<[north] north>], [<[south] south>], [<[east]
-east>]; [<[disengage] disengage>]
-> chameleon, w
-The party is moving westward with Chameleon.
-
-Granite-gilded passage
-Four corridors join here at a small hub, where the huge stone blocks of the
-Granite Wing to the west clash with the too-shiny ornaments of the Gilded Wing
-to the north.
-
-The [<guests>] are milling around and talking amongst themselves.
-
-The butler is moving from the dining patio to the ballroom.
-
-Quip deck: [#q-2-jackdaw #q-2-spider #q-3-vault #q-3-flirting #q-3-
-constantine #q-3-malatesta]
-Chose #q-2-spider
-
-                                    (*)-{R}     
-                                     |   |      
-                                ( )-(C)-(.)-( ) 
-                                 |   |   |   |  
-                                ( )-( )-(B)-( ) 
-
-Rat: [<[rat , west] west>], [<[rat , south] south>]; [<[rat , sabotage the
-toilet] sabotage the toilet>]
-Spider: [<wait>], [<long wait>]; view any room or object
-Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[west] west>], [<[north] north>], [<[south] south>], [<[east]
-east>]; [<[disengage] disengage>]
-> chameleon, e
-Everyone is following Chameleon to the glass-gilded passage.
-
-Glass-gilded passage
-Four corridors join here at a small hub, where the sharp-edged rectangles of
-the Glass Wing to the east clash with the too-shiny ornaments of the Gilded
-Wing to the north.
-
-The [<guests>] are milling around and talking amongst themselves.
-
-The butler is moving from the ballroom to the dining patio.
-
-if we’re going to be prying at secrets why don’t you poke at spider for a while
-and let me work
-
-The secrets of the Spider’s work?
-
-Is this really the right time?
-
-Well, we can piece most of it together already, no?
-
-do tell
-
-                                    (*)-{R}     
-                                     |   |      
-                                ( )-(.)-(C)-( ) 
-                                 |   |   |   |  
-                                ( )-(B)-( )-( ) 
-
-Rat: [<[rat , west] west>], [<[rat , south] south>]; [<[rat , sabotage the
-toilet] sabotage the toilet>]
-Spider: [<wait>], [<long wait>]; view any room or object
-Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[west] west>], [<[north] north>], [<[south] south>], [<[east]
-east>]; [<[disengage] disengage>]
-> chameleon, w
-The party is moving westward with Chameleon.
-
-Granite-gilded passage
-Four corridors join here at a small hub, where the huge stone blocks of the
-Granite Wing to the west clash with the too-shiny ornaments of the Gilded Wing
-to the north.
-
-The [<guests>] are milling around and talking amongst themselves.
-
-The butler is moving from the dining patio to the ballroom.
-
-Well, consider what we know. Spider is a technology expert who spent the last
-several years on text analysis, always refers to Meresankh by her first name,
-and calls her an intellectual property thief. At this point it’s obvious,
-right?
-
-huh
-yeah
-
-Just to spell it out, I suspect he is the architect of her much-vaunted
-language processing systems, and she did away with him once he was no longer
-necessary.
-
-Yes, fine. Just do not mention my real name until the job is over. That was the
-deal.
-
-just call him meresankh’s bitter ex-partner got it
-
-Surely there must be a better way to phrase that.
-
-                                    (*)-{R}     
-                                     |   |      
-                                ( )-(C)-(.)-( ) 
-                                 |   |   |   |  
-                                ( )-( )-(B)-( ) 
-
-Rat: [<[rat , west] west>], [<[rat , south] south>]; [<[rat , sabotage the
-toilet] sabotage the toilet>]
-Spider: [<wait>], [<long wait>]; view any room or object
-Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[west] west>], [<[north] north>], [<[south] south>], [<[east]
-east>]; [<[disengage] disengage>]
-> chameleon, e
-Chameleon is leading the crowd east.
-
-Glass-gilded passage
-Four corridors join here at a small hub, where the sharp-edged rectangles of
-the Glass Wing to the east clash with the too-shiny ornaments of the Gilded
-Wing to the north.
-
-The [<guests>] are milling around and talking amongst themselves.
-
-The butler is moving from the ballroom to the dining patio.
-
-                                    (*)-{R}     
-                                     |   |      
-                                ( )-(.)-(C)-( ) 
-                                 |   |   |   |  
-                                ( )-(B)-( )-( ) 
-
-Rat: [<[rat , west] west>], [<[rat , south] south>]; [<[rat , sabotage the
-toilet] sabotage the toilet>]
-Spider: [<wait>], [<long wait>]; view any room or object
-Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[west] west>], [<[north] north>], [<[south] south>], [<[east]
-east>]; [<[disengage] disengage>]
-> chameleon, w
-Everyone is following Chameleon to the granite-gilded passage.
-
-Granite-gilded passage
-Four corridors join here at a small hub, where the huge stone blocks of the
-Granite Wing to the west clash with the too-shiny ornaments of the Gilded Wing
-to the north.
-
-The [<guests>] are milling around and talking amongst themselves.
-
-The butler is moving from the dining patio to the ballroom.
-
-Quip deck: [#q-2-jackdaw #q-3-vault #q-3-flirting #q-3-constantine #q-3-
-malatesta #q-null-1 #q-null-2]
-Chose #q-2-jackdaw
-
-                                    (*)-{R}     
-                                     |   |      
-                                ( )-(C)-(.)-( ) 
-                                 |   |   |   |  
-                                ( )-( )-(B)-( ) 
-
-Rat: [<[rat , west] west>], [<[rat , south] south>]; [<[rat , sabotage the
-toilet] sabotage the toilet>]
-Spider: [<wait>], [<long wait>]; view any room or object
-Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[west] west>], [<[north] north>], [<[south] south>], [<[east]
-east>]; [<[disengage] disengage>]
-> chameleon, e
-The party is moving eastward with Chameleon.
-
-Glass-gilded passage
-Four corridors join here at a small hub, where the sharp-edged rectangles of
-the Glass Wing to the east clash with the too-shiny ornaments of the Gilded
-Wing to the north.
-
-The [<guests>] are milling around and talking amongst themselves.
-
-The butler is moving from the ballroom to the dining patio.
-
-And what about you, Jackdaw?
-
-what about me
-i’m in this to steal
-
-I get the sense there’s more to it than that.
-
-more to what
-
-To the way your typing got faster when I mentioned Constantine Quinn, perhaps.
-
-oops gtg there’s an alarm or something
-
-                                    (*)-{R}     
-                                     |   |      
-                                ( )-(.)-(C)-( ) 
-                                 |   |   |   |  
-                                ( )-(B)-( )-( ) 
-
-Rat: [<[rat , west] west>], [<[rat , south] south>]; [<[rat , sabotage the
-toilet] sabotage the toilet>]
-Spider: [<wait>], [<long wait>]; view any room or object
-Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[west] west>], [<[north] north>], [<[south] south>], [<[east]
-east>]; [<[disengage] disengage>]
-> chameleon, w
-Chameleon is leading the crowd west.
-
-Granite-gilded passage
-Four corridors join here at a small hub, where the huge stone blocks of the
-Granite Wing to the west clash with the too-shiny ornaments of the Gilded Wing
-to the north.
-
-The [<guests>] are milling around and talking amongst themselves.
-
-The butler is moving from the dining patio to the ballroom.
-
-All alarms should be taken care of.
-
-fine if you really have to know
-i used to run the family business before the refrigerator magnate showed up
-he undercut me and sold at a loss until i went bankrupt then bought it all out
-for pennies
-so now i’m doing heists to make ends meet
-on the plus side i never have to look at a timesheet again
-
-                                    (*)-{R}     
-                                     |   |      
-                                ( )-(C)-(.)-( ) 
-                                 |   |   |   |  
-                                ( )-( )-(B)-( ) 
-
-Rat: [<[rat , west] west>], [<[rat , south] south>]; [<[rat , sabotage the
-toilet] sabotage the toilet>]
-Spider: [<wait>], [<long wait>]; view any room or object
-Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[west] west>], [<[north] north>], [<[south] south>], [<[east]
-east>]; [<[disengage] disengage>]
-> chameleon, e
-The party is moving eastward with Chameleon.
-
-Glass-gilded passage
-Four corridors join here at a small hub, where the sharp-edged rectangles of
-the Glass Wing to the east clash with the too-shiny ornaments of the Gilded
-Wing to the north.
-
-The [<guests>] are milling around and talking amongst themselves.
-
-The butler is moving from the ballroom to the dining patio.
-
-                                    (*)-{R}     
-                                     |   |      
-                                ( )-(.)-(C)-( ) 
-                                 |   |   |   |  
-                                ( )-(B)-( )-( ) 
-
-Rat: [<[rat , west] west>], [<[rat , south] south>]; [<[rat , sabotage the
-toilet] sabotage the toilet>]
-Spider: [<wait>], [<long wait>]; view any room or object
-Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[west] west>], [<[north] north>], [<[south] south>], [<[east]
-east>]; [<[disengage] disengage>]
-> chameleon, w
-Everyone is following Chameleon to the granite-gilded passage.
-
-Granite-gilded passage
-Four corridors join here at a small hub, where the huge stone blocks of the
-Granite Wing to the west clash with the too-shiny ornaments of the Gilded Wing
-to the north.
-
-The [<guests>] are milling around and talking amongst themselves.
-
-The butler is moving from the dining patio to the ballroom.
-
-Quip deck: [#q-2-fox #q-3-vault #q-3-flirting #q-3-constantine #q-3-
-constantine #q-3-constantine #q-3-malatesta #q-null-1 #q-null-2]
-Chose #q-3-vault
-
-                                    (*)-{R}     
-                                     |   |      
-                                ( )-(C)-(.)-( ) 
-                                 |   |   |   |  
-                                ( )-( )-(B)-( ) 
-
-Rat: [<[rat , west] west>], [<[rat , south] south>]; [<[rat , sabotage the
-toilet] sabotage the toilet>]
-Spider: [<wait>], [<long wait>]; view any room or object
-Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[west] west>], [<[north] north>], [<[south] south>], [<[east]
-east>]; [<[disengage] disengage>]
-> chameleon, e
-Chameleon is winking at the camera and swirling away, and the crowd is
-following her.
-
-Glass-gilded passage
-Four corridors join here at a small hub, where the sharp-edged rectangles of
-the Glass Wing to the east clash with the too-shiny ornaments of the Gilded
-Wing to the north.
-
-The [<guests>] are milling around and talking amongst themselves.
-
-The butler is moving from the ballroom to the dining patio.
-
-The rat wonders. A vault? Why? Must the butler not use it?
-
-we could also just call it a storage room
-it’s a normal room with a normal lock
-i just wanted to say i breached the vault
-
-                                    (*)-{R}     
-                                     |   |      
-                                ( )-(.)-(C)-( ) 
-                                 |   |   |   |  
-                                ( )-(B)-( )-( ) 
-
-Rat: [<[rat , west] west>], [<[rat , south] south>]; [<[rat , sabotage the
-toilet] sabotage the toilet>]
-Spider: [<wait>], [<long wait>]; view any room or object
-Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[west] west>], [<[north] north>], [<[south] south>], [<[east]
-east>]; [<[disengage] disengage>]
-> chameleon, w
-Everyone is following Chameleon to the granite-gilded passage.
-
-Granite-gilded passage
-Four corridors join here at a small hub, where the huge stone blocks of the
-Granite Wing to the west clash with the too-shiny ornaments of the Gilded Wing
-to the north.
-
-The [<guests>] are milling around and talking amongst themselves.
-
-The butler is moving from the dining patio to the ballroom.
-
-                                    (*)-{R}     
-                                     |   |      
-                                ( )-(C)-(.)-( ) 
-                                 |   |   |   |  
-                                ( )-( )-(B)-( ) 
-
-Rat: [<[rat , west] west>], [<[rat , south] south>]; [<[rat , sabotage the
-toilet] sabotage the toilet>]
-Spider: [<wait>], [<long wait>]; view any room or object
-Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[west] west>], [<[north] north>], [<[south] south>], [<[east]
-east>]; [<[disengage] disengage>]
-> chameleon, e
-Chameleon is leading the crowd east.
-
-Glass-gilded passage
-Four corridors join here at a small hub, where the sharp-edged rectangles of
-the Glass Wing to the east clash with the too-shiny ornaments of the Gilded
-Wing to the north.
-
-The [<guests>] are milling around and talking amongst themselves.
-
-The butler is moving from the ballroom to the dining patio.
-
-Quip deck: [#q-2-fox #q-3-flirting #q-3-constantine #q-3-malatesta #q-null-
-1 #q-null-2]
-Chose #q-2-fox
-
-                                    (*)-{R}     
-                                     |   |      
-                                ( )-(.)-(C)-( ) 
-                                 |   |   |   |  
-                                ( )-(B)-( )-( ) 
-
-Rat: [<[rat , west] west>], [<[rat , south] south>]; [<[rat , sabotage the
-toilet] sabotage the toilet>]
-Spider: [<wait>], [<long wait>]; view any room or object
-Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[west] west>], [<[north] north>], [<[south] south>], [<[east]
-east>]; [<[disengage] disengage>]
-> lz
-We shall wait.
-
-[============================================================================]
-
-The butler is moving from the dining patio to the granite-gilded passage.
-
-It seems we all had reasons to sign on for this job, above and beyond the
-money.
-
-So yes. It seems.
-
-But it makes me wonder about the Count. Did anyone have a grudge against him,
-or was he just a convenient target?
-
-you should ask fox
-
-Oh?
-
-<Yes> / <No>>> 
-Curious...and Fox does have such good organizational skills...
-
-therell be time to pry later focus on the job now
-
-But Fox is far more interesting.
-
-[============================================================================]
-
-The butler is moving from the granite-gilded passage to the trophy room.
-
-[============================================================================]
-
-The butler is moving from the trophy room to the gold-plated bathroom.
-
-People approach! The rat must hide!
-
-Quip deck: [#q-3-flirting #q-3-constantine #q-3-malatesta #q-null-1 #q-null-2]
 Chose #q-3-flirting
-[============================================================================]
 
-The butler is putting down the silver tray.
+                                    (*)-{R}     
+                                     |   |      
+                                ( )-(C)-(.)-( ) 
+                                 |   |   |   |  
+                                ( )-( )-(B)-( ) 
+
+Rat: [<[rat , west] west>], [<[rat , south] south>]; [<[rat , sabotage the
+toilet] sabotage the toilet>]
+Spider: [<wait>], [<long wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+Chameleon: [<[west] west>], [<[north] north>], [<[south] south>], [<[east]
+east>]; [<[disengage] disengage>]; [<[loop] loop>]
+> chameleon, e
+The party is moving eastward with Chameleon.
+
+Glass-gilded passage
+Four corridors join here at a small hub, where the sharp-edged rectangles of
+the Glass Wing to the east clash with the too-shiny ornaments of the Gilded
+Wing to the north.
+
+The [<guests>] are milling around and talking amongst themselves.
+
+The butler is moving from the ballroom to the dining patio.
 
 chameleon you’re seriously flirting like this with someone you’ve never met
 face to face
@@ -4104,9 +3845,404 @@ refer to you?
 [<they/them>] / [<it/its>] /???>> fae/faer
 A fae after my own heart.
 
+                                    (*)-{R}     
+                                     |   |      
+                                ( )-(.)-(C)-( ) 
+                                 |   |   |   |  
+                                ( )-(B)-( )-( ) 
+
+Rat: [<[rat , west] west>], [<[rat , south] south>]; [<[rat , sabotage the
+toilet] sabotage the toilet>]
+Spider: [<wait>], [<long wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+Chameleon: [<[west] west>], [<[north] north>], [<[south] south>], [<[east]
+east>]; [<[disengage] disengage>]; [<[loop] loop>]
+> chameleon, w
+Everyone is following Chameleon to the granite-gilded passage.
+
+Granite-gilded passage
+Four corridors join here at a small hub, where the huge stone blocks of the
+Granite Wing to the west clash with the too-shiny ornaments of the Gilded Wing
+to the north.
+
+The [<guests>] are milling around and talking amongst themselves.
+
+The butler is moving from the dining patio to the ballroom.
+
+                                    (*)-{R}     
+                                     |   |      
+                                ( )-(C)-(.)-( ) 
+                                 |   |   |   |  
+                                ( )-( )-(B)-( ) 
+
+Rat: [<[rat , west] west>], [<[rat , south] south>]; [<[rat , sabotage the
+toilet] sabotage the toilet>]
+Spider: [<wait>], [<long wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+Chameleon: [<[west] west>], [<[north] north>], [<[south] south>], [<[east]
+east>]; [<[disengage] disengage>]; [<[loop] loop>]
+> chameleon, e
+Chameleon is winking at the camera and swirling away, and the crowd is
+following her.
+
+Glass-gilded passage
+Four corridors join here at a small hub, where the sharp-edged rectangles of
+the Glass Wing to the east clash with the too-shiny ornaments of the Gilded
+Wing to the north.
+
+The [<guests>] are milling around and talking amongst themselves.
+
+The butler is moving from the ballroom to the dining patio.
+
+Quip deck: [#q-2-jackdaw #q-2-spider #q-3-vault #q-3-constantine #q-3-
+malatesta #q-null-1 #q-null-2]
+Chose #q-null-1
+
+                                    (*)-{R}     
+                                     |   |      
+                                ( )-(.)-(C)-( ) 
+                                 |   |   |   |  
+                                ( )-(B)-( )-( ) 
+
+Rat: [<[rat , west] west>], [<[rat , south] south>]; [<[rat , sabotage the
+toilet] sabotage the toilet>]
+Spider: [<wait>], [<long wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+Chameleon: [<[west] west>], [<[north] north>], [<[south] south>], [<[east]
+east>]; [<[disengage] disengage>]; [<[loop] loop>]
+> chameleon, w
+The party is moving westward with Chameleon.
+
+Granite-gilded passage
+Four corridors join here at a small hub, where the huge stone blocks of the
+Granite Wing to the west clash with the too-shiny ornaments of the Gilded Wing
+to the north.
+
+The [<guests>] are milling around and talking amongst themselves.
+
+The butler is moving from the dining patio to the ballroom.
+
+                                    (*)-{R}     
+                                     |   |      
+                                ( )-(C)-(.)-( ) 
+                                 |   |   |   |  
+                                ( )-( )-(B)-( ) 
+
+Rat: [<[rat , west] west>], [<[rat , south] south>]; [<[rat , sabotage the
+toilet] sabotage the toilet>]
+Spider: [<wait>], [<long wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+Chameleon: [<[west] west>], [<[north] north>], [<[south] south>], [<[east]
+east>]; [<[disengage] disengage>]; [<[loop] loop>]
+> chameleon, e
+Chameleon is leading the crowd east.
+
+Glass-gilded passage
+Four corridors join here at a small hub, where the sharp-edged rectangles of
+the Glass Wing to the east clash with the too-shiny ornaments of the Gilded
+Wing to the north.
+
+The [<guests>] are milling around and talking amongst themselves.
+
+The butler is moving from the ballroom to the dining patio.
+
+Quip deck: [#q-2-jackdaw #q-2-spider #q-3-vault #q-3-constantine #q-3-
+malatesta]
+Chose #q-3-vault
+
+                                    (*)-{R}     
+                                     |   |      
+                                ( )-(.)-(C)-( ) 
+                                 |   |   |   |  
+                                ( )-(B)-( )-( ) 
+
+Rat: [<[rat , west] west>], [<[rat , south] south>]; [<[rat , sabotage the
+toilet] sabotage the toilet>]
+Spider: [<wait>], [<long wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+Chameleon: [<[west] west>], [<[north] north>], [<[south] south>], [<[east]
+east>]; [<[disengage] disengage>]; [<[loop] loop>]
+> chameleon, w
+Everyone is following Chameleon to the granite-gilded passage.
+
+Granite-gilded passage
+Four corridors join here at a small hub, where the huge stone blocks of the
+Granite Wing to the west clash with the too-shiny ornaments of the Gilded Wing
+to the north.
+
+The [<guests>] are milling around and talking amongst themselves.
+
+The butler is moving from the dining patio to the ballroom.
+
+The rat wonders. A vault? Why? Must the butler not use it?
+
+we could also just call it a storage room
+it’s a normal room with a normal lock
+i just wanted to say i breached the vault
+
+                                    (*)-{R}     
+                                     |   |      
+                                ( )-(C)-(.)-( ) 
+                                 |   |   |   |  
+                                ( )-( )-(B)-( ) 
+
+Rat: [<[rat , west] west>], [<[rat , south] south>]; [<[rat , sabotage the
+toilet] sabotage the toilet>]
+Spider: [<wait>], [<long wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+Chameleon: [<[west] west>], [<[north] north>], [<[south] south>], [<[east]
+east>]; [<[disengage] disengage>]; [<[loop] loop>]
+> chameleon, e
+Chameleon is winking at the camera and swirling away, and the crowd is
+following her.
+
+Glass-gilded passage
+Four corridors join here at a small hub, where the sharp-edged rectangles of
+the Glass Wing to the east clash with the too-shiny ornaments of the Gilded
+Wing to the north.
+
+The [<guests>] are milling around and talking amongst themselves.
+
+The butler is moving from the ballroom to the dining patio.
+
+                                    (*)-{R}     
+                                     |   |      
+                                ( )-(.)-(C)-( ) 
+                                 |   |   |   |  
+                                ( )-(B)-( )-( ) 
+
+Rat: [<[rat , west] west>], [<[rat , south] south>]; [<[rat , sabotage the
+toilet] sabotage the toilet>]
+Spider: [<wait>], [<long wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+Chameleon: [<[west] west>], [<[north] north>], [<[south] south>], [<[east]
+east>]; [<[disengage] disengage>]; [<[loop] loop>]
+> chameleon, w
+Everyone is following Chameleon to the granite-gilded passage.
+
+Granite-gilded passage
+Four corridors join here at a small hub, where the huge stone blocks of the
+Granite Wing to the west clash with the too-shiny ornaments of the Gilded Wing
+to the north.
+
+The [<guests>] are milling around and talking amongst themselves.
+
+The butler is moving from the dining patio to the ballroom.
+
+Quip deck: [#q-2-jackdaw #q-2-spider #q-3-constantine #q-3-malatesta #q-null-
+1 #q-null-2]
+Chose #q-null-1
+
+                                    (*)-{R}     
+                                     |   |      
+                                ( )-(C)-(.)-( ) 
+                                 |   |   |   |  
+                                ( )-( )-(B)-( ) 
+
+Rat: [<[rat , west] west>], [<[rat , south] south>]; [<[rat , sabotage the
+toilet] sabotage the toilet>]
+Spider: [<wait>], [<long wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+Chameleon: [<[west] west>], [<[north] north>], [<[south] south>], [<[east]
+east>]; [<[disengage] disengage>]; [<[loop] loop>]
+> chameleon, e
+Chameleon is winking at the camera and swirling away, and the crowd is
+following her.
+
+Glass-gilded passage
+Four corridors join here at a small hub, where the sharp-edged rectangles of
+the Glass Wing to the east clash with the too-shiny ornaments of the Gilded
+Wing to the north.
+
+The [<guests>] are milling around and talking amongst themselves.
+
+The butler is moving from the ballroom to the dining patio.
+
+                                    (*)-{R}     
+                                     |   |      
+                                ( )-(.)-(C)-( ) 
+                                 |   |   |   |  
+                                ( )-(B)-( )-( ) 
+
+Rat: [<[rat , west] west>], [<[rat , south] south>]; [<[rat , sabotage the
+toilet] sabotage the toilet>]
+Spider: [<wait>], [<long wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+Chameleon: [<[west] west>], [<[north] north>], [<[south] south>], [<[east]
+east>]; [<[disengage] disengage>]; [<[loop] loop>]
+> chameleon, w
+Chameleon is leading the crowd west.
+
+Granite-gilded passage
+Four corridors join here at a small hub, where the huge stone blocks of the
+Granite Wing to the west clash with the too-shiny ornaments of the Gilded Wing
+to the north.
+
+The [<guests>] are milling around and talking amongst themselves.
+
+The butler is moving from the dining patio to the ballroom.
+
+Quip deck: [#q-2-jackdaw #q-2-spider #q-3-constantine #q-3-malatesta]
+Chose #q-3-malatesta
+
+                                    (*)-{R}     
+                                     |   |      
+                                ( )-(C)-(.)-( ) 
+                                 |   |   |   |  
+                                ( )-( )-(B)-( ) 
+
+Rat: [<[rat , west] west>], [<[rat , south] south>]; [<[rat , sabotage the
+toilet] sabotage the toilet>]
+Spider: [<wait>], [<long wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+Chameleon: [<[west] west>], [<[north] north>], [<[south] south>], [<[east]
+east>]; [<[disengage] disengage>]; [<[loop] loop>]
+> chameleon, e
+Chameleon is winking at the camera and swirling away, and the crowd is
+following her.
+
+Glass-gilded passage
+Four corridors join here at a small hub, where the sharp-edged rectangles of
+the Glass Wing to the east clash with the too-shiny ornaments of the Gilded
+Wing to the north.
+
+The [<guests>] are milling around and talking amongst themselves.
+
+The butler is moving from the ballroom to the dining patio.
+
+Chameleon: Ah, Doctor! Long time no see! How are the research grants coming?
+
+Malatesta: Research? Huh? Oh? Who said anything about research?
+
+Chameleon: Oh, come now, Doctor, it’s what you’re known for. You’re always
+working on one project or another, aren’t you?
+
+Malatesta: Ah, right, right. Research. It’s all going entirely according to
+plan. Exactly as predicted on the IRB proposal documents. Always wonderful,
+when everything happens just the way it’s supposed to.
+
+                                    (*)-{R}     
+                                     |   |      
+                                ( )-(.)-(C)-( ) 
+                                 |   |   |   |  
+                                ( )-(B)-( )-( ) 
+
+Rat: [<[rat , west] west>], [<[rat , south] south>]; [<[rat , sabotage the
+toilet] sabotage the toilet>]
+Spider: [<wait>], [<long wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+Chameleon: [<[west] west>], [<[north] north>], [<[south] south>], [<[east]
+east>]; [<[disengage] disengage>]; [<[loop] loop>]
+> chameleon, w
+Chameleon is leading the crowd west.
+
+Granite-gilded passage
+Four corridors join here at a small hub, where the huge stone blocks of the
+Granite Wing to the west clash with the too-shiny ornaments of the Gilded Wing
+to the north.
+
+The [<guests>] are milling around and talking amongst themselves.
+
+The butler is moving from the dining patio to the ballroom.
+
+Chameleon: Aw, is that really all you can say? I’d love to hear more details on
+your experiments, like exposing human subjects to radio-polonium-infused
+animals.
+
+Malatesta: Oh, the human subjects! Yes, I’d love to talk about the human
+subjects, that would be just lovely. Anything you want to know. I’m afraid we
+had to end those experiments.
+
+Chameleon: End them? How come?
+
+Malatesta: The results were just too unpredictable. So much variation between
+subjects, even when infected from exactly the same specimen. Every one of them
+showed some kind of effect, but the details of those effects were so scattered,
+we couldn’t get a p-value low enough to publish.
+
+                                    (*)-{R}     
+                                     |   |      
+                                ( )-(C)-(.)-( ) 
+                                 |   |   |   |  
+                                ( )-( )-(B)-( ) 
+
+Rat: [<[rat , west] west>], [<[rat , south] south>]; [<[rat , sabotage the
+toilet] sabotage the toilet>]
+Spider: [<wait>], [<long wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+Chameleon: [<[west] west>], [<[north] north>], [<[south] south>], [<[east]
+east>]; [<[disengage] disengage>]; [<[loop] loop>]
+> chameleon, e
+The party is moving eastward with Chameleon.
+
+Glass-gilded passage
+Four corridors join here at a small hub, where the sharp-edged rectangles of
+the Glass Wing to the east clash with the too-shiny ornaments of the Gilded
+Wing to the north.
+
+The [<guests>] are milling around and talking amongst themselves.
+
+The butler is moving from the ballroom to the dining patio.
+
+Chameleon: Fascinating! What did you do with the specimens afterward?
+
+Malatesta: Afterward? Ah, right, afterward. Well. That part...we disposed of
+them in exactly the normal way, in compliance with all the regulations, of
+course. Just as we always to do. Absolutely nothing to worry about there.
+
+                                    (*)-{R}     
+                                     |   |      
+                                ( )-(.)-(C)-( ) 
+                                 |   |   |   |  
+                                ( )-(B)-( )-( ) 
+
+Rat: [<[rat , west] west>], [<[rat , south] south>]; [<[rat , sabotage the
+toilet] sabotage the toilet>]
+Spider: [<wait>], [<long wait>]; view any room or object
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+Chameleon: [<[west] west>], [<[north] north>], [<[south] south>], [<[east]
+east>]; [<[disengage] disengage>]; [<[loop] loop>]
+> lz
+We shall wait.
+
+[============================================================================]
+
+The butler is moving from the dining patio to the granite-gilded passage.
+
+[============================================================================]
+
+The butler is moving from the granite-gilded passage to the trophy room.
+
+Quip deck: [#q-2-jackdaw #q-2-spider #q-3-constantine #q-null-1 #q-null-2]
+Chose #q-null-1
+[============================================================================]
+
+The butler is moving from the trophy room to the gold-plated bathroom.
+
+People approach! The rat must hide!
+
+[============================================================================]
+
+The butler is putting down the silver tray.
+
+Quip deck: [#q-2-jackdaw #q-2-spider #q-3-constantine]
+Chose #q-2-jackdaw
 [============================================================================]
 
 The butler is picking up the newspaper.
+
+And what about you, Jackdaw?
+
+what about me
+i’m in this to steal
+
+I get the sense there’s more to it than that.
+
+more to what
+
+To the way your typing got faster when I mentioned Constantine Quinn, perhaps.
+
+oops gtg there’s an alarm or something
 
 [============================================================================]
 
@@ -4114,15 +4250,22 @@ The butler is kneeling down in the puddle and reconnecting the pipes. Then a
 few pages of the New Gothenburg Post get repurposed as a mop to transfer the
 water back into the toilet bowl.
 
-Quip deck: [#q-3-constantine #q-3-malatesta #q-null-1 #q-null-2]
-Chose #q-null-2
+All alarms should be taken care of.
+
+fine if you really have to know
+i used to run the family business before the refrigerator magnate showed up
+he undercut me and sold at a loss until i went bankrupt then bought it all out
+for pennies
+so now i’m doing heists to make ends meet
+on the plus side i never have to look at a timesheet again
+
 [============================================================================]
 
-Security active again.
+Time.
 
-done
+out
 
-26 minutes.
+The butler was distracted for 26 minutes.
 
 grabbed a security camera
 
@@ -4136,6 +4279,22 @@ Only fifteen, I hope. As usual I will wait for Fox’s signal.
 The butler is moving through the glass-gilded passage toward the ballroom.
 
 The rat is alone, and free to act.
+
+                                    (*)-(R)     
+                                     |   |      
+                                ( )-( )-(B)-( ) 
+                                 |   |   |   |  
+                                ( )-( )-( )-( ) 
+
+Rat: [<[rat , west] west>], [<[rat , south] south>]; [<[rat , sabotage the
+toilet] sabotage the toilet>]
+Spider: [<wait>], [<long wait>]; view any room or object; [<[spider , hack the
+security camera] hack the security camera>]
+Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
+Chameleon: [<[west] west>], [<[north] north>], [<[south] south>], [<[east]
+east>]; [<[disengage] disengage>]
+> 
+...
 
                                     (*)-(R)     
                                      |   |      
@@ -4216,7 +4375,7 @@ Rat: [<[rat , west] west>], [<[rat , north] north>], [<[rat , east] east>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
 > z
-The rat waits.
+All systems ready.
 
 Vespertilion: Insurance will pay more than the losses and the objects will be
 easily tracked; the thieves will not get far. But the loss of face will be

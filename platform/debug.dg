@@ -45,7 +45,7 @@
 	margin-bottom: 1em;
 (style class @butlercolor)
 	color: inherit;
-(conversation style description) plain white (line) it’ll stand out
+(conversation style description) plain white (line) it’ll stand out against all the colors
 
 (hr)
 	(progress bar 1 of 1)

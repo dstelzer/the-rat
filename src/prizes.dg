@@ -294,3 +294,5 @@
 	(start act four) %% world.dg
 (perform [examine *])
 	(div @jackdaw) { bunch of tiny components hidden behind a plate on the ceiling }
+
+(maximum turns required for any prize ever is 25)
