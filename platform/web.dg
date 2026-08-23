@@ -78,3 +78,6 @@
 	(div @hr) (space 1)
 
 (using fixed background color) (fail)
+
+(explain colors)
+	This version uses a “text message” interface where messages appear one at a time, color-coded by sender. If this becomes a problem \( for example, if the messages are appearing too slowly, or the colors are not clear \), you can adjust this in the ≡ menu at the top right.

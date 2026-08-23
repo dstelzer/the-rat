@@ -1,23 +1,23 @@
 /* If using Google web fonts, import them here, before anything else */
 
 /* Special things for this game! */
-/* TODO: why doesn't this work? */
-.aa-rat:first-child:before {
+
+.lettered .aa-rat > p:first-child:before {
 	color: goldenrod;
 	font-weight: bold;
 	content: "R: ";
 }
-.aa-spider:first-child:before {
-	color: cyan;
+.lettered .aa-spider > p:first-child:before {
+	color: deepskyblue;
 	font-weight: bold;
 	content: "S: ";
 }
-.aa-jackdaw:first-child:before {
+.lettered .aa-jackdaw > p:first-child:before {
 	color: green;
 	font-weight: bold;
 	content: "J: ";
 }
-.aa-chameleon:first-child:before {
+.lettered .aa-chameleon > p:first-child:before {
 	color: magenta;
 	font-weight: bold;
 	content: "C: ";
@@ -107,7 +107,7 @@ h2 {
 }
 
 #aacontainer {
-	max-width: 60ch;
+	max-width: 70ch;
 	margin: auto;
 	position: relative;
 	line-height: 1.35em;

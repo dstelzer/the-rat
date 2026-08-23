@@ -40,6 +40,7 @@ var toggles = [
 	{id: "aacb-large", text: "Larger text", init: false},
 	{id: "aacb-nofont", text: "Disable fonts", tooltip: "Use the system's default fonts instead of the ones chosen by the author", init: false},
 	{id: "aacb-delay", text: "Slow text", tooltip: "Make messages appear one at a time instead of all at once", init: true},
+	{id: "aacb-letters", text: "Labelled messages", tooltip: "Put a letter at the start of each text message to show who sent it", init: false},
 ];
 
 var aaengine;
@@ -1330,6 +1331,11 @@ window.run_game = function(story64, options) {
 		} else {
 			$("body").removeClass("nofont");
 		}
+		if(document.getElementById("aacb-letters").checked) {
+			$("body").addClass("lettered");
+		} else {
+			$("body").removeClass("lettered");
+		}
 		io.adjust_size();
 		io.maybe_focus();
 	}
@@ -1371,6 +1377,10 @@ window.run_game = function(story64, options) {
 	$("#aacb-refocus").on("change", function() {
 		io.always_refocus = document.getElementById("aacb-refocus").checked;
 		io.maybe_focus();
+	});
+
+	$("#aacb-letters").on("change", function() {
+		update_globalstyle();
 	});
 
 	$("#aamenulines").on('click', function() {

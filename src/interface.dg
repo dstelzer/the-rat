@@ -39,7 +39,7 @@
 		({save}) (bullet)
 		({restore}) (bullet)
 		({about}) (bullet)
-		({hints})
+		(link resource @hints) { (color link {hints}) }
 	}
 (bullet) (space) \~ (space)
 
@@ -138,6 +138,7 @@
 	background-color: rgba\(0, 0, 0, 1\);
 	border: 1px solid rgba\(64, 64, 64, 1\);
 	padding: 0.25em;
+	margin-top: 0.5em;
 
 (style class @statusline)
 	margin-left: 1em;
