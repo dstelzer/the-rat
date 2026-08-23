@@ -57,6 +57,7 @@
 	float: left;
 	width: 5ch;
 	height: 3em;
+	text-wrap-mode: nowrap;
 	top: 0px;
 	left: 0px;
 	position: absolute;
@@ -68,6 +69,7 @@
 	float: right;
 	width: 5ch;
 	height: 3em;
+	text-wrap-mode: nowrap;
 	top: 0px;
 	right: 0px;
 	position: absolute;

@@ -71,7 +71,7 @@ east.
                                    |          
                                   (B)-(R)-( ) 
 
-Rat: [<[east] east>], [<[west] west>]
+Rat: [<[west] west>], [<[east] east>]
 Spider: [<wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
 > hedges
@@ -83,7 +83,7 @@ garden will seem even larger than it really is.
                                    |          
                                   (B)-(R)-( ) 
 
-Rat: [<[east] east>], [<[west] west>]
+Rat: [<[west] west>], [<[east] east>]
 Spider: [<wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
 > w
@@ -94,7 +94,7 @@ No! Impossible! The rat would be seen.
                                    |          
                                   (B)-(R)-( ) 
 
-Rat: [<[east] east>], [<[west] west>]
+Rat: [<[west] west>], [<[east] east>]
 Spider: [<wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
 > e
@@ -289,7 +289,7 @@ People approach! The rat must hide!
                                    |          
                                   ( )-(B)-{.} 
 
-Rat: [<[east] east>], [<[west] west>]
+Rat: [<[west] west>], [<[east] east>]
 Spider: [<wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
 > z
@@ -304,7 +304,7 @@ The rat is alone, and free to act.
                                    |          
                                   ( )-(R)-{B} 
 
-Rat: [<[east] east>], [<[west] west>]
+Rat: [<[west] west>], [<[east] east>]
 Spider: [<wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
 > w
@@ -381,7 +381,7 @@ tasks.
                                      |   |  
                                    -(B)-(R)-
 
-Rat: [<[north] north>], [<[west] west>]; [<[sabotage the chandelier] sabotage
+Rat: [<[west] west>], [<[north] north>]; [<[sabotage the chandelier] sabotage
 the chandelier>]
 Spider: [<wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
@@ -399,7 +399,7 @@ passage.
                                      |   |  
                                    -( )-(R)-
 
-Rat: [<[north] north>], [<[west] west>]; [<[sabotage the chandelier] sabotage
+Rat: [<[west] west>], [<[north] north>]; [<[sabotage the chandelier] sabotage
 the chandelier>]
 Spider: [<wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
@@ -422,7 +422,7 @@ Chose #q-1-videogame
                                      |   |  
                                    -( )-{R}-
 
-Rat: [<[north] north>], [<[west] west>]; [<[sabotage the chandelier] sabotage
+Rat: [<[west] west>], [<[north] north>]; [<[sabotage the chandelier] sabotage
 the chandelier>]
 Spider: [<wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
@@ -456,7 +456,7 @@ apparently
                                      |   |  
                                    -( )-{R}-
 
-Rat: [<[rat , north] north>], [<[rat , west] west>]; [<[rat , sabotage the
+Rat: [<[rat , west] west>], [<[rat , north] north>]; [<[rat , sabotage the
 chandelier] sabotage the chandelier>]
 Spider: [<wait>]; view any room or object
 Jackdaw: [<[proceed] proceed>]; [<[score] score>]
@@ -759,7 +759,7 @@ Chose #q-1-proceed
                                      |   |  
                                    -{.}-(R)-
 
-Rat: [<[north] north>], [<[west] west>]; [<[sabotage the chandelier] sabotage
+Rat: [<[west] west>], [<[north] north>]; [<[sabotage the chandelier] sabotage
 the chandelier>]
 Spider: [<wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
@@ -794,7 +794,7 @@ The butler is moving from the granite-gilded passage to the dining patio.
                                      |   |  
                                    -{B}-( )-
 
-Rat: [<[north] north>], [<[south] south>], [<[west] west>]
+Rat: [<[west] west>], [<[north] north>], [<[south] south>]
 Spider: [<wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
 > n
@@ -823,7 +823,7 @@ Disambiguation.
                                      |   |  
                                    -(B)-( )-
 
-Rat: [<[south] south>], [<[west] west>]; [<[sabotage the toilet] sabotage the
+Rat: [<[west] west>], [<[south] south>]; [<[sabotage the toilet] sabotage the
 toilet>]
 Spider: [<wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
@@ -914,7 +914,7 @@ The butler is moving from the dining patio to the granite-gilded passage.
                                      |   |  
                                    -( )-( )-
 
-Rat: [<[south] south>], [<[west] west>]; [<[sabotage the toilet] sabotage the
+Rat: [<[west] west>], [<[south] south>]; [<[sabotage the toilet] sabotage the
 toilet>]
 Spider: [<wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
@@ -938,7 +938,7 @@ Chose #q-1-guestlist
                                      |   |  
                                    -( )-( )-
 
-Rat: [<[south] south>], [<[west] west>]; [<[sabotage the toilet] sabotage the
+Rat: [<[west] west>], [<[south] south>]; [<[sabotage the toilet] sabotage the
 toilet>]
 Spider: [<wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
@@ -976,7 +976,7 @@ just buy me time
                                      |   |  
                                    -( )-( )-
 
-Rat: [<[north] north>], [<[south] south>], [<[west] west>]
+Rat: [<[west] west>], [<[north] north>], [<[south] south>]
 Spider: [<wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
 > s
@@ -996,7 +996,7 @@ The butler is assessing—looking at the toilet now.
                                      |   |  
                                    -( )-(R)-
 
-Rat: [<[north] north>], [<[west] west>]; [<[sabotage the chandelier] sabotage
+Rat: [<[west] west>], [<[north] north>]; [<[sabotage the chandelier] sabotage
 the chandelier>]
 Spider: [<wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
@@ -1021,7 +1021,7 @@ Chose #q-1-tension
                                      |   |  
                                    -( )-{R}-
 
-Rat: [<[north] north>], [<[west] west>]; [<[sabotage the chandelier] sabotage
+Rat: [<[west] west>], [<[north] north>]; [<[sabotage the chandelier] sabotage
 the chandelier>]
 Spider: [<wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
@@ -1183,7 +1183,7 @@ knows him as the Refrigerator Magnate.
                                      |   |  
                                    -{B}-( )-
 
-Rat: [<[south] south>], [<[west] west>]; [<[sabotage the toilet] sabotage the
+Rat: [<[west] west>], [<[south] south>]; [<[sabotage the toilet] sabotage the
 toilet>]
 Spider: [<wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
@@ -1208,7 +1208,7 @@ Names usually do that, yes.
                                      |   |  
                                    -(B)-( )-
 
-Rat: [<[south] south>], [<[west] west>]; [<[sabotage the toilet] sabotage the
+Rat: [<[west] west>], [<[south] south>]; [<[sabotage the toilet] sabotage the
 toilet>]
 Spider: [<wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
@@ -1244,7 +1244,7 @@ cellar. Fox, tell me when it is time to act.
                                      |   |  
                                    -(B)-( )-
 
-Rat: [<[south] south>], [<[west] west>]; [<[sabotage the toilet] sabotage the
+Rat: [<[west] west>], [<[south] south>]; [<[sabotage the toilet] sabotage the
 toilet>]
 Spider: [<wait>]; view any room or object; [<[spider , hack the wifi router]
 hack the wifi router>]
@@ -1283,7 +1283,7 @@ well you can take your time there’s tons of stuff to raid here
                                  |   |   |   |  
                                 ( )- B - L -( ) 
 
-Rat: [<[rat , south] south>], [<[rat , west] west>]; [<[rat , sabotage the
+Rat: [<[rat , west] west>], [<[rat , south] south>]; [<[rat , sabotage the
 toilet] sabotage the toilet>]
 Spider: [<wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
@@ -1303,7 +1303,7 @@ The butler is moving to the ballroom.
                                  |   |   |   |  
                                 ( )- V - B -( ) 
 
-Rat: [<[north] north>], [<[south] south>], [<[east] east>], [<[west] west>]
+Rat: [<[west] west>], [<[north] north>], [<[south] south>], [<[east] east>]
 Spider: [<wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
 > e
@@ -1325,7 +1325,7 @@ Chose #q-1-count
                                  |   |   |   |  
                                 ( )- V - B -( ) 
 
-Rat: [<[south] south>], [<[west] west>]; [<[sabotage the coolant pipes]
+Rat: [<[west] west>], [<[south] south>]; [<[sabotage the coolant pipes]
 sabotage the coolant pipes>]
 Spider: [<wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
@@ -1357,7 +1357,7 @@ Every four years. He’s run unopposed for decades.
                                  |   |   |   |  
                                 ( )- B - L -(R) 
 
-Rat: [<[north] north>], [<[west] west>]; [<[sabotage the smart automation
+Rat: [<[west] west>], [<[north] north>]; [<[sabotage the smart automation
 devices] sabotage the smart automation devices>]
 Spider: [<wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
@@ -1381,7 +1381,7 @@ apparently it worked.
                                  |   |   |   |  
                                 ( )- B - L -{R} 
 
-Rat: [<[north] north>], [<[west] west>]; [<[sabotage the smart automation
+Rat: [<[west] west>], [<[north] north>]; [<[sabotage the smart automation
 devices] sabotage the smart automation devices>]
 Spider: [<wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
@@ -1400,7 +1400,7 @@ The butler is picking up the silver tray.
                                  |   |   |   |  
                                 ( )- B - L -{.} 
 
-Rat: [<[south] south>], [<[west] west>]; [<[sabotage the coolant pipes]
+Rat: [<[west] west>], [<[south] south>]; [<[sabotage the coolant pipes]
 sabotage the coolant pipes>]
 Spider: [<wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
@@ -1422,7 +1422,7 @@ Chose #q-1-butler
                                  |   |   |   |  
                                 ( )- V - L -{.} 
 
-Rat: [<[south] south>], [<[west] west>]; [<[sabotage the coolant pipes]
+Rat: [<[west] west>], [<[south] south>]; [<[sabotage the coolant pipes]
 sabotage the coolant pipes>]
 Spider: [<wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
@@ -1447,7 +1447,7 @@ that ones pretty good though
                                  |   |   |   |  
                                 ( )- V - L -{.} 
 
-Rat: [<[rat , south] south>], [<[rat , west] west>]; [<[rat , sabotage the
+Rat: [<[rat , west] west>], [<[rat , south] south>]; [<[rat , sabotage the
 coolant pipes] sabotage the coolant pipes>]
 Spider: [<wait>]; view any room or object
 Jackdaw: [<[proceed] proceed>]; [<[score] score>]
@@ -1472,7 +1472,7 @@ People approach! The rat must hide!
                                  |   |   |   |  
                                 ( )- V - L -{.} 
 
-Rat: [<[rat , south] south>], [<[rat , west] west>]; [<[rat , sabotage the
+Rat: [<[rat , west] west>], [<[rat , south] south>]; [<[rat , sabotage the
 coolant pipes] sabotage the coolant pipes>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[proceed] proceed>]; [<[score] score>]
@@ -1520,7 +1520,7 @@ What are the guests discussing, if I may?
 I will start a transcription. Any suggestions for color?
 
 plain white
-itll stand out
+it’ll stand out
 
 Done.
 
@@ -1642,7 +1642,7 @@ The rat is alone, and free to act.
                                  |   |   |   |  
                                 ( )- V - L -( ) 
 
-Rat: [<[rat , south] south>], [<[rat , west] west>]; [<[rat , sabotage the
+Rat: [<[rat , west] west>], [<[rat , south] south>]; [<[rat , sabotage the
 coolant pipes] sabotage the coolant pipes>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[proceed] proceed>]; [<[score] score>]
@@ -1664,7 +1664,7 @@ Chose #q-2-servers
                                  |   |   |   |  
                                 ( )- V - L -( ) 
 
-Rat: [<[rat , south] south>], [<[rat , west] west>]; [<[rat , sabotage the
+Rat: [<[rat , west] west>], [<[rat , south] south>]; [<[rat , sabotage the
 coolant pipes] sabotage the coolant pipes>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[proceed] proceed>]; [<[score] score>]
@@ -1691,7 +1691,7 @@ you can also just say i’m better at this than rat
                                  |   |   |   |  
                                 ( )- B - L -(R) 
 
-Rat: [<[north] north>], [<[west] west>]; [<[sabotage the smart automation
+Rat: [<[west] west>], [<[north] north>]; [<[sabotage the smart automation
 devices] sabotage the smart automation devices>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
@@ -1710,7 +1710,7 @@ The butler is assessing—turning to the smart automation devices.
                                  |   |   |   |  
                                 ( )- B - L -{R} 
 
-Rat: [<[north] north>], [<[west] west>]; [<[sabotage the smart automation
+Rat: [<[west] west>], [<[north] north>]; [<[sabotage the smart automation
 devices] sabotage the smart automation devices>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
@@ -1734,7 +1734,7 @@ Chose #q-2-office
                                  |   |   |   |  
                                 ( )- V - L -{.} 
 
-Rat: [<[south] south>], [<[west] west>]; [<[sabotage the coolant pipes]
+Rat: [<[west] west>], [<[south] south>]; [<[sabotage the coolant pipes]
 sabotage the coolant pipes>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
@@ -1755,7 +1755,7 @@ the staff for all the actual labor.
                                  |   |   |   |  
                                 ( )- V - L -{ } 
 
-Rat: [<[south] south>], [<[west] west>]; [<[sabotage the coolant pipes]
+Rat: [<[west] west>], [<[south] south>]; [<[sabotage the coolant pipes]
 sabotage the coolant pipes>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
@@ -1778,7 +1778,7 @@ People approach! The rat must hide!
                                  |   |   |   |  
                                 ( )- V - L -{ } 
 
-Rat: [<[north] north>], [<[south] south>], [<[east] east>], [<[west] west>]
+Rat: [<[west] west>], [<[north] north>], [<[south] south>], [<[east] east>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
 > z
@@ -1799,7 +1799,7 @@ Chose #q-1-profanity
                                  |   |   |   |  
                                 ( )- V - L -{ } 
 
-Rat: [<[north] north>], [<[south] south>], [<[east] east>], [<[west] west>]
+Rat: [<[west] west>], [<[north] north>], [<[south] south>], [<[east] east>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
 > n
@@ -1834,7 +1834,7 @@ wow i take it back thats some good tech
                                  |   |   |   |  
                                 ( )- V - L -{ } 
 
-Rat: [<[south] south>], [<[west] west>]; [<[sabotage the toilet] sabotage the
+Rat: [<[west] west>], [<[south] south>]; [<[sabotage the toilet] sabotage the
 toilet>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
@@ -1852,7 +1852,7 @@ The butler is assessing—looking at the toilet now.
                                  |   |   |   |  
                                 ( )- V - L -{ } 
 
-Rat: [<[south] south>], [<[west] west>]; [<[sabotage the toilet] sabotage the
+Rat: [<[west] west>], [<[south] south>]; [<[sabotage the toilet] sabotage the
 toilet>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
@@ -1931,7 +1931,7 @@ water back into the toilet bowl.
                                  |   |   |   |  
                                 ( )- V - L -{ } 
 
-Rat: [<[north] north>], [<[south] south>], [<[east] east>], [<[west] west>]
+Rat: [<[west] west>], [<[north] north>], [<[south] south>], [<[east] east>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
 > w
@@ -2381,8 +2381,8 @@ Rat: [<[rat , north] north>], [<[rat , east] east>]; [<[rat , sabotage the bat
 cages] sabotage the bat cages>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[chameleon , north] north>], [<[chameleon , east] east>],
-[<[chameleon , west] west>]; [<[chameleon , mingle] mingle>]
+Chameleon: [<[chameleon , west] west>], [<[chameleon , north] north>],
+[<[chameleon , east] east>]; [<[chameleon , mingle] mingle>]
 > chameleon, mingle
 Your wish is my command. Give me just a moment to slip into the conversation
 and they’ll follow me wherever I go.
@@ -2397,7 +2397,7 @@ Rat: [<[rat , north] north>], [<[rat , east] east>]; [<[rat , sabotage the bat
 cages] sabotage the bat cages>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[north] north>], [<[east] east>], [<[west] west>]; [<[disengage]
+Chameleon: [<[west] west>], [<[north] north>], [<[east] east>]; [<[disengage]
 disengage>]
 > e
 Chameleon is winking at the camera and swirling away, and the crowd is
@@ -2425,7 +2425,7 @@ Rat: [<[rat , north] north>], [<[rat , east] east>]; [<[rat , sabotage the bat
 cages] sabotage the bat cages>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[north] north>], [<[east] east>], [<[west] west>]; [<[disengage]
+Chameleon: [<[west] west>], [<[north] north>], [<[east] east>]; [<[disengage]
 disengage>]
 > rat, sabotage cages
 Simple cages. Many handholds to climb. The latches open, and open, and open.
@@ -2453,8 +2453,8 @@ Rat: [<[north] north>], [<[east] east>]; [<[sabotage the bat cages] sabotage
 the bat cages>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[chameleon , north] north>], [<[chameleon , east] east>],
-[<[chameleon , west] west>]; [<[chameleon , disengage] disengage>]
+Chameleon: [<[chameleon , west] west>], [<[chameleon , north] north>],
+[<[chameleon , east] east>]; [<[chameleon , disengage] disengage>]
 > n
 The rat is going.
 
@@ -2484,8 +2484,8 @@ Rat: [<[south] south>], [<[east] east>]; [<[sabotage the pipe organ] sabotage
 the pipe organ>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[chameleon , north] north>], [<[chameleon , east] east>],
-[<[chameleon , west] west>]; [<[chameleon , disengage] disengage>]
+Chameleon: [<[chameleon , west] west>], [<[chameleon , north] north>],
+[<[chameleon , east] east>]; [<[chameleon , disengage] disengage>]
 > e
 It goes.
 
@@ -2515,11 +2515,11 @@ the Post’s archives forever.
                                  |   |   |   |  
                                 {.}-( )-(C)-( ) 
 
-Rat: [<[north] north>], [<[south] south>], [<[east] east>], [<[west] west>]
+Rat: [<[west] west>], [<[north] north>], [<[south] south>], [<[east] east>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[chameleon , north] north>], [<[chameleon , east] east>],
-[<[chameleon , west] west>]; [<[chameleon , disengage] disengage>]
+Chameleon: [<[chameleon , west] west>], [<[chameleon , north] north>],
+[<[chameleon , east] east>]; [<[chameleon , disengage] disengage>]
 > n
 The rat is moving.
 
@@ -2542,8 +2542,8 @@ Rat: [<[south] south>], [<[east] east>]; [<[sabotage the weapons] sabotage the
 weapons>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[chameleon , north] north>], [<[chameleon , east] east>],
-[<[chameleon , west] west>]; [<[chameleon , disengage] disengage>]
+Chameleon: [<[chameleon , west] west>], [<[chameleon , north] north>],
+[<[chameleon , east] east>]; [<[chameleon , disengage] disengage>]
 > sabotage weapons
 Many handholds. The rat can climb. Small pegs. Easy to pull free. And the axe
 begins to swing!
@@ -2568,8 +2568,8 @@ Rat: [<[south] south>], [<[east] east>]; [<[sabotage the weapons] sabotage the
 weapons>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[chameleon , north] north>], [<[chameleon , east] east>],
-[<[chameleon , west] west>]; [<[chameleon , disengage] disengage>]
+Chameleon: [<[chameleon , west] west>], [<[chameleon , north] north>],
+[<[chameleon , east] east>]; [<[chameleon , disengage] disengage>]
 > s
 The rat, it moves.
 
@@ -2598,11 +2598,11 @@ of me to question an invited guest who has crossed my threshold.
                                  |   |   |   |  
                                 { }-( )-(C)-( ) 
 
-Rat: [<[north] north>], [<[south] south>], [<[east] east>], [<[west] west>]
+Rat: [<[west] west>], [<[north] north>], [<[south] south>], [<[east] east>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[chameleon , north] north>], [<[chameleon , east] east>],
-[<[chameleon , west] west>]; [<[chameleon , disengage] disengage>]
+Chameleon: [<[chameleon , west] west>], [<[chameleon , north] north>],
+[<[chameleon , east] east>]; [<[chameleon , disengage] disengage>]
 > e
 It is moving.
 
@@ -2633,11 +2633,11 @@ Vespertilion: By no means. But the National Register of Historic Places does.
                                  |   |   |   |  
                                 { }-( )-(C)-( ) 
 
-Rat: [<[north] north>], [<[south] south>], [<[east] east>], [<[west] west>]
+Rat: [<[west] west>], [<[north] north>], [<[south] south>], [<[east] east>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[chameleon , north] north>], [<[chameleon , east] east>],
-[<[chameleon , west] west>]; [<[chameleon , disengage] disengage>]
+Chameleon: [<[chameleon , west] west>], [<[chameleon , north] north>],
+[<[chameleon , east] east>]; [<[chameleon , disengage] disengage>]
 > n
 The rat is moving.
 
@@ -2669,12 +2669,12 @@ maybe just a bit
                                  |   |   |   |  
                                 { }-( )-(C)-( ) 
 
-Rat: [<[south] south>], [<[west] west>]; [<[sabotage the toilet] sabotage the
+Rat: [<[west] west>], [<[south] south>]; [<[sabotage the toilet] sabotage the
 toilet>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[chameleon , north] north>], [<[chameleon , east] east>],
-[<[chameleon , west] west>]; [<[chameleon , disengage] disengage>]
+Chameleon: [<[chameleon , west] west>], [<[chameleon , north] north>],
+[<[chameleon , east] east>]; [<[chameleon , disengage] disengage>]
 > sabotage toilet
 Gold pipes. Not different from normal pipes. The rat twists, and inserts, and
 reconnects, and is done.
@@ -2689,12 +2689,12 @@ The butler is assessing—focusing on the toilet.
                                  |   |   |   |  
                                 { }-( )-(C)-( ) 
 
-Rat: [<[south] south>], [<[west] west>]; [<[sabotage the toilet] sabotage the
+Rat: [<[west] west>], [<[south] south>]; [<[sabotage the toilet] sabotage the
 toilet>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[chameleon , north] north>], [<[chameleon , east] east>],
-[<[chameleon , west] west>]; [<[chameleon , disengage] disengage>]
+Chameleon: [<[chameleon , west] west>], [<[chameleon , north] north>],
+[<[chameleon , east] east>]; [<[chameleon , disengage] disengage>]
 > s
 It is going.
 
@@ -2718,11 +2718,11 @@ Chose #q-3-constantine-solo
                                  |   |   |   |  
                                 { }-( )-(C)-( ) 
 
-Rat: [<[north] north>], [<[south] south>], [<[east] east>], [<[west] west>]
+Rat: [<[west] west>], [<[north] north>], [<[south] south>], [<[east] east>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[chameleon , north] north>], [<[chameleon , east] east>],
-[<[chameleon , west] west>]; [<[chameleon , disengage] disengage>]
+Chameleon: [<[chameleon , west] west>], [<[chameleon , north] north>],
+[<[chameleon , east] east>]; [<[chameleon , disengage] disengage>]
 > e
 The rat is moving.
 
@@ -2747,12 +2747,12 @@ Quinn: It’s the least I can do, really, the very least.
                                  |   |   |   |  
                                 { }-( )-(C)-( ) 
 
-Rat: [<[south] south>], [<[west] west>]; [<[sabotage the coolant pipes]
+Rat: [<[west] west>], [<[south] south>]; [<[sabotage the coolant pipes]
 sabotage the coolant pipes>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[chameleon , north] north>], [<[chameleon , east] east>],
-[<[chameleon , west] west>]; [<[chameleon , disengage] disengage>]
+Chameleon: [<[chameleon , west] west>], [<[chameleon , north] north>],
+[<[chameleon , east] east>]; [<[chameleon , disengage] disengage>]
 > sabotage pipes
 So many pipes. So many connections. Pry one free, and let its lifeblood flow
 and pool.
@@ -2774,12 +2774,12 @@ of monster would have wanted that flood to happen?
                                  |   |   |   |  
                                 { }-( )-(C)-( ) 
 
-Rat: [<[south] south>], [<[west] west>]; [<[sabotage the coolant pipes]
+Rat: [<[west] west>], [<[south] south>]; [<[sabotage the coolant pipes]
 sabotage the coolant pipes>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[chameleon , north] north>], [<[chameleon , east] east>],
-[<[chameleon , west] west>]; [<[chameleon , disengage] disengage>]
+Chameleon: [<[chameleon , west] west>], [<[chameleon , north] north>],
+[<[chameleon , east] east>]; [<[chameleon , disengage] disengage>]
 > s
 It is going.
 
@@ -2808,12 +2808,12 @@ of the town after that, certainly.
                                  |   |   |   |  
                                 { }-( )-(C)-(R) 
 
-Rat: [<[north] north>], [<[west] west>]; [<[sabotage the smart automation
+Rat: [<[west] west>], [<[north] north>]; [<[sabotage the smart automation
 devices] sabotage the smart automation devices>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[chameleon , north] north>], [<[chameleon , east] east>],
-[<[chameleon , west] west>]; [<[chameleon , disengage] disengage>]
+Chameleon: [<[chameleon , west] west>], [<[chameleon , north] north>],
+[<[chameleon , east] east>]; [<[chameleon , disengage] disengage>]
 > sabotage devices
 The sensors. They can be confused. Report errors. The system will lose
 consistency.
@@ -2829,12 +2829,12 @@ The butler is assessing—turning to the coolant pipes.
                                  |   |   |   |  
                                 { }-( )-(C)-{R} 
 
-Rat: [<[north] north>], [<[west] west>]; [<[sabotage the smart automation
+Rat: [<[west] west>], [<[north] north>]; [<[sabotage the smart automation
 devices] sabotage the smart automation devices>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[chameleon , north] north>], [<[chameleon , east] east>],
-[<[chameleon , west] west>]; [<[chameleon , disengage] disengage>]
+Chameleon: [<[chameleon , west] west>], [<[chameleon , north] north>],
+[<[chameleon , east] east>]; [<[chameleon , disengage] disengage>]
 > proceed
 on it
 
@@ -2854,12 +2854,12 @@ Chose #q-2-chapel
                                  |   |   |   |  
                                 { }-( )-(C)-{R} 
 
-Rat: [<[rat , north] north>], [<[rat , west] west>]; [<[rat , sabotage the
+Rat: [<[rat , west] west>], [<[rat , north] north>]; [<[rat , sabotage the
 smart automation devices] sabotage the smart automation devices>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[proceed] proceed>]; [<[score] score>]
-Chameleon: [<[chameleon , north] north>], [<[chameleon , east] east>],
-[<[chameleon , west] west>]; [<[chameleon , disengage] disengage>]
+Chameleon: [<[chameleon , west] west>], [<[chameleon , north] north>],
+[<[chameleon , east] east>]; [<[chameleon , disengage] disengage>]
 > lz
 We shall wait.
 
@@ -3132,12 +3132,12 @@ guardrails!
                                  |   |   |   |  
                                 ( )-(B)-(C)-(R) 
 
-Rat: [<[rat , north] north>], [<[rat , west] west>]; [<[rat , sabotage the
+Rat: [<[rat , west] west>], [<[rat , north] north>]; [<[rat , sabotage the
 smart automation devices] sabotage the smart automation devices>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[proceed] proceed>]; [<[score] score>]
-Chameleon: [<[chameleon , north] north>], [<[chameleon , east] east>],
-[<[chameleon , west] west>]; [<[chameleon , disengage] disengage>]
+Chameleon: [<[chameleon , west] west>], [<[chameleon , north] north>],
+[<[chameleon , east] east>]; [<[chameleon , disengage] disengage>]
 > chameleon, n
 Everyone is following Chameleon to the glass-gilded passage.
 
@@ -3165,12 +3165,12 @@ an IED.
                                  |   |   |   |  
                                 ( )-(B)-( )-(R) 
 
-Rat: [<[rat , north] north>], [<[rat , west] west>]; [<[rat , sabotage the
+Rat: [<[rat , west] west>], [<[rat , north] north>]; [<[rat , sabotage the
 smart automation devices] sabotage the smart automation devices>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[north] north>], [<[south] south>], [<[east] east>], [<[west]
-west>]; [<[disengage] disengage>]
+Chameleon: [<[west] west>], [<[north] north>], [<[south] south>], [<[east]
+east>]; [<[disengage] disengage>]
 > rat, sabotage devices
 The sensors. They can be confused. Report errors. The system will lose
 consistency.
@@ -3193,12 +3193,12 @@ are entirely legal. Is there anything else I can help you with?
                                  |   |   |   |  
                                 ( )-(B)-(.)-{R} 
 
-Rat: [<[north] north>], [<[west] west>]; [<[sabotage the smart automation
+Rat: [<[west] west>], [<[north] north>]; [<[sabotage the smart automation
 devices] sabotage the smart automation devices>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[chameleon , north] north>], [<[chameleon , south] south>],
-[<[chameleon , east] east>], [<[chameleon , west] west>]; [<[chameleon ,
+Chameleon: [<[chameleon , west] west>], [<[chameleon , north] north>],
+[<[chameleon , south] south>], [<[chameleon , east] east>]; [<[chameleon ,
 disengage] disengage>]
 > n
 It goes.
@@ -3215,12 +3215,12 @@ The butler is moving from the dining patio to the granite-gilded passage.
                                  |   |   |   |  
                                 ( )-(.)-(.)-{.} 
 
-Rat: [<[south] south>], [<[west] west>]; [<[sabotage the coolant pipes]
+Rat: [<[west] west>], [<[south] south>]; [<[sabotage the coolant pipes]
 sabotage the coolant pipes>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[chameleon , north] north>], [<[chameleon , south] south>],
-[<[chameleon , east] east>], [<[chameleon , west] west>]; [<[chameleon ,
+Chameleon: [<[chameleon , west] west>], [<[chameleon , north] north>],
+[<[chameleon , south] south>], [<[chameleon , east] east>]; [<[chameleon ,
 disengage] disengage>]
 > z
 dot dot dot
@@ -3239,12 +3239,12 @@ Chose #q-3-tension
                                  |   |   |   |  
                                 ( )-(.)-(.)-{.} 
 
-Rat: [<[south] south>], [<[west] west>]; [<[sabotage the coolant pipes]
+Rat: [<[west] west>], [<[south] south>]; [<[sabotage the coolant pipes]
 sabotage the coolant pipes>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[chameleon , north] north>], [<[chameleon , south] south>],
-[<[chameleon , east] east>], [<[chameleon , west] west>]; [<[chameleon ,
+Chameleon: [<[chameleon , west] west>], [<[chameleon , north] north>],
+[<[chameleon , south] south>], [<[chameleon , east] east>]; [<[chameleon ,
 disengage] disengage>]
 > z
 So, darling, what comes next?
@@ -3267,12 +3267,12 @@ voice for those who have not been heard!
                                  |   |   |   |  
                                 ( )-(.)-(.)-{.} 
 
-Rat: [<[south] south>], [<[west] west>]; [<[sabotage the coolant pipes]
+Rat: [<[west] west>], [<[south] south>]; [<[sabotage the coolant pipes]
 sabotage the coolant pipes>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[chameleon , north] north>], [<[chameleon , south] south>],
-[<[chameleon , east] east>], [<[chameleon , west] west>]; [<[chameleon ,
+Chameleon: [<[chameleon , west] west>], [<[chameleon , north] north>],
+[<[chameleon , south] south>], [<[chameleon , east] east>]; [<[chameleon ,
 disengage] disengage>]
 > z
 The rat waits.
@@ -3294,12 +3294,12 @@ maintain that now without its old reporters and editors?
                                  |   |   |   |  
                                 ( )-(.)-(.)-{.} 
 
-Rat: [<[south] south>], [<[west] west>]; [<[sabotage the coolant pipes]
+Rat: [<[west] west>], [<[south] south>]; [<[sabotage the coolant pipes]
 sabotage the coolant pipes>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[chameleon , north] north>], [<[chameleon , south] south>],
-[<[chameleon , east] east>], [<[chameleon , west] west>]; [<[chameleon ,
+Chameleon: [<[chameleon , west] west>], [<[chameleon , north] north>],
+[<[chameleon , south] south>], [<[chameleon , east] east>]; [<[chameleon ,
 disengage] disengage>]
 > z
 dot dot dot
@@ -3329,12 +3329,12 @@ Tension: Guests toast to new Tension Media merger!
                                  |   |   |   |  
                                 ( )-(.)-(.)-{.} 
 
-Rat: [<[south] south>], [<[west] west>]; [<[sabotage the coolant pipes]
+Rat: [<[west] west>], [<[south] south>]; [<[sabotage the coolant pipes]
 sabotage the coolant pipes>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[chameleon , north] north>], [<[chameleon , south] south>],
-[<[chameleon , east] east>], [<[chameleon , west] west>]; [<[chameleon ,
+Chameleon: [<[chameleon , west] west>], [<[chameleon , north] north>],
+[<[chameleon , south] south>], [<[chameleon , east] east>]; [<[chameleon ,
 disengage] disengage>]
 > z
 So, darling, what comes next?
@@ -3347,12 +3347,12 @@ The butler is moving from the granite-gilded passage to the dining patio.
                                  |   |   |   |  
                                 ( )-(B)-(.)-{.} 
 
-Rat: [<[south] south>], [<[west] west>]; [<[sabotage the coolant pipes]
+Rat: [<[west] west>], [<[south] south>]; [<[sabotage the coolant pipes]
 sabotage the coolant pipes>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[chameleon , north] north>], [<[chameleon , south] south>],
-[<[chameleon , east] east>], [<[chameleon , west] west>]; [<[chameleon ,
+Chameleon: [<[chameleon , west] west>], [<[chameleon , north] north>],
+[<[chameleon , south] south>], [<[chameleon , east] east>]; [<[chameleon ,
 disengage] disengage>]
 > chameleon, w
 Chameleon is leading the crowd west.
@@ -3377,12 +3377,12 @@ Chose #q-null-1
                                  |   |   |   |  
                                 ( )-( )-(B)-{.} 
 
-Rat: [<[rat , south] south>], [<[rat , west] west>]; [<[rat , sabotage the
+Rat: [<[rat , west] west>], [<[rat , south] south>]; [<[rat , sabotage the
 coolant pipes] sabotage the coolant pipes>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[north] north>], [<[south] south>], [<[east] east>], [<[west]
-west>]; [<[disengage] disengage>]
+Chameleon: [<[west] west>], [<[north] north>], [<[south] south>], [<[east]
+east>]; [<[disengage] disengage>]
 > rat, w
 The rat, it goes.
 
@@ -3399,11 +3399,11 @@ The butler is moving from the ballroom to the office.
                                  |   |   |   |  
                                 ( )-( )-( )-{B} 
 
-Rat: [<[north] north>], [<[south] south>], [<[east] east>], [<[west] west>]
+Rat: [<[west] west>], [<[north] north>], [<[south] south>], [<[east] east>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[chameleon , north] north>], [<[chameleon , south] south>],
-[<[chameleon , east] east>], [<[chameleon , west] west>]; [<[chameleon ,
+Chameleon: [<[chameleon , west] west>], [<[chameleon , north] north>],
+[<[chameleon , south] south>], [<[chameleon , east] east>]; [<[chameleon ,
 disengage] disengage>]
 > rat, n
 The rat is moving.
@@ -3428,12 +3428,12 @@ Chose #q-1-lowercase
                                  |   |   |   |  
                                 ( )-( )-( )-(B) 
 
-Rat: [<[south] south>], [<[west] west>]; [<[sabotage the toilet] sabotage the
+Rat: [<[west] west>], [<[south] south>]; [<[sabotage the toilet] sabotage the
 toilet>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[chameleon , north] north>], [<[chameleon , south] south>],
-[<[chameleon , east] east>], [<[chameleon , west] west>]; [<[chameleon ,
+Chameleon: [<[chameleon , west] west>], [<[chameleon , north] north>],
+[<[chameleon , south] south>], [<[chameleon , east] east>]; [<[chameleon ,
 disengage] disengage>]
 > rat, sabotage
 Gold pipes. Not different from normal pipes. The rat twists, and inserts, and
@@ -3456,12 +3456,12 @@ out of spite
                                  |   |   |   |  
                                 ( )-( )-(.)-(B) 
 
-Rat: [<[south] south>], [<[west] west>]; [<[sabotage the toilet] sabotage the
+Rat: [<[west] west>], [<[south] south>]; [<[sabotage the toilet] sabotage the
 toilet>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[chameleon , north] north>], [<[chameleon , south] south>],
-[<[chameleon , east] east>], [<[chameleon , west] west>]; [<[chameleon ,
+Chameleon: [<[chameleon , west] west>], [<[chameleon , north] north>],
+[<[chameleon , south] south>], [<[chameleon , east] east>]; [<[chameleon ,
 disengage] disengage>]
 > chameleon, e
 The party is moving eastward with Chameleon.
@@ -3481,12 +3481,12 @@ The butler is moving from the office to the ballroom.
                                  |   |   |   |  
                                 ( )-(.)-(B)-( ) 
 
-Rat: [<[rat , south] south>], [<[rat , west] west>]; [<[rat , sabotage the
+Rat: [<[rat , west] west>], [<[rat , south] south>]; [<[rat , sabotage the
 toilet] sabotage the toilet>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[north] north>], [<[south] south>], [<[east] east>], [<[west]
-west>]; [<[disengage] disengage>]
+Chameleon: [<[west] west>], [<[north] north>], [<[south] south>], [<[east]
+east>]; [<[disengage] disengage>]
 > proceed
 thats a go
 
@@ -3502,12 +3502,12 @@ Chose #q-3-malatesta-solo
                                  |   |   |   |  
                                 ( )-(B)-( )-( ) 
 
-Rat: [<[rat , south] south>], [<[rat , west] west>]; [<[rat , sabotage the
+Rat: [<[rat , west] west>], [<[rat , south] south>]; [<[rat , sabotage the
 toilet] sabotage the toilet>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[proceed] proceed>]; [<[score] score>]
-Chameleon: [<[chameleon , north] north>], [<[chameleon , south] south>],
-[<[chameleon , east] east>], [<[chameleon , west] west>]; [<[chameleon ,
+Chameleon: [<[chameleon , west] west>], [<[chameleon , north] north>],
+[<[chameleon , south] south>], [<[chameleon , east] east>]; [<[chameleon ,
 disengage] disengage>]
 > chameleon, w
 Chameleon is winking at the camera and swirling away, and the crowd is
@@ -3535,12 +3535,12 @@ medicines can come to market sooner.
                                  |   |   |   |  
                                 ( )-( )-(B)-( ) 
 
-Rat: [<[rat , south] south>], [<[rat , west] west>]; [<[rat , sabotage the
+Rat: [<[rat , west] west>], [<[rat , south] south>]; [<[rat , sabotage the
 toilet] sabotage the toilet>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[north] north>], [<[south] south>], [<[east] east>], [<[west]
-west>]; [<[disengage] disengage>]
+Chameleon: [<[west] west>], [<[north] north>], [<[south] south>], [<[east]
+east>]; [<[disengage] disengage>]
 > chameleon, e
 The party is moving eastward with Chameleon.
 
@@ -3567,12 +3567,12 @@ children too young to receive the vaccine.
                                  |   |   |   |  
                                 ( )-(B)-( )-( ) 
 
-Rat: [<[rat , south] south>], [<[rat , west] west>]; [<[rat , sabotage the
+Rat: [<[rat , west] west>], [<[rat , south] south>]; [<[rat , sabotage the
 toilet] sabotage the toilet>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[north] north>], [<[south] south>], [<[east] east>], [<[west]
-west>]; [<[disengage] disengage>]
+Chameleon: [<[west] west>], [<[north] north>], [<[south] south>], [<[east]
+east>]; [<[disengage] disengage>]
 > chameleon, w
 Everyone is following Chameleon to the granite-gilded passage.
 
@@ -3597,12 +3597,12 @@ of rabies among young children in underserved populations.
                                  |   |   |   |  
                                 ( )-( )-(B)-( ) 
 
-Rat: [<[rat , south] south>], [<[rat , west] west>]; [<[rat , sabotage the
+Rat: [<[rat , west] west>], [<[rat , south] south>]; [<[rat , sabotage the
 toilet] sabotage the toilet>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[north] north>], [<[south] south>], [<[east] east>], [<[west]
-west>]; [<[disengage] disengage>]
+Chameleon: [<[west] west>], [<[north] north>], [<[south] south>], [<[east]
+east>]; [<[disengage] disengage>]
 > chameleon, e
 Chameleon is leading the crowd east.
 
@@ -3621,12 +3621,12 @@ The butler is moving from the ballroom to the dining patio.
                                  |   |   |   |  
                                 ( )-(B)-( )-( ) 
 
-Rat: [<[rat , south] south>], [<[rat , west] west>]; [<[rat , sabotage the
+Rat: [<[rat , west] west>], [<[rat , south] south>]; [<[rat , sabotage the
 toilet] sabotage the toilet>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[north] north>], [<[south] south>], [<[east] east>], [<[west]
-west>]; [<[disengage] disengage>]
+Chameleon: [<[west] west>], [<[north] north>], [<[south] south>], [<[east]
+east>]; [<[disengage] disengage>]
 > chameleon, w
 Chameleon is winking at the camera and swirling away, and the crowd is
 following her.
@@ -3651,12 +3651,12 @@ Chose #q-null-1
                                  |   |   |   |  
                                 ( )-( )-(B)-( ) 
 
-Rat: [<[rat , south] south>], [<[rat , west] west>]; [<[rat , sabotage the
+Rat: [<[rat , west] west>], [<[rat , south] south>]; [<[rat , sabotage the
 toilet] sabotage the toilet>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[north] north>], [<[south] south>], [<[east] east>], [<[west]
-west>]; [<[disengage] disengage>]
+Chameleon: [<[west] west>], [<[north] north>], [<[south] south>], [<[east]
+east>]; [<[disengage] disengage>]
 > chameleon, e
 Chameleon is leading the crowd east.
 
@@ -3675,12 +3675,12 @@ The butler is moving from the ballroom to the dining patio.
                                  |   |   |   |  
                                 ( )-(B)-( )-( ) 
 
-Rat: [<[rat , south] south>], [<[rat , west] west>]; [<[rat , sabotage the
+Rat: [<[rat , west] west>], [<[rat , south] south>]; [<[rat , sabotage the
 toilet] sabotage the toilet>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[north] north>], [<[south] south>], [<[east] east>], [<[west]
-west>]; [<[disengage] disengage>]
+Chameleon: [<[west] west>], [<[north] north>], [<[south] south>], [<[east]
+east>]; [<[disengage] disengage>]
 > chameleon, w
 The party is moving westward with Chameleon.
 
@@ -3703,12 +3703,12 @@ Chose #q-2-spider
                                  |   |   |   |  
                                 ( )-( )-(B)-( ) 
 
-Rat: [<[rat , south] south>], [<[rat , west] west>]; [<[rat , sabotage the
+Rat: [<[rat , west] west>], [<[rat , south] south>]; [<[rat , sabotage the
 toilet] sabotage the toilet>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[north] north>], [<[south] south>], [<[east] east>], [<[west]
-west>]; [<[disengage] disengage>]
+Chameleon: [<[west] west>], [<[north] north>], [<[south] south>], [<[east]
+east>]; [<[disengage] disengage>]
 > chameleon, e
 Everyone is following Chameleon to the glass-gilded passage.
 
@@ -3738,12 +3738,12 @@ do tell
                                  |   |   |   |  
                                 ( )-(B)-( )-( ) 
 
-Rat: [<[rat , south] south>], [<[rat , west] west>]; [<[rat , sabotage the
+Rat: [<[rat , west] west>], [<[rat , south] south>]; [<[rat , sabotage the
 toilet] sabotage the toilet>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[north] north>], [<[south] south>], [<[east] east>], [<[west]
-west>]; [<[disengage] disengage>]
+Chameleon: [<[west] west>], [<[north] north>], [<[south] south>], [<[east]
+east>]; [<[disengage] disengage>]
 > chameleon, w
 The party is moving westward with Chameleon.
 
@@ -3781,12 +3781,12 @@ Surely there must be a better way to phrase that.
                                  |   |   |   |  
                                 ( )-( )-(B)-( ) 
 
-Rat: [<[rat , south] south>], [<[rat , west] west>]; [<[rat , sabotage the
+Rat: [<[rat , west] west>], [<[rat , south] south>]; [<[rat , sabotage the
 toilet] sabotage the toilet>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[north] north>], [<[south] south>], [<[east] east>], [<[west]
-west>]; [<[disengage] disengage>]
+Chameleon: [<[west] west>], [<[north] north>], [<[south] south>], [<[east]
+east>]; [<[disengage] disengage>]
 > chameleon, e
 Chameleon is leading the crowd east.
 
@@ -3805,12 +3805,12 @@ The butler is moving from the ballroom to the dining patio.
                                  |   |   |   |  
                                 ( )-(B)-( )-( ) 
 
-Rat: [<[rat , south] south>], [<[rat , west] west>]; [<[rat , sabotage the
+Rat: [<[rat , west] west>], [<[rat , south] south>]; [<[rat , sabotage the
 toilet] sabotage the toilet>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[north] north>], [<[south] south>], [<[east] east>], [<[west]
-west>]; [<[disengage] disengage>]
+Chameleon: [<[west] west>], [<[north] north>], [<[south] south>], [<[east]
+east>]; [<[disengage] disengage>]
 > chameleon, w
 Everyone is following Chameleon to the granite-gilded passage.
 
@@ -3833,12 +3833,12 @@ Chose #q-2-jackdaw
                                  |   |   |   |  
                                 ( )-( )-(B)-( ) 
 
-Rat: [<[rat , south] south>], [<[rat , west] west>]; [<[rat , sabotage the
+Rat: [<[rat , west] west>], [<[rat , south] south>]; [<[rat , sabotage the
 toilet] sabotage the toilet>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[north] north>], [<[south] south>], [<[east] east>], [<[west]
-west>]; [<[disengage] disengage>]
+Chameleon: [<[west] west>], [<[north] north>], [<[south] south>], [<[east]
+east>]; [<[disengage] disengage>]
 > chameleon, e
 The party is moving eastward with Chameleon.
 
@@ -3870,12 +3870,12 @@ oops gtg there’s an alarm or something
                                  |   |   |   |  
                                 ( )-(B)-( )-( ) 
 
-Rat: [<[rat , south] south>], [<[rat , west] west>]; [<[rat , sabotage the
+Rat: [<[rat , west] west>], [<[rat , south] south>]; [<[rat , sabotage the
 toilet] sabotage the toilet>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[north] north>], [<[south] south>], [<[east] east>], [<[west]
-west>]; [<[disengage] disengage>]
+Chameleon: [<[west] west>], [<[north] north>], [<[south] south>], [<[east]
+east>]; [<[disengage] disengage>]
 > chameleon, w
 Chameleon is leading the crowd west.
 
@@ -3903,12 +3903,12 @@ on the plus side i never have to look at a timesheet again
                                  |   |   |   |  
                                 ( )-( )-(B)-( ) 
 
-Rat: [<[rat , south] south>], [<[rat , west] west>]; [<[rat , sabotage the
+Rat: [<[rat , west] west>], [<[rat , south] south>]; [<[rat , sabotage the
 toilet] sabotage the toilet>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[north] north>], [<[south] south>], [<[east] east>], [<[west]
-west>]; [<[disengage] disengage>]
+Chameleon: [<[west] west>], [<[north] north>], [<[south] south>], [<[east]
+east>]; [<[disengage] disengage>]
 > chameleon, e
 The party is moving eastward with Chameleon.
 
@@ -3927,12 +3927,12 @@ The butler is moving from the ballroom to the dining patio.
                                  |   |   |   |  
                                 ( )-(B)-( )-( ) 
 
-Rat: [<[rat , south] south>], [<[rat , west] west>]; [<[rat , sabotage the
+Rat: [<[rat , west] west>], [<[rat , south] south>]; [<[rat , sabotage the
 toilet] sabotage the toilet>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[north] north>], [<[south] south>], [<[east] east>], [<[west]
-west>]; [<[disengage] disengage>]
+Chameleon: [<[west] west>], [<[north] north>], [<[south] south>], [<[east]
+east>]; [<[disengage] disengage>]
 > chameleon, w
 Everyone is following Chameleon to the granite-gilded passage.
 
@@ -3955,12 +3955,12 @@ Chose #q-3-vault
                                  |   |   |   |  
                                 ( )-( )-(B)-( ) 
 
-Rat: [<[rat , south] south>], [<[rat , west] west>]; [<[rat , sabotage the
+Rat: [<[rat , west] west>], [<[rat , south] south>]; [<[rat , sabotage the
 toilet] sabotage the toilet>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[north] north>], [<[south] south>], [<[east] east>], [<[west]
-west>]; [<[disengage] disengage>]
+Chameleon: [<[west] west>], [<[north] north>], [<[south] south>], [<[east]
+east>]; [<[disengage] disengage>]
 > chameleon, e
 Chameleon is winking at the camera and swirling away, and the crowd is
 following her.
@@ -3986,12 +3986,12 @@ i just wanted to say i breached the vault
                                  |   |   |   |  
                                 ( )-(B)-( )-( ) 
 
-Rat: [<[rat , south] south>], [<[rat , west] west>]; [<[rat , sabotage the
+Rat: [<[rat , west] west>], [<[rat , south] south>]; [<[rat , sabotage the
 toilet] sabotage the toilet>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[north] north>], [<[south] south>], [<[east] east>], [<[west]
-west>]; [<[disengage] disengage>]
+Chameleon: [<[west] west>], [<[north] north>], [<[south] south>], [<[east]
+east>]; [<[disengage] disengage>]
 > chameleon, w
 Everyone is following Chameleon to the granite-gilded passage.
 
@@ -4010,12 +4010,12 @@ The butler is moving from the dining patio to the ballroom.
                                  |   |   |   |  
                                 ( )-( )-(B)-( ) 
 
-Rat: [<[rat , south] south>], [<[rat , west] west>]; [<[rat , sabotage the
+Rat: [<[rat , west] west>], [<[rat , south] south>]; [<[rat , sabotage the
 toilet] sabotage the toilet>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[north] north>], [<[south] south>], [<[east] east>], [<[west]
-west>]; [<[disengage] disengage>]
+Chameleon: [<[west] west>], [<[north] north>], [<[south] south>], [<[east]
+east>]; [<[disengage] disengage>]
 > chameleon, e
 Chameleon is leading the crowd east.
 
@@ -4038,12 +4038,12 @@ Chose #q-2-fox
                                  |   |   |   |  
                                 ( )-(B)-( )-( ) 
 
-Rat: [<[rat , south] south>], [<[rat , west] west>]; [<[rat , sabotage the
+Rat: [<[rat , west] west>], [<[rat , south] south>]; [<[rat , sabotage the
 toilet] sabotage the toilet>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[north] north>], [<[south] south>], [<[east] east>], [<[west]
-west>]; [<[disengage] disengage>]
+Chameleon: [<[west] west>], [<[north] north>], [<[south] south>], [<[east]
+east>]; [<[disengage] disengage>]
 > lz
 We shall wait.
 
@@ -4143,13 +4143,13 @@ The rat is alone, and free to act.
                                  |   |   |   |  
                                 ( )-( )-( )-( ) 
 
-Rat: [<[rat , south] south>], [<[rat , west] west>]; [<[rat , sabotage the
+Rat: [<[rat , west] west>], [<[rat , south] south>]; [<[rat , sabotage the
 toilet] sabotage the toilet>]
 Spider: [<wait>], [<long wait>]; view any room or object; [<[spider , hack the
 security camera] hack the security camera>]
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Chameleon: [<[north] north>], [<[south] south>], [<[east] east>], [<[west]
-west>]; [<[disengage] disengage>]
+Chameleon: [<[west] west>], [<[north] north>], [<[south] south>], [<[east]
+east>]; [<[disengage] disengage>]
 > hack
 I am beginning my work now.
 
@@ -4212,7 +4212,7 @@ entered the lower floors and made off with who even knows what.
                                  |   |   |   |  
                                 (B)-(C)-(R)-( ) 
 
-Rat: [<[rat , north] north>], [<[rat , east] east>], [<[rat , west] west>]
+Rat: [<[rat , west] west>], [<[rat , north] north>], [<[rat , east] east>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
 > z
@@ -4236,7 +4236,7 @@ Vespertilion is turning away and moving back toward the dining room.
                                  |   |   |   |  
                                 (B)-(C)-(R)-( ) 
 
-Rat: [<[rat , north] north>], [<[rat , east] east>], [<[rat , west] west>]
+Rat: [<[rat , west] west>], [<[rat , north] north>], [<[rat , east] east>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
 > z
@@ -4251,7 +4251,7 @@ it.
                                  |   |   |   |  
                                 (B)-(C)-(R)-( ) 
 
-Rat: [<[rat , north] north>], [<[rat , east] east>], [<[rat , west] west>]
+Rat: [<[rat , west] west>], [<[rat , north] north>], [<[rat , east] east>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
 Butler: [<[butler , north] north>], [<[butler , east] east>]; [<attend to the
@@ -4265,7 +4265,7 @@ The butler glances at the silver tray in his hands.
                                  |   |   |   |  
                                 (B)-(C)-(R)-( ) 
 
-Rat: [<[rat , north] north>], [<[rat , east] east>], [<[rat , west] west>]
+Rat: [<[rat , west] west>], [<[rat , north] north>], [<[rat , east] east>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
 Butler: [<[north] north>], [<[east] east>]; [<attend to the silver tray>]
@@ -4279,7 +4279,7 @@ Your meaning seems obvious, but apparently those are not the right words. Try
                                  |   |   |   |  
                                 (B)-(C)-(R)-( ) 
 
-Rat: [<[rat , north] north>], [<[rat , east] east>], [<[rat , west] west>]
+Rat: [<[rat , west] west>], [<[rat , north] north>], [<[rat , east] east>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
 Butler: [<[north] north>], [<[east] east>]; [<attend to the silver tray>]
@@ -4292,7 +4292,7 @@ The butler puts down the silver tray.
                                  |   |   |   |  
                                 (B)-(C)-(R)-( ) 
 
-Rat: [<[rat , north] north>], [<[rat , east] east>], [<[rat , west] west>]
+Rat: [<[rat , west] west>], [<[rat , north] north>], [<[rat , east] east>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
 Butler: [<[north] north>], [<[east] east>]; [<attend to the silver tray>]
@@ -4313,10 +4313,10 @@ The [<guests>] are milling around and talking amongst themselves.
                                  |   |   |   |  
                                 (*)-(B)-(R)-( ) 
 
-Rat: [<[rat , north] north>], [<[rat , east] east>], [<[rat , west] west>]
+Rat: [<[rat , west] west>], [<[rat , north] north>], [<[rat , east] east>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Butler: [<[north] north>], [<[east] east>], [<[west] west>]
+Butler: [<[west] west>], [<[north] north>], [<[east] east>]
 > n
 The butler is moving north.
 
@@ -4331,10 +4331,10 @@ to the north.
                                  |   |   |   |  
                                 (*)-(C)-(R)-( ) 
 
-Rat: [<[rat , north] north>], [<[rat , east] east>], [<[rat , west] west>]
+Rat: [<[rat , west] west>], [<[rat , north] north>], [<[rat , east] east>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Butler: [<[north] north>], [<[south] south>], [<[east] east>], [<[west] west>]
+Butler: [<[west] west>], [<[north] north>], [<[south] south>], [<[east] east>]
 > n
 The butler is moving north.
 
@@ -4351,10 +4351,10 @@ A [<curtain rod>] has been propped up in an out-of-the-way corner.
                                  |   |   |   |  
                                 (*)-(C)-(R)-( ) 
 
-Rat: [<[rat , north] north>], [<[rat , east] east>], [<[rat , west] west>]
+Rat: [<[rat , west] west>], [<[rat , north] north>], [<[rat , east] east>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Butler: [<[south] south>], [<[east] east>], [<[west] west>]; [<attend to the
+Butler: [<[west] west>], [<[south] south>], [<[east] east>]; [<attend to the
 curtain rod>]
 > w
 The butler is moving west.
@@ -4372,7 +4372,7 @@ The butler is inclining his head slightly toward a small [<data drive>].
                                  |   |   |   |  
                                 (*)-(C)-(R)-( ) 
 
-Rat: [<[rat , north] north>], [<[rat , east] east>], [<[rat , west] west>]
+Rat: [<[rat , west] west>], [<[rat , north] north>], [<[rat , east] east>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
 Butler: [<[east] east>]; [<attend to the data drive>]
@@ -4386,7 +4386,7 @@ position.
                                  |   |   |   |  
                                 (*)-(C)-(R)-( ) 
 
-Rat: [<[rat , north] north>], [<[rat , east] east>], [<[rat , west] west>]
+Rat: [<[rat , west] west>], [<[rat , north] north>], [<[rat , east] east>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
 Butler: [<[east] east>]; [<attend to the data drive>]
@@ -4399,7 +4399,7 @@ The butler picks up the data drive.
                                  |   |   |   |  
                                 (*)-(C)-(R)-( ) 
 
-Rat: [<[rat , north] north>], [<[rat , east] east>], [<[rat , west] west>]
+Rat: [<[rat , west] west>], [<[rat , north] north>], [<[rat , east] east>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
 Butler: [<[east] east>]; [<attend to the data drive>]
@@ -4419,10 +4419,10 @@ A [<curtain rod>] has been propped up in an out-of-the-way corner.
                                  |   |   |   |  
                                 (*)-(C)-(R)-( ) 
 
-Rat: [<[rat , north] north>], [<[rat , east] east>], [<[rat , west] west>]
+Rat: [<[rat , west] west>], [<[rat , north] north>], [<[rat , east] east>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Butler: [<[south] south>], [<[east] east>], [<[west] west>]; [<attend to the
+Butler: [<[west] west>], [<[south] south>], [<[east] east>]; [<attend to the
 data drive>]; [<attend to the curtain rod>]
 > e
 The butler is moving east.
@@ -4437,10 +4437,10 @@ bathrooms are no exception. Even the [<toilet>] is polished to a bright shine.
                                  |   |   |   |  
                                 (*)-(C)-(R)-( ) 
 
-Rat: [<[rat , north] north>], [<[rat , east] east>], [<[rat , west] west>]
+Rat: [<[rat , west] west>], [<[rat , north] north>], [<[rat , east] east>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
-Butler: [<[south] south>], [<[east] east>], [<[west] west>]; [<attend to the
+Butler: [<[west] west>], [<[south] south>], [<[east] east>]; [<attend to the
 data drive>]
 > e
 The butler is moving east.
@@ -4458,7 +4458,7 @@ transmit to anywhere in the house.
                                  |   |   |   |  
                                 (*)-(C)-(R)-( ) 
 
-Rat: [<[rat , north] north>], [<[rat , east] east>], [<[rat , west] west>]
+Rat: [<[rat , west] west>], [<[rat , north] north>], [<[rat , east] east>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
 Butler: [<[west] west>]; [<attend to the data drive>]; [<attend to the intercom
@@ -4475,7 +4475,7 @@ you don’t have to sound so admiring about it
                                  |   |   |   |  
                                 (*)-(C)-(R)-( ) 
 
-Rat: [<[rat , north] north>], [<[rat , east] east>], [<[rat , west] west>]
+Rat: [<[rat , west] west>], [<[rat , north] north>], [<[rat , east] east>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
 Butler: [<[west] west>]; [<attend to the data drive>]; [<attend to the intercom
@@ -4493,7 +4493,7 @@ we could hear spider drooling over it
                                  |   |   |   |  
                                 (*)-(C)-(R)-( ) 
 
-Rat: [<[rat , north] north>], [<[rat , east] east>], [<[rat , west] west>]
+Rat: [<[rat , west] west>], [<[rat , north] north>], [<[rat , east] east>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[jackdaw , proceed] proceed>]; [<[jackdaw , score] score>]
 Butler: [<[west] west>]; [<attend to the data drive>]; [<attend to the intercom
@@ -4514,7 +4514,7 @@ we’re each getting a nice vacation
                                  |   |   |   |  
                                 (*)-(C)-(R)-( ) 
 
-Rat: [<[rat , north] north>], [<[rat , east] east>], [<[rat , west] west>]
+Rat: [<[rat , west] west>], [<[rat , north] north>], [<[rat , east] east>]
 Spider: [<wait>], [<long wait>]; view any room or object
 Jackdaw: [<[proceed] proceed>]; [<[score] score>]
 Butler: [<[butler , west] west>]; [<attend to the data drive>]; [<attend to the
