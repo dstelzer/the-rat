@@ -837,6 +837,15 @@
 	(div @chameleon) { As much as I love hearing your voice, darling, you don’t have to tell me twice. They’re hanging on my every word. }
 	(div @jackdaw) { what voice this is all happening in text }
 
+(prevent [mingle]) %% So many other quips depend on this one, we need to push it to happen early
+	(#q-3-alisa is unvisited)
+	(div @chameleon) { I would love to, darling, but propriety demands that I should really be greeted by the butler first. Give him a moment to find me,
+	(if) ($ is broken) (then)
+		without any sabotage,
+	(endif)
+	and I’m sure he will. }
+	(now) ~(delay selection by one tick) %% Ensure the quip selection happens soon
+
 (prevent [mingle])
 	(#chameleon is in room $Room)
 	~(#crowd is in room $Room)

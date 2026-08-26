@@ -1,18 +1,32 @@
 %% See quipmachinery.dg for how this should work
 %% A quip definition should look like:
 %% #q-whatever
-%% (available *) When it should be available
+%% (locked *) Anything that should restrict it from happening
+%% (* depends on QUIP) If another quip needs to have happened first
+%% (* involves TOPICS) If it involves any topics, used for discourse structure
 %% (* has priority NUMBER) If it should be weighted more heavily (default 1)
 %% (* line 1) The first line of the quip
 %% (* line 2) The second line of the quip
 %% You can also use (* line) if it has only a single line
-%% (* involves TOPIC) If it involves any topics, used for discourse structure
 
 %% There are no quips in acts 0 or 4, so this file is divided into sections for 1, 2, and 3
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% ACT 1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+#q-1-howto %% Added to try to tell players that there’s no right or wrong way to play - they shouldn’t try to go for 100% completion if it’s no longer fun
+(quip *)
+(* has priority 3)
+(locked *) (in debugger) %% We’re so close to the deadline I can’t deal with this complicating the regression tests right now :( TODO fix this later!
+(* line)
+	(div @jackdaw) { so the gala runs all night (line) how much of it are we gonna be here for }
+	(div @spider) { Until we acquire what we came here for, I assume? }
+	(div @jackdaw) { how vague of you }
+	(div @rat) { Quick and short, is what the rat thinks. The crew takes what it can, and does not linger beyond. }
+	(div @chameleon) { But why hurry? Why not make the most of this chance, make off with every item we possibly can? Get the full (span @italic) experience of the event? }
+	(div @rat) { But yet. In time, a full experience, it repeats, becomes a chore. }
+	(div @spider) { I suppose the final decision falls to Fox. Whether we hurry through or try to take every last cent, we will still come out of this enriched. }
 
 #q-1-comms
 (quip *)
