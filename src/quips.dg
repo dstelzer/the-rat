@@ -20,13 +20,13 @@
 (* has priority 3)
 (locked *) (in debugger) %% We’re so close to the deadline I can’t deal with this complicating the regression tests right now :( TODO fix this later!
 (* line)
-	(div @jackdaw) { so the gala runs all night (line) how much of it are we gonna be here for }
+	(div @jackdaw) { so the gala runs all night (line) how long are we sticking around }
 	(div @spider) { Until we acquire what we came here for, I assume? }
 	(div @jackdaw) { how vague of you }
-	(div @rat) { Quick and short, is what the rat thinks. The crew takes what it can, and does not linger beyond. }
+	(div @rat) { Quick and short, is what the rat thinks. The crew takes what arises, and does not linger beyond. }
 	(div @chameleon) { But why hurry? Why not make the most of this chance, make off with every item we possibly can? Get the full (span @italic) experience of the event? }
 	(div @rat) { But yet. In time, a full experience, it repeats, becomes a chore. }
-	(div @spider) { I suppose the final decision falls to Fox. Whether we hurry through or try to take every last cent, we will still come out of this enriched. }
+	(div @spider) { I suppose the final decision falls to Fox. Whether we rush for the end or try to take every last cent before moving on, we will still come out of this enriched. }
 
 #q-1-comms
 (quip *)
