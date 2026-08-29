@@ -4,7 +4,7 @@ There are two builds of the game included in this zip file.
 
 web/ has the most user-friendly version, which can be played in a web browser; double-click index.html to start.
 
-zmachine.z5 has a Z-machine version, for people who prefer to use a dedicated interpreter. This version doesn’t have hyperlinks, but can be played on all sorts of platforms.
+zmachine.z5 has a Z-machine version, for people who prefer to use a dedicated interpreter. This version doesn’t have hyperlinks, and the aesthetics are less customizable, but it can be played on all sorts of platforms.
 
 If you run into any problems, ping @Draconis on the forums, or send an email to <dsdraco7@gmail.com>.
 
